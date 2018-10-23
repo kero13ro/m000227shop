@@ -1,0 +1,12 @@
+
+
+
+
+=afterline($height, $color: rgb(199,199,199))
+  line-height: $height
+  &:after
+    content: ""
+    display: block
+    border-right: 1px solid $color
+    +position(absolute, 0 0 null null )
+    height: $height

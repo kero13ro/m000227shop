@@ -1,0 +1,203 @@
+
+
+
+.footer
+  background-image: url("./images/00-foot-bgc2.jpg")
+  background-size: cover
+  white-space: nowrap
+  color: rgb(240,223,196)
+  position: relative
+  overflow: hidden
+  a
+    color: rgb(240,223,196)
+    +hoverText(#fff)
+.flower1
+  +position(absolute, 0 0 null null )
+  transform: translate(40%, -30%)
+.flower2
+  +position(absolute, null null 0 0)
+  transform: translate(-30%, 45%)
+
+.sitemap
+  +container
+  +f(flex-start)
+  +padding( 70px null 60px null)
+  border-bottom: 1px solid rgba(256,256,256,0.3)
+  padding-bottom: 40px
+
+  &__content
+    width: 100%
+    margin-right: 120px
+    +f(space-between, flex-start)
+
+    li
+      +f(flex-start, flex-start, column)
+
+      a
+        margin-bottom: 14px
+      a.f20
+        text-shadow: 0 0 1px white
+        margin-bottom: 20px
+        letter-spacing: 1px
+
+    li.secondary
+      font-weight: bold
+
+  &__call
+    margin-top: -15px
+    li
+      +size(20.83vw, 56px)
+      min-width: 300px
+      +f(flex-start, center)
+      letter-spacing: 1px
+      a
+        margin: 0 5px
+
+      &:not(:last-child)
+        border-bottom: 1px solid rgba(256,256,256,0.3)
+
+  +m(1200, 991)
+    +padding(30px null 15px)
+    
+    &__content
+      margin-right: 60px
+
+    &__call
+      margin-top: 0
+      li
+        +size(auto)
+        min-width: 0px
+        border-bottom: 0 !important
+        font-size: 16px
+        +f(center,flex-start,column)
+        a
+          +margin(5px null 15px)
+
+  +max(990)
+    +padding(30px 60px 15px)
+
+    &__content
+      display: none
+
+    &__call
+      margin-top: 0
+      width: 100%
+      +f(center,center,row, wrap)
+      
+      li
+        +margin(null null 15px)
+        +size(50%, auto)
+        min-width: 0px
+        border-bottom: 0 !important
+        font-weight: bolder
+        font-size: 18px
+
+  +max(768)
+    &__call li
+      +size(100%, auto)
+
+  +max(550)
+    padding: 50px 30px 35px
+
+  +max(370)
+    padding: 40px 20px 10px
+    li
+      font-size: 16px
+
+
+.address
+  +padding( 40px null)
+  +f(center, flex-end)
+  font-style: normal
+  +container
+
+  &__logo
+    +size(180px, auto)
+    margin-right: 30px
+    min-height: 1px
+
+  &__content
+    +f(flex-start,flex-start,column)
+    width: 100%
+    max-width: 760px
+    
+    > *
+      +f(flex-start,flex-start)
+      width: 100%
+
+  &__location
+    +margin(null null 10px -8px)
+    li
+      padding: 0 8px
+    li:not(:first-child):not(:nth-last-child(2)):not(:last-child)
+      border-right: 1px solid white
+    li:last-child a
+      text-decoration: underline
+
+  &__contact
+    +margin(null null 16px -10px)
+    a
+      margin: 0 10px
+
+  +max(990)
+
+    +f(center, flex-start, column)
+    padding: 30px 60px
+
+    &__logo
+      margin-bottom: 30px
+      width: 18vw
+      min-width: 120px
+
+    &__location
+      +f(flex-start, flex-start, row ,wrap)
+      margin-bottom: 0px
+      &::after
+        content: ""
+        width: calc(100% - 450px)
+
+      li.linebreak ~ li
+        order: 1
+      li
+        margin-bottom: 10px
+      
+  +max(768)
+
+    .tel ~ *
+      display: none
+
+    &__copyright
+      flex-wrap: wrap
+      
+      span:nth-child(1)
+        width: 100%
+        margin-bottom: 5px
+      
+      span:nth-child(2)
+        display: none
+
+  +max(550)
+    padding: 30px 30px
+    font-size: 14px
+    .f14
+      font-size: 14px
+  
+    &__location
+      +margin(null null 8px -6px)
+      &::after
+        display: none
+      li
+        padding: 0 6px
+
+    &__contact
+      flex-wrap: wrap
+      .addr
+        width: 100%
+        margin-bottom: 5px
+        & + span
+          display: none
+
+  +max(370)
+    padding: 30px 20px
+    .f14
+      font-size: 12px

@@ -1,0 +1,379 @@
+
+
+
+#dashboard
+  height: 100%
+  +position(fixed, 0 0 null null )
+  +padding(35px 25px 60px 25px)
+  +f(flex-start, center, column)
+  pointer-events: none
+  z-index: 13
+
+  .cover
+    +size(100%)
+    +position(fixed, 0 0 0 0 )
+    background-color: trasparent
+    pointer-events: auto
+    display: none
+
+  >*:not(.cover)
+    +fc
+    border-radius: 50%
+    box-shadow: 0 0 2px rgba(0,0,0,0.3)
+    margin-bottom: 20px
+    pointer-events: auto
+    position: relative
+    cursor: pointer
+    flex-shrink: 0
+    
+
+  .big
+    +size(100px)
+    flex-direction: column
+    background-color: $purple
+    color: white
+    .icon-cart
+      font-size: 1.5rem
+      margin-bottom: 8px
+
+  .white
+    +size(42px)
+    background-color: #fff
+    color: $purple
+    &.xl:before
+      font-size: 1.45rem
+    &.lg:before
+      font-size: 1.25rem
+  
+  .go-top
+    +size(42px)
+    margin-top: auto
+    background-color: $purple
+    color: white
+
+
+  .bar
+    height: 42px
+    +f( center, flex-start, column)
+    +position(absolute, 0 0 null null )
+    border-radius: 21px
+    color: white
+    background-color: $purple
+    z-index: -1
+    overflow: hidden
+    white-space: nowrap
+    > a
+      color: #fff !important
+      background-color: $purple
+      padding: 10px 3px
+      min-width: 100px
+    
+  .icon-scan
+    z-index: 1
+  form.bar
+    top: 0
+    height: 90px
+    border-radius: 20px
+
+    input[type="search"] 
+      width: 100px  
+      padding: 3px 4px
+      margin-top: 8px
+      color: white
+      background-color: $purple
+      border: 1px solid rgba(256,256,256,0.4)
+      +trans
+      &::placeholder 
+        color: white
+      &:focus 
+        background-color: rgba(256,256,256,0.1)
+      &:hover 
+        background-color: rgba(256,256,256,0.1)
+
+    input[type="submit"] 
+      color: white
+      background-color: $purple
+      border: 1px solid rgba(256,256,256,0.4)
+      padding: 3px 4px
+      +trans
+      &:hover 
+        background-color: rgba(256,256,256,0.1)
+  
+  +max(1600)
+    +padding(100px null null null )
+    // z-index: 11
+  +max(991)
+    padding: 15px 15px 25px
+    margin-top: 30vw
+
+    >*
+      margin-bottom: 10px
+
+    .big
+      +size(42px)
+      .icon-cart
+        font-size: 1.25rem
+        margin-bottom: 0
+      .icon-cart + span
+        display: none
+
+    .white
+      +size(42px)
+      &.xl:before
+        font-size: 1.45rem
+      &.lg:before
+        font-size: 1.25rem
+    
+    .go-top
+      +size(42px)
+      margin-top: 0
+
+  +max(991)
+    top: auto
+    bottom: 0
+    height: auto
+    .plus
+      +size(42px)
+      background-color: $purple
+      color: white
+      border-radius: 50%
+      margin-top: 30px
+      .one, .two
+        margin: 0 auto
+        +size(20px, 3px)
+        +position(absolute, null 0 null 0)
+        background-color: #fff
+      .two
+        transform: rotate(90deg)  
+        transition: 0.3s transform
+
+    .gasp
+      opacity: 0
+
+    .plus:active
+      transform: scale(1.1)
+      transition: 0.3s transform
+
+    &.expend .plus
+      transition: 0.3s transform
+      .two
+        transform: rotate(0deg)  
+        transition: 0.3s transform
+
+
+//hover 動畫
+#dashboard  
+  >*
+    +trans
+
+  .bar
+    width: 0 
+    opacity: 0
+    transition: width 0.3s ,opacity 0.3s
+
+  [class^="icon"]:before
+    +trans2-slow
+
+  >*:hover
+    &[class^="icon"], [class^="icon"]
+      &:before
+        transform: rotate(360deg)
+
+  >*:hover
+    &.white
+      background-color: $purple
+      color: white
+
+    &.big, 
+    &.go-top
+      background-color: tint($purple, 15%)
+
+  >*.expend
+    .bar
+      width: 200px 
+      padding: 0 20px
+      opacity: 1
+      transition: width 0.3s ,opacity 0.3s
+
+// dashboard 彈跳視窗
+.lity
+  background-color: rgba(0,0,0,0.5)
+  .lity-close
+    +size(32px)
+    position: absolute
+    transform: translateX(50%) translateY(-50%)
+    font-size: 27px
+    line-height: 27px
+    color: $brown
+    border: 1px solid $brown
+    background-color: $brown-light
+    border-radius: 50%
+
+  .box
+    +f(center,center,column)
+    border-radius: 5px
+    background-color: $brown-light
+    text-align: center
+    border: 5px solid white
+
+  #line
+    +size(600px, 500px)
+    img
+      border: 1px solid rgb(200,200,200)
+    .f30
+      font-weight: bolder
+
+    +max(991)
+      +size(90vw, auto)
+      +padding(35px 15px)
+      max-width: 600px
+      img
+        max-width: 50vw
+
+    +max(365)
+      .trans
+        line-height: 1.5
+        .lh18
+          display: none
+        &:after
+          content: "開啟LINE應用程式，接著至「其他」頁籤中的「加入好友」選單掃描行動條碼。"
+
+
+  #phone
+    +size(600px, 450px)
+    .f30
+      font-weight: bolder
+    table
+      max-width: 500px
+    tr
+      height: 60px
+      border-bottom: 1px solid $brown-230
+    th
+      background-color: $brown-240
+    td
+      width: 33%
+      
+    .icon-phone
+      margin: 0 auto
+      +size(40px) 
+      +fc
+      background-color: $purple
+      color: white
+      border-radius: 50%
+      font-size: 1.2rem  
+
+    +max(991)
+      +size(90vw, auto)
+      +padding(35px 15px)
+      max-width: 600px
+
+    +max(450)
+      td
+        width: 50%
+      .icon-phone
+        display: none
+
+      
+
+  #ADslick
+    +size(90vw, auto)
+    max-width: 600px
+    .box
+      background-attachment: cover
+
+    .slick
+      +arrow-reset
+
+    .slick-prev, .slick-next        
+      +size(200px, 450px)
+      border-radius: 0
+      &::before 
+        font-size: 5rem
+        +trans
+
+    .slick-prev
+      left: -200px
+      &:before
+        content: '\e807'
+
+    .slick-next
+      right: -200px
+      &:before
+        content: '\e806'
+
+    .box
+      height: 90vw
+      max-height: 450px
+      background-size: cover
+      background-position: right center
+
+    .wrap
+      margin-left: auto
+      +size(250px, 100%)
+      +f(center, center, column)
+      position: relative
+      span, p
+        width: 100%
+
+      span
+        font-weight: bolder
+        line-height: 1.5
+
+
+    .btn-circle
+      margin: 0 auto
+      +size(150px)
+      +f(center, center, column)
+      flex-shrink: 0
+      border-radius: 50%
+      background-color: $blue
+      color:  white
+      +trans
+      &:hover
+        background-color: shade($blue, 8%);
+        
+
+    
+    .wrap.color-pink
+      color: rgb(228,136,137)
+
+    .btn-square
+      +size(110px, 40px)
+      line-height: 40px
+      background-color: rgb(241,155,158)
+      color: white
+      +trans
+      &:hover
+        background-color: shade(rgb(241,155,158), 8%);
+
+
+    +max(990)
+      .slick-prev, .slick-next  
+        display: none !important
+
+    +max(767)
+      .btn-circle
+        +size(auto, auto)
+        +padding(12px 16px )
+        line-height: 40px
+        color: white
+        border-radius: 0
+
+    +max(500)
+      .wrap
+        width: 100%
+      .box  
+        position: relative
+        background-position: right center !important
+        &:before
+          background-color: rgba(256, 256, 256, 0.5)
+          content: ""
+          display: block
+          +size(100%)
+          +position(absolute, 0 0 0 0)
+
+    +max(374)
+      .box
+        height: 100vw
+
+
