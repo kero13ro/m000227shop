@@ -2,5 +2,284 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+  
+  #index
+    .slider-show    
+      .wrapper(style="background-image: url(styles/images/01-banner2.jpg);")
+      .wrapper(style="background-image: url(styles/images/01-banner3.jpg);")
+      .wrapper(style="background-image: url(styles/images/01-banner1.jpg);")
+      .wrapper(style="background-image: url(styles/images/01-banner1.jpg);")
+      .wrapper(style="background-image: url(styles/images/01-banner1.jpg);")
+
+    ul.slider-nav.mb32.nostyle
+      li 消費滿萬送好禮喔！
+      li.actvie 複合式月子餐
+      li 高壓萃取的天然湯底
+      li 分享心得送好康
+      li 月子飲品十天份
+
+    .container
+
+      .submenu
+        a.active 紫金月子
+        a 生理保養
+        a 小產元氣
+        a 保健調養
+        a 媽媽寶寶
+        
+      .row.mb56
+        .catolog.col-12.col-md-2
+          .block__title.f18 產品分類
+
+          ul.nostyle.orange
+            li.subtitle.icon-right: a 特惠活動
+            li: a 火熱新品養身飲
+            li: a 誠意滿滿伴手禮
+            li: a 艾力克斯的禮物
+          ul.nostyle.purple
+            li.subtitle.icon-right: a 月子餐組合選
+            li.active: a 月子補養兩日餐(素)
+            li: a 月子養生飲品
+            li: a 產後養護用品
+          ul.nostyle
+            li.subtitle.icon-right: a 紫金月子
+            li: a 月子養生餐(葷)
+            li: a 月子養生餐(素)
+          ul.nostyle
+            li.subtitle.icon-right: a 複合式月子餐
+            li: a 複合式月子餐
+          ul.nostyle
+            li.subtitle.icon-right: a 月子調理
+            li: a 月子水八折優惠
+            li: a 紫金月子飲品
+            li: a 孕媽咪滋養飲
+            li: a 月子藥膳調理
+            li: a 月子哺乳湯底
+          ul.nostyle
+            li.subtitle.icon-right: a 小產調養
+            li: a 小產養生餐(葷)
+            li: a 小產養生餐(素)
+            li: a 小產藥膳調理
+          ul.nostyle
+            li.subtitle.icon-right: a 生理調養
+            li: a 甜品&烘焙
+            li: a 生理藥膳調理
+            li: a 香草美人生理餐
+          ul.nostyle
+            li.subtitle.icon-right: a 保健調養
+            li: a 美肌Q彈花膠飲
+            li: a 孕期滋養鰻魚精
+            li: a 術後調養鱸魚精
+            li: a 百分百新鮮果汁
+            li: a 連淨100%苦茶油
+            li: a 真宴坊冰糖燕窩
+
+
+        
+
+        .items.col-12.col-md-10.col-xl-8
+          .block__title.f18 產品分類
+          .items__content
+            .card
+              .card__pic(data-tri="新品" data-corner="30日")
+                img(src="./styles/images/01-item01.jpg")
+                .cover
+                  .icon-heart
+                    
+                  .icon-cart
+                    
+              .card__name 月子補養兩日餐(30日)
+              .card__price
+                span 特惠價
+                span.num $ 33,888 
+              .card__ps 套餐
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item02.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 月子補養兩日餐(20日)
+              .card__price
+                span 特惠價
+                span.num $ 22,888 
+              .card__ps 套餐
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item03.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 月子補養兩日餐(10日)
+              .card__price
+                span 特惠價
+                span.num $ 11,888 
+              .card__ps 套餐
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item04.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 月子補養兩日餐(2日)
+              .card__price
+                span 特惠價
+                span.num $ 2,388
+              .card__ps 套餐
+
+            .border
+
+            .card
+              .card__pic(data-tri="特惠" data-corner="TOP 1")
+                img(src="./styles/images/01-item05.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 生理藥膳調理【5日】
+              .card__price
+                span 特惠價
+                span.num $ 925
+              .card__ps 套餐
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item06.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 香草美人經中餐
+              .card__price
+                span 特惠價
+                span.num $ 938
+              .card__ps 套餐
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item07.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 香草美人經後餐
+              .card__price
+                span 特惠價
+                span.num $ 1,050
+              .card__ps 套餐
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item08.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 香草美人生理餐(六期搭贈一期)
+              .card__price
+                span 特惠價
+                span.num $ 11,928
+              .card__ps 套餐
+
+            .border
+
+            .card
+              .card__pic(data-tri="特惠" data-corner="1箱")
+                img(src="./styles/images/01-item09.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 紫金月子水【1箱】
+              .card__price
+                span 特惠價
+                span.num $ 960
+
+            .card
+              .card__pic(data-tri="特惠" data-corner="30日")
+                img(src="./styles/images/01-item10.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 月子藥膳湯底第一階段
+              .card__price
+                span 特惠價
+                span.num $ 3,600
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item11.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 月子藥膳湯底第二階段
+              .card__price
+                span 特惠價
+                span.num $ 3,600
+
+            .card
+              .card__pic
+                img(src="./styles/images/01-item12.jpg")
+                .cover
+                  .icon-heart
+                  .icon-cart
+              .card__name 月子藥膳湯底第三階段
+              .card__price
+                span 特惠價
+                span.num $ 3,600
+
+                
+        .col-12.col-md-2
+          .cart
+            .block__title.f18 購物車 (2)
+            .cart__content
+
+              ul.nostyle
+              
+                li.unit
+                  .unit__content
+                    img(src="./styles/images/01-item03.jpg")
+                    .info
+                      .calc $11,888 x 1
+                      .delete 移除
+                  .unit__title 月子補養兩日餐(10日)
+
+                li.unit
+                  .unit__content
+                    img(src="./styles/images/01-item09.jpg")
+                    .info
+                      .calc $960 x 1
+                      .delete 移除
+                  .unit__title 紫金月子水1箱
+
+              .cart__total 
+                span 小計：
+                span.num $12,848
+
+              a.cart_tips 
+                .f18 滿額禮大方送
+                .brown 購物滿$15,000 #[br] 好禮任你選
+                | 還差 $2,152元 #[br] 好禮搶先看
+
+
+              .cart__btn
+                a(href="#") 查看 #[br] 購物車
+                a(href="#") 結帳
+
+          .record
+            .block__title.f18 瀏覽紀錄：
+            .record__content
+              ul.nostyle
+              
+                li.unit
+                  .unit__content
+                    img(src="./styles/images/01-item03.jpg")
+                    .info 月子補養兩日餐(10日)
+
+                li.unit
+                  .unit__content
+                    img(src="./styles/images/01-item09.jpg")
+                    .info 紫金月子水1箱
+
+                li.unit
+                  .unit__content
+                    img(src="./styles/images/01-item03.jpg")
+                    .info 月子補養兩日餐(10日)

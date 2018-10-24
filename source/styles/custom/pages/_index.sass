@@ -1,0 +1,337 @@
+
+$bgco: rgb(245, 241, 240)
+
+
+.slider-show
+  border-bottom: 1px solid rgb(181,137,89)
+  
+  .wrapper
+    height: 470px
+    background-size: cover
+    position: relative
+    &:before
+      +size(100%)
+      +position(absolute, 0 null null 0)
+      z-index: 1
+      content: ""
+      display: block
+      background-color: rgba(black, 0.3)
+      opacity: 0
+      transition: opacity 0.3s
+
+  .wrapper:not(.slick-current)
+    &:before
+      opacity: 1
+      transition: opacity 0.3s
+
+  .slick-list
+    position: relative
+    width: 100vw
+    +padding(null calc((100vw - 1400px) /2))
+
+
+.slider-nav
+  height: 50px
+  +fc
+
+  >li
+    width: 200px
+    text-align: center
+    cursor: pointer
+    color: rgb(102, 102, 102)
+    border-right: 1px solid rgb(181,137,89)
+    line-height: 1
+
+  li:first-child
+    border-left: 1px solid rgb(181,137,89)
+    
+  .actvie
+    position: relative
+    &::before
+      border-left: 1px solid rgb(181,137,89)
+      border-top: 1px solid rgb(181,137,89)
+      content: ""
+      display: block
+      +size(12px)
+      +position(absolute, -24px null null 50%)
+      background-color: $bgco
+      transform: translateX(-50%) rotate(45deg)
+
+.submenu
+  +f(flex-start, flex-end)
+  margin-bottom: 30px
+  a
+    +fc
+    font-weight: bold
+    color: rgb(162, 134, 104)
+    +margin(null 1px null null )
+    +size(200px, 50px)
+    border: 1px solid rgb(217,194,170)
+    border-radius: 8px 8px 0 0
+    background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
+
+  a.active
+    background: rgb(104,55,0)
+    color: white
+    height: 60px
+    +hoverText(white)
+
+    position: relative
+    &::before
+      content: ""
+      display: block
+      background: rgb(104,55,0)
+      +size(16px)
+      +position(absolute, null null 0px 50%)
+      transform: translate(-50%,50%) rotate(45deg)
+
+.block__title
+  height: 50px
+  +f(null, center)    
+  background: linear-gradient(to bottom, rgb(255,255,255), rgb(251,247,243))
+  border-top: 1px solid rgb(222, 207, 186)
+  color: rgb(104,55,0)
+  font-weight: bold
+  border-bottom: 1px solid rgb(239,239,239)
+  +padding(null 25px)
+
+
+.catolog
+  min-width: 215px
+  +f(null, null, column)
+
+  ul
+    background-color: rgb(255,255,255)
+    +padding(null 25px)
+    margin-bottom: 8px
+    +padding(10px null)
+    line-height: 30px
+    font-weight: bolder
+
+    .subtitle
+      font-weight: bold
+      color: #a57b4b
+      line-height: 36px
+      &:before
+        +margin(null 10px null -3px)
+
+    li:not(.subtitle)
+      line-height: 32px
+      +f(null , center)
+      +circle( 5px, 10px, #c8ab81)
+
+  ul.orange
+    .subtitle, .active
+      color: #fd5f27
+    li.active:before
+      background-color: #fd5f27
+
+  ul.purple
+    .subtitle,.active
+      color: #8c1e5b
+    li.active:before
+      background-color: #8c1e5b
+
+
+.items
+  
+.items__content
+  background-color: rgb(255,255,255)
+  +f(space-around, flex-start, row, wrap)
+  +padding(5px 18px)
+
+.card
+  +size(220px, auto)
+  white-space: normal
+  +padding(15px)
+  +margin(18px null 18px null )
+
+  .card__pic
+    margin-bottom: 10px
+    position: relative
+
+  .card__pic[data-tri]:before
+    content: attr(data-tri)
+    +position(absolute, 0 null null 0)
+    color: white
+    +triangle("up", 74px, 37px, red)
+    font-size: 14px
+    line-height: 45px
+    z-index: 1
+    text-indent: -14px
+    white-space: nowrap
+    transform:  translateY(15px) rotate(-45deg)
+    transform-origin: 0 100%
+
+  .card__pic[data-corner]:after
+    content: attr(data-corner)
+    +position(absolute, null 0 0  null)
+    +size(55px, 25px)
+    +fc
+    background-color: rgb(255, 156, 1)
+    border-radius: 6px 0 0 0 
+    color: white
+    font-size: 14px
+    z-index: 1
+
+  .cover
+    +position(absolute, 0 0 0 0)
+    +size(100%)
+    +fc
+    background-color: rgba(black, 0.3)
+    opacity: 0
+    pointer-events: none
+    .icon-heart,
+    .icon-cart
+      +size(50px)
+      +margin(null 10px)
+      border-radius: 50%
+      +fc
+      cursor: pointer
+    .icon-heart
+      color: rgb(189, 160, 120)
+      background-color: #fff
+      +padding(3px 2px null null )
+
+    .icon-cart
+      color: #fff
+      background-color: rgb(189, 160, 120)
+
+
+
+  .card__name
+    line-height: 26px
+    +padding(3px null)
+
+  .card__price
+    height: 26px
+    margin-bottom: 5px
+    span:first-child
+      font-size: 15px
+      color: #8b8b8b
+      margin-right: 5px
+    .num
+      font-size: 18px
+      color: #b47832
+      
+
+  .card__ps
+    +size(38px , 20px)
+    background-color: #d2655c
+    border-radius: 3px
+    color: white
+    +fc
+    font-size: 14px
+
++min(1450)
+  .border
+    width: calc(100% + 36px)
+    +margin(null -18px)
+    border-bottom: 1px solid #e5e5e5
+
+
+
+
+
+.right-panel
+
+
+
+
+
+.cart
+  margin-bottom: 20px
+.cart__content
+  background-color: rgb(255,255,255)
+  min-height: 300px 
+  +padding(null 20px)
+  padding-bottom: 30px
+
+.unit
+  // margin-bottom: 18px
+  +padding(20px null)
+
+.unit
+  border-bottom: 1px solid rgb(240, 240, 240)
+.unit:last-child
+  border-bottom: 1px solid black
+  
+.unit__content
+  +f(flex-start, flex-end)
+  margin-bottom: 10px
+  img
+    +size(58px)
+    margin-right: 10px
+  .info
+    +f(center, flx-start, column)
+  .calc
+    margin-bottom: 5px
+    font-size: 15px
+  .delete
+    +size(60px, 25px)
+    font-size: 14px
+    background-color: rgb(237, 237, 237)
+    +fc
+    cursor: pointer
+
+.cart__total
+  height: 60px
+  text-align: center
+  span
+    line-height: 60px
+    align-self: baseline
+  .num
+    font-size: 25px
+
+
+
+.cart_tips
+  margin-bottom: 25px
+  width: 100%
+  border: 1px solid rgb(222, 207, 186)
+  border-radius: 10px
+  white-space: normal
+  +padding(12px null)
+  text-align: center
+  background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
+
+
+  +padding(null 12px)
+  color: rgb(210,101,92)
+  
+  .f18
+    font-weight: bold
+    margin-bottom: 5px
+  
+  .brown
+    color: rgb(162,134,104)
+    line-height: 1.3
+    border-bottom: 1px solid rgb(222, 207, 186)
+    padding-bottom: 10px
+    margin-bottom: 10px
+
+
+.cart__btn
+  +f
+  a
+    +size(80px)
+    color: white
+    border-radius: 50%
+    +margin(null 3px)
+    +fc
+    text-align: center
+  a:first-child
+    background-color: rgb(189, 160, 120)
+  a:last-child
+    background-color: rgb(210,101,92)
+
+
+.record__content
+  background-color: rgb(255,255,255)
+
+
+.card:hover
+  box-shadow: 0 0 1px #b47832
+  .cover
+    opacity: 1
+    pointer-events: auto

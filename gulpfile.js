@@ -180,6 +180,8 @@ gulp.task("copy-plugin-css", function () {
 
 
 
+//在sass前面插入plugin的css，但考量到需要調整（覆蓋會累贅），因此改用複製到資料夾內、import方式
+
 
 // gulp.task("sass", function() {
 //   var plugins = [                         
