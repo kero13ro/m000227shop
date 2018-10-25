@@ -1,0 +1,73 @@
+
+
+
+.intro__head
+  +padding(40px 30px)
+  +fc
+
+.head__left
+  width: 400px
+  height: 100px
+  .slick
+    display: none
+
+
+.head__right
+  .f24
+    margin-bottom: 20px
+  // span 
+  //   display: inline-block
+
+  .vege
+    color: #59a467
+    display: block
+
+  div[class*="border-"]
+    border-bottom: 1px solid rgb(239,239,239)  
+    
+  .border-1
+    margin-bottom: 12px
+    padding-bottom: 12px
+  .border-2
+    margin-bottom: 20px
+    padding-bottom: 16px
+  .border-3
+    padding-bottom: 20px
+    margin-bottom: 20px
+
+  .group
+    +f
+    span 
+      width: 80px
+      display: inline-block
+      color: #7c7c7c
+
+  .control
+    +f
+    > *
+      border: 1px solid #ccc
+      +fc
+
+    a
+      +size(32px)
+      color: #ccc
+    .mount
+      +size(42px, 32px)
+
+  .through
+    text-decoration: line-through
+    color: #7c7c7c
+
+  .sale
+    line-height: 1
+    +f(flex-start, flex-end)
+      
+    .f28
+      color: #cc0000
+      font-family: 'Open Sans', sans-serif
+
+// width: 250px
+// width: 150px
+
+.intro__main
+  display: none

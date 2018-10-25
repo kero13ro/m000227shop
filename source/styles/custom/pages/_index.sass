@@ -90,14 +90,46 @@ $bgco: rgb(245, 241, 240)
   +f(null, center)    
   background: linear-gradient(to bottom, rgb(255,255,255), rgb(251,247,243))
   border-top: 1px solid rgb(222, 207, 186)
+  +padding(null 25px)
+  border-bottom: 1px solid rgb(239,239,239)  
   color: rgb(104,55,0)
   font-weight: bold
-  border-bottom: 1px solid rgb(239,239,239)
-  +padding(null 25px)
+
+  & + *
+    background-color: rgb(255,255,255)
 
 
-.catolog
-  min-width: 215px
+
+.leftBlock, .midBlock, .rightBlock
+  +margin(null 12px)
+
+.leftBlock, .rightBlock
+  width: 215px
+
+.midBlock
+  width: calc(100% - 502px)
+
++m(1300, 768)
+  .row
+    position: relative
+
+  .midBlock
+    +position(absolute, 0 0 null null )
+    width: calc(100% - 263px)
+
+  .rightBlock
+    margin-right: calc(100% - 287px)
+
++max(767)
+  .leftBlock, .midBlock, .rightBlock
+    width: 100%
+
+
+
+
+
+
+.catalog
   +f(null, null, column)
 
   ul
@@ -108,43 +140,67 @@ $bgco: rgb(245, 241, 240)
     line-height: 30px
     font-weight: bolder
 
-    .subtitle
-      font-weight: bold
+  .subtitle
+    font-weight: bold
+    line-height: 36px
+    color: #a57b4b  
+    a
       color: #a57b4b
-      line-height: 36px
-      &:before
-        +margin(null 10px null -3px)
+    &:before
+      +margin(null 10px null -3px)
 
-    li:not(.subtitle)
-      line-height: 32px
-      +f(null , center)
-      +circle( 5px, 10px, #c8ab81)
+  li:not(.subtitle)
+    line-height: 32px
+    +f(null , center)
+    +circle( 5px, 10px, #c8ab81)
 
-  ul.orange
-    .subtitle, .active
-      color: #fd5f27
-    li.active:before
-      background-color: #fd5f27
 
   ul.purple
-    .subtitle,.active
-      color: #8c1e5b
-    li.active:before
-      background-color: #8c1e5b
+    .subtitle
+      &::before, a
+        color: #8c1e5b
+    .active
+      &::before
+        background-color: #8c1e5b
+      a
+        color: #8c1e5b
+
+  ul.orange
+    .subtitle
+      &::before, a
+        color: #fd5f27
+    .active
+      &::before
+        background-color: #fd5f27
+      a
+        color: #fd5f27
+
+  +max(767)
+    li:not(.subtitle)
+      display: none
+      opacity: 0
+      overflow: hidden
+
+      // transition: 0.3s opacity
+
+
+
+
+
 
 
 .items
   
 .items__content
-  background-color: rgb(255,255,255)
+  // background-color: rgb(255,255,255)
   +f(space-around, flex-start, row, wrap)
   +padding(5px 18px)
 
-.card
-  +size(220px, auto)
-  white-space: normal
-  +padding(15px)
-  +margin(18px null 18px null )
+  .card
+    +size(220px, auto)
+    white-space: normal
+    +padding(15px)
+    +margin(18px null 18px null )
 
   .card__pic
     margin-bottom: 10px
@@ -223,27 +279,40 @@ $bgco: rgb(245, 241, 240)
     +fc
     font-size: 14px
 
-+min(1450)
+
   .border
     width: calc(100% + 36px)
     +margin(null -18px)
     border-bottom: 1px solid #e5e5e5
+    +max(1450)
+      display: none
+
+
+.items__content
+  +max(530)
+    +padding(null 10px)
+    
+    .card
+      width: calc(50%)
+      +padding(null 10px)
+      +margin(0 null)
+
+    .card__name
+      font-size: 15px
+    .card__price
+      height: auto
+      > span
+        display: block
 
 
 
 
 
-.right-panel
-
-
-
-
-
-.cart
+.cart-lsit
   margin-bottom: 20px
+
 .cart__content
-  background-color: rgb(255,255,255)
-  min-height: 300px 
+  // background-color: rgb(255,255,255)
   +padding(null 20px)
   padding-bottom: 30px
 
@@ -322,12 +391,35 @@ $bgco: rgb(245, 241, 240)
     text-align: center
   a:first-child
     background-color: rgb(189, 160, 120)
+    +hoverBgc(#b27f3c)
   a:last-child
     background-color: rgb(210,101,92)
+    +hoverBgc(#cc3d33)
+
+
 
 
 .record__content
   background-color: rgb(255,255,255)
+  +padding(5px 30px 20px 20px)
+  height: 500px
+  overflow: auto
+  
+  #mCSB_1_scrollbar_vertical
+    right: 5px
+  
+  .record__unit
+    padding-right: 10px
+    font-size: 15px
+    +f(flex-start, center)
+    +padding(15px null)
+    white-space: normal
+    &:not(:last-child)
+      border-bottom: 1px solid #e5e5e5
+
+  img
+    +size(60px)
+    margin-right: 12px
 
 
 .card:hover

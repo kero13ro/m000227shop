@@ -2,5 +2,146 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+
+  include ./include/index_block.pug
+  include ./include/component.pug
+
+  #info
+
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 月子餐組合選
+          li.icon-right-thin 月子補養兩日餐(10日)
+
+      +topLanding
+
+      
+        
+
+      .row.mb56      
+        .catalog.leftBlock
+          +catalog
+
+
+        .items.midBlock
+
+          .block__title 月子餐組合選
+
+          .introduce
+
+            .intro__head
+              .head__left
+                .slick
+                  img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
+                  img(src="./styles/images/02-01-05.jpg" alt="紫金堂")
+                  img(src="./styles/images/02-01-06.jpg" alt="紫金堂")
+                  img(src="./styles/images/02-01-07.jpg" alt="紫金堂")
+
+
+
+              .head__right
+
+                h3.f24.wide5 月子補養兩日餐(10日)
+                .f16.lh20
+                  div 素燉富含膳食纖維是坐月子混搭的好選擇
+                  .vege.border-1 奶蛋素
+
+                  .group
+                    span 付款方式    
+                    | 信用卡付款  \  超商代碼繳費  \  虛擬帳號轉帳
+
+                  .group.border-2
+                    span 配送方式
+                    | 低溫宅配
+
+                  .group.mb8
+                    span 數量
+                    .control
+                      a.icon-plus
+                      .mount 1
+                      a.icon-minus
+
+                  .group.mb8
+                    span 定價
+                    .through $14,000
+                    
+                  .group.border-3.sale
+                    span 特惠價
+                    .f28 $11,888
+
+                  .group
+                    .btn 立即購買
+                    .btn.icon-cart 加入購物車
+                  .group
+                    sapn 分享：
+                    a.icon-facebook
+                    a.icon-line
+                    sapn 加入追蹤清單：
+                    a.icon-heart
+
+
+            .intro__main
+              .index
+                a 商品說明
+                a 購物說明
+              .content
+                .text
+                  .f24.border 月子補養兩日餐 (10天)
+                    span.vege (蛋奶素)
+
+                  p 爲滿足現代女性必須於短短三十天內做好產後調養、哺育母乳以及快速回復體態的需求；紫金堂秉持中醫漸進式調理觀點，結合現代營養學，研發代謝、修復、滋補、回春四階段月子養生素燉膳食。
+                  p 為了讓消費者更能輕易體驗「月子餐組合選」的獨特之處與方便性，特地開發全新的素燉組合餐，另外為了媽媽們產後想親自哺乳新生兒，餐點另有一般組合餐與哺乳組合餐，請先了解個人需求後下單。
+                  p 
+                    span.dark 【月子餐組合選內容】
+                    | 補氣主食6碗、調養燉品6碗、養生飲品10包。
+                  p 
+                    span.dark 【配送方式】
+                    | 兩日1配。
+                  p 
+                    span.dark 【每日用餐建議】
+                    | 早餐-補氣主食1碗、調養燉品1碗、養生飲品1包。#[br]
+                    | 午餐-補氣主食1碗、調養燉品1碗、養生飲品1包。#[br]
+                    | 下午茶-養生飲品1包。#[br]
+                    | 晚餐-補氣主食1碗、調養燉品1碗、養生飲品1包。#[br]
+                    | 晚安飲-養生飲品1包。
+                    | 備有一般組合餐與哺乳組合餐可任選。
+                  p 
+                    span.dark 【調養燉品】
+                    .border
+                      span 第一週：
+                      | 丹蔘素魚湯、海苔米糕湯、枸杞豆包湯、四神豆腸湯、黑豆薏米素羊肉、忘憂腰果菜捲湯、山藥麥條湯、牛蒡福袋湯、藕節銀耳湯、百菇素雞湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+                    .border
+                      span 第二週：
+                      | 杜仲固本湯、巴戟天固本湯、牛蒡福袋湯、海苔米糕湯、四神豆腸湯、忘憂腰果菜捲湯、藕節銀耳湯、枸杞豆包湯、百頁羅宋湯、牛蒡福袋湯、麻薑珍菇湯、紅麴素鰻湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+                    .border
+                      span 第三週：
+                      | 百菇素雞湯、麻薑珍菇湯、帝王素雞、紅麴素鰻湯、黑豆薏米素羊肉、牛蒡福袋湯、藥燉獅子頭、藕節銀耳湯、百頁羅宋湯、山藥麥條湯、枸杞豆包湯、忘憂腰果菜捲湯、杜仲固本湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+                    .border
+                      span 第四週：
+                      | 百菇素雞湯、帝王素雞、麻薑珍菇湯、紅麴素鰻湯、黑豆薏米素羊肉、藥燉獅子頭、藕節銀耳湯、牛蒡福袋湯、海苔米糕湯、藕節銀耳湯、山藥麥條湯、百頁羅宋湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+                  p 
+                    span.dark 【補氣主食】
+                    | 晶玉薏仁、油飯、地瓜糙米飯、十穀飯、玉米雜糧飯、紅豆薏仁、紫米棗香飯等輪替
+                  p 
+                    span.dark 【養生飲品】
+                    | 觀音串、仙楂、黃耆、清熱飲、草本止渴飲等輪替。
+
+                .pic
+                  img(src="./styles/images/02-01-05.jpg" alt="紫金堂")
+                  img(src="./styles/images/02-01-06.jpg" alt="紫金堂")
+                  img(src="./styles/images/02-01-07.jpg" alt="紫金堂")
+                  img(src="./styles/images/02-01-08.jpg" alt="紫金堂")
+                  img(src="./styles/images/02-01-09.jpg" alt="紫金堂")
+
+
+
+
+                
+        .rightBlock
+
+          +cart
+          +record
+
+

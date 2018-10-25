@@ -1,0 +1,110 @@
+mixin catalog
+  .block__title 產品分類
+
+  ul.nostyle.orange
+    li.subtitle.icon-right: a 特惠活動
+    li: a(href="category.html") 火熱新品養身飲
+    li: a(href="category.html") 誠意滿滿伴手禮
+    li: a(href="category.html") 艾力克斯的禮物
+  ul.nostyle.purple
+    li.subtitle.icon-right: a 月子餐組合選
+    li.active: a 月子補養兩日餐(素)
+    li: a(href="category.html") 月子養生飲品
+    li: a(href="category.html") 產後養護用品
+  ul.nostyle
+    li.subtitle.icon-right: a 紫金月子
+    li: a(href="category.html") 月子養生餐(葷)
+    li: a(href="category.html") 月子養生餐(素)
+  ul.nostyle
+    li.subtitle.icon-right: a 複合式月子餐
+    li: a(href="category.html") 複合式月子餐
+  ul.nostyle
+    li.subtitle.icon-right: a 月子調理
+    li: a(href="category.html") 月子水八折優惠
+    li: a(href="category.html") 紫金月子飲品
+    li: a(href="category.html") 孕媽咪滋養飲
+    li: a(href="category.html") 月子藥膳調理
+    li: a(href="category.html") 月子哺乳湯底
+  ul.nostyle
+    li.subtitle.icon-right: a 小產調養
+    li: a(href="category.html") 小產養生餐(葷)
+    li: a(href="category.html") 小產養生餐(素)
+    li: a(href="category.html") 小產藥膳調理
+  ul.nostyle
+    li.subtitle.icon-right: a 生理調養
+    li: a(href="category.html") 甜品&烘焙
+    li: a(href="category.html") 生理藥膳調理
+    li: a(href="category.html") 香草美人生理餐
+  ul.nostyle
+    li.subtitle.icon-right: a 保健調養
+    li: a(href="category.html") 美肌Q彈花膠飲
+    li: a(href="category.html") 孕期滋養鰻魚精
+    li: a(href="category.html") 術後調養鱸魚精
+    li: a(href="category.html") 百分百新鮮果汁
+    li: a(href="category.html") 連淨100%苦茶油
+    li: a(href="category.html") 真宴坊冰糖燕窩
+
+
+
+mixin cart
+  .cart-lsit
+    .block__title 購物車 (2)
+    .cart__content
+      ul.nostyle
+        li.unit
+          .unit__content
+            img(src="./styles/images/01-item03.jpg")
+            .info
+              .calc $11,888 x 1
+              .delete 移除
+          .unit__title 月子補養兩日餐(10日)
+
+        li.unit
+          .unit__content
+            img(src="./styles/images/01-item09.jpg")
+            .info
+              .calc $960 x 1
+              .delete 移除
+          .unit__title 紫金月子水1箱
+
+      .cart__total 
+        span 小計：
+        span.num $12,848
+
+      a.cart_tips 
+        .f18 滿額禮大方送
+        .brown 購物滿$15,000 #[br] 好禮任你選
+        | 還差 $2,152元 #[br] 好禮搶先看
+
+      .cart__btn
+        a(href="#") 查看 #[br] 購物車
+        a(href="#") 結帳
+
+mixin record
+  .record
+    .block__title 瀏覽紀錄：
+    .record__content  
+      a.record__unit
+
+        img(src="./styles/images/01-item03.jpg")
+        div 月子補養兩日餐(10日)
+
+      a.record__unit
+        img(src="./styles/images/01-item09.jpg")
+        div 紫金月子水1箱
+
+      a.record__unit
+        img(src="./styles/images/01-item03.jpg")
+        div 月子補養兩日餐(10日)
+
+      a.record__unit
+        img(src="./styles/images/01-item09.jpg")
+        div 紫金月子水1箱
+
+      a.record__unit
+        img(src="./styles/images/01-item03.jpg")
+        div 月子補養兩日餐(10日)
+
+      a.record__unit
+        img(src="./styles/images/01-item09.jpg")
+        div 紫金月子水1箱

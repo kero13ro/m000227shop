@@ -98,16 +98,17 @@ gulp.task("vendorJs", function () {
     .src([
       "./source/scripts/plugins/*",
       "./node_modules/slick-carousel/slick/slick.min.js",
-      './node_modules/lity/dist/lity.min.js',
-      './node_modules/jquery-focuspoint/js/jquery.focuspoint.min.js',
-      ])
+      "./node_modules/lity/dist/lity.min.js",
+      "./node_modules/jquery-focuspoint/js/jquery.focuspoint.min.js",
+      "./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"
+    ])
     .pipe(order([
-      "jquery.min.js",
-      "jquery.easing.1.3.js",
-      "TweenMax.min.js",
-      "ScrollMagic.js",
-      "**.js"
-    ]))
+        "jquery.min.js",
+        "jquery.easing.1.3.js",
+        "TweenMax.min.js",
+        "ScrollMagic.js",
+        "**.js"
+      ]))
     .pipe(concat("vendor.js"))
     .pipe(gulp.dest("./public/scripts/plugins/"));
 });
@@ -170,7 +171,9 @@ gulp.task("copy-plugin-css", function () {
     './node_modules/lity/dist/lity.css',
     "./node_modules/bootstrap/dist/css/bootstrap-grid.css",
     "./node_modules/bootstrap/dist/css/bootstrap-reboot.css",
-    './node_modules/jquery-focuspoint/css/focuspoint.css'
+    './node_modules/jquery-focuspoint/css/focuspoint.css',
+    // "./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"
+    
   ]).pipe(gulp.dest("./source/styles/plugin"))
 
   gulp.src([

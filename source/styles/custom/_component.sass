@@ -11,3 +11,34 @@
     border-right: 1px solid $color
     +position(absolute, 0 0 null null )
     height: $height
+
+
+.landing
+  height: 350px
+  margin-bottom: 35px
+  +fc
+
+  .slogan
+    color: white
+    text-align: center
+    text-shadow: 0 0 100px rgba(black, 0.3), 0 0 10px rgba(black, 0.3)
+  .f56
+    margin-bottom: 0
+  .f24.bd
+    margin-bottom: 6px
+    padding-bottom: 6px
+    border-bottom: 1px solid #fff
+
+.breadcrumb
+  +padding( 20px null)
+  white-space: nowrap
+  ul
+    +f(flex-start, center)
+    li:before
+      color: $orange
+      margin: 0 10px
+      font-weight: bolder
+
+  +max(330)
+    li:nth-child(3)
+      display: none
