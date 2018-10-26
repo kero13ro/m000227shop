@@ -1,14 +1,35 @@
 
+// tmp 防止一開始的破圖
+.slider-show
+  opacity: 0
+  visibility: hidden
+  transition: opacity 1s ease
+.slider-show.slick-initialized
+  visibility: visible
+  opacity: 1  
+
+
+  
 $bgco: rgb(245, 241, 240)
 
 
-.slider-show
+
+.slider-show  
   border-bottom: 1px solid rgb(181,137,89)
-  
   .wrapper
-    height: 470px
+    // height: 470px
+
+
     background-size: cover
+    background-position: center
     position: relative
+    &:after
+      display: block
+      content: ""
+      padding-top: 33.57%
+      
+
+
     &:before
       +size(100%)
       +position(absolute, 0 null null 0)
@@ -39,27 +60,41 @@ $bgco: rgb(245, 241, 240)
     text-align: center
     cursor: pointer
     color: rgb(102, 102, 102)
-    border-right: 1px solid rgb(181,137,89)
-    line-height: 1
+    line-height: 50px
+    +hoverText($brown-dark)
 
-  li:first-child
-    border-left: 1px solid rgb(181,137,89)
-    
-  .actvie
     position: relative
+    &:after
+      content: ""
+      display: block
+      border-right: 1px solid rgb(181,137,89)
+      height: 16px
+      +position(absolute, 17px 0 null null )
+
+  .active
+    color: $brown-dark
     &::before
       border-left: 1px solid rgb(181,137,89)
       border-top: 1px solid rgb(181,137,89)
       content: ""
       display: block
       +size(12px)
-      +position(absolute, -24px null null 50%)
+      +position(absolute, -7px null null 50%)
       background-color: $bgco
       transform: translateX(-50%) rotate(45deg)
 
+
+
+
+.slider-nav
+  +max(990)
+    display: none
+
+
+
 .submenu
   +f(flex-start, flex-end)
-  margin-bottom: 30px
+  margin-bottom: 20px
   a
     +fc
     font-weight: bold
@@ -69,12 +104,9 @@ $bgco: rgb(245, 241, 240)
     border: 1px solid rgb(217,194,170)
     border-radius: 8px 8px 0 0
     background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
+    margin-bottom: 10px
+    // +hoverText(rgb(104,55,0))
 
-  a.active
-    background: rgb(104,55,0)
-    color: white
-    height: 60px
-    +hoverText(white)
 
     position: relative
     &::before
@@ -84,6 +116,17 @@ $bgco: rgb(245, 241, 240)
       +size(16px)
       +position(absolute, null null 0px 50%)
       transform: translate(-50%,50%) rotate(45deg)
+      opacity: 0
+      
+
+
+  a.active
+    background: rgb(104,55,0)
+    color: white
+    height: 60px
+    &::before
+      opacity: 1
+
 
 .block__title
   height: 50px
@@ -97,6 +140,36 @@ $bgco: rgb(245, 241, 240)
 
   & + *
     background-color: rgb(255,255,255)
+
+
+
+.submenu
+  .slick-track
+    +f(flex-start, flex-end)
+  a
+    display: flex !important
+
+  .slick-list
+    +margin(null 42px)
+
+
+  .slick-arrow
+    background-color: rgb(216, 194, 170)
+    border-radius: 50%
+    color: white
+    +size(26px)
+    position: absolute
+    top: 20px
+    +fc
+    &:before
+      font-size: 12px
+      
+  .slick-arrow.slick-disabled
+    background-color: rgba(200,200,200,0.5)
+
+  .icon-next
+    right: 0
+  // .icon-prev
 
 
 
@@ -311,90 +384,90 @@ $bgco: rgb(245, 241, 240)
 .cart-lsit
   margin-bottom: 20px
 
-.cart__content
-  // background-color: rgb(255,255,255)
-  +padding(null 20px)
-  padding-bottom: 30px
+  .cart__content
+    // background-color: rgb(255,255,255)
+    +padding(null 20px)
+    padding-bottom: 30px
 
-.unit
-  // margin-bottom: 18px
-  +padding(20px null)
+  .unit
+    // margin-bottom: 18px
+    +padding(20px null)
 
-.unit
-  border-bottom: 1px solid rgb(240, 240, 240)
-.unit:last-child
-  border-bottom: 1px solid black
-  
-.unit__content
-  +f(flex-start, flex-end)
-  margin-bottom: 10px
-  img
-    +size(58px)
-    margin-right: 10px
-  .info
-    +f(center, flx-start, column)
-  .calc
-    margin-bottom: 5px
-    font-size: 15px
-  .delete
-    +size(60px, 25px)
-    font-size: 14px
-    background-color: rgb(237, 237, 237)
-    +fc
-    cursor: pointer
-
-.cart__total
-  height: 60px
-  text-align: center
-  span
-    line-height: 60px
-    align-self: baseline
-  .num
-    font-size: 25px
-
-
-
-.cart_tips
-  margin-bottom: 25px
-  width: 100%
-  border: 1px solid rgb(222, 207, 186)
-  border-radius: 10px
-  white-space: normal
-  +padding(12px null)
-  text-align: center
-  background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
-
-
-  +padding(null 12px)
-  color: rgb(210,101,92)
-  
-  .f18
-    font-weight: bold
-    margin-bottom: 5px
-  
-  .brown
-    color: rgb(162,134,104)
-    line-height: 1.3
-    border-bottom: 1px solid rgb(222, 207, 186)
-    padding-bottom: 10px
+  .unit
+    border-bottom: 1px solid rgb(240, 240, 240)
+  .unit:last-child
+    border-bottom: 1px solid black
+    
+  .unit__content
+    +f(flex-start, flex-end)
     margin-bottom: 10px
+    img
+      +size(58px)
+      margin-right: 10px
+    .info
+      +f(center, flx-start, column)
+    .calc
+      margin-bottom: 5px
+      font-size: 15px
+    .delete
+      +size(60px, 25px)
+      font-size: 14px
+      background-color: rgb(237, 237, 237)
+      +fc
+      cursor: pointer
 
-
-.cart__btn
-  +f
-  a
-    +size(80px)
-    color: white
-    border-radius: 50%
-    +margin(null 3px)
-    +fc
+  .cart__total
+    height: 60px
     text-align: center
-  a:first-child
-    background-color: rgb(189, 160, 120)
-    +hoverBgc(#b27f3c)
-  a:last-child
-    background-color: rgb(210,101,92)
-    +hoverBgc(#cc3d33)
+    span
+      line-height: 60px
+      align-self: baseline
+    .num
+      font-size: 25px
+
+
+
+  .cart_tips
+    margin-bottom: 25px
+    width: 100%
+    border: 1px solid rgb(222, 207, 186)
+    border-radius: 10px
+    white-space: normal
+    +padding(12px null)
+    text-align: center
+    background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
+
+
+    +padding(null 12px)
+    color: rgb(210,101,92)
+    
+    .f18
+      font-weight: bold
+      margin-bottom: 5px
+    
+    .brown
+      color: rgb(162,134,104)
+      line-height: 1.3
+      border-bottom: 1px solid rgb(222, 207, 186)
+      padding-bottom: 10px
+      margin-bottom: 10px
+
+
+  .cart__btn
+    +f
+    a
+      +size(80px)
+      color: white
+      border-radius: 50%
+      +margin(null 3px)
+      +fc
+      text-align: center
+    a:first-child
+      background-color: rgb(189, 160, 120)
+      +hoverBgc(#b27f3c)
+    a:last-child
+      background-color: rgb(210,101,92)
+      +hoverBgc(#cc3d33)
 
 
 
