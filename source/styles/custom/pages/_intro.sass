@@ -1,44 +1,86 @@
 
 
-
-.intro__head
-  +padding(40px 30px)
-  +fc
-  margin-bottom: 10px
-
-.head__left
-  margin-right: 35px
-  .show
-    +size(400px)
-    margin-bottom: 20px
-    background-size: cover
-  // .showFade
-  //   +size(100%)
-  //   position: absolute
-  //   background-size: cover
-  //   position: relative
-
-
-  .slick-intro
-    +size(300px , 90px)
-    +margin(null auto)
-    .unit
-      +size(90px)
-      background-size: cover
-      +margin(null 5px)
-      
-
 .vege
   color: #59a467
 
 
+.intro__head
+  +f(center, flex-start)
+  margin-bottom: 10px
+  width: 100%
+  +padding(40px 30px)
+
+.head__left
+  margin-right: 35px
+  width: 50%
+  max-width: 400px  
+
+  .show
+    margin-bottom: 20px
+    background-size: cover
+    background-position: center center
+    &:after
+      display: block
+      content: ""
+      padding-top: 100%
+
+  .slick-intro
+    +margin(null auto)
+    width: 100%
+
+    
+    .unit
+      width: 30%
+      background-size: cover
+      +margin(null 5px)
+      opacity: 0.7
+      cursor: pointer
+      position: relative
+      &:after
+        display: block
+        padding-top: 100%
+        content: ""
+      +trans
+      &:hover:not(:focus)
+        opacity: 0.8
+      &:focus
+        opacity: 1
+        outline: none
+
+  .slick-list
+    max-width: 300px
+    width: calc(100% - 100px)
+    +margin(null auto)
+
+  .slick-arrow
+    color: #7c7c7c
+    +size(40px)
+    +position(absolute, 50% nul nul nul  )
+    transform: translateY(-50%)
+    +fc
+    cursor: pointer
+    &:before
+      font-size: 16px
+      
+  .slick-arrow.slick-disabled
+    color: rgba(200,200,200,0.7)
+
+  .icon-next
+    right: 10px
+  .icon-prev
+    left: 10px
+  
+
 .head__right
+  width: 100%
   .f24
     margin-bottom: 20px
 
   .vege
-    // color: #59a467
     display: block
+  .f16.lh20
+    width: 100%
+
 
   div[class*="border-"]
     border-bottom: 1px solid rgb(239,239,239)  
@@ -57,6 +99,7 @@
     +f
     > span 
       width: 80px
+      flex-shrink: 0
       display: inline-block
       color: #7c7c7c
 
@@ -115,6 +158,155 @@
   .trace
     .icon-heart
       color: rgb(207, 63, 62)
+
+
++max(991)
+  .intro__head
+    flex-direction: column-reverse
+    align-items: center
+  .head__left
+    margin-right: 0
+    width: 100%
+
+  .head__right
+    margin-bottom: 20px
+
++max(768)
+  .intro__head
+    +padding(20px 15px)
+
+  .head__left
+    margin-right: 0
+
++max(380)//slick-intro 不知為何會推擠右側，沒有依寬度100%設定，應該是因為slick設定寬度
+
+  .head__left
+    padding-bottom: 80px
+    position: relative
+    .slick-intro
+      position: absolute
+
+    .slick-list
+      width: calc(100% - 50px)
+    .icon-next
+      right: -15px
+    .icon-prev
+      left: -15px
+
+
+  
+// .items.midBlock.form-type
+// 三頁的產品介紹頁面，有包含表格
+  
+.scrollbarX
+  //不知道為啥為推擠
+  width: 84vw
+  >table
+    min-width: 450px
+    width: 450px
+
+[class*="form-type-"]    
+  +min(992)
+    .head__left
+      width: 40%
+      max-width: 320px  
+    .head__right
+      width: calc(60% - 20px)
+
+
+[class*="form-type-"] .radio
+  margin-top: 10px
+  width: 100%
+  border-collapse: collapse
+  font-size: 15px
+  text-align: center
+  white-space: nowrap
+  
+  tr
+    border: 1px solid rgb(211, 177, 131)
+  th,
+  td
+    padding: 0 10px
+    height: 45px
+  th
+    background-color: rgb(249, 245, 234)
+  td
+    background-color: rgb(255, 252, 247)
+
+  .radio_unit
+    height: 45px
+    white-space: nowrap
+
+    input[type="radio"]
+      position: absolute
+      opacity: 0
+      pointer-events: none
+
+    input[type="radio"] + label
+      cursor: pointer
+      +size(100%)
+      +fc
+      &:before
+        content: ""
+        display: block
+        +size(18px)
+        background: $white
+        border-radius: 50%
+        border: 1px solid rgb(211, 174, 130)
+        transition: background-color 0.3s ease, box-shadow 0.3s ease
+        flex-shrink: 0
+
+    input[type="radio"]:checked + label:before
+      background-color: rgb(211, 174, 130)
+      box-shadow: inset 0 0 0 3px #f4f4f4
+
+    input[type="radio"]:disabled + label:before
+      box-shadow: inset 0 0 0 4px #f4f4f4
+      border-color: #b4b4b4
+      background: #b4b4b4
+
+
+[class*="form-type-2"] .radio
+  tr
+    > *:first-child
+      width: 75px
+
+[class*="form-type-3"] .radio
+  tr
+    > *:first-child
+      width: 100px
+      line-height: 1.5
+  td
+    height: 75px
+
+
+[class*="form-type-4"] .radio
+  text-align: left
+  th,
+  td
+    +padding(null 28px)
+  tr > td:not(:last-child)
+    border-right: 1px solid rgb(211, 174, 130)
+  label
+    cursor: pointer
+    +size(100%)
+    +f(flex-start, center)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

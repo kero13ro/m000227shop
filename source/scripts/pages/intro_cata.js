@@ -7,28 +7,30 @@
 
 
 
-
-
-$(".slick-intro").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-
-  var showPic = $(".show");
-
-  var target = $(this).find("[data-slick-index=" + nextSlide + "]")[0].style.backgroundImage;
   // console.log(target)
 
-  var tl = new TimelineLite();
 
-  tl.set(showPic, { backgroundImage: target })
-    .to(showPic, 0.3, { opacity: 1 });
+// $(".slick-intro").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
+//   var showPic = $("#js-show");
+//   var target = $(this).find("[data-slick-index=" + nextSlide + "]")[0].style.backgroundImage;
+//   TweenLite.fromTo(showPic, 1, { backgroundImage: target, opacity: 0 }, { opacity: 1 });
+// });
 
-  // $(".show").css("backgroundImage", target);
+$(".slick-intro .unit").on("click", function () {
+
+  var showPic = $("#js-show");
+  var target = $(this)[0].style.backgroundImage;
+  TweenLite.set(showPic, { backgroundImage: target });
 });
 
 $(".slick-intro").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
-  focusOnSelect: true,
+  infinite: false,
+
+  nextArrow: '<div class="icon-next"></div>',
+  prevArrow: '<div class="icon-prev"></div>'
 });
 
 

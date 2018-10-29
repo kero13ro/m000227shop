@@ -59,8 +59,8 @@ gulp.task("sass", function() {
       ]})
     .on("error", sass.logError))
     .pipe(postcss(plugins))
-    .pipe(gulp.dest("./public/styles"))
     .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("./public/styles"))
     .pipe(browserSync.reload({
       stream: true
     }));
