@@ -1,0 +1,139 @@
+
+
+#member
+  background-size: cover
+  max-height: 800px
+  height: 90vh
+  min-height: 650px
+
+  .container
+    +size(100%)
+    +fc
+    position: relative
+
+  .breadcrumb
+    color: white
+    +position(absolute, 0 null null 12px)
+  
+  .login
+    +size(1000px , 540px)
+    +margin(null auto)
+    background-color: $white
+    border-radius: 5px
+    +fc
+
+  .login_left,
+  .login_right
+    +size(50%, 100%)
+    +fc
+
+  .login_left
+    +padding(20px 55px 20px 70px)
+    background-color: $brown-light
+    .f24
+      font-weight: bold
+    .mb16 
+      color: #683700
+    input
+      +size(100%, 60px)
+      border: 1px solid $brown
+      padding: 15px
+      color: $brown
+      +trans
+      &::placeholder
+        color: #A57B4B
+      &:hover
+        background-color: $brown-light
+      &:focus
+        color: #A57B4B
+        border-color: #A57B4B
+
+    .verify
+      +f(flex-start, center)
+      img
+        cursor: pointer
+
+    .login_btn
+      color: $white
+      +size(100%, 60px)
+      background-color: #A57B4B
+      +fc
+      +hoverBgc(#d37d1b)
+
+    .btn-group
+      +f(center, center)
+      line-height: 1
+
+      a:first-child
+        padding-right: 15px
+        margin-right: 15px
+        border-right: 2px solid black
+        font-weight: bold
+      a
+        +hoverText(#A57B4B)
+
+
+  .circle
+    border-radius: 50%
+    position: absolute
+    +size(60px)
+    color: #D5C3C3
+    left: 0
+    top: 50%
+    transform: translate(-50%, -50%)
+    background-color: white
+    +fc
+
+
+  .login_right
+    +padding(20px 70px 20px 50px)
+    position: relative
+    .login_center
+      +f(center, center, column)
+
+    .brown.mb24
+      align-self: flex-start
+
+    a:hover img
+      transition: 0.2s box-shadow
+      box-shadow: 0 0 10px rgba(100, 100, 100, 0.5)
+
+    .check_unit
+      align-items: flex-start
+      .box
+        margin-top: 3px
+
+      a
+        text-decoration: underline
+        font-weight: bolder
+        +hoverText(#A57B4B)
+
+#member
+  +max(990)      
+    .login_left,
+    .login_right
+      +padding(40px)
+      
+      input, .login_btn
+        height: 50px
+
+  +max(767)
+    .login
+      display: block
+    .login_left,
+    .login_right
+      +size(100%, auto)
+      
+    .circle
+      top: 0
+      left: 50%
+
+  +max(500)      
+    .login_left,
+      +padding(30px 30px 45px )
+    .login_right
+      +padding(30px)
+
+    .login
+      height: 80vh
+      +margin(null 10px)

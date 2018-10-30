@@ -172,23 +172,27 @@ $bgco: rgb(245, 241, 240)
   // .icon-prev
 
 
+.mb56.d-flex
+  position: relative
+  width: 100%
 
-.leftBlock, .midBlock, .rightBlock
-  +margin(null 12px)
+.midBlock
+  +margin(null 24px)
+  width: calc(100% - 478px)
 
 .leftBlock, .rightBlock
   width: 215px
+  flex-shrink: 0
 
-.midBlock
-  width: calc(100% - 502px)
 
-+m(1300, 768)
-  .row
-    position: relative
++max(1300)
+  .mb56.d-flex
+    flex-wrap: wrap
 
   .midBlock
-    +position(absolute, 0 0 null null )
-    width: calc(100% - 263px)
+    +position(absolute, 0 0px null null )
+    +margin(null 0px)
+    width: calc(100% - 236px)
 
   .rightBlock
     margin-right: calc(100% - 287px)
@@ -196,6 +200,8 @@ $bgco: rgb(245, 241, 240)
 +max(767)
   .leftBlock, .midBlock, .rightBlock
     width: 100%
+    position: relative
+    margin: 0
 
 
 

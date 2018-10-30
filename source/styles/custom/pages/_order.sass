@@ -1,0 +1,137 @@
+  
+#order
+  background-color: #fff
+
+.control-row
+  +f
+  .f24
+    margin-right: auto
+  .group
+    +f
+
+.select_unit
+  +f(center, center)
+  width: 240px
+  position: relative
+  white-space: nowrap
+
+  &:after
+    content: ""
+    display: block
+    +position(absolute, 16px 16px null null )  //20-4
+    +triangle("down", 12px, 8px, $brown)
+    pointer-events: none
+
+  select
+    +size(100%, 40px)
+    line-height: 40px
+    +padding(null 15px)
+    border: 1px solid #E5E5E5
+    border-radius: 3px
+    color: rgb(100,100,100)
+    +trans
+
+    &::-ms-expand
+      display: none
+    &:hover
+      background-color: $brown-light
+    &:focus
+      border-color: $brown-dark
+
+.search_unit
+  +f
+  +size(260px, 40px)
+  position: relative
+  input[type="search"] 
+    +size(100%)
+    border: 1px solid #E5E5E5
+    +padding(null 15px)
+    
+    // +trans
+    // &::placeholder 
+    //   color: #1E1E1E
+    // &:focus 
+    //   background-color: $brown-dark
+    // &:hover 
+    //   background-color: $brown-dark
+
+  input[type="submit"] 
+    +size(38px,100%)
+    opacity: 0
+    +position(absolute, null 0 null null )
+  &:before
+    +position(absolute, 12px 8px null null )
+    color: $brown
+    font-size: 1rem
+
+.plain
+  width: 100%
+
+  table
+    text-align: center
+    white-space: nowrap
+
+  tr
+    border-bottom: 1px solid #E5E5E5
+    &:first-child
+      background-color: rgb(202, 153, 97)
+      color: white
+    &:last-child
+      border-bottom: 1px solid rgb(202, 153, 97)
+    &:nth-child(odd):not(:first-child)
+      background-color: #F6F6F6
+
+  a
+    color: #B47832
+    text-decoration: underline
+    
+
+
+.pages
+  +f(center, center)
+  a
+    display: block
+    margin: 0 4px
+    +f(center, center)
+    +size(27px)
+    color: $brown-dark
+    border-radius: 50%
+    font-size: 14px
+    flex-shrink: 0
+    &:not([class^="icon"])
+      border: 1px solid $brown-dark
+
+    &:hover,
+    &.active
+      background-color: $brown-dark
+      color: white
+
++max(990)
+  .control-row
+    flex-wrap: wrap
+    justify-content: space-between
+
+    .f24
+      margin-bottom: 0.8rem
+
+    [class*="_unit"]
+
+    .search_unit
+      width: calc(40% - 24px)
+      order: 1
+    .select_unit  
+      margin-bottom: 0.8rem
+      margin-right: 0
+      width: calc(60% - 24px)
+      span 
+        width: 100px
+        flex-shrink: 0
+    .select_unit.md
+      order: 2
+
++max(550)
+  .control-row
+
+    [class*="_unit"]
+      width: calc(100%)
+      +margin(null 0 1rem null)

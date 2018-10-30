@@ -2,5 +2,53 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+  
+  #member(style="background-image: url(styles/images/login-00-bgc.jpg)")
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 會員專區
+      .login.scrollbarY
+        
+        .login_left
+
+          .login_center.f16
+
+            .f24.lh18.brown 會員登入
+            .mb24 如您已經有帳號，請輸入您註冊時的Email
+
+            input(type="text", placeholder="Email").mb24
+            input(type="password", placeholder="Password").mb24
+            label.verify.mb24
+              input(type="text" placeholder="請輸入驗證碼" required)
+              img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+            a(href="order.html").login_btn.mb24.anchor 登入
+
+            .btn-group
+              a(href="register.html") 建立新帳號
+              a(href="forget.html") 忘記密碼
+            
+
+        .login_right
+
+          .login_center
+            .circle OR
+
+            .brown.mb24 您也可以使用下列方式登入成為紫金堂會員：
+
+            label.mb24.check_unit
+              input(type="checkbox")
+              .box
+              span 建立帳號代表您已詳細閱讀並同意我們的
+                a 服務條款
+
+            a.mb24
+              img(src="./styles/images/09-99-01.jpg", alt="紫金堂")
+            a.mb24
+              img(src="./styles/images/09-99-02.jpg", alt="紫金堂")
+            a.mb24
+              img(src="./styles/images/09-99-03.jpg", alt="紫金堂")
+            
+
+  

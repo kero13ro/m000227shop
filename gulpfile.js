@@ -46,7 +46,7 @@ gulp.task('pug', function buildHTML() {
 gulp.task("sass", function() {
   var plugins = [                         
     autoprefixer({ browsers: ['defaults'] })//postcss 使用的套件
-  ];;
+  ];
 
   return  gulp
     .src("./source/styles/**/*.sass")

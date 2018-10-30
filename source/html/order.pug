@@ -2,5 +2,149 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 會員專區
+        li.icon-right-thin 訂單紀錄
+
+  #order
+    
+    .slcik-menu
+      ul.nostyle
+        li.active
+          a(href="order.html") 訂單紀錄
+        li 
+          a(href="cancel.html") 退貨查詢
+        li 
+          a(href="trace.html") 我的追蹤清單
+        li 
+          a(href="bonus.html") 紅利點數
+        li 
+          a(href="profile.html") 會員資料維護
+        li 
+          a(href="course.html") 媽媽教室
+        li 
+          a(href="taste.html") 預約試吃
+        li 
+          a(href="subscribe.html") 訂閱電子報
+
+    .container.pt40
+
+      .control-row
+
+        h3.brown.f24 訂單紀錄
+
+        label.select_unit.mr24
+          span 篩選：
+          select(required)
+            option(value="1" selected) 最近三個月訂單
+            option(value="2") 篩選2
+            option(value="3") 篩選3
+
+        label.select_unit.mr24.md
+          span 排序依據：
+          select(required)
+            option(value="1" selected) 訂購日期
+            option(value="2") 排序依據2
+            option(value="3") 排序依據3
+
+        form.search_unit.icon-scan
+          input(type="search", placeholder="搜尋") 
+          input(type="submit",  value="搜尋") 
+
+      .scrollbarX.plain
+        table.mt32.table
+          tr 
+            th 訂單編號
+            th 訂購日期
+            th 訂單狀態
+            th 訂單金額
+            th 付款方式
+            th 預定出貨日
+            th 配送狀態
+            th 取消/退貨
+            th 客服問答
+          tr
+            td: a A2017120701
+            td 2017/12/15
+            td 訂單成立
+            td NT $ 11,888
+            td ATM
+            td -
+            td 待處理
+            td -
+            td: a 詢問
+
+          tr
+            td: a A2017120701
+            td 2017/12/01
+            td 訂單成立
+            td NT $ 12,848
+            td 信用卡
+            td 2017/12/03
+            td 處理中
+            td: a 取消訂單
+            td: a 詢問
+          tr
+            td: a A2017120701
+            td 2017/07/30
+            td 訂單取消
+            td NT $ 2,388
+            td -
+            td -
+            td -
+            td -
+            td: a 詢問
+          tr
+            td: a A2017120701
+            td 2017/07/22
+            td 訂單完成
+            td NT $ 22,888
+            td Web ATM
+            td 2017/08/01
+            td 已出貨
+            td -
+            td: a 詢問
+          tr
+            td: a A2017120701
+            td 2017/05/17
+            td 已送達
+            td NT $ 1,050
+            td 信用卡
+            td -
+            td 已送達
+            td: a 申請退貨
+            td: a 詢問
+          tr
+            td: a A2017120701
+            td 2017/03/08
+            td 退款完成
+            td NT $ 938
+            td 信用卡
+            td -
+            td 退款完成
+            td: a 退貨查詢
+            td: a 詢問
+          tr
+            td: a A2017120701
+            td 2017/06/07
+            td 退貨中
+            td NT $ 3,600
+            td 信用卡
+            td -
+            td 退貨中
+            td -
+            td: a 詢問
+
+      .pages.pt40.pb56
+        a(href="#").icon-first
+        a(href="#").icon-prev
+        a(href="#").active 1
+        a(href="#") 2
+        a(href="#") 3 
+        a(href="#") 4
+        a(href="#") 5
+        a(href="#").icon-next
+        a(href="#").icon-last

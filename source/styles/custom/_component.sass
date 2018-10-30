@@ -42,3 +42,126 @@
   +max(330)
     li:nth-child(3)
       display: none
+
+
+
+.check_unit
+  cursor: pointer
+  +f(null, center, row)
+  // margin-bottom: 20px
+  // margin-right: 28px
+
+  input[type="checkbox"] 
+    display: none
+
+  .box 
+    display: inline-block
+    +size(18px)
+    background: $white
+    border: 1px solid $brown
+    margin-right: 15px
+    border-radius: 3px
+    flex-shrink: 0
+    
+    &:after 
+      content: ""
+      position: absolute
+      +size(0, 3px)
+      background: $brown-dark
+        
+      transform: translate(6px, 11px) rotate(-45deg)
+      transform-origin: left
+      transition: all 50ms
+      transition-delay: 0ms
+    
+    &:before 
+      content: ""
+      position: absolute
+      +size(0, 3px)
+      background: $brown-dark
+        
+      transform: translate(2px, 6px) rotate(45deg)
+      transform-origin: left
+      transition: all 50ms
+      transition-delay: 50ms
+  
+  input[type="checkbox"]:checked 
+    & + .box 
+      &:before 
+        width: 8px
+        transition-delay: 0ms
+      &:after 
+        width: 12px
+        transition-delay: 150ms
+
+
+
+
+
+
+
+
+.slcik-menu
+  border-top: 1px solid $brown-230
+  box-shadow: inset 0 -4px rgb(240, 231, 222)
+  =shorterLine
+    content: ""
+    +size(0px ,30px)
+    border-right: 1px solid $brown-230
+    +position(absolute, 50% 0 null null)
+    transform: translateY(-50%)
+  
+  ul
+    max-width: 1400px
+    +margin(null auto)
+    +fc
+    +padding(null 40px)
+    
+  li  
+    flex: 1 1 auto
+
+  a
+    height: 58px
+    +fc
+    position: relative
+    font-weight: bold
+    // z-index: 1
+    // line-height: 1.5
+    &:after
+      +shorterLine
+        
+  li:first-child
+    a:before
+      +shorterLine
+      left: 0px
+
+  li.active
+    border-bottom: 4px solid $brown-dark
+    a
+      color: $brown-dark
+      font-weight: bold
+      letter-spacing: 1px
+
+  li:hover
+    a
+      color: $brown-dark
+      transition: color 0.3s
+
+  .slick-arrow
+    +size(40px , 100%)
+    +fc
+    height: 58px
+    position: absolute
+    
+  .slick-arrow
+    color: #F7B550
+    
+  .icon-prev
+    left: 0
+    &:after
+      +shorterLine
+  .icon-next
+    right: 0
+    &:after
+      +shorterLine
+      left: 0
