@@ -1,0 +1,45 @@
+
+  
+#bonus
+
+  .foreword
+    background-position: right
+    background-repeat: no-repeat
+    background-size: 600px
+    // height: 400px
+    padding-top: 20px
+    +f(flex-start, flex-start, column)
+    
+  .circle
+    margin-bottom: auto
+    margin-bottom: 45px
+    li
+      +circle(10px, 15px, #F7B551)
+
+
+
+  .status
+    padding-bottom: 25px
+    +f
+    span 
+      font-size: 24px
+      color: #B47832
+      font-family: 'Open Sans', sans-serif
+      font-style: italic
+      letter-spacing: 1px
+    .usable
+      color: #E24001
+
+  .plain
+    th, td
+      text-align: left
+      +padding(null null null 60px)
+      &:nth-child(3)
+        width: 18%
+      &:last-child
+        width: 28%
+    .plus
+      color: #B47832
+    .minus
+      color: #CC0000
+

@@ -2,5 +2,142 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 會員專區
+        li.icon-right-thin 紅利點數
+
+  #bonus.bgcWhite
+    
+    .slcik-menu.eq9
+      ul.nostyle
+        li
+          a(href="order.html") 訂單紀錄
+        li 
+          a(href="returned.html") 退貨查詢
+        li 
+          a(href="trace.html") 我的追蹤清單
+        li.active  
+          a(href="bonus.html") 紅利點數
+        li 
+          a(href="profile.html") 會員資料維護
+        li 
+          a(href="course.html") 媽媽教室
+        li 
+          a(href="taste.html") 預約試吃
+        li
+          a(href="subscribe.html") 訂閱電子報
+
+
+
+    .container.pt40
+
+      .foreword(style="background-image: url(styles/images/login-4-bgc.jpg)")
+    
+        h3.brown.f24.mb24 紅利點數使用說明
+        ul.nostyle.circle.lh20
+          li 1點紅利可抵用購物金額1元
+          li 凡線上購物消費滿100元（不含運費）即可累積1點紅利，於下次消費時抵用
+          li 本紅利積點僅供會員本人於「紫金堂．線上購物專區 」線上購物抵用，不可要求換取現金、
+          li 不得轉讓予任何第三人或要求將不同會員帳號的紅利積點合併
+          li 每次交易最高可折抵該筆訂單之消費金額150元
+          li 取消訂單或退貨，該筆交易所抵用之紅利將退還於原帳戶
+
+        ul.nostyle.status
+          li 總累積點數：
+            span.sum 1,080
+            |  點，
+          li 未生效點數：
+            span.invalid 0
+            |  點，
+          li 已過期點數：
+            span.overdue 0
+            |  點，
+          li 可用結餘點數：
+            span.usable 1,080
+            |  點
+
+
+      .scrollbarX.plain
+        table.table
+          tr 
+            th 紅利點數
+            th 生效日期
+            th 有效日期
+            th 摘要說明
+            th 備註
+          tr 
+            td
+              span.plus +10
+              |  點
+            td 2017/12/15
+            td 無期限
+            td 購物滿 1,000 元
+            td -
+          tr
+            td
+              span.minus -150
+              |  點
+            td 2017/12/01
+            td 無期限
+            td 折抵購物金額 150 元
+            td -
+          tr
+            td
+              span.plus +10
+              |  點
+            td 2017/07/30
+            td -
+            td 購物滿 2,000 元
+            td -
+          tr
+            td
+              span.minus -10
+              |  點
+            td 2017/07/22
+            td -
+            td 折抵購物金額 10 元
+            td -
+          tr
+            td
+              span.plus +500
+              |  點
+            td 2017/05/17
+            td 2017/08/17  剩餘 30 天
+            td 生日禮金(三個月使用期限)
+            td 生日當月1號算起
+          tr
+            td
+              span.plus +100
+              |  點
+            td 2016/03/08
+            td 無期限
+            td 購物滿 10,000 元
+            td -
+          tr
+            td
+              span.plus +10
+              |  點
+            td 2016/06/07
+            td 無期限
+            td 購物滿 1,000 元
+            td -
+
+
+
+
+            
+
+      .pages.pt40.pb56
+        a(href="#").icon-first
+        a(href="#").icon-prev
+        a(href="#").active 1
+        a(href="#") 2
+        a(href="#") 3 
+        a(href="#") 4
+        a(href="#") 5
+        a(href="#").icon-next
+        a(href="#").icon-last

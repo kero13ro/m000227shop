@@ -64,20 +64,20 @@ $(window).on("load", function () {
 
 
 //商品分類的目錄
-if ( wW < 768  ) {
-  $(".active")
-    .css("display", "block")
-    .css("opacity", "1")
-    .siblings("li")
-    .css("display", "block")
-    .css("opacity", "1");
+// if ( wW < 768  ) {
+//   $(".active")
+//     .css("display", "block")
+//     .css("opacity", "1")
+//     .siblings("li")
+//     .css("display", "block")
+//     .css("opacity", "1");
 
-  $(".subtitle").click(function () {
+//   $(".subtitle").click(function () {
 
-    $(".catolog").find("li:not(.subtitle)").slideUp(200).css("opacity", "0");
-    $(this).siblings("li").slideDown(200).css("opacity", "1");
-  });
-}
+//     $(".catolog").find("li:not(.subtitle)").slideUp(200).css("opacity", "0");
+//     $(this).siblings("li").slideDown(200).css("opacity", "1");
+//   });
+// }
 
 
 // if (wW < 768) {

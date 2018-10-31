@@ -2,7 +2,9 @@
 extends ./include/layout.pug
 
 block content
+
   
+
   .container
     .breadcrumb
       ul.nostyle
@@ -24,10 +26,9 @@ block content
           a(href="guest-taste.html") 預約試吃
         li.active 
           a(href="guest-subscribe.html") 訂閱電子報
-  
-    
-    include ./include/public.pug
-    +epapper("guest-subscribed.html","guest-unsubscribed.html")
-    
-        
 
+    include ./include/public.pug
+    +unsubscribed
+
+
+            

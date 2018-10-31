@@ -1,5 +1,7 @@
   
-#order
+// #order
+//   background-color: #fff
+.bgcWhite
   background-color: #fff
 
 .control-row
@@ -70,6 +72,7 @@
   table
     text-align: center
     white-space: nowrap
+    width: 100%
 
   tr
     border-bottom: 1px solid #E5E5E5
@@ -87,51 +90,127 @@
     
 
 
-.pages
-  +f(center, center)
-  a
-    display: block
-    margin: 0 4px
-    +f(center, center)
-    +size(27px)
-    color: $brown-dark
-    border-radius: 50%
-    font-size: 14px
-    flex-shrink: 0
-    &:not([class^="icon"])
-      border: 1px solid $brown-dark
-
-    &:hover,
-    &.active
-      background-color: $brown-dark
-      color: white
 
 +max(990)
   .control-row
     flex-wrap: wrap
     justify-content: space-between
 
-    .f24
-      margin-bottom: 0.8rem
+  .search_unit
+    width: calc(40% - 15px)
+    order: 2
 
-    [class*="_unit"]
+  .select_unit.md
+    order: 3
 
-    .search_unit
-      width: calc(40% - 24px)
-      order: 1
-    .select_unit  
-      margin-bottom: 0.8rem
-      margin-right: 0
-      width: calc(60% - 24px)
-      span 
-        width: 100px
-        flex-shrink: 0
-    .select_unit.md
-      order: 2
+  .select_unit  
+    margin-bottom: 0.8rem
+    margin-right: 0
+    width: calc(60% - 15px)
+    span 
+      width: 100px
+      flex-shrink: 0
+      
 
 +max(550)
+    
+  .select_unit
+    order: 1 !important
+
   .control-row
 
-    [class*="_unit"]
-      width: calc(100%)
-      +margin(null 0 1rem null)
+  .f24,
+  [class*="_unit"]
+    width: calc(100%)
+    +margin(null 0 1rem null)
+    span 
+      width: 90px
+
+
+
+  
+// #trace 
+.containPic
+  width: 100%
+
+  table
+    text-align: center
+    white-space: nowrap
+    width: 100%
+  tr
+    border-bottom: 1px solid #E5E5E5
+    &:first-child
+      background-color: rgb(202, 153, 97)
+      color: white
+
+  th,td
+    +padding(null 30px)
+
+  th:first-child,
+  .pic + div,
+  .check_unit
+    text-align: left  
+    
+
+  td > div
+    height: 100px
+    +f(center, center, row)
+
+  .info
+    justify-content: flex-start
+
+  .column
+    flex-direction: column
+
+  .red
+    color: #CC0000
+
+  .gray
+    color: #7C7C7C
+
+  .pic
+    +size(100px)
+    background-position: left
+    background-size: cover
+    
+  [class*="icon-"]
+    color: white
+    +padding(8px null)
+    border-radius: 3px
+    width: 140px
+    &:before
+      margin-right: 10px
+
+  .icon-cart
+    background-color: rgb(179, 139, 90)
+    &:before
+      transform: scale(-1,1)
+
+  .icon-trash
+    background-color: rgb(153, 153, 153)
+
+  +max(990)
+    td > div
+      height: 80px
+
+    .pic
+      +size(80px)
+
+  +max(767)
+    font-size: 15px
+    td > div
+      height: 60px
+
+    .pic
+      +size(60px)
+
+    th,td
+      +padding(null 15px)
+
+    [class*="icon-"]
+      width: 120px
+      &:before
+        margin-right: 5px
+
+
+        

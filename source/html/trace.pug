@@ -1,0 +1,127 @@
+
+extends ./include/layout.pug
+
+block content
+
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 會員專區
+        li.icon-right-thin 我的追蹤清單
+
+  #trace.bgcWhite
+    
+    .slcik-menu.eq9
+      ul.nostyle
+        li
+          a(href="order.html") 訂單紀錄
+        li 
+          a(href="returned.html") 退貨查詢
+        li.active  
+          a(href="trace.html") 我的追蹤清單
+        li 
+          a(href="bonus.html") 紅利點數
+        li 
+          a(href="profile.html") 會員資料維護
+        li 
+          a(href="course.html") 媽媽教室
+        li 
+          a(href="taste.html") 預約試吃
+        li
+          a(href="subscribe.html") 訂閱電子報
+
+
+
+    .container.pt40
+
+      .control-row
+
+        h3.brown.f24 退貨查詢
+
+      .scrollbarX.containPic
+        table.mt32.table
+          tr 
+            th 商品資訊
+            th 商品金額
+            th 加入日期
+            th 貨到通知我
+            th 加入購物車
+            th 取消追蹤
+          tr
+            td: div.info
+              .pic.mr40(style="background-image: url(styles/images/02-01-07.jpg)")
+              .lh19 
+                .gray PRO-000124 
+                | 月子補養兩日餐(10日)
+
+            td: div.column.lh18
+              div 商品定價：NT $ 14,000
+              .red 特惠價：NT $ 11,888
+            td: div 2017/12/15
+            td: div 
+              label.check_unit
+                input(type="checkbox")
+                .box
+                span 貨到通知我
+            td: div.wide10 
+              a.icon-cart 加入購物車
+            td: div.wide10 
+              a.icon-trash 取消追蹤
+          tr
+            td: div.info
+              .pic.mr40(style="background-image: url(styles/images/02-00-item07.jpg)")
+              .lh19 
+                .gray PRO-000124 
+                | 月子飲品(10包/盒)
+
+            td: div.column.lh18
+              div 商品定價：NT $ 900
+              .red 特惠價：NT $ 900
+            td: div 2017/12/15
+            td: div 
+              label.check_unit
+                input(type="checkbox")
+                .box
+                span 貨到通知我
+            td: div.wide10 
+              a.icon-cart 加入購物車
+            td: div.wide10 
+              a.icon-trash 取消追蹤
+          tr
+            td: div.info
+              .pic.mr40(style="background-image: url(styles/images/02-00-item12.jpg)")
+              .lh19 
+                .gray PRO-000124 
+                | 草本沐浴組(5包入)
+
+            td: div.column.lh18
+              div 商品定價：NT $ 750
+              .red 特惠價：NT $ 600
+            td: div 2017/12/15
+            td: div 
+              label.check_unit
+                input(type="checkbox")
+                .box
+                span 貨到通知我
+            td: div.wide10 
+              a.icon-cart 加入購物車
+            td: div.wide10 
+              a.icon-trash 取消追蹤
+
+
+
+            
+
+
+
+      .pages.pt40.pb56
+        a(href="#").icon-first
+        a(href="#").icon-prev
+        a(href="#").active 1
+        a(href="#") 2
+        a(href="#") 3 
+        a(href="#") 4
+        a(href="#") 5
+        a(href="#").icon-next
+        a(href="#").icon-last

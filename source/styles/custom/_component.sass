@@ -1,6 +1,24 @@
 
 
 
+.pages
+  +f(center, center)
+  a
+    display: block
+    margin: 0 4px
+    +f(center, center)
+    +size(27px)
+    color: $brown-dark
+    border-radius: 50%
+    font-size: 14px
+    flex-shrink: 0
+    &:not([class^="icon"])
+      border: 1px solid $brown-dark
+
+    &:hover,
+    &.active
+      background-color: $brown-dark
+      color: white
 
 =afterline($height, $color: rgb(199,199,199))
   line-height: $height
@@ -48,6 +66,7 @@
 .check_unit
   cursor: pointer
   +f(null, center, row)
+  position: relative
   // margin-bottom: 20px
   // margin-right: 28px
 
@@ -97,10 +116,6 @@
 
 
 
-
-
-
-
 .slcik-menu
   border-top: 1px solid $brown-230
   box-shadow: inset 0 -4px rgb(240, 231, 222)
@@ -114,11 +129,12 @@
   ul
     max-width: 1400px
     +margin(null auto)
-    +fc
-    +padding(null 40px)
-    
+    +f
   li  
+
     flex: 1 1 auto
+    +min(990)
+      max-width: 175px  //會跟slcik有衝突
 
   a
     height: 58px
@@ -165,3 +181,137 @@
     &:after
       +shorterLine
       left: 0
+
+
+  +max(990)
+    ul
+      +padding(null 40px)
+
+
+
+
+
+
+
+
+
+// 電子報
+.container.fc
+  +fc
+  
+//干擾全域?
+.bgc
+  background-size: cover
+  background-position: right bottom
+
+
+
+.epapper
+  .unsubscribe
+    display: none
+
+  width: 100%
+  max-width: 530px
+  border: 1px solid #D1AF81
+  box-shadow: 3px 3px 15px rgba(black,0.2)
+  background-color: #fff
+  text-align: center
+  border-radius: 10px
+  overflow: hidden
+
+  .epapper__toggle
+    height: 50px
+    +fc
+    background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
+    border-bottom: 1px solid rgb(239,239,239)  
+
+    > div 
+      +size(120px, 100%)
+      +fc
+      cursor: pointer
+
+    > .current
+      font-weight: bold
+      color: rgb(142, 108, 80)
+      box-shadow: inset 0 -2px 0px rgb(222, 207, 186)
+
+
+  .epapper__main
+    +padding(36px 80px 64px)
+    text-align: center
+
+  .f24
+    margin-top: 5px
+
+  input
+    +size(100%, 40px)
+    border: 1px solid $brown
+    padding: 15px
+    color: $brown
+    +trans
+    &::placeholder
+      color: #A57B4B
+    &:hover
+      background-color: $brown-light
+    &:focus
+      color: #A57B4B
+      border-color: #A57B4B
+
+  .verify
+    +f(flex-start, center)
+    img
+      cursor: pointer
+
+  .login_btn
+    +fc
+    > a
+      color: $white
+      +size(170px, 40px)
+      +fc
+      background-color: rgb(99, 99, 99)
+      border-radius: 3px
+      +hoverBgc(rgb(63, 63, 63))
+
+    .mr
+      margin-right: 22px
+      background-color: #A57B4B
+      +hoverBgc(#d37d1b)
+
+
+  .epapper__main
+    +max(767)
+      +padding(25px 40px 40px)
+
+    +max(374)
+      +padding(25px 30px 30px)
+      .login_btn .mr
+        margin-right: 8px
+
+
+.epapper.epapper--back
+  .epapper__main
+    padding-top: 48px
+
+  .back-btn
+    height: 136px
+    width: 100%
+    +f(center,center,column)
+    border-top: 1px solid #D1AF81
+    color: rgb(178, 138, 89)
+    +hoverText(#d37d1b)
+
+  .icon-back
+    font-size: 1.8rem
+    margin-bottom: 10px
+
+
+
+
+
+
+
+
+
+
+
+    

@@ -1,5 +1,5 @@
 
-var $submenu_slider = $(".slcik-menu ul"),
+var $submenu_slider = $(".slcik-menu.eq9 ul"),
   settings_md = {
     arrows: true,
     dots: false,
@@ -38,3 +38,44 @@ $(window).on('resize', function () {
 });
 
 $(window).trigger("resize");  
+
+
+
+
+
+//非會員專區的slcik僅有5個
+if ($(window).width() < 768) {
+  $(".slcik-menu.eq5 ul").slick({
+    arrows: true,
+    dots: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    autoplay: false,
+    nextArrow: '<div class="icon-next"></div>',
+    prevArrow: '<div class="icon-prev"></div>',
+  });
+}
+
+
+  
+
+
+// 訂閱電子報
+$("#epapper-js").find("div").click(function () {
+  $(this).addClass("current");
+  $(this).siblings("div").removeClass("current");
+
+  var target = $(this).attr("data-page");
+  $("." + target).siblings(".epapper__main").hide();
+  $("." + target).show();
+});
+
+
+
+
+
+
+
+
+

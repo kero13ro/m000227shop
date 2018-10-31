@@ -1,6 +1,20 @@
 
+var navPages = $("#nav .nav_shop a, .logo");
+var currentPage = sessionStorage.getItem("nav");
 
-var ui;
+navPages.filter("[href='" + currentPage + "']").addClass("current");
+
+navPages.click(function () {
+  var tmp = $(this).attr("href");  
+  sessionStorage.setItem("nav", tmp);
+});
+
+
+
+
+
+
+
   /* ==========================================================================
             greensock animation
    ==========================================================================*/
@@ -8,11 +22,11 @@ var ui;
 /*  首頁動畫
   -------------------------------------------------- */
 
-  var controller_index = new ScrollMagic.Controller();
+  // var controller_index = new ScrollMagic.Controller();
 
-  //場景一
-  let s1_slick = $("#index .slick "),
-    s1_tl = new TimelineLite();
+  // //場景一
+  // let s1_slick = $("#index .slick "),
+  //   s1_tl = new TimelineLite();
     // s1_chars40 = new SplitText(s1_sub40, { type: "words,chars" }).chars,
 
   // s1_tl

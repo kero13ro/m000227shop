@@ -1,0 +1,69 @@
+
+  
+// #guest
+//   background-color: #fff
+  
+.login-non
+  width: 100%
+  max-width: 530px
+  border-radius: 10px
+  border: 1px solid #D1AF81
+  +padding(64px 80px)
+  box-shadow: 3px 3px 15px rgba(black,0.2)
+  background-color: #fff
+  text-align: center
+
+  .f24
+    font-weight: bold
+    
+  .f24 + *
+    white-space: nowrap
+    text-indent: -20px
+
+  
+  input
+    +size(100%, 40px)
+    border: 1px solid $brown
+    padding: 15px
+    color: $brown
+    +trans
+    &::placeholder
+      color: #A57B4B
+    &:hover
+      background-color: $brown-light
+    &:focus
+      color: #A57B4B
+      border-color: #A57B4B
+
+  .verify
+    +f(flex-start, center)
+    img
+      cursor: pointer
+
+  .login_btn
+    +fc
+    > a
+      color: $white
+      +size(170px, 40px)
+      +fc
+      background-color: rgb(99, 99, 99)
+      border-radius: 3px
+      +hoverBgc(rgb(63, 63, 63))
+
+    .mr
+      margin-right: 22px
+      background-color: #A57B4B
+      +hoverBgc(#d37d1b)
+
+  +max(767)
+    +padding(50px 40px)
+    .f24 + *
+      white-space: normal
+      text-indent: 0px
+
+  +max(374)
+    +padding(40px 30px)
+    .login_btn .mr
+      margin-right: 8px
+
+

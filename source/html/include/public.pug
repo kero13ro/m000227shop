@@ -1,0 +1,74 @@
+
+
+
+mixin epapper(href1,href2)
+  .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+    .container.fc.fc.pt72.pb88
+
+      .epapper.f16
+
+        .epapper__toggle#epapper-js
+          div(data-page="subscribe").current 訂閱電子報
+          div(data-page="unsubscribe") 取消訂閱
+        
+        form.epapper__main.subscribe
+          img(src="./styles/images/login-00-01.png" alt="紫金堂")
+          .f24.lh20.mb24 訂閱電子報
+
+          input(type="text", placeholder="Email").mb24
+          label.verify.mb40
+            input(type="text" placeholder="請輸入驗證碼" required)
+            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+
+          .login_btn
+            a(href=href1).mr 送出
+            a(href="index.html") 取消
+
+        form.epapper__main.unsubscribe
+          img(src="./styles/images/login-00-01.png" alt="紫金堂")
+          .f24.lh20.mb24 取消訂閱電子報
+
+          input(type="text", placeholder="Email").mb24
+          label.verify.mb40
+            input(type="text" placeholder="請輸入驗證碼" required)
+            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+
+          .login_btn
+            a(href=href2).mr 送出
+            a(href="index.html") 取消
+  
+
+
+mixin subscribed
+  .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+
+    .container.fc.pt72.pb88
+      .epapper.f16.epapper--back
+        
+        .epapper__main
+          img(src="./styles/images/login-00-01.png" alt="紫金堂")
+          .f24.lh20.mb24 恭喜！您已訂閱成功
+          div 感謝您對紫金堂的支持與肯定，可至您的信箱確認。
+
+        a(href="index.html").back-btn
+          .icon-back
+          span 返回首頁
+
+
+
+mixin unsubscribed
+  .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+
+    .container.fc.pt72.pb88
+      .epapper.f16.epapper--back
+        
+        .epapper__main
+          img(src="./styles/images/login-00-01.png" alt="紫金堂")
+          .f24.lh20.mb24 您已取消訂閱
+          div 感謝您對紫金堂的支持與肯定。
+
+        a(href="index.html").back-btn
+          .icon-back
+          span 返回首頁
+
+    

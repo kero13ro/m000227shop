@@ -10,7 +10,7 @@ block content
         li 會員專區
         li.icon-right-thin 訂單紀錄
 
-  #course.bgcWhite
+  #unsubscribed.bgcWhite
     
     .slcik-menu.eq9
       ul.nostyle
@@ -28,5 +28,9 @@ block content
           a(href="course.html") 媽媽教室
         li 
           a(href="taste.html") 預約試吃
-        li.active 
+        li.active
           a(href="subscribe.html") 訂閱電子報
+
+
+    include ./include/public.pug
+    +unsubscribed

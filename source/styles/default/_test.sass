@@ -160,7 +160,7 @@ $space: (m: margin, p: padding)
 
 @each $key_dir,$val_dir in $direction
   @each $key_spc,$val_spc in $space
-    @for $i from 1 through 8
+    @for $i from 1 through 12
       .#{$key_spc}#{$key_dir}#{$i*8}
 
         #{$val_spc}-#{$val_dir}: #{$i*8}px
