@@ -197,13 +197,12 @@
   
 // .items.midBlock.form-type
 // 三頁的產品介紹頁面，有包含表格
-  
-.scrollbarX
-  //不知道為啥為推擠
-  width: 84vw
-  >table
-    min-width: 450px
-    width: 450px
+.form-type
+  .scrollbarX
+    width: 84vw
+    >table
+      min-width: 450px
+      width: 450px
 
 [class*="form-type-"]    
   +min(992)
@@ -233,37 +232,37 @@
   td
     background-color: rgb(255, 252, 247)
 
-  .radio_unit
-    height: 45px
-    white-space: nowrap
+  // .radio_unit
+  //   height: 45px
+  //   white-space: nowrap
 
-    input[type="radio"]
-      position: absolute
-      opacity: 0
-      pointer-events: none
+  //   input[type="radio"]
+  //     position: absolute
+  //     opacity: 0
+  //     pointer-events: none
 
-    input[type="radio"] + label
-      cursor: pointer
-      +size(100%)
-      +fc
-      &:before
-        content: ""
-        display: block
-        +size(18px)
-        background: $white
-        border-radius: 50%
-        border: 1px solid rgb(211, 174, 130)
-        transition: background-color 0.3s ease, box-shadow 0.3s ease
-        flex-shrink: 0
+  //   input[type="radio"] + label
+  //     cursor: pointer
+  //     +size(100%)
+  //     +fc
+  //     &:before
+  //       content: ""
+  //       display: block
+  //       +size(18px)
+  //       background: $white
+  //       border-radius: 50%
+  //       border: 1px solid rgb(211, 174, 130)
+  //       transition: background-color 0.3s ease, box-shadow 0.3s ease
+  //       flex-shrink: 0
 
-    input[type="radio"]:checked + label:before
-      background-color: rgb(211, 174, 130)
-      box-shadow: inset 0 0 0 3px #f4f4f4
+  //   input[type="radio"]:checked + label:before
+  //     background-color: rgb(211, 174, 130)
+  //     box-shadow: inset 0 0 0 3px #f4f4f4
 
-    input[type="radio"]:disabled + label:before
-      box-shadow: inset 0 0 0 4px #f4f4f4
-      border-color: #b4b4b4
-      background: #b4b4b4
+  //   input[type="radio"]:disabled + label:before
+  //     box-shadow: inset 0 0 0 4px #f4f4f4
+  //     border-color: #b4b4b4
+  //     background: #b4b4b4
 
 
 [class*="form-type-2"] .radio

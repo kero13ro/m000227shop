@@ -2,5 +2,104 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+
+  #register
+
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 會員專區
+          li.icon-right-thin 建立新帳號
+    .title
+      .f24 建立新帳號
+
+    form.pt48
+      .container.sm
+
+        .box
+          .box__title 帳號密碼設定
+            span.f16.lh18.ml24 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
+          .box__content.bottom
+            .group.mb16.md
+              span.star.justify 帳號
+              input(type="text" required)
+
+            .group.mb16.md
+              span.star.justify 密碼
+              input(type="text" required)
+
+            .group.md
+              span.star.justify 確認密碼
+              input(type="text" required)
+
+        .box.mb48
+          .box__content.bottom
+            .group.mb16.name
+              span.star.justify 姓名
+              input(type="text" required)
+              
+              .radio_unit.transX
+                input(type="radio" name="gender" id="male") 
+                label(for="male") 先生
+              .radio_unit
+                input(type="radio" name="gender" id="female") 
+                label(for="female") 小姐
+
+            label.group.addr.mb8
+              span.star 聯絡地址
+              .select_unit
+                select(required)
+                  option(disabled selected hidden) 年份
+                  option(value="年份") 年份
+
+              .select_unit.break
+                select(required)
+                  option(disabled selected hidden) 月份
+                  option(value="月份") 月份
+
+              .select_unit.break.spe1
+                select(required)
+                  option(disabled selected hidden) 日期
+                  option(value="日期") 日期
+
+            .group.mb16
+              .red 出生日期一旦送出將不可修改，請確認資料無誤。
+
+            label.group.mb16 
+              span.star 連絡電話
+              input(type="tel" required)
+
+            label.group.mb16
+              span.star 電子信箱
+              input(type="mail" required)
+
+            label.group.addr.mb16
+              span.star 聯絡地址
+              .select_unit
+                select(required)
+                  option(disabled selected hidden) 縣市
+                  option(value="台北市") 台北市
+
+              .select_unit.break
+                select(required)
+                  option(disabled selected hidden) 鄉鎮區
+                  option(value="松山區") 松山區
+              
+              input(type="text" required placeholder="郵遞區號")
+              
+            label.group.mb16
+              span
+              input(type="text" required)
+
+            label.group.mb16.verify
+              span.justify.star 驗證碼
+              input(type="text" placeholder="請輸入驗證碼" required)
+              img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+              span.ml16 點擊刷新
+
+
+      .submit.pt40.pb88
+        .btn 送出
+        .btn.cancel 取消
+

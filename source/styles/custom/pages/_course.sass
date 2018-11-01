@@ -1,0 +1,122 @@
+
+#course
+  background-image: url("images/login-7-bgc.jpg")
+  background-repeat: no-repeat
+  background-position: bottom 80px right 70px
+
+  .container
+    position: relative
+    padding-top: 60px
+
+  .right-info
+    +position(absolute, 150px 10px null null )
+    width: 520px
+    .f24
+      color: #A57B4B
+
+    li
+      padding-left: 20px
+      +circle(12px,12px)
+      text-indent: -20px
+
+  .control-row
+    max-width: 810px
+    margin-bottom: 54px
+    justify-content: space-between
+
+
+.site
+  position: relative
+  max-width: 810px
+  box-shadow: 0 2px 5px rgba(black, 0.2)
+  .site_title
+    color: white
+    background-color: rgb(200, 150, 87)
+    span
+      display: inline-block
+      +padding(9px 18px)
+
+    .city
+      width: 95px
+      background-color: rgb(180, 120, 50)
+
+
+  .site_content
+    +f
+    background-color: $white
+    +padding(18px 35px)
+    ul.text
+      width: 100%
+    li
+      +circle( 10px, 15px, rgb(250, 179, 89) )
+      text-indent: -25px
+      padding-left: 30px
+      margin-bottom: 6px
+      .icon-location
+        text-indent: 0px
+        margin-left: 15px
+        color: #92c7d6
+        +hoverText(#43bee0)
+      span
+        color: $brown
+
+    .ps
+      color: rgb(229, 83, 70)
+      padding-top: 18px
+      margin-top: 18px
+      border-top: 1px solid rgb(210, 210, 210)
+      &:before
+        background-color: rgb(229, 83, 70) !important
+
+    .btn
+      margin-top: 10px
+      color: $white
+      +fc
+      flex-shrink: 0
+      +size(100px)
+      border-radius: 50%
+      background-color: rgb(201, 201, 193)
+      cursor: default
+
+    .btn.cancel
+      background-color: rgb(229, 83, 70)
+      cursor: pointer
+      +hoverBgc(#d63c31)
+
+    
+  
+#course
+  +max(1400)
+    .container
+      padding-top: 30px
+      > .site, .right-info, .control-row
+        +margin(null auto)
+
+    .right-info
+      position: static
+      margin-bottom: 30px
+      width: 100%
+      max-width: 810px
+
+    .control-row
+      +margin(null auto)
+
+  +max(500)
+    .site_title .city
+      display: block
+      width: auto
+      +padding(6px null)
+      font-size: 14px
+
+    .site_content
+      flex-direction: column
+      align-items: center
+      +padding(15px 15px)
+      ul
+        margin-right: 0
+      .btn
+        +margin(10px null null 0)
+        border-radius: 5px
+        height: auto
+        +padding(12px null)
+

@@ -90,15 +90,29 @@
 
 
 
-@for $i from 8 through 12 //1.6~2.4
-  .lh#{$i*2*1}
+@for $i from 8 through 12 
+  .lh#{$i*2*1}            //1.6~2.4
     line-height: $i*2*0.1
       
     +m(768, 481)
-      line-height: $i*2*0.09
+      line-height: $i*2*0.095
       
     +max(480)
-      line-height: $i*2*0.082
+      // line-height: $i*2*0.082
+      
+      @if $i*2*0.09 > 1.6
+        line-height: $i*2*0.09
+
+      @else if $i*2*0.85 > 1.6
+        line-height: $i*2*0.85
+
+      @else 
+        line-height: 1.6
+
+
+
+
+
 
     
 @for $i from 1 through 4 //0.5~2
@@ -112,15 +126,17 @@
       letter-spacing: #{$i*0.5*0.25}px
 
 
-
 .f12
   font-size: 12px
 .f14
   font-size: 14px
 .f15
   font-size: 15px
+
 .f18
   font-size: 18px
+  +max(480)
+    font-size: 15px
 
 @for $i from 4 through 15 //16, 20, 24 ~ 40px
   .f#{$i*4}

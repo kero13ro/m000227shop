@@ -10,9 +10,9 @@ block content
         li 會員專區
         li.icon-right-thin 會員資料維護
 
-  #profile.bgcWhite
+  #profile
     
-    .slcik-menu.eq9
+    .slcik-menu.eq9.bgcWhite
       ul.nostyle
         li
           a(href="order.html") 訂單紀錄
@@ -30,3 +30,75 @@ block content
           a(href="taste.html") 預約試吃
         li
           a(href="subscribe.html") 訂閱電子報
+
+
+    form.pt48
+      .container.sm
+        span.f24 會員資料維護
+        span.f16.lh18 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
+
+        .box.mb24.mt24
+          .box__title 帳號密碼設定
+          .box__content.top
+            .group
+              span.justify 帳號
+              span tasteforlife@gmail.com
+            .group
+              span.justify 密碼
+              span.change 
+                span ***********
+                a 密碼變更
+
+        .box.mb24
+          .box__title 帳號密碼設定
+          .box__content.bottom
+            .group.mb16.name
+              span.star.justify 姓名
+              input(type="text" placeholder="張樂樂" required)
+
+              .radio_unit.transX
+                input(type="radio" name="gender" id="male") 
+                label(for="male") 先生
+              .radio_unit
+                input(type="radio" name="gender" id="female") 
+                label(for="female") 小姐
+
+            label.group.mb16 
+              span.star 出生日期
+              //- span.brown 1980-08-10
+              input(type="text" required placeholder="1980-08-10")
+
+            label.group.mb16 
+              span.star 連絡電話
+              input(type="tel" placeholder="0988-818-818" required)
+
+
+            label.group.mb16
+              span.star 電子信箱
+              input(type="mail" placeholder="test@gmail.com" required)
+
+            label.group.addr.mb16
+              span.star 聯絡地址
+              .select_unit
+                select(required)
+                  //- option(disabled selected hidden) 縣市
+                  option(value="台中市" selected) 台中市
+                  option(value="台北市") 台北市
+
+              .select_unit.break
+                select(required)
+                  //- option(disabled selected hidden) 鄉鎮區
+                  option(value="北屯區" selected) 北屯區
+                  option(value="松山區") 松山區
+              
+              input(type="text" required placeholder="406")
+              //- input(type="text" required placeholder="郵遞區號")
+              
+            label.group.mb20
+              span
+              input(type="text" required placeholder="東山路一段147巷49號")
+
+      .submit.pt40.pb88
+        .btn 送出
+        .btn.cancel 取消
+

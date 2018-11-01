@@ -35,30 +35,32 @@ block content
 
     .container.pt40
 
-      .foreword(style="background-image: url(styles/images/login-4-bgc.jpg)")
-    
-        h3.brown.f24.mb24 紅利點數使用說明
-        ul.nostyle.circle.lh20
-          li 1點紅利可抵用購物金額1元
-          li 凡線上購物消費滿100元（不含運費）即可累積1點紅利，於下次消費時抵用
-          li 本紅利積點僅供會員本人於「紫金堂．線上購物專區 」線上購物抵用，不可要求換取現金、
-          li 不得轉讓予任何第三人或要求將不同會員帳號的紅利積點合併
-          li 每次交易最高可折抵該筆訂單之消費金額150元
-          li 取消訂單或退貨，該筆交易所抵用之紅利將退還於原帳戶
+      //- .foreword(style="background-image: url(styles/images/login-4-bgc.jpg)")
+      .foreword
+        .wrap
+          h3.brown.f24.mb24 紅利點數使用說明
+          ul.nostyle.circle.lh20
+            li 1點紅利可抵用購物金額1元
+            li 凡線上購物消費滿100元（不含運費）即可累積1點紅利，於下次消費時抵用
+            li 本紅利積點僅供會員本人於「紫金堂．線上購物專區 」線上購物抵用，不可要求換取現金、
+            li 不得轉讓予任何第三人或要求將不同會員帳號的紅利積點合併
+            li 每次交易最高可折抵該筆訂單之消費金額150元
+            li 取消訂單或退貨，該筆交易所抵用之紅利將退還於原帳戶
 
-        ul.nostyle.status
-          li 總累積點數：
-            span.sum 1,080
-            |  點，
-          li 未生效點數：
-            span.invalid 0
-            |  點，
-          li 已過期點數：
-            span.overdue 0
-            |  點，
-          li 可用結餘點數：
-            span.usable 1,080
-            |  點
+          ul.nostyle.status
+            li 總累積點數：
+              span.sum 1,080
+              |  點，
+            li 未生效點數：
+              span.invalid 0
+              |  點，
+            li 已過期點數：
+              span.overdue 0
+              |  點，
+            li 可用結餘點數：
+              span.usable 1,080
+              |  點
+        img(src="./styles/images/login-4-bgc.jpg", alt="紫金堂")
 
 
       .scrollbarX.plain
@@ -71,7 +73,7 @@ block content
             th 備註
           tr 
             td
-              span.plus +10
+              span.brown +10
               |  點
             td 2017/12/15
             td 無期限
@@ -79,7 +81,7 @@ block content
             td -
           tr
             td
-              span.minus -150
+              span.red -150
               |  點
             td 2017/12/01
             td 無期限
@@ -87,7 +89,7 @@ block content
             td -
           tr
             td
-              span.plus +10
+              span.brown +10
               |  點
             td 2017/07/30
             td -
@@ -95,7 +97,7 @@ block content
             td -
           tr
             td
-              span.minus -10
+              span.red -10
               |  點
             td 2017/07/22
             td -
@@ -103,15 +105,16 @@ block content
             td -
           tr
             td
-              span.plus +500
+              span.brown +500
               |  點
             td 2017/05/17
-            td 2017/08/17  剩餘 30 天
+            td 2017/08/17  
+              span.red 剩餘 30 天
             td 生日禮金(三個月使用期限)
             td 生日當月1號算起
           tr
             td
-              span.plus +100
+              span.brown +100
               |  點
             td 2016/03/08
             td 無期限
@@ -119,7 +122,7 @@ block content
             td -
           tr
             td
-              span.plus +10
+              span.brown +10
               |  點
             td 2016/06/07
             td 無期限

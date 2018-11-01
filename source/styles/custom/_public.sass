@@ -24,6 +24,11 @@ $blue: rgb(145,199,213)
 .brown
   color: #B47832
 
+.red
+  color: #CC0000
+
+.gray
+  color: #7C7C7C
 
 body
   // font-size: 16px
@@ -44,4 +49,24 @@ a
   color: $defaultcolor
   transition: color .30s ease-in-out
 
+  
+.star
+  position: relative
+  &::before
+    content: "*"
+    display: inline-block
+    color: $red
+    +position(absolute, -2px -10px null null )
+
+.star.mid::before
+  right: -2px
+
+.justify
+  text-align: justify
+  &:after
+    content: ""
+    display: inline-block
+    width: 100%
+  & + span
+    line-height: 38px
 
