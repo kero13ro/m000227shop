@@ -2,19 +2,19 @@
 extends ./include/layout.pug
 
 block content
-  
+
   .container
     .breadcrumb
       ul.nostyle
         li 首頁
         li 會員專區
-        li.icon-right-thin 訂單紀錄
+        li.icon-right-thin 密碼管理
 
-  #canceled.bgcWhite
+  #altered
     
-    .slcik-menu.eq9
+    .slcik-menu.eq9.bgcWhite
       ul.nostyle
-        li.active
+        li
           a(href="order.html") 訂單紀錄
         li 
           a(href="returned.html") 退貨查詢
@@ -22,24 +22,22 @@ block content
           a(href="trace.html") 我的追蹤清單
         li 
           a(href="bonus.html") 紅利點數
-        li 
+        li.active  
           a(href="profile.html") 會員資料維護
         li 
           a(href="course.html") 媽媽教室
         li 
           a(href="taste.html") 預約試吃
-        li 
+        li
           a(href="subscribe.html") 訂閱電子報
 
-  
-    
     .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
-      .container.fc.pt72.pb88
+      .container.fc.pt64.pb80
         .modal.f16
-          .modal__main
-            img(src="./styles/images/login-00-01.png" alt="紫金堂")
-            .f24.lh20.mb24 訂單已取消
-            div 您的訂單已取消，您毋須支付此訂單費用。
+          .modal__main.lh22
+            img(src="./styles/images/login-00-02.png" alt="紫金堂").mb8
+            .f24.lh20.mb24 密碼修改成功
+            div 您的密碼重設確認信已成功寄出，請前往收閱信件並依指示操作設定
           .modal-bottom
             a(href="index.html")
               .icon-back

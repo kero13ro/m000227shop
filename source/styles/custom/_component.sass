@@ -181,16 +181,6 @@
 
 
 
-// 電子報
-.container.fc
-  +fc
-  
-//干擾全域?
-.bgc
-  background-size: cover
-  background-position: right bottom
-
-
 
 .epapper
   .unsubscribe
@@ -232,7 +222,7 @@
   input
     +size(100%, 40px)
     border: 1px solid $brown
-    padding: 15px
+    +padding(null 15px)
     color: $brown
     +trans
     &::placeholder
@@ -274,21 +264,80 @@
         margin-right: 8px
 
 
-.epapper.epapper--back
-  .epapper__main
-    padding-top: 48px
 
-  .back-btn
+
+.modal
+  width: 100%
+  max-width: 530px
+  border: 1px solid #D1AF81
+  box-shadow: 3px 3px 15px rgba(black,0.2)
+  background-color: #fff
+  text-align: center
+  border-radius: 6px
+  overflow: hidden
+
+  .modal__main
+    +padding(48px 60px 64px)
+    text-align: center
+
+  .f24
+    margin-top: 5px
+
+  .modal-bottom
     height: 136px
     width: 100%
-    +f(center,center,column)
+    +f(center,center)
     border-top: 1px solid #D1AF81
-    color: rgb(178, 138, 89)
-    +hoverText(#d37d1b)
 
-  .icon-back
-    font-size: 1.8rem
-    margin-bottom: 10px
+    > a
+      color: rgb(178, 138, 89)
+      +hoverText(#d37d1b)
+      +f(center,center, column)
+
+      [class*="icon"]
+        font-size: 1.8rem
+        margin-bottom: 10px
+
+      .icon-user 
+        font-size: 1.1rem
+        border: 2px solid rgb(178, 138, 89)
+        border-radius: 50%
+        +size(40px)
+        +fc
+      
+    > a:hover .icon-user 
+      border-color: #d37d1b
+
+    > a:not(:last-child)
+      margin-right: 70px
+        
+  .modal__main
+    +max(767)
+      +padding(25px 40px 40px)
+
+    +max(374)
+      +padding(25px 30px 30px)
+
+
+.modal.lg
+  max-width: 600px
+  .modal__main
+    +padding(48px 60px 40px)
+
+    +max(767)
+      +padding(25px 40px 40px)
+
+    +max(374)
+      +padding(null 20px 30px)
+
+
+.modal.dark
+  z-index: 2
+  .modal__main
+    +padding(48px 50px 40px)
+    background-color: rgb(244, 240, 239)
+
+
 
 
 
@@ -447,7 +496,7 @@
 
 
 .container.sm
-  max-width: 790px  //740 + 25 padding
+  max-width: 740px
   
 .box
   border-radius: 5px
@@ -598,3 +647,9 @@
     background-color: rgb(100, 100, 100)
     +hoverBgc(rgb(60, 60, 60))
 
+  +max(500)
+    +padding(null 10px)
+    .btn
+      margin: 0 10px
+
+      

@@ -5,11 +5,26 @@
   max-height: 800px
   height: 90vh
   min-height: 650px
+  position: relative
+  
+
+  
+  +m(768,720) 
+    background-position: left center
+    background-size: 200%
+
+  &.darker
+    &::before
+      content: ""
+      +position(absolute, 0 0 0 0)
+      +size(100%)
+      background-color: rgba(black,0.2)
+      z-index: 1
 
   .container
     +size(100%)
-    +fc
     position: relative
+
 
   .breadcrumb
     color: white
@@ -17,7 +32,6 @@
   
   .login
     +size(1000px , 540px)
-    +margin(null auto)
     background-color: $white
     border-radius: 5px
     +fc
@@ -137,3 +151,78 @@
     .login
       height: 80vh
       +margin(null 10px)
+
+
+.forget
+
+  width: 100%
+  max-width: 580px
+  border-radius: 8px
+  border: 1px solid #D1AF81
+  +padding(70px 105px)
+  box-shadow: 3px 3px 15px rgba(black,0.2)
+  background-color: rgb(246, 242, 241)
+  text-align: center
+  
+
+  .f24
+    font-weight: bold    
+  .f24 + *
+    +margin(null -25px)
+    color: #683700
+
+  
+  input
+    +size(100%, 60px)
+    border: 1px solid $brown
+    padding: 15px
+    color: $brown
+    +trans
+    &::placeholder
+      color: #A57B4B
+    &:hover
+      background-color: $brown-light
+    &:focus
+      color: #A57B4B
+      border-color: #A57B4B
+
+
+  .verify
+    +f(flex-start, center)
+    img
+      cursor: pointer
+
+  .login_btn
+    +fc
+    > a
+      color: $white
+      +size(50%, 60px)
+      +fc
+      background-color: rgb(99, 99, 99)
+      border-radius: 3px
+      +hoverBgc(rgb(63, 63, 63))
+
+    .mr
+      margin-right: 22px
+      background-color: #A57B4B
+      +hoverBgc(#d37d1b)
+
+  +max(768)
+    +padding(70px 80px)
+    .f24 + *
+      +margin(null 0)
+
+  +max(500)
+    +padding(40px 30px)
+    .login_btn .mr
+      margin-right: 8px
+
+    input,
+    .login_btn > a
+      height: 45px
+
+
+// #member
+.modal.dark
+  display: none
+  

@@ -196,18 +196,14 @@
       transition: width 0.3s ,opacity 0.3s
 
 // dashboard 彈跳視窗
+.lity-container
+  max-width: 90%
 .lity
   background-color: rgba(0,0,0,0.5)
   .lity-close
-    +size(32px)
-    position: absolute
-    transform: translateX(50%) translateY(-50%)
-    font-size: 27px
-    line-height: 27px
-    color: $brown
-    border: 1px solid $brown
-    background-color: $brown-light
-    border-radius: 50%
+    text-shadow: none
+    +position(absolute, 15px 15px null null )
+    color: #ddc6a8
 
   .box
     +f(center,center,column)
@@ -275,105 +271,105 @@
 
       
 
-  #ADslick
-    +size(90vw, auto)
-    max-width: 600px
-    .box
-      background-attachment: cover
+  // #ADslick
+  //   +size(90vw, auto)
+  //   max-width: 600px
+  //   .box
+  //     background-attachment: cover
 
-    .slick
-      +arrow-reset
+  //   .slick
+  //     +arrow-reset
 
-    .slick-prev, .slick-next        
-      +size(200px, 450px)
-      border-radius: 0
-      &::before 
-        font-size: 5rem
-        +trans
+  //   .slick-prev, .slick-next        
+  //     +size(200px, 450px)
+  //     border-radius: 0
+  //     &::before 
+  //       font-size: 5rem
+  //       +trans
 
-    .slick-prev
-      left: -200px
-      &:before
-        content: '\e807'
+  //   .slick-prev
+  //     left: -200px
+  //     &:before
+  //       content: '\e807'
 
-    .slick-next
-      right: -200px
-      &:before
-        content: '\e806'
+  //   .slick-next
+  //     right: -200px
+  //     &:before
+  //       content: '\e806'
 
-    .box
-      height: 90vw
-      max-height: 450px
-      background-size: cover
-      background-position: right center
+  //   .box
+  //     height: 90vw
+  //     max-height: 450px
+  //     background-size: cover
+  //     background-position: right center
 
-    .wrap
-      margin-left: auto
-      +size(250px, 100%)
-      +f(center, center, column)
-      position: relative
-      span, p
-        width: 100%
+  //   .wrap
+  //     margin-left: auto
+  //     +size(250px, 100%)
+  //     +f(center, center, column)
+  //     position: relative
+  //     span, p
+  //       width: 100%
 
-      span
-        font-weight: bolder
-        line-height: 1.5
+  //     span
+  //       font-weight: bolder
+  //       line-height: 1.5
 
 
-    .btn-circle
-      margin: 0 auto
-      +size(150px)
-      +f(center, center, column)
-      flex-shrink: 0
-      border-radius: 50%
-      background-color: $blue
-      color:  white
-      +trans
-      &:hover
-        background-color: shade($blue, 8%);
+  //   .btn-circle
+  //     margin: 0 auto
+  //     +size(150px)
+  //     +f(center, center, column)
+  //     flex-shrink: 0
+  //     border-radius: 50%
+  //     background-color: $blue
+  //     color:  white
+  //     +trans
+  //     &:hover
+  //       background-color: shade($blue, 8%);
         
 
     
-    .wrap.color-pink
-      color: rgb(228,136,137)
+  //   .wrap.color-pink
+  //     color: rgb(228,136,137)
 
-    .btn-square
-      +size(110px, 40px)
-      line-height: 40px
-      background-color: rgb(241,155,158)
-      color: white
-      +trans
-      &:hover
-        background-color: shade(rgb(241,155,158), 8%);
+  //   .btn-square
+  //     +size(110px, 40px)
+  //     line-height: 40px
+  //     background-color: rgb(241,155,158)
+  //     color: white
+  //     +trans
+  //     &:hover
+  //       background-color: shade(rgb(241,155,158), 8%);
 
 
-    +max(990)
-      .slick-prev, .slick-next  
-        display: none !important
+  //   +max(990)
+  //     .slick-prev, .slick-next  
+  //       display: none !important
 
-    +max(767)
-      .btn-circle
-        +size(auto, auto)
-        +padding(12px 16px )
-        line-height: 40px
-        color: white
-        border-radius: 0
+  //   +max(767)
+  //     .btn-circle
+  //       +size(auto, auto)
+  //       +padding(12px 16px )
+  //       line-height: 40px
+  //       color: white
+  //       border-radius: 0
 
-    +max(500)
-      .wrap
-        width: 100%
-      .box  
-        position: relative
-        background-position: right center !important
-        &:before
-          background-color: rgba(256, 256, 256, 0.5)
-          content: ""
-          display: block
-          +size(100%)
-          +position(absolute, 0 0 0 0)
+  //   +max(500)
+  //     .wrap
+  //       width: 100%
+  //     .box  
+  //       position: relative
+  //       background-position: right center !important
+  //       &:before
+  //         background-color: rgba(256, 256, 256, 0.5)
+  //         content: ""
+  //         display: block
+  //         +size(100%)
+  //         +position(absolute, 0 0 0 0)
 
-    +max(374)
-      .box
-        height: 100vw
+  //   +max(374)
+  //     .box
+  //       height: 100vw
 
 

@@ -2,5 +2,42 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+  
+  #member(style="background-image: url(styles/images/login-00-bgc.jpg)")
+    .container.fc
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 會員專區
+
+      //- _login.sass
+      .forget.lh18
+      
+        .f24.brown.mb16.wide10 忘記密碼
+        .mb24 請輸入您註冊時的 E-mail 帳號，系統將會自動寄送一組網址至您的信箱，點選網址後即可進入進行修改。
+
+        input(type="mail", placeholder="Email").mb32
+        
+        label.verify.mb40
+          input(type="text" placeholder="請輸入驗證碼" required)
+          img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+
+        .login_btn
+          a.mr#js-sent 送出
+          a(href="index.html") 返回首頁
+
+
+      .modal.lg.f16.dark
+        .modal__main.lh22
+          img(src="./styles/images/login-00-02.png" alt="紫金堂").mb8
+          .f24.lh20.mb24 送出成功
+          div 您的密碼重設確認信已成功寄出，請前往收閱信件並依指示操作設定！
+        .modal-bottom
+          a(href="index.html")
+            .icon-back
+            span 返回首頁
+          a(href="member.html")
+            .icon-user
+            span 會員登入
+
+            

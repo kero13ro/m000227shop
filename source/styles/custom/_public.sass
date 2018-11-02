@@ -1,4 +1,4 @@
-    
+
 
 $defaultcolor: rgb(22, 24, 23) !default  
 $red: rgb(166, 42, 6)
@@ -21,6 +21,8 @@ $table-bgc: rgb(249, 245, 234)
 $white: rgb(254, 254, 254)  
 $blue: rgb(145,199,213)
 
+
+  
 .brown
   color: #B47832
 
@@ -70,3 +72,17 @@ a
   & + span
     line-height: 38px
 
+.underline
+  text-decoration: underline
+
+// 電子報
+.container.fc
+  +fc
+  
+//干擾全域?
+.bgc
+  background-size: cover
+  background-position: right bottom
+
+.noBorder
+  border-top: 0px solid #000 !important

@@ -4,7 +4,7 @@ extends ./include/layout.pug
 block content
   
   #member(style="background-image: url(styles/images/login-00-bgc.jpg)")
-    .container
+    .container.fc
       .breadcrumb
         ul.nostyle
           li 首頁
@@ -23,7 +23,7 @@ block content
             label.verify.mb24
               input(type="text" placeholder="請輸入驗證碼" required)
               img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
-            a(href="order.html").login_btn.mb24.anchor 登入
+            a(href="order.html").login_btn.mb24 登入
 
             .btn-group
               a(href="register.html") 建立新帳號

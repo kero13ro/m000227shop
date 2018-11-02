@@ -70,8 +70,8 @@ img
   -webkit-user-select: none
   user-select: none
 
-// textarea
-//   resize: none
+textarea
+  resize: none
 
 \::-webkit-input-placeholder, ::-moz-placeholder, ::-o-placeholder, ::-ms-placeholder, ::-ms-input-placeholder
   color: #888888
@@ -133,3 +133,12 @@ input
   &[type="search"]
     &::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration
       display: none
+
+
+//瀏覽器預設樣式，但不知為何以前沒有出現?，
+input,
+select,
+textarea
+  &:focus
+    outline-color: transparent
+

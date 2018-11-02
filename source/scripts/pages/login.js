@@ -74,7 +74,12 @@ $("#epapper-js").find("div").click(function () {
 
 
 
-
+// 忘記密碼\ 送出成功對話框
+$("#js-sent").click(function () {
+  $("#member").find(".forget").hide();
+  $("#member").addClass("darker");
+  $(".modal.dark").show();
+});
 
 
 

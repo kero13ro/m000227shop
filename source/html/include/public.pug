@@ -1,6 +1,8 @@
 
 
 
+
+//- 在會員專區和非會員專區都有共用
 mixin epapper(href1,href2)
   .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
     .container.fc.fc.pt72.pb88
@@ -38,37 +40,32 @@ mixin epapper(href1,href2)
             a(href="index.html") 取消
   
 
-
-mixin subscribed
+//- 在會員專區和非會員專區都有共用
+//- 在訂閱及取消訂閱之後的回應
+mixin subscribe_stage2(state)
   .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
 
     .container.fc.pt72.pb88
-      .epapper.f16.epapper--back
+      .modal.f16
+
+        if state == "subscribed"
+          .modal__main
+            img(src="./styles/images/login-00-01.png" alt="紫金堂")
+            .f24.lh20.mb24 恭喜！您已訂閱成功
+            div 感謝您對紫金堂的支持與肯定，可至您的信箱確認。
+          .modal-bottom
+            a(href="index.html")
+              .icon-back
+              span 返回首頁
+        else if state == "unsubscribed"
+          .modal__main
+            img(src="./styles/images/login-00-01.png" alt="紫金堂")
+            .f24.lh20.mb24 您已取消訂閱
+            div 感謝您對紫金堂的支持與肯定。
+          .modal-bottom
+            a(href="index.html")
+              .icon-back
+              span 返回首頁
+        else
+          block
         
-        .epapper__main
-          img(src="./styles/images/login-00-01.png" alt="紫金堂")
-          .f24.lh20.mb24 恭喜！您已訂閱成功
-          div 感謝您對紫金堂的支持與肯定，可至您的信箱確認。
-
-        a(href="index.html").back-btn
-          .icon-back
-          span 返回首頁
-
-
-
-mixin unsubscribed
-  .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
-
-    .container.fc.pt72.pb88
-      .epapper.f16.epapper--back
-        
-        .epapper__main
-          img(src="./styles/images/login-00-01.png" alt="紫金堂")
-          .f24.lh20.mb24 您已取消訂閱
-          div 感謝您對紫金堂的支持與肯定。
-
-        a(href="index.html").back-btn
-          .icon-back
-          span 返回首頁
-
-    

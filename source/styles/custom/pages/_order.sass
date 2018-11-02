@@ -87,4 +87,122 @@
         margin-right: 5px
 
 
+
+
+#cancel
+  .submit
+    background-color: rgb(245, 241, 240)
+
+// #inquire
+
+.inquireType
+  .f24
+    color: #A57B4B
+    display: inline-block
+    margin-right: 20px
+
+  .box__content
+    +padding(1.2rem null)
+
+    .group > span:nth-child(2)
+      color: #B47832
+      height: 38px
+      line-height: 38px
+
+  .select_unit
+    width: 350px
+
+  textarea
+    +size(100%, 120px)
+    +padding(10px 15px)
+    border: 1px solid $brown
+    border-radius: 3px
+    color: $brown-dark
+    +trans
+    &::placeholder
+      color: $brown-dark
+    &:hover
+      background-color: $brown-light
+    &:focus
+      color: $brown-dark
+      border-color: $brown-dark
+
+  +max(350)
+    .container > .f16
+      display: block
+      margin-bottom: 10px
+
+
+
+.inquiryWrap
+  border-top: 1px solid $brown
+  width: 100%
+
+.inquiryLog
+  .log__title
+    height: 50px
+    background-color: rgb(235, 235, 235)
+    +f(flex-start,center)
+    +padding(null 30px)
+    border-bottom: 1px solid rgb(235, 235, 235)
+
+  .log__content
+    +padding(20px 30px)
+    +f(flex-start,center)
+    border-bottom: 1px solid rgb(235, 235, 235)
+    > .lh20
+      width: 100%
+
+  .sub
+    +f(flex-start,flex-end)
+    margin-right: 50px
+    flex-shrink: 0
+    span 
+      margin-left: 10px
+
+  ul
+    +f
+    color: #7C7C7C
+  li
+    margin-right: 35px
+    white-space: nowrap
+
+  .answer
+    background-color: rgb(254, 246, 235)
+    .sub
+      color: rgb(203, 152, 95)
+
+  +max(990)
+    ul
+      flex-wrap: wrap
+      margin-bottom: 10px
+    li
+      width: 100%
+      margin-right: 0
+
+  +max(580)
+    .log__content
+      flex-direction: column
+      align-items: flex-start
+      +padding(null 20px)
+      
+    .sub
+      +margin(null 0 20px null  )
+    ul
+      font-size: 15px
         
+
+
+
+#modal-cancel
+  max-width: 600px
+  .f24
+    color: $brown-dark
+
+  .modal__main
+    background-color: rgb(245, 241, 240)
+    +padding(48px 60px 40px)
+
+    +max(400)
+      +padding(30px 40px)
+

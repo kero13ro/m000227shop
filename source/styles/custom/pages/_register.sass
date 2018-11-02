@@ -1,15 +1,9 @@
 
-
 #register
   background-image: url("./images/login-00-bgc4.jpg")
-  background-position:  center top -60px
-  // background-position:  right top -60px
+  // background-position:  center top -60px
+  background-position:  right top -60px
   // background-size: cover
-  .verify
-    img
-      cursor: pointer
-    input
-      max-width: 180px
 
   .title
     +margin(null auto)
@@ -21,8 +15,6 @@
     .f24
       color: #A57B4B
       
-
-
   .submit
     +margin(null auto)
     max-width: 1200px
@@ -38,8 +30,31 @@
     .box__content
       padding-bottom: 30px
     
+  .verify
+    img
+      cursor: pointer
+    input
+      max-width: 180px
 
   +max(580)
     .group.addr
       > .spe1
         +margin(null 0 5px null)
+
+
+    .box__title
+      .ml24
+        display: block
+        margin-left: 0
+
+    .verify
+      span.ml16
+        display: none
+
+  +max(390)
+    .verify
+      flex-wrap: wrap
+      input
+        max-width: 100% 
+      img
+        +margin(8px null  null 0)

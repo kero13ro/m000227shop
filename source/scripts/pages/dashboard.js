@@ -1,78 +1,78 @@
 
-/* ==========================================================================
-        通用元件 js
-==========================================================================*/
+// /* ==========================================================================
+//         通用元件 js
+// ==========================================================================*/
 
 
-/*  dashboard 在450以下會以 plus btn 顯示
-  -------------------------------------------------- */
+// /*  dashboard 在450以下會以 plus btn 顯示
+//   -------------------------------------------------- */
 
-function openDashboard() {
-  dashboardStage.kill();
-  dashboardStage.play();
-  $dashboard.addClass("expend");
-}
+// function openDashboard() {
+//   dashboardStage.kill();
+//   dashboardStage.play();
+//   $dashboard.addClass("expend");
+// }
 
-function closeDashboard() {
-  $dashboard.removeClass("expend");
-  dashboardStage.reverse(0);
-}
+// function closeDashboard() {
+//   $dashboard.removeClass("expend");
+//   dashboardStage.reverse(0);
+// }
 
-if ($(window).width() <= 991) {
+// if ($(window).width() <= 991) {
 
-  var $dashboard = $("#dashboard");
-  var $btnGroup = $("#dashboard > .gasp");
-  var $plus = $("#js-plus");
-  var dashboardStage = new TimelineMax();
+//   var $dashboard = $("#dashboard");
+//   var $btnGroup = $("#dashboard > .gasp");
+//   var $plus = $("#js-plus");
+//   var dashboardStage = new TimelineMax();
 
-  dashboardStage.staggerTo($btnGroup, 0.3, { y: 0, autoAlpha: 1 }, 0.05).pause();
-  TweenLite.set($btnGroup, { y: 30, autoAlpha: 0 });
+//   dashboardStage.staggerTo($btnGroup, 0.3, { y: 0, autoAlpha: 1 }, 0.05).pause();
+//   TweenLite.set($btnGroup, { y: 30, autoAlpha: 0 });
 
-  $plus.on("click", function () {
-    if (!$dashboard.hasClass("expend")) {
-      openDashboard();
-    } else {
-      closeDashboard();
-    }
-  });
+//   $plus.on("click", function () {
+//     if (!$dashboard.hasClass("expend")) {
+//       openDashboard();
+//     } else {
+//       closeDashboard();
+//     }
+//   });
 
-}
+// }
 
-/*  dashboard 768以下 從hover改成click
-
-
--------------------------------------------------- */
-
-var btnWithBar = $("#dashboard > .white");
-var fixCover = $("#dashboard .cover");
-var dashboardCloseAllBar = function () {
-  btnWithBar.removeClass("expend");
-  fixCover.hide();
-};
+// /*  dashboard 768以下 從hover改成click
 
 
-if ($(window).width() > 768) {
-  btnWithBar.hover(function () {
-    $(this).toggleClass("expend");
-  });
-} else {
+// -------------------------------------------------- */
 
-  btnWithBar.click(function () {
-    $(this).toggleClass("expend");
-    $(this).siblings(".white").removeClass("expend");
+// var btnWithBar = $("#dashboard > .white");
+// var fixCover = $("#dashboard .cover");
+// var dashboardCloseAllBar = function () {
+//   btnWithBar.removeClass("expend");
+//   fixCover.hide();
+// };
 
-    fixCover.show().click(function () {
-      dashboardCloseAllBar();
-    });
-  });
 
-}
+// if ($(window).width() > 768) {
+//   btnWithBar.hover(function () {
+//     $(this).toggleClass("expend");
+//   });
+// } else {
 
-$(document).on('lity:close', function (event, instance) {
-  dashboardCloseAllBar();
-});
+//   btnWithBar.click(function () {
+//     $(this).toggleClass("expend");
+//     $(this).siblings(".white").removeClass("expend");
 
-$("#dashboard .icon-scan .bar").click(function (e) {
-  e.stopPropagation();
-  e.preventDefault();
-});
+//     fixCover.show().click(function () {
+//       dashboardCloseAllBar();
+//     });
+//   });
+
+// }
+
+// $(document).on('lity:close', function (event, instance) {
+//   dashboardCloseAllBar();
+// });
+
+// $("#dashboard .icon-scan .bar").click(function (e) {
+//   e.stopPropagation();
+//   e.preventDefault();
+// });

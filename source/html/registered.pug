@@ -1,0 +1,27 @@
+
+extends ./include/layout.pug
+
+block content
+
+  #register
+
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 會員專區
+          li.icon-right-thin 建立新帳號
+
+    .container.fc.pt72.pb88
+      .modal.lg.f16
+        .modal__main.lh22
+          img(src="./styles/images/login-00-02.png" alt="紫金堂").mb8
+          .f24.lh20.mb24 會員註冊完成
+          div 歡迎您加入紫金堂！ 系統已寄送「帳號啟用通知信」至您的信箱，#[br] 請收取並依照指示確認信箱無誤，即成為會員。
+        .modal-bottom
+          a(href="index.html")
+            .icon-back
+            span 返回首頁
+          a(href="member.html")
+            .icon-user
+            span 會員登入

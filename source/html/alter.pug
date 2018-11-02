@@ -1,0 +1,60 @@
+
+extends ./include/layout.pug
+
+block content
+
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 會員專區
+        li.icon-right-thin 密碼管理
+
+  #profile
+    
+    .slcik-menu.eq9.bgcWhite
+      ul.nostyle
+        li
+          a(href="order.html") 訂單紀錄
+        li 
+          a(href="returned.html") 退貨查詢
+        li 
+          a(href="trace.html") 我的追蹤清單
+        li 
+          a(href="bonus.html") 紅利點數
+        li.active  
+          a(href="profile.html") 會員資料維護
+        li 
+          a(href="course.html") 媽媽教室
+        li 
+          a(href="taste.html") 預約試吃
+        li
+          a(href="subscribe.html") 訂閱電子報
+
+
+    form.pt48.alter
+      .container.sm
+        span.f24 會員資料維護
+        span.f16.lh18 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
+
+        .box.mb40.mt24
+          .box__title 個人資料設定
+          .box__content.bottom
+          
+            label.group.mb16 
+              span.star 目前密碼
+              input(type="text" required)
+
+            label.group.mb16 
+              span.star 輸入新密碼
+              input(type="text" required)
+
+            label.group.mb16 
+              span.star 確認新密碼
+              input(type="password" required)
+
+
+      .submit.pt40.pb88
+        a(href="altered.html").btn 送出
+        .btn.cancel 取消
+
