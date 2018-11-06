@@ -97,7 +97,7 @@
         transition-delay: 0ms
       &:after 
         width: 12px
-        transition-delay: 150ms
+        transition-delay: 50ms
 
 
 
@@ -653,3 +653,19 @@
       margin: 0 10px
 
       
+
+input.std  //可以再把box 裡面的樣式簡化
+  +size(100%, 38px)
+  line-height: 38px
+  +padding(null 15px)
+  border: 1px solid $brown
+  border-radius: 3px
+  color: $brown-dark
+  +trans
+  &::placeholder
+    color: $brown-dark
+  &:hover
+    background-color: $brown-light
+  &:focus
+    color: $brown-dark
+    border-color: $brown-dark

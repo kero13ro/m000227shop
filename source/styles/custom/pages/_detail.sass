@@ -1,0 +1,382 @@
+
+
+#detail,
+#return
+  font-family: "Roboto", Heiti TC, "微軟正黑體" , Microsoft JhengHei
+  
+  .container
+    +f(space-between, stretch, row, wrap)
+  .bottom
+    +fc
+    width: 100%
+  .back
+    +fc
+    +size(200px, 38px)
+    border-radius: 3px
+    letter-spacing: 1px
+    color: white
+    background-color: rgb(179, 139, 90)
+    +hoverBgc(#ce8327)
+
+.icon-thermometer
+  +size(120px, 40px)
+  color: white
+  +fc
+  border-radius: 20px
+  &:before
+    font-size: 1.2rem
+    +margin(null 6px null -6px)
+
+  &.normal
+    background-color: rgb(242, 141, 25)
+  &.low
+    background-color: rgb(92, 199, 215)
+
+    
+//咖啡色上框的容器，內容分為二種 multiple 及 list
+.infoCard
+  width: calc(50% - 18px)
+  background-color: #fff
+  border-top: 5px solid rgb(234, 217, 197)
+  border-radius: 5px
+  +padding(null 28px)
+  &.infoCard.w100
+    width: 100%
+
+  +max(500)
+    +padding(null 18px)
+  +max(359)
+    +padding(null 12px)
+
+.infoCard__title
+  +padding(20px null)
+  border-bottom: 1px solid rgb(234, 217, 197)
+  span:first-child
+    margin-right: 20px
+    color: #B47832
+    font-size: 24px
+
+.infoCard__content
+  +padding(25px null 35px)
+
+
+
+
+
+//第一種類型內容 infoCard--multiple
+// 內容分為三種樣式 multiple__main  multiple__secondary multiple__sum
+
+//第二種類型內容
+.infoCard--list
+  letter-spacing: 1px
+  +padding(23px null)
+  li
+    +padding(5px null)
+    +f
+  
+  span:first-child
+    margin-right: 45px
+    width: 68px
+    display: inline-block
+    color: #1E1E1E
+    flex-shrink: 0
+
+  span:nth-child(2)
+    color: #7C7C7C
+
+  &.two-columns
+    li
+      width: 49%
+      display: inline-block
+      
+.tel
+  +f(flex-start, baseline,row,wrap)
+  white-space: nowrap
+
+span.sp
+  text-align: justify
+  margin-bottom: -68px
+
+  &:after
+    content: ""
+    display: inline-block
+    width: 100%
+
+
+
+
+.infoCard
+
+  .infoCard--list
+    +max(1200)
+      &.two-columns li
+        width: 100% 
+
+    +max(991)
+      span:first-child
+        margin-right: 30px
+
+  +max(767)
+    width: 100%
+    .infoCard__title
+      font-size: 20px
+      +padding(12px null)
+
+    .infoCard__content
+      +padding(12px null 22px)
+
+  +max(400)
+    .infoCard__title
+      font-size: 18px
+      +padding(10px null)
+
+    .infoCard__content
+      +padding(10px null)
+    
+    .infoCard--list
+      font-size: 15px
+      span:first-child
+        margin-right: 20px
+
+
+//第一種類型內容
+//內容分為三種樣式 multiple__main  multiple__secondary multiple__sum
+.infoCard--multiple
+
+
+.multiple__main  //multiple 中第一種
+  table
+    border-radius: 5px 5px 0 0
+    overflow: hidden
+
+  tr
+    background-color: rgb(245, 241, 240)
+    &:first-child
+      background-color: rgb(213, 178, 136)
+    &:last-child
+      border: 0px solid #000
+
+  td
+    +padding(1rem null)
+    &::not(:last-child)
+      border-right: 1px solid white
+
+  .fc
+    height: 48px
+    +fc
+
+  +max(990)
+    max-width: 450px
+    margin-bottom: 40px
+    +margin(null auto null null)
+    font-size: 15px
+    th
+      display: none
+    td
+      +f
+      padding: 0
+      height: 50px
+      &:before
+        +fc
+        content: attr(data-title)
+        width: 40%
+        height: 100%
+        color: white
+        background-color: rgb(213, 178, 136)
+
+      .fc
+        +padding(15px null)
+        width: 60%
+        height: 100%
+    td:nth-child(odd)
+      &:before
+        background-color: #cea579
+      .fc
+        background-color: #ede6e6
+
+
+
+
+
+
+
+
+//multiple 中第二種 multiple__secondary
+.multiple__secondary
+  
+
+.table__title,
+.table__content
+  +f(space-between, center)
+  +padding(null 25px)
+
+  > div   
+    width: 150px  //在return 因應 左側勾選欄位不要放大  從120改為150
+    +padding(20px 10px)
+
+    &:nth-child(3)
+      width: 70px
+
+    &:nth-child(n+3):not(.append)
+      text-align: center
+
+  .pic img
+    width: 100px
+
+  .name
+    width: 30%
+    flex: 1 1 30%
+    // max-width: 500px
+    // @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    //   max-width: 100%
+    color: #683700
+    .sub 
+      color: #b7a287
+      margin-top: 6px
+
+.table__content
+  position: relative
+
+  &.appendType
+    padding-bottom: 50px
+  
+  .append
+    +position(absolute, null null 0 0 )
+    margin-left: 25px
+    width: calc(100% - 50px)
+    +padding(12px 0)
+    color: #e09aae
+    border-top: 1px solid #ddd
+    span
+      margin-left: 30px
+
+.table__title
+  background-color: rgb(234, 217, 197)
+  color: #a38468
+  > div
+    +padding(13px null)  
+
+.table__content, 
+.table__total 
+  border: 1px solid #ddd
+  border-width: 0 1px 1px 1px 
+
+
+
++max(990)
+
+  .table__title,
+  .table__content div:nth-child(4)
+    display: none
+
+  .table__content
+    flex-wrap: wrap
+    +padding(25px 15px 25px 165px)
+
+    &:nth-child(2)
+      border-top: 1px solid #ddd
+
+    > div:not(.append)
+      +padding(3px 5px)
+      width: 100%
+
+      &:nth-child(n+3)
+        text-align: left
+
+      &:nth-child(3):before
+        content: attr(data-title)
+        margin-right: 5px
+        display: inline-block
+
+      &:nth-child(6)
+        display: none  //-----------js顯示
+
+      &.pic
+        +padding(30px 38px)
+        width: auto
+        +position(absolute, 0 null null 0)
+
+    &.appendType
+      padding-bottom: 70px
+
+    .append
+      +f(flex-start, center, row, wrap)
+      +padding(8px 0)
+      span
+        margin: 0
+  
+
+
++max(500)
+
+  .table__content
+    +padding(15px 8px 15px 85px)
+    font-size: 15px
+
+    .append,
+    .sub,
+    > div:nth-child(3),
+    > div:nth-child(6),
+      font-size: 14px
+
+    > div:not(.append)
+      .sub 
+        margin-top: 0px
+
+      &:nth-child(3)
+        margin-top: 10px
+
+      &.pic
+        +padding(20px 8px)
+        img
+          width: 70px
+
+
+  
+
+
+.table__total 
+  text-align: right
+  +padding(null 25px)
+  > *
+    +padding(14px null)
+    display: inline-block
+    &:first-child
+      color: #7C7C7C
+    &:last-child
+      font-weight: bolder
+
+
+
+
+
+
+//multiple 中第三種 multiple__sum
+.multiple__sum
+[class*="sum__"]
+  +padding(17px 25px 17px calc(100% - 425px))
+  li
+    +f(flex-start, center)
+  span
+    margin-left: auto
+  a
+    text-decoration: underline
+    font-weight: bolder
+    +hoverText(#A57B4B)
+
+.sum__cost
+  border: 1px solid #ddd
+  border-width: 0 1px 1px 1px 
+  +padding(8px null)
+
+.sum__return
+  border: 1px solid #ddd
+  background-color: rgb(243, 243, 243)
+
+
++max(450)
+  [class*="sum__"]
+    font-size: 15px
++max(340)
+  .sum__return
+    font-size: 14px

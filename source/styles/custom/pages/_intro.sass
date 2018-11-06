@@ -1,9 +1,5 @@
 
 
-.vege
-  color: #59a467
-
-
 .intro__head
   +f(center, flex-start)
   margin-bottom: 10px
@@ -310,8 +306,6 @@
 
 
 
-
-
 .intro__main
   background-color: rgb(255, 255, 255)
   .page
@@ -341,8 +335,6 @@
   .content
     +padding(32px)
     +f
-
-
 
   .content__pic
     +f(center, center, column)
@@ -449,4 +441,7 @@
 
   .js-page1 ~ *
     display: none
-  
+
+  +max(990)
+    .content
+      flex-direction: column

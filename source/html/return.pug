@@ -7,15 +7,15 @@ block content
       ul.nostyle
         li 首頁
         li 會員專區
-        li.icon-right-thin 退貨查詢
+        li.icon-right-thin 申請退貨
 
-  #return.bgcWhite
+  #return
     
-    .slcik-menu.eq9
+    .slcik-menu.eq9.bgcWhite
       ul.nostyle
-        li
+        li.active
           a(href="order.html") 訂單紀錄
-        li.active 
+        li 
           a(href="returned.html") 退貨查詢
         li 
           a(href="trace.html") 我的追蹤清單
@@ -30,26 +30,260 @@ block content
         li 
           a(href="subscribe.html") 訂閱電子報
 
-    .container.pt40
+    form.container.pt40
+    
+      .infoCard.mb32.w100
+        .infoCard__title 
+          span 訂單相關資訊資料
+          span ※ 提醒您，如原訂單滿額享免運優惠，請先試算退貨餘額是否達免運門檻
 
-      .control-row
+        .top_select
+          .radio_unit
+            input(type="radio" name="return" id="all-return") 
+            label(for="all-return") 全部退貨
+          .radio_unit
+            input(type="radio" name="return" id="part-return") 
+            label(for="part-return") 部分退貨
+          
+        .infoCard__content.infoCard--multiple
 
-        h3.brown.f24 退貨查詢
 
-        label.select_unit.mr24
-          span 篩選：
-          select(required)
-            option(value="1" selected) 最近三個月訂單
-            option(value="2") 篩選2
-            option(value="3") 篩選3
+          .multiple__main.plain
+            table.table.mb24
+              tr 
+                th 訂單編號
+                th 訂購日期
+                th 訂單狀態
+                th 訂單總金額
+                th 付款方式
+                th 預定出貨日
+                th 配送狀態
+                th 客服洽詢
+              tr 
+                td(data-title="訂單編號"): div.fc A2017120701
+                td(data-title="訂購日期"): div.fc 2017/12/15 #[br] 13:00
+                td(data-title="訂單狀態"): div.fc 訂單成立
+                td(data-title="訂單總金額"): div.fc NT $ 76,714
+                td(data-title="付款方式"): div.fc 信用卡 #[br] (一次付清)
+                td(data-title="預定出貨日"): div.fc 2017/12/03
+                td(data-title="配送狀態"): div.fc 待處理
+                td(data-title="客服洽詢"): div.fc 
+                  a(href="inquire.html") 詢問
 
-        label.select_unit.mr24.md
-          span 排序依據：
-          select(required)
-            option(value="1" selected) 申請日期
-            option(value="2") 排序依據2
-            option(value="3") 排序依據3
+          .baseline.mb16
+            .icon-thermometer.normal 常溫配送
+            span 已勾選 #[span.brown 1] 項商品
 
-        form.search_unit.icon-scan
-          input(type="search", placeholder="搜尋") 
-          input(type="submit",  value="搜尋") 
+          .multiple__secondary.mb32
+            .table__title
+              div 勾選退貨
+              div.pic 圖片
+              div.name 商品貨號 / 商品名稱
+              div 數量
+              div 單價
+              div 小計
+
+            .table__content
+              div 
+                label.check_unit
+                  input(type="checkbox")
+                  .box
+
+              div.pic
+                img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
+              div.name 月子補養兩日餐(10日)
+              div(data-title="數量") 1
+              div NT$11,888
+              div NT$11,888
+
+            .table__total.wide5
+              div 共 1 項，購物金額 11,888 + 常溫運費 0 =
+              div NT $ 11,888
+
+
+          .baseline.mb16
+            .icon-thermometer.low 低溫配送
+            span 已勾選 #[span.brown 1] 項商品
+
+
+
+          .multiple__secondary.mb16
+            .table__title
+              div 勾選退貨
+              div.pic 圖片
+              div.name 商品貨號 / 商品名稱
+              div 數量
+              div 單價
+              div 小計
+              
+            .table__content.appendType
+              div
+                label.check_unit
+                  input(type="checkbox")
+                  .box
+
+              div.pic 
+                img(src="./styles/images/01-item02.jpg" alt="紫金堂")
+              div.name 紫金堂月子餐【15日份】
+              div(data-title="數量") 1
+              div NT$28,200
+              div NT$28,200
+              
+              div.append 《好孕加值禮》： 
+                span + (A) 疏乳棒1支、美身帶1條
+            .table__content
+              div
+                label.check_unit
+                  input(type="checkbox")
+                  .box
+              div.pic 
+                img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
+              div.name 月子補養兩日餐(10日)
+                .sub 產後第二週 + 哺乳
+              div(data-title="數量") 1
+              div NT$11,888
+              div NT$11,888
+              
+            .table__content
+              div
+                label.check_unit
+                  input(type="checkbox")
+                  .box
+              div.pic 
+                img(src="./styles/images/01-item01.jpg" alt="紫金堂")
+              div.name 月子補養兩日餐(10日)
+                .sub 產後第一週 + 哺乳 (出一停一)
+              div(data-title="數量") 1
+              div NT$22,888
+              div NT$22,888
+              
+            .table__total 
+              div 共 1 項，購物金額 62,976 + 常溫運費 0 =
+              div NT $ 62,976
+
+
+
+      .infoCard.mb32.w100
+        .infoCard__title 
+          span 退貨原因
+          span ※ 標示*符號的欄位為必填。
+        .infoCard__content.infoCard--reason
+
+          .group
+            span.star 退貨原因
+            .select_unit
+              select(required)
+                option(selected disabled hidden) 請選擇
+                option(value="1") 原因1
+
+            input(type="text").std.md
+
+      .infoCard.mb32
+        .infoCard__title
+          span 退貨收件人資料
+          span ※ 標示*符號的欄位為必填。
+        .infoCard__content.infoCard--form
+
+          .group.mb16
+            span.star.sp 姓名
+            input(type="text" required).std.md
+
+            .radio_unit
+              input(type="radio" name="gender" id="male") 
+              label(for="male") 先生
+            .radio_unit
+              input(type="radio" name="gender" id="female") 
+              label(for="female") 小姐
+
+          label.group.mb16
+            span.star 電子信箱
+            input(type="mail" required).std.md
+
+          label.group.mb16 
+            span.star 連絡電話
+            input(type="tel" required).std.md
+
+          label.group.addr.mb16
+            span.star 聯絡地址
+            .select_unit
+              select(required)
+                option(disabled selected hidden) 縣市
+                option(value="台北市") 台北市
+
+            .select_unit.break
+              select(required)
+                option(disabled selected hidden) 鄉鎮區
+                option(value="松山區") 松山區
+            
+            input(type="text" required placeholder="郵遞區號").std
+            
+          label.group
+            span
+            input(type="text" required).std
+
+
+      .infoCard.mb32
+        .infoCard__title
+          span 退款資訊
+          span ※ 標示*符號的欄位為必填。
+
+        .infoCard__content.infoCard--form
+
+          label.select_unit.group.mb16.md
+            span.star 退款方式
+            select(required)
+              option(value="" selected) 銀行匯款
+              option(value="") 退款方式2
+
+          .group.mb16.bank
+            span.star 銀行名稱
+            .select_unit
+              select(required)
+                option(value="" selected) 
+              
+            span.star 分行
+            input(type="text" required).std
+
+
+          .group.mb16
+            span.star 銀行帳號
+            input(type="text" required).std.md
+
+          .group.mb16
+            span.star.sp 戶名
+            input(type="text" required).std.md
+
+          .group.mb16
+            span 備註說明
+            input(type="text" required).std.md
+
+
+      .infoCard.mb32.w100
+        .infoCard__title.info
+          span 退貨須知
+          a.line 更多退貨相關說明
+        .infoCard__content.infoCard--note
+          p 根據消保法規定，於本站購買產品之故客均享有商品道或七天猶豫期之權益，詳細辦法如下：
+          ol.lh22.pl24
+            li 若您辦理退貨後原單金額未達滿額，或組合商品未達組合優惠件數，同單保留組合優惠商品需恢復原價，滿額贈品亦需退回； #[br]     整單全退請連同贈品(整單連同加購及加贈商品)一併退回。
+            li 產品欲退換貨者，須於到貨7日內提出，並保持原產品之外包裝及產品之完整（產品須為回全新狀態）且含發票一併送回。
+            li 收到產品後如因非人為因素之商品損毀、刮傷、或運輸過程造成包裝破損不完整者，請儘速通知本公司客服人員，在進行商品瑕疵或損壞鑑定後，將儘速寄送新品給您。
+            li 不良品、瑕疵品退還，經過檢查與測試之後，若發現商品本身並無瑕疵，消費者必須支付所有發生之相關費用。
+            li 運費採宅配到府收回按件計算，台灣本島每件收取150元。離島地區每件收取320元；若非本公司因素而退、換貨，運費及退款之匯費30元將由消費者負擔。
+            li 退貨完成後，紅利點數未使用者將全部扣除；若已使用則不歸還 (非會員無紅利點數)。
+            li
+              .tel 當您申請退貨後，將安排物流公司到府收貨；如您有任何問題，請至「 #[.red 客服中心]」或撥專線
+                a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+                | ，將有客服專員為您服務
+
+          label.check_unit
+            input(type="checkbox")
+            .box
+            span 您已詳細閱讀並同意我們的
+              a().line 退貨相關說明
+
+      
+      .submit.pt32
+        a(href="order.html").btn 送出
+        a(href="order.html").btn.cancel 返回
+

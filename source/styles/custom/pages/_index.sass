@@ -184,23 +184,29 @@ $bgco: rgb(245, 241, 240)
   width: 215px
   flex-shrink: 0
 
+.rightBlock
+  position: absolute
+  right: 0
+  top: 0
+
 
 +max(1300)
   .mb56.d-flex
     flex-wrap: wrap
 
   .midBlock
-    +position(absolute, 0 0px null null )
-    +margin(null 0px)
+    +margin(null 0px null 20px)
     width: calc(100% - 236px)
 
   .rightBlock
-    margin-right: calc(100% - 287px)
+    position: static
+
 
 +max(767)
+  .mb56.d-flex
+    // flex-wrap: wrap-reverse
   .leftBlock, .midBlock, .rightBlock
     width: 100%
-    position: relative
     margin: 0
 
 
@@ -262,12 +268,14 @@ $bgco: rgb(245, 241, 240)
 
       // transition: 0.3s opacity
 
-    display: none //tmp
+    // display: none //tmp
 
 
 
 
-
+//問題在於 順序無法以 小大小小 排列
+//應該要用js方式變更DOM 或是放入dashboard的方式
+  
 
 .items
   

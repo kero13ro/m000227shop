@@ -1,0 +1,122 @@
+
+
+#return
+
+  .top_select
+    +size(250px, 70px)
+    +f(space-between,center)
+    .radio_unit input[type="radio"] + label:before
+      margin-right: 15px
+      +size(22px)
+
+    & + .infoCard__content
+      padding-top: 0
+
+  .baseline      
+    +f(flex-start, flex-end)
+    > span 
+      margin-left: 35px
+
+
+  .table__title,
+  .table__content
+    > div   
+      &:nth-child(1)
+        width: 90px
+        .check_unit
+          height: 50px
+          +fc
+        
+      &:nth-child(3)
+        text-align: left
+
+  .infoCard--reason
+    .group
+      +size(auto,85px)
+      border: 1px solid #E5E5E5
+      background-color: #ededed
+      +padding(null 30px)
+
+    .select_unit
+      +size(250px,40px)
+      margin-left: 10px
+      margin-right: 10px
+    // input
+    //   +size(350px,40px)
+
+
+  .group
+    white-space: nowrap
+    +f(flex-start, center)
+
+    > span:first-child
+      margin-right: 28px
+      width: 65px
+      flex-shrink: 0
+      
+    select
+      border: 1px solid $brown
+
+  .md
+    max-width: 350px
+    width: 100%
+
+  
+
+
+  .infoCard--form
+    .radio_unit
+      margin-left: 20px
+      label:before
+        margin-right: 15px
+
+  span.sp
+    margin-bottom: -24px
+    white-space: normal
+    
+  .addr
+    .select_unit
+      width: 120px
+      margin-right: 15px
+    input
+      width: 120px
+    & + label
+      input
+        max-width: 430px
+
+  .bank
+    .select_unit
+      width: 300px
+      flex-shrink: 0
+      margin-right: 20px
+
+    span:nth-child(3)
+      margin-right: 20px
+      flex-shrink: 0
+
+  .info
+    +f(space-between,flex-end)
+    a
+      padding-right: 10px
+      color: $brown
+      +hoverText($brown-dark)
+      
+  .infoCard--note
+    p
+      color: #CC0000
+    .tel
+      line-height: 1.7
+    ol
+      padding-bottom: 20px
+      margin-bottom: 25px
+      border-bottom: 1px solid #ddd
+    a
+      +hoverText($brown)
+
+
+
+
+  .submit
+    width: 100%
+    border-top: 0px solid #000
+    padding-bottom: 110px

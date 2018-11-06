@@ -1,0 +1,34 @@
+
+#privacy
+  background-image: url("./images/login-00-bgc4.jpg")
+  background-position:  right top -80px
+  
+  .title
+    border-bottom: 2px solid rgba(#B47832, 0.5) 
+    padding-bottom: 12px
+    color: #A57B4B
+    font-weight: bold
+      
+  .container.md
+    max-width: 1200px
+
+  .content
+    max-height: 440px
+    position: relative
+    .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+      background-color: $brown-dark
+    .mCS-dark-thick.mCSB_scrollTools .mCSB_draggerRail
+      background-color: #eae5dc
+    p
+      padding-right: 20px
+    &:before
+      content: ""
+      display: block
+      +position(absolute, null null 0 null )
+      +size(calc(100% - 20px), 70px)
+      background: linear-gradient(0deg, rgb(245, 241, 240) 0%, rgba(0,212,255,0) 100%)
+      z-index: 1
+
+  .submit
+    border-top: 2px solid rgba(#B47832, 0.5) 
+

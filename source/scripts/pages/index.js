@@ -59,6 +59,12 @@ $(window).on("load", function () {
     axis: "y",
     theme: "minimal-dark"
   });
+
+  $("#privacy .content").mCustomScrollbar({
+    axis: "y",
+    theme: "dark-thick"
+  });
+
 });
 
 
