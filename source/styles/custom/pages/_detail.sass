@@ -1,7 +1,8 @@
 
 
 #detail,
-#return
+#return,
+#returning
   font-family: "Roboto", Heiti TC, "微軟正黑體" , Microsoft JhengHei
   
   .container
@@ -48,13 +49,31 @@
   +max(359)
     +padding(null 12px)
 
+
 .infoCard__title
   +padding(20px null)
   border-bottom: 1px solid rgb(234, 217, 197)
-  span:first-child
+  width: 100%
+  +f(flex-start,flex-end, row, wrap)
+
+  > span:first-child
     margin-right: 20px
     color: #B47832
-    font-size: 24px
+
+  a
+    margin-left: auto
+    display: inline-block
+
+  +max(767)
+    +padding(12px null)
+    > span:first-child
+      width: 100%
+      margin-bottom: 10px
+
+  +max(400)
+    +padding(10px null)
+
+
 
 .infoCard__content
   +padding(25px null 35px)
@@ -70,7 +89,7 @@
 .infoCard--list
   letter-spacing: 1px
   +padding(23px null)
-  li
+  li:not(.tel)
     +padding(5px null)
     +f
   
@@ -118,17 +137,11 @@ span.sp
 
   +max(767)
     width: 100%
-    .infoCard__title
-      font-size: 20px
-      +padding(12px null)
 
     .infoCard__content
       +padding(12px null 22px)
 
   +max(400)
-    .infoCard__title
-      font-size: 18px
-      +padding(10px null)
 
     .infoCard__content
       +padding(10px null)
@@ -196,144 +209,61 @@ span.sp
 
 
 
-
-
-
-
-
 //multiple 中第二種 multiple__secondary
-.multiple__secondary
   
-
 .table__title,
 .table__content
   +f(space-between, center)
   +padding(null 25px)
 
   > div   
-    width: 150px  //在return 因應 左側勾選欄位不要放大  從120改為150
+    min-width: 120px
     +padding(20px 10px)
-
-    &:nth-child(3)
-      width: 70px
-
-    &:nth-child(n+3):not(.append)
+    
+    &.name ~ div
       text-align: center
 
-  .pic img
-    width: 100px
-
+  .pic 
+    width: 140px
+    img
+      width: 100px
   .name
     width: 30%
     flex: 1 1 30%
-    // max-width: 500px
-    // @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
-    //   max-width: 100%
     color: #683700
     .sub 
       color: #b7a287
       margin-top: 6px
 
-.table__content
-  position: relative
+  .num
+    width: 70px
 
-  &.appendType
-    padding-bottom: 50px
-  
-  .append
-    +position(absolute, null null 0 0 )
-    margin-left: 25px
-    width: calc(100% - 50px)
-    +padding(12px 0)
-    color: #e09aae
-    border-top: 1px solid #ddd
-    span
-      margin-left: 30px
+  +min(1600) //讓div有兼具，並在螢幕縮小時會消失
+    > div
+      &:not(.pic):not(.name):not(.check)
+        +margin(null null null 40px)
+      &.name
+        +margin(null null null 10px)
+
+  .check //return.html
+    min-width: 80px
+    .check_unit
+      height: 50px
+      +fc  
+
 
 .table__title
   background-color: rgb(234, 217, 197)
   color: #a38468
+  & ~ div
+    border: 1px solid #ddd
+    border-width: 0 1px 1px 1px 
+    position: relative
+
   > div
     +padding(13px null)  
 
-.table__content, 
-.table__total 
-  border: 1px solid #ddd
-  border-width: 0 1px 1px 1px 
-
-
-
-+max(990)
-
-  .table__title,
-  .table__content div:nth-child(4)
-    display: none
-
-  .table__content
-    flex-wrap: wrap
-    +padding(25px 15px 25px 165px)
-
-    &:nth-child(2)
-      border-top: 1px solid #ddd
-
-    > div:not(.append)
-      +padding(3px 5px)
-      width: 100%
-
-      &:nth-child(n+3)
-        text-align: left
-
-      &:nth-child(3):before
-        content: attr(data-title)
-        margin-right: 5px
-        display: inline-block
-
-      &:nth-child(6)
-        display: none  //-----------js顯示
-
-      &.pic
-        +padding(30px 38px)
-        width: auto
-        +position(absolute, 0 null null 0)
-
-    &.appendType
-      padding-bottom: 70px
-
-    .append
-      +f(flex-start, center, row, wrap)
-      +padding(8px 0)
-      span
-        margin: 0
-  
-
-
-+max(500)
-
-  .table__content
-    +padding(15px 8px 15px 85px)
-    font-size: 15px
-
-    .append,
-    .sub,
-    > div:nth-child(3),
-    > div:nth-child(6),
-      font-size: 14px
-
-    > div:not(.append)
-      .sub 
-        margin-top: 0px
-
-      &:nth-child(3)
-        margin-top: 10px
-
-      &.pic
-        +padding(20px 8px)
-        img
-          width: 70px
-
-
-  
-
+// .table__content
 
 .table__total 
   text-align: right
@@ -346,6 +276,73 @@ span.sp
     &:last-child
       font-weight: bolder
 
+.table__append
+  +padding(12px 25px)
+  color: #e09aae
+
+  &:after, &:before
+    content: ""
+    display: block
+    +size(18px)
+    background-color: #fff
+    +position(absolute, -5px null null null )
+  &:after
+    left: 0
+  &:before
+    right: 0
+
+
++max(990)
+
+  .table__title,
+  .table__content .per,
+  .table__content .state  //js判斷顯示
+    display: none
+
+  .table__content
+    flex-wrap: wrap
+    min-height: 160px
+    +padding(25px 15px 25px 165px)
+
+    &:nth-child(2)
+      border-top: 1px solid #ddd
+
+    > div:not(.pic)
+      width: 100%
+      +padding(3px 5px)
+      &.name ~ div
+        text-align: left
+    
+    .num:before,
+    .check:after
+      content: attr(data-title)
+      margin-right: 5px
+      display: inline-block
+
+    .pic
+      +padding(30px 38px)
+      width: auto
+      +position(absolute, 0 null null 0)
+
+  
++max(500)
+  .table__append
+    font-size: 14px
+    +padding(8px 15px)
+    
+  .table__content
+    +padding(15px 8px 15px 85px)
+    min-height: 0px
+    font-size: 15px
+
+    .name .sub 
+      margin-top: 0px
+      font-size: 14px
+
+    .pic
+      +padding(20px 8px)
+      img
+        width: 70px
 
 
 

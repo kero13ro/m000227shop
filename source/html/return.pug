@@ -34,7 +34,7 @@ block content
     
       .infoCard.mb32.w100
         .infoCard__title 
-          span 訂單相關資訊資料
+          span.f24 申請退貨
           span ※ 提醒您，如原訂單滿額享免運優惠，請先試算退貨餘額是否達免運門檻
 
         .top_select
@@ -76,15 +76,15 @@ block content
 
           .multiple__secondary.mb32
             .table__title
-              div 勾選退貨
+              div(data-title="勾選退貨").check 勾選退貨
               div.pic 圖片
               div.name 商品貨號 / 商品名稱
-              div 數量
-              div 單價
-              div 小計
+              div.num 數量
+              div.per 單價
+              div.sum 小計
 
             .table__content
-              div 
+              div(data-title="勾選退貨").check
                 label.check_unit
                   input(type="checkbox")
                   .box
@@ -92,11 +92,11 @@ block content
               div.pic
                 img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
               div.name 月子補養兩日餐(10日)
-              div(data-title="數量") 1
-              div NT$11,888
-              div NT$11,888
+              div(data-title="數量").num 1
+              div.per NT$11,888
+              div.sum NT$11,888
 
-            .table__total.wide5
+            .table__total.wide10
               div 共 1 項，購物金額 11,888 + 常溫運費 0 =
               div NT $ 11,888
 
@@ -109,15 +109,15 @@ block content
 
           .multiple__secondary.mb16
             .table__title
-              div 勾選退貨
+              div(data-title="勾選退貨").check 勾選退貨
               div.pic 圖片
               div.name 商品貨號 / 商品名稱
-              div 數量
-              div 單價
-              div 小計
+              div.num 數量
+              div.per 單價
+              div.sum 小計
               
-            .table__content.appendType
-              div
+            .table__content
+              div(data-title="勾選退貨").check
                 label.check_unit
                   input(type="checkbox")
                   .box
@@ -125,14 +125,12 @@ block content
               div.pic 
                 img(src="./styles/images/01-item02.jpg" alt="紫金堂")
               div.name 紫金堂月子餐【15日份】
-              div(data-title="數量") 1
-              div NT$28,200
-              div NT$28,200
-              
-              div.append 《好孕加值禮》： 
-                span + (A) 疏乳棒1支、美身帶1條
+              div(data-title="數量").num 1
+              div.per NT$28,200
+              div.sum NT$28,200
+            .table__append 《好孕加值禮》：  + (A) 疏乳棒1支、美身帶1條
             .table__content
-              div
+              div(data-title="勾選退貨").check
                 label.check_unit
                   input(type="checkbox")
                   .box
@@ -140,12 +138,12 @@ block content
                 img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
               div.name 月子補養兩日餐(10日)
                 .sub 產後第二週 + 哺乳
-              div(data-title="數量") 1
-              div NT$11,888
-              div NT$11,888
+              div(data-title="數量").num 1
+              div.per NT$11,888
+              div.sum NT$11,888
               
             .table__content
-              div
+              div(data-title="勾選退貨").check
                 label.check_unit
                   input(type="checkbox")
                   .box
@@ -153,9 +151,9 @@ block content
                 img(src="./styles/images/01-item01.jpg" alt="紫金堂")
               div.name 月子補養兩日餐(10日)
                 .sub 產後第一週 + 哺乳 (出一停一)
-              div(data-title="數量") 1
-              div NT$22,888
-              div NT$22,888
+              div(data-title="數量").num 1
+              div.per NT$22,888
+              div.sum NT$22,888
               
             .table__total 
               div 共 1 項，購物金額 62,976 + 常溫運費 0 =
@@ -165,28 +163,28 @@ block content
 
       .infoCard.mb32.w100
         .infoCard__title 
-          span 退貨原因
-          span ※ 標示*符號的欄位為必填。
+          span.f24 退貨原因
+          span ※ 標示 #[span.red *] 符號的欄位為必填。
         .infoCard__content.infoCard--reason
-
-          .group
-            span.star 退貨原因
-            .select_unit
-              select(required)
-                option(selected disabled hidden) 請選擇
-                option(value="1") 原因1
-
-            input(type="text").std.md
+          .bgc
+            .line
+              span.star 退貨原因
+              .select_unit
+                select(required)
+                  option(selected disabled hidden) 請選擇
+                  option(value="1") 退貨原因1
+                  option(value="1") 退貨原因2
+              input(type="text").md
 
       .infoCard.mb32
         .infoCard__title
-          span 退貨收件人資料
-          span ※ 標示*符號的欄位為必填。
+          span.f24 退貨收件人資料
+          span ※ 標示 #[span.red *] 符號的欄位為必填。
         .infoCard__content.infoCard--form
 
-          .group.mb16
-            span.star.sp 姓名
-            input(type="text" required).std.md
+          .line.mb16
+            span.star.justify 姓名
+            input(type="text" required).md
 
             .radio_unit
               input(type="radio" name="gender" id="male") 
@@ -195,15 +193,15 @@ block content
               input(type="radio" name="gender" id="female") 
               label(for="female") 小姐
 
-          label.group.mb16
+          label.line.mb16
             span.star 電子信箱
-            input(type="mail" required).std.md
+            input(type="mail" required).md
 
-          label.group.mb16 
+          label.line.mb16 
             span.star 連絡電話
-            input(type="tel" required).std.md
+            input(type="tel" required).md
 
-          label.group.addr.mb16
+          label.line.addr.mb16
             span.star 聯絡地址
             .select_unit
               select(required)
@@ -215,53 +213,54 @@ block content
                 option(disabled selected hidden) 鄉鎮區
                 option(value="松山區") 松山區
             
-            input(type="text" required placeholder="郵遞區號").std
+            input(type="text" required placeholder="郵遞區號")
             
-          label.group
+          label.line
             span
-            input(type="text" required).std
+            input(type="text" required)
 
 
       .infoCard.mb32
         .infoCard__title
-          span 退款資訊
-          span ※ 標示*符號的欄位為必填。
+          span.f24 退款資訊
+          span ※ 標示 #[span.red *] 符號的欄位為必填。
 
         .infoCard__content.infoCard--form
 
-          label.select_unit.group.mb16.md
+          .line.mb16
             span.star 退款方式
-            select(required)
-              option(value="" selected) 銀行匯款
-              option(value="") 退款方式2
+            .select_unit.md
+              select(required)
+                option(value="" selected) 銀行匯款
+                option(value="") 退款方式2
 
-          .group.mb16.bank
+          .line.mb16.bank
             span.star 銀行名稱
             .select_unit
               select(required)
                 option(value="" selected) 
-              
-            span.star 分行
-            input(type="text" required).std
 
+            .line
+              span.star 分行
+              input(type="text" required)
 
-          .group.mb16
+          .line.mb16
             span.star 銀行帳號
-            input(type="text" required).std.md
+            input(type="text" required).md
 
-          .group.mb16
-            span.star.sp 戶名
-            input(type="text" required).std.md
+          .line.mb16
+            span.star.justify 戶名
+            input(type="text" required).md
 
-          .group.mb16
+          .line.mb16
             span 備註說明
-            input(type="text" required).std.md
+            input(type="text" required).md
 
 
       .infoCard.mb32.w100
         .infoCard__title.info
-          span 退貨須知
-          a.line 更多退貨相關說明
+          span.f24 退貨須知
+          a.underline 更多退貨相關說明
         .infoCard__content.infoCard--note
           p 根據消保法規定，於本站購買產品之故客均享有商品道或七天猶豫期之權益，詳細辦法如下：
           ol.lh22.pl24
@@ -280,10 +279,10 @@ block content
             input(type="checkbox")
             .box
             span 您已詳細閱讀並同意我們的
-              a().line 退貨相關說明
+              a().underline 退貨相關說明
 
       
       .submit.pt32
-        a(href="order.html").btn 送出
+        a(href="returning.html").btn 送出
         a(href="order.html").btn.cancel 返回
 

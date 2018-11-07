@@ -34,7 +34,7 @@ block content
     
       .infoCard.mb32.w100
         .infoCard__title 
-          span 訂單相關資訊資料
+          span.f24 訂單相關資訊資料
           
         .infoCard__content.infoCard--multiple
 
@@ -67,21 +67,21 @@ block content
             .table__title
               div.pic 圖片
               div.name 商品貨號 / 商品名稱
-              div 數量
-              div 單價
-              div 小計
-              div 貨品狀態              
+              div.num 數量
+              div.per 單價
+              div.sum 小計
+              div.state 貨品狀態              
             .table__content
               div.pic
                 img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
               div.name 月子補養兩日餐(10日)
-              div(data-title="數量") 1
-              div NT$11,888
-              div NT$11,888
-              div.red 退貨處理中
+              div(data-title="數量").num 1
+              div.per NT$11,888
+              div.sum NT$11,888
+              div.state.red 退貨處理中
 
             .table__total.wide5
-              div 共 1 項，購物金額 11,888 + 常溫運費 0 =
+              div.mr8 共 1 項，購物金額 11,888 + 常溫運費 0 =
               div NT $ 11,888
 
 
@@ -92,40 +92,39 @@ block content
             .table__title
               div.pic 圖片
               div.name 商品貨號 / 商品名稱
-              div 數量
-              div 單價
-              div 小計
-              div 貨品狀態              
-            .table__content.appendType
+              div.num 數量
+              div.per 單價
+              div.sum 小計
+              div.state 貨品狀態              
+            .table__content
               div.pic 
                 img(src="./styles/images/01-item02.jpg" alt="紫金堂")
               div.name 紫金堂月子餐【15日份】
-              div(data-title="數量") 1
-              div NT$28,200
-              div NT$28,200
-              div -
-              div.append 《好孕加值禮》： 
-                span + (A) 疏乳棒1支、美身帶1條
+              div(data-title="數量").num 1
+              div.per NT$28,200
+              div.sum NT$28,200
+              div.state -
+            .table__append 《好孕加值禮》：  + (A) 疏乳棒1支、美身帶1條
             .table__content
               div.pic 
                 img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
               div.name 月子補養兩日餐(10日)
                 .sub 產後第二週 + 哺乳
-              div(data-title="數量") 1
-              div NT$11,888
-              div NT$11,888
-              div -
+              div(data-title="數量").num 1
+              div.per NT$11,888
+              div.sum NT$11,888
+              div.state -
             .table__content
               div.pic 
                 img(src="./styles/images/01-item01.jpg" alt="紫金堂")
               div.name 月子補養兩日餐(10日)
                 .sub 產後第一週 + 哺乳 (出一停一)
-              div(data-title="數量") 1
-              div NT$22,888
-              div NT$22,888
-              div.red 退貨處理中
-            .table__total 
-              div 共 1 項，購物金額 62,976 + 常溫運費 0 =
+              div(data-title="數量").num 1
+              div.per NT$22,888
+              div.sum NT$22,888
+              div.state.red 退貨處理中
+            .table__total.wide5
+              div.mr8 共 1 項，購物金額 62,976 + 常溫運費 0 =
               div NT $ 62,976
 
 

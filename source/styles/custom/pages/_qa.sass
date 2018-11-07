@@ -1,19 +1,112 @@
 
-  
 #qa
   .landing
     height: 350px
     margin-bottom: 35px
     +fc
 
-    .slogan
-      color: white
-      text-align: center
-      text-shadow: 0 0 100px rgba(black, 0.3), 0 0 10px rgba(black, 0.3)
-    .f56
-      margin-bottom: 0
-    .f24.bd
-      width: 310px
-      margin-top: 6px
-      padding-top: 6px
-      border-top: 1px solid #fff
+  .slogan
+    color: white
+    text-align: center
+    text-shadow: 0 0 100px rgba(black, 0.3), 0 0 10px rgba(black, 0.3)
+  .f56
+    margin-bottom: 0
+  .f24.bd
+    width: 310px
+    margin-top: 6px
+    padding-top: 6px
+    border-top: 1px solid #fff
+
+.qa .block__content
+  +padding(null 30px)
+
+.qa__menu
+  position: relative
+  padding-right: 120px
+  border-bottom: 1px solid #eee
+  ul
+    +f
+  li
+    +fc
+    height: 60px
+    white-space: nowrap
+  
+  li:not(:last-child)
+    +margin(null 32px null null )
+
+  li.active
+    color: $brown-dark
+    font-weight: bold
+    border-bottom: 2px solid $brown-dark
+
+  .control
+    +fc
+    +position(absolute, 16px 0 null null )
+    font-size: 0.9rem
+    .btn
+      +size(30px)
+      background-color: rgb(229, 229, 229)
+      color: #fff
+      +fc
+      border-radius: 50%
+      +margin(null 7px)
+      cursor: pointer
+      +hoverBgc($brown)
+
+.qa__content
+  +padding(40px null)
+
+  [class*="unit__"]
+    text-indent: -20px
+
+  .unit__q
+    +padding( 16px 24px 16px 34px)
+    border-top: 1px solid #eee
+    border-bottom: 1px solid #eee
+    +f(flex-start, center)
+    +hoverText($brown-dark)
+    cursor: pointer
+
+  .unit__a
+    display: none
+    // height: 0
+    overflow: hidden
+    line-height: 2
+    color: #878787
+    +padding( 14px 14px 45px 34px)
+    
+  .plus
+    margin-right: 10px
+    transform: translateX(10px)
+    +size(2px ,10px)
+    background-color: #aaa
+    margin-left: auto
+    &:after
+      content: ""
+      display: block
+      +size(2px ,10px)
+      background-color: #aaa
+      transform: rotate(90deg)
+
+  li.expend
+    .unit__q
+      background-color: #eee
+      color: $brown-dark
+
+    .unit__a
+      // display: block
+    .plus
+      background-color: #eee
+      &:after
+        background-color: $brown-dark
+
+
+
+
+
+
+
+
+
+
+

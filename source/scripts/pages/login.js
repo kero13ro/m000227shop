@@ -84,3 +84,14 @@ $("#js-sent").click(function () {
 
 
 
+$("#qa .unit__q").click(function () {
+  $("#qa .qa__content")
+    .children("li")
+    .removeClass("expend")
+    .find(".unit__a")
+    .slideUp(300);
+  $(this).parent("li").addClass("expend");
+  $(this).parent("li").find(".unit__a").slideDown(300);
+
+
+});

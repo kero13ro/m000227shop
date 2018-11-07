@@ -31,8 +31,6 @@
     height: $height
 
 
-
-
 .breadcrumb
   +padding( 20px null)
   white-space: nowrap
@@ -46,60 +44,6 @@
   +max(330)
     li:nth-child(3)
       display: none
-
-
-
-.check_unit
-  cursor: pointer
-  +f(null, center, row)
-  position: relative
-  // margin-bottom: 20px
-  // margin-right: 28px
-
-  input[type="checkbox"] 
-    display: none
-
-  .box 
-    display: inline-block
-    +size(18px)
-    background: $white
-    border: 1px solid $brown
-    margin-right: 15px
-    border-radius: 3px
-    flex-shrink: 0
-    
-    &:after 
-      content: ""
-      position: absolute
-      +size(0, 3px)
-      background: $brown-dark
-        
-      transform: translate(6px, 11px) rotate(-45deg)
-      transform-origin: left
-      transition: all 50ms
-      transition-delay: 0ms
-    
-    &:before 
-      content: ""
-      position: absolute
-      +size(0, 3px)
-      background: $brown-dark
-        
-      transform: translate(2px, 6px) rotate(45deg)
-      transform-origin: left
-      transition: all 50ms
-      transition-delay: 50ms
-  
-  input[type="checkbox"]:checked 
-    & + .box 
-      &:before 
-        width: 8px
-        transition-delay: 0ms
-      &:after 
-        width: 12px
-        transition-delay: 50ms
-
-
 
 
 .slcik-menu
@@ -172,14 +116,6 @@
   +max(990)
     ul
       +padding(null 40px)
-
-
-
-
-
-
-
-
 
 
 .epapper
@@ -342,94 +278,6 @@
 
 
 
-.radio_unit
-  height: 45px
-  white-space: nowrap
-
-  input[type="radio"]
-    position: absolute
-    opacity: 0
-    pointer-events: none
-
-  input[type="radio"] + label
-    cursor: pointer
-    +size(100%)
-    +fc
-    &:before
-      content: ""
-      display: block
-      +size(18px)
-      background: $white
-      border-radius: 50%
-      border: 1px solid rgb(211, 174, 130)
-      transition: background-color 0.3s ease, box-shadow 0.3s ease
-      flex-shrink: 0
-
-  input[type="radio"]:checked + label:before
-    background-color: rgb(211, 174, 130)
-    box-shadow: inset 0 0 0 3px #f4f4f4
-
-  input[type="radio"]:disabled + label:before
-    box-shadow: inset 0 0 0 4px #f4f4f4
-    border-color: #b4b4b4
-    background: #b4b4b4
-
-
-
-.select_unit
-  +f(center, center)
-  width: 240px
-  position: relative
-  white-space: nowrap
-
-  &:after
-    content: ""
-    display: block
-    +position(absolute, 16px 16px null null )  //20-4
-    +triangle("down", 12px, 8px, $brown)
-    pointer-events: none
-
-  select
-    +size(100%, 40px)
-    line-height: 40px
-    +padding(null 15px)
-    border: 1px solid #E5E5E5
-    border-radius: 3px
-    color: rgb(100,100,100)
-    +trans
-
-    &::-ms-expand
-      display: none
-    &:hover
-      background-color: $brown-light
-    &:focus
-      border-color: $brown-dark
-
-.search_unit
-  +f
-  +size(260px, 40px)
-  position: relative
-  input[type="search"] 
-    +size(100%)
-    border: 1px solid #E5E5E5
-    +padding(null 15px)
-    
-    // +trans
-    // &::placeholder 
-    //   color: #1E1E1E
-    // &:focus 
-    //   background-color: $brown-dark
-    // &:hover 
-    //   background-color: $brown-dark
-
-  input[type="submit"] 
-    +size(38px,100%)
-    opacity: 0
-    +position(absolute, null 0 null null )
-  &:before
-    +position(absolute, 12px 8px null null )
-    color: $brown
-    font-size: 1rem
 
 .plain
   width: 100%
@@ -513,32 +361,34 @@
   .box__content
     +padding(null 38px)
 
-  .group
-    +f(flex-start,center)
-    position: relative
-    padding-left: 96px
+  // .group
+    // +f(flex-start,center)
+    // position: relative
+    // padding-left: 96px
 
-    > span:first-child
-      +position(absolute, 0 null null 0)
-      +size(66px, 38px)
-      line-height: 38px
-      flex-shrink: 0
-      margin-right: 30px
+    // > span:first-child
+    //   +position(absolute, 0 null null 0)
+    //   +size(66px, 38px)
+    //   width: 66px
+    //   line-height: 38px
+    //   flex-shrink: 0
+    //   margin-right: 30px
   
 
   .box__content.top
     +padding(1.2rem null )
-    .group > span:nth-child(2)
-      color: #B47832
+    .brown
+      +fc
+      height: 40px
+    .change
+      a
+        margin-left: 15px
+        color: #B47832
+      span
+        transform: translateY(4px)
+        // display: inline-block
 
-    .change > span:nth-child(1)
-      transform: translateY(4px)
-      display: inline-block
 
-    .change a
-      text-decoration: underline
-      margin-left: 15px
-      color: #B47832
 
   .box__content.bottom
     +padding(2.2rem null )
@@ -551,22 +401,22 @@
     &.transX
       transform: translateX(15px)
 
-  input,
-  select
-    +size(100%, 38px)
-    line-height: 38px
-    +padding(null 15px)
-    border: 1px solid $brown
-    border-radius: 3px
-    color: $brown-dark
-    +trans
-    &::placeholder
-      color: $brown-dark
-    &:hover
-      background-color: $brown-light
-    &:focus
-      color: $brown-dark
-      border-color: $brown-dark
+  // input,
+  // select
+  //   +size(100%, 38px)
+  //   line-height: 38px
+  //   +padding(null 15px)
+  //   border: 1px solid $brown
+  //   border-radius: 3px
+  //   color: $brown-dark
+  //   +trans
+  //   &::placeholder
+  //     color: $brown-dark
+  //   &:hover
+  //     background-color: $brown-light
+  //   &:focus
+  //     color: $brown-dark
+  //     border-color: $brown-dark
 
   .addr
     .select_unit
@@ -654,18 +504,18 @@
 
       
 
-input.std  //可以再把box 裡面的樣式簡化
-  +size(100%, 38px)
-  line-height: 38px
-  +padding(null 15px)
-  border: 1px solid $brown
-  border-radius: 3px
-  color: $brown-dark
-  +trans
-  &::placeholder
-    color: $brown-dark
-  &:hover
-    background-color: $brown-light
-  &:focus
-    color: $brown-dark
-    border-color: $brown-dark
+// input.std  //可以再把box 裡面的樣式簡化
+//   +size(100%, 38px)
+//   line-height: 38px
+//   +padding(null 15px)
+//   border: 1px solid $brown
+//   border-radius: 3px
+//   color: $brown-dark
+//   +trans
+//   &::placeholder
+//     color: $brown-dark
+//   &:hover
+//     background-color: $brown-light
+//   &:focus
+//     color: $brown-dark
+//     border-color: $brown-dark

@@ -21,21 +21,21 @@ block content
           .box__title 帳號密碼設定
             span.f16.lh18.ml24 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
           .box__content.bottom
-            .group.mb16.md
+            .line.mb16.md
               span.star.justify 帳號
               input(type="text" required)
 
-            .group.mb16.md
+            .line.mb16.md
               span.star.justify 密碼
               input(type="text" required)
 
-            .group.md
+            .line.md
               span.star.justify 確認密碼
               input(type="text" required)
 
         .box.mb48
           .box__content.bottom
-            .group.mb16.name
+            .line.mb16.name
               span.star.justify 姓名
               input(type="text" required)
               
@@ -46,7 +46,7 @@ block content
                 input(type="radio" name="gender" id="female") 
                 label(for="female") 小姐
 
-            label.group.addr.mb8
+            label.line.addr.mb8
               span.star 聯絡地址
               .select_unit
                 select(required)
@@ -63,18 +63,18 @@ block content
                   option(disabled selected hidden) 日期
                   option(value="日期") 日期
 
-            .group.mb16
+            .line.mb16
               .red 出生日期一旦送出將不可修改，請確認資料無誤。
 
-            label.group.mb16 
+            label.line.mb16 
               span.star 連絡電話
               input(type="tel" required)
 
-            label.group.mb16
+            label.line.mb16
               span.star 電子信箱
               input(type="mail" required)
 
-            label.group.addr.mb16
+            label.line.addr.mb16
               span.star 聯絡地址
               .select_unit
                 select(required)
@@ -88,11 +88,11 @@ block content
               
               input(type="text" required placeholder="郵遞區號")
               
-            label.group.mb16
+            label.line.mb16
               span
               input(type="text" required)
 
-            label.group.mb16.verify
+            label.line.mb16.verify
               span.justify.star 驗證碼
               input(type="text" placeholder="請輸入驗證碼" required)
               img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16

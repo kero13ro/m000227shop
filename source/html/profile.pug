@@ -40,19 +40,19 @@ block content
         .box.mb24.mt24
           .box__title 帳號密碼設定
           .box__content.top
-            .group
+            .line
               span.justify 帳號
-              span tasteforlife@gmail.com
-            .group
+              .brown tasteforlife@gmail.com
+            .line
               span.justify 密碼
-              span.change 
+              .brown.change 
                 span ***********
-                a(href="alter.html") 密碼變更
+                a(href="alter.html").underline 密碼變更
 
         .box.mb24
           .box__title 帳號密碼設定
           .box__content.bottom
-            .group.mb16.name
+            .line.mb16.name
               span.star.justify 姓名
               input(type="text" placeholder="張樂樂" required)
 
@@ -63,21 +63,21 @@ block content
                 input(type="radio" name="gender" id="female") 
                 label(for="female") 小姐
 
-            label.group.mb16 
+            label.line.mb16 
               span.star 出生日期
               //- span.brown 1980-08-10
               input(type="text" required placeholder="1980-08-10")
 
-            label.group.mb16 
+            label.line.mb16 
               span.star 連絡電話
               input(type="tel" placeholder="0988-818-818" required)
 
 
-            label.group.mb16
+            label.line.mb16
               span.star 電子信箱
               input(type="mail" placeholder="test@gmail.com" required)
 
-            label.group.addr.mb16
+            label.line.addr.mb16
               span.star 聯絡地址
               .select_unit
                 select(required)
@@ -94,7 +94,7 @@ block content
               input(type="text" required placeholder="406")
               //- input(type="text" required placeholder="郵遞區號")
               
-            label.group.mb20
+            label.line.mb20
               span
               input(type="text" required placeholder="東山路一段147巷49號")
 
