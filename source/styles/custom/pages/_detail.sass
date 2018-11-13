@@ -66,9 +66,9 @@
 
   +max(767)
     +padding(12px null)
-    > span:first-child
+    > span:nth-child(2)
       width: 100%
-      margin-bottom: 10px
+      margin-top: 10px
 
   +max(400)
     +padding(10px null)
@@ -238,7 +238,7 @@ span.sp
   .num
     width: 70px
 
-  +min(1600) //讓div有兼具，並在螢幕縮小時會消失
+  +min(1600) //讓div有間距，並在螢幕縮小時會消失
     > div
       &:not(.pic):not(.name):not(.check)
         +margin(null null null 40px)

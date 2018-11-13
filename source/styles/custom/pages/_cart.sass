@@ -4,45 +4,126 @@
   +f(space-between,center)
   +margin(null auto)
   max-width: 910px
+  min-width: 500px
+  +padding(null 10px)
   a
     +f(center, center, column)
     position: relative
     span
-      position: absolute
-      bottom: -35px
+      padding-top: 10px
+
 
   [class^="icon"]
     font-size: 1.9rem
     color: rgb(149, 149, 149)
+    +padding(null 3px 15px 3px)
 
   .icon-double-right
     color: $brown
 
-#cart
-  .container
+  +max(767)
+    font-size: 15px
+
+    [class^="icon"]
+      +padding(null 0px 10px 0px)
+    a
+      span 
+        display: none
+      &:after
+        content: attr(data-abbr)
+        margin-top: 10px
+
+      &.current
+        color: $brown-dark
+        flex-shrink: 1
+
+      &:not(.current)
+        flex-shrink: 6
+
+  +max(360)
+    margin-bottom: 0
+    a
+      &.current
+        max-width: 70px
+
+      &:not(.current)
+        max-width: 50px
+    // [class^="icon"]:before
+    //   +margin(0)
+
+.cart-grid
+  .infoCard-wrap
     position: relative
 
   .infoCard,
   .submit
     width: calc(100% - 405px)
 
+  +min(501)
+    .infoCard
+      +padding(null 35px)
+
   .infoCard.right
     width: 380px
-    +position(absolute, null 25px null null )
-    right: 25px
+    +position(absolute, 0 0 null null )
+
+    .infoCard__title span 
+      color: #333
+
+    .border
+      border-top: 1px solid #eee
+      margin-top: 0.5rem
 
   [class*="sum__"]
     +padding(0px)
 
-  .infoCard--radio
+  .submit
+    border-width: 0px
+    .btn
+      max-width: 375px
+      width: 100%
+      height: 50px
+      +fc
+      +margin(null 10px)
 
-    +f
+  
+  .infoCard__title .ml24
+    padding-bottom: 3px
+
+  +max(1365)
+    .infoCard,
+    .submit
+      width: 100%
+
+    .infoCard.right
+      width: 100%
+      max-width: 718px
+      margin-left: auto
+      +position(relative, null 0 null null )
+
+
+
+.infoCard--sm
+  .infoCard__title
+    +padding(12px null )
+  .infoCard__content
+    +padding(8px null )
+
+
+
+#cart
+  .radio-top
+    .infoCard__content
+      +f
+
     .radio_unit
       width: 100px
+
     label
       justify-content: flex-start
-    label:before
-      margin-right: 15px
+      &:before
+        margin-right: 15px
+
 
   .del
     min-width: 0px
@@ -55,15 +136,19 @@
     cursor: pointer
 
   .table__title, .table__content
-    +padding(null 10px)
+    +min(991)
+      +padding(null 10px)
 
   .select_unit
     width: 80px
 
   .sub
     font-size: 15px
+    
   .num
-    min-width: 80px
+    min-width: 120px
+    +min(1600)
+      min-width: 80px
 
   input
     +margin(null 8px)
@@ -74,15 +159,40 @@
     &::placeholder
       color: $brown-dark
 
+  +max(990)
+    .select_unit
+      margin-bottom: 5px
+    .icon-trash
+      +position(absolute, calc(50% - 16px) 0 null null )
+      +padding(0 26px)
+      font-size: 1rem
+
+  +max(768)
+    .baseline
+      flex-wrap: wrap
+      span
+        width: 100%
+        margin-left: 0
+        margin-top: 10px
+
+  +max(450)
+    .icon-trash
+      top: auto
+      bottom: 20px
+      +padding(0 15px)
+
+
+
   .gift__wrap
     +f(space-between, stretch)
+    max-width: 1000px
 
   .gift
+    +margin(null 8px)
     +f(flex-start, flex-start, column)
     // min-width: 200px
-    +margin(null 8px)
     width: 100%
-    // min-height: 315px
+    // max-width: 215px
     +padding(18px 18px)
     border: 1px solid #ddd
 
@@ -102,6 +212,7 @@
 
 
   .gift__bottom
+    margin-top: 15px
     width: 100%
     +f(space-between,flex-end)
     .check_unit 
@@ -109,6 +220,30 @@
         color: $brown-dark
       .box
         margin-right: 10px
+
+  +max(990)
+    .gift
+      font-size: 15px
+    .gift__wrap
+      min-width: 750px
+
+  +max(400)
+    .gift
+      font-size: 14px
+      +padding(10px 10px)
+
+    .gift__wrap
+      min-width: 700px
+
+    .gift__bottom
+      flex-wrap: wrap
+
+    .gift__num,
+    .gift__check
+      width: 100%
+      margin-bottom: 8px
+
+
 
   .js-soldOut
     .gift__num
@@ -128,14 +263,7 @@
       &:before
         content: "已贈罄"
 
-  .submit
-    border-width: 0px
-    .btn
-      max-width: 375px
-      width: 100%
-      height: 50px
-      +fc
-      +margin(null 10px)
+
 
 #modal-gift
   +size(650px, 330px)
@@ -155,3 +283,119 @@
     border-bottom: 1px solid #eee
   
     
+
+#info
+  .infoCard--form
+    +f
+    flex-wrap: wrap
+    +margin(null -18px)
+
+  .line
+    width: calc(50% - 36px)
+    +margin(null 18px)
+
+  .radio_wrap
+    padding-left: 5px
+    label
+      margin-right: 30px
+      justify-content: flex-start
+      &:before
+        margin-right: 12px
+
+  .addr
+    width: 100%
+    > *:not(.main)
+      margin-right: 12px
+      max-width: 120px
+
+  .select_unit
+    width: 100%
+
+  .eli
+    padding-right: 35px
+
+  .infoCard__title
+    .wrap
+      margin-left: auto
+      +fc
+      >*:not(:first-child)
+        margin-left: 25px
+    .box
+      +size(15px)
+      margin-right: 12px
+
+  .tri-type
+    width: 100%
+    white-space: nowrap
+    .wrap
+      height: 40px
+      +f(flex-start, center)
+    .check_unit
+      margin-right: 30px
+
+  .ps
+    .infoCard__content
+      padding-bottom: 25px
+    .line
+      width: calc(100% - 36px)
+      border-bottom: 1px solid #ddd
+    ul
+      +margin(null 18px)
+
+  .ps2
+    border-width: 0
+
+
+#info
+  +max(990)
+    .addr
+      flex-wrap: wrap
+      
+    .line.lg-break
+      width: 100%
+
+  +max(767)
+    .infoCard__title .wrap
+      margin-top: 10px
+
+  +max(650)
+
+    .addr
+      .select_unit
+        width: calc(50% - 6px)
+        max-width: 100%
+        &.break
+          margin-right: 0
+
+      input.break
+        width: 100%
+        max-width: 100%
+        margin-right: 0
+
+    .line
+      width: 100%
+    .radio_wrap
+      padding-left: 96px
+
+    .tri-type
+      height: 90px
+      .wrap
+        width: 100%
+        height: auto
+        flex-wrap: wrap
+
+      .check_unit
+        width: 100%
+        +margin(null 0px 8px null )
+
+
+  +max(380)
+    font-size: 14px
+    .line
+      padding-left: 76px
+      > span:first-child
+        width: 56px
+    select,
+    input
+      +padding(null 8px)
+

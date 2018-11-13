@@ -4,7 +4,7 @@ extends ./include/layout.pug
 block content
   
   
-  #cart
+  #cart.cart-grid
 
     .container
       .breadcrumb
@@ -12,254 +12,264 @@ block content
           li 首頁
           li.icon-right-thin 購物車
 
-      .progress.mb72
-        a
-          img(src="./styles/images/cart-01b.png", alt="紫金堂")
-          span 確認購物清單
-        .icon-double-right
-        a
-          img(src="./styles/images/cart-02.png", alt="紫金堂")
-          span 填寫訂購資料
-        .icon-single-right
-        a
-          img(src="./styles/images/cart-03.png", alt="紫金堂")
-          span 選擇付款方式
-        .icon-single-right
-        a
-          img(src="./styles/images/cart-04.png", alt="紫金堂")
-          span 訂單、資料確認
-        .icon-single-right
-        a
-          img(src="./styles/images/cart-05.png", alt="紫金堂")
-          span 購物完成
+      .scrollbarX.mb32
+        .progress.mb32
+          a(data-abbr="購物清單").current
+            img(src="./styles/images/cart-01b.png", alt="紫金堂")
+            span 確認購物清單
+          .icon-double-right
+          a(data-abbr="填寫資料")
+            img(src="./styles/images/cart-02.png", alt="紫金堂")
+            span 填寫訂購資料
+          .icon-single-right
+          a(data-abbr="付款方式")
+            img(src="./styles/images/cart-03.png", alt="紫金堂")
+            span 選擇付款方式
+          .icon-single-right
+          a(data-abbr="資料確認")
+            img(src="./styles/images/cart-04.png", alt="紫金堂")
+            span 訂單、資料確認
+          .icon-single-right
+          a(data-abbr="購物完成")
+            img(src="./styles/images/cart-05.png", alt="紫金堂")
+            span 購物完成
 
 
-      .infoCard.mb32.right
-        .infoCard__title 
-          span.f24 訂單總計
-          
-        .infoCard__content.infoCard--multiple
-
-          .multiple__sum.lh22
-            ul.sum__order.nostyle
-              li.bold 訂單總計
-              li 常溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
-                span NT$ 11,888
-              li 低溫商品 (&nbsp; #[.brown 3] &nbsp;項 ) 
-                span NT$ 62,976
-              li 滿額贈品 (&nbsp; #[.brown 1] &nbsp;項 ) 
-                span.red 贈品
-              li 紅利折抵 (&nbsp; #[.brown -150] &nbsp;點 ) 
-                span.red NT$ -150
-              li 活動折扣 (&nbsp; #[.brown 0] &nbsp;項 ) 
-                span NT$ 0
-              li 常溫運費 
-                span NT$ 0
-              li 低溫運費             
-                span NT$ 0
-              li.bold 訂單總計金額
-                span.f20 NT $ 74,714
                 
+      .infoCard-wrap
 
-      .infoCard.mb32
-        .infoCard__title 
-          span.f24 請選擇運送範圍
-          
-        .infoCard__content.infoCard--radio
-          .radio_unit
-            input(type="radio", name="cart1" id="cart1-1") 
-            label(for="cart1-1") 本島
-          .radio_unit
-            input(type="radio", name="cart1" id="cart1-2") 
-            label(for="cart1-2") 離島
-
-
-
-      .infoCard.mb32
-        .infoCard__title 
-          span.f24 購物清單
-          span.ml24 共 #[span.red 4] 項商品
-          
-        .infoCard__content.infoCard--multiple
-
-          .baseline.mb16
-            .icon-thermometer.normal 常溫配送
-            span 本區運費 NT$80 元，商品金額 NT$599（含）以上免運費
-
-          .multiple__secondary.mb32
-            .table__title
-              div.pic 圖片
-              div.name 商品貨號 / 商品名稱
-              div.num 數量
-              div.per 單價
-              div.sum 小計
-              div.del 刪除
-            .table__content
-              div.pic
-                img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
-              div(data-title="數量").num
-                label.select_unit
-                  select(required)
-                    option(value="1" selected) 1
-                    option(value="2") 2
-                    option(value="3") 3
-              div.per NT$11,888
-              div.sum NT$11,888
-              div.del: .icon-trash
-
-            .table__total.wide5
-              div.mr8 共 1 項，購物金額 11,888 + 常溫運費 0 =
-              div NT $ 11,888
+        .infoCard.mb32.radio-top.infoCard--sm
+          .infoCard__title 
+            span.f24 請選擇運送範圍
+            
+          .infoCard__content
+            .radio_unit
+              input(type="radio", name="cart1" id="cart1-1") 
+              label(for="cart1-1") 本島
+            .radio_unit
+              input(type="radio", name="cart1" id="cart1-2") 
+              label(for="cart1-2") 離島
 
 
-          .baseline.mb16
-            .icon-thermometer.low 低溫配送
-            span 本區運費 NT$150 元，商品金額 NT$1,500（含）以上免運費
 
-          
-          .multiple__secondary.mb16
-            .table__title
-              div.pic 圖片
-              div.name 商品貨號 / 商品名稱
-              div.num 數量
-              div.per 單價
-              div.sum 小計
-              div.del 刪除
-            .table__content
-              div.pic 
-                img(src="./styles/images/01-item02.jpg" alt="紫金堂")
-              div.name 紫金堂月子餐【15日份】
-              div(data-title="數量").num
-                label.select_unit
-                  select(required)
-                    option(value="1" selected) 1
-                    option(value="2") 2
-                    option(value="3") 3
-              div.per NT$28,200
-              div.sum NT$28,200
-              div.del: .icon-trash
-            .table__append 《好孕加值禮》：  + (A) 疏乳棒1支、美身帶1條
-            .table__content
-              div.pic 
-                img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
-                .sub 產後第二週 + 哺乳
-              div(data-title="數量").num
-                label.select_unit
-                  select(required)
-                    option(value="1" selected) 1
-                    option(value="2") 2
-                    option(value="3") 3
-              div.per NT$11,888
-              div.sum NT$11,888
-              div.del: .icon-trash
-            .table__content
-              div.pic 
-                img(src="./styles/images/01-item01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
-                .sub 產後第一週 + 哺乳 (出一停一)
-              div(data-title="數量").num
-                label.select_unit
-                  select(required)
-                    option(value="1" selected) 1
-                    option(value="2") 2
-                    option(value="3") 3
-              div.per NT$22,888
-              div.sum NT$22,888
-              div.del: .icon-trash
-            .table__total.wide5
-              div.mr8 共 1 項，購物金額 62,976 + 常溫運費 0 =
-              div NT $ 62,976
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 購物清單
+            span 共 #[span.red 4] 項商品
+            
+          .infoCard__content.infoCard--multiple
 
-      .infoCard.mb32
-        .infoCard__title 
-          span.f24 紅利折抵
-          
-        .infoCard__content.lh20 您目前共享有紅利點數 #[span.red 1,130 ]
-          | 點，每1點可折抵 #[span.red NT $ 1 ]
-          | 元，本次購物使用
-          input(type="text" required placeholder="150")
-          | 點 ( #[span.red NT$150元]
-          | ) #[br]
-          span.gray 每次交易最高可折抵該筆訂單之消費金額150元
+            .baseline.mb16
+              .icon-thermometer.normal 常溫配送
+              span 本區運費 NT$80 元，商品金額 NT$599（含）以上免運費
+
+            .multiple__secondary.mb32
+              .table__title
+                div.pic 圖片
+                div.name 商品貨號 / 商品名稱
+                div.num 數量
+                div.per 單價
+                div.sum 小計
+                div.del 刪除
+              .table__content
+                div.pic
+                  img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
+                div.name 月子補養兩日餐(10日)
+                div.num
+                  label.select_unit
+                    select(required)
+                      option(value="1" selected) 1
+                      option(value="2") 2
+                      option(value="3") 3
+                div.per NT$11,888
+                div.sum NT$11,888
+                div.del: .icon-trash
+
+              .table__total.wide5
+                div.mr8 共 1 項，購物金額 11,888 + 常溫運費 0 =
+                div NT $ 11,888
 
 
-      .infoCard.mb32
-        .infoCard__title 
-          span.f24 滿額贈品
-          
-        .infoCard__content 
-          .mb16 本筆訂單金額 #[span.red NT$5,000] 元以上，可挑選 #[span.red 1] 項贈品
+            .baseline.mb16
+              .icon-thermometer.low 低溫配送
+              span 本區運費 NT$150 元，商品金額 NT$1,500（含）以上免運費
 
-          .gift__wrap.mb32
-            .gift
-              a.gift__pic.tank( href="#modal-gift" data-lity)
-                .fluid(style="background-image: url(styles/images/01-gift-1.jpg)")
+            
+            .multiple__secondary.mb16
+              .table__title
+                div.pic 圖片
+                div.name 商品貨號 / 商品名稱
+                div.num 數量
+                div.per 單價
+                div.sum 小計
+                div.del 刪除
+              .table__content
+                div.pic 
+                  img(src="./styles/images/01-item02.jpg" alt="紫金堂")
+                div.name 紫金堂月子餐【15日份】
+                div.num
+                  label.select_unit
+                    select(required)
+                      option(value="1" selected) 1
+                      option(value="2") 2
+                      option(value="3") 3
+                div.per NT$28,200
+                div.sum NT$28,200
+                div.del: .icon-trash
+              .table__append 《好孕加值禮》：  + (A) 疏乳棒1支、美身帶1條
+              .table__content
+                div.pic 
+                  img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
+                div.name 月子補養兩日餐(10日)
+                  .sub 產後第二週 + 哺乳
+                div.num
+                  label.select_unit
+                    select(required)
+                      option(value="1" selected) 1
+                      option(value="2") 2
+                      option(value="3") 3
+                div.per NT$11,888
+                div.sum NT$11,888
+                div.del: .icon-trash
+              .table__content
+                div.pic 
+                  img(src="./styles/images/01-item01.jpg" alt="紫金堂")
+                div.name 月子補養兩日餐(10日)
+                  .sub 產後第一週 + 哺乳 (出一停一)
+                div.num
+                  label.select_unit
+                    select(required)
+                      option(value="1" selected) 1
+                      option(value="2") 2
+                      option(value="3") 3
+                div.per NT$22,888
+                div.sum NT$22,888
+                div.del: .icon-trash
+              .table__total.wide5
+                div.mr8 共 1 項，購物金額 62,976 + 常溫運費 0 =
+                div NT $ 62,976
 
-              .gift__title 疏乳棒 (舒舒棒)
-              .gift__bottom
-                .gift__num: span 倒數 45
-                label.check_unit
-                  input(type="checkbox")
-                  .box
-                  span 選取
-            .gift.js-soldOut
-              a.gift__pic.tank( href="#modal-gift" data-lity)
-                .fluid(style="background-image: url(styles/images/01-gift-2.jpg)")
-              .gift__title 美身帶
-              .gift__bottom
-                .gift__num: span 倒數 13
-                .gift__check
-                  label.check_unit
-                    input(type="checkbox")
-                    .box
-                    span 選取
-
-            .gift
-              a.gift__pic.tank( href="#modal-gift" data-lity)
-                .fluid(style="background-image: url(styles/images/01-gift-3.jpg)")
-              .gift__title 艾力克斯的禮物-清涼膏隨身瓶 (30ml)
-              .gift__bottom
-                .gift__num: span 倒數 13
-                .gift__check
-                  label.check_unit
-                    input(type="checkbox")
-                    .box
-                    span 選取
-
-            .gift
-              a.gift__pic.tank( href="#modal-gift" data-lity)
-                .fluid(style="background-image: url(styles/images/01-gift-4.jpg)")
-              .gift__title 乳尖修護膏
-              .gift__bottom
-                .gift__num: span 倒數 36
-                .gift__check
-                  label.check_unit
-                    input(type="checkbox")
-                    .box
-                    span 選取
-          .gray 每次交易最高可折抵該筆訂單之消費金額150元
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 紅利折抵
+            
+          .infoCard__content.lh20 您目前共享有紅利點數 #[span.red 1,130 ]
+            | 點，每1點可折抵 #[span.red NT $ 1 ]
+            | 元，本次購物使用
+            input(type="text" required placeholder="150")
+            | 點 ( #[span.red NT$150元]
+            | ) #[br]
+            span.gray 每次交易最高可折抵該筆訂單之消費金額150元
 
 
-      .infoCard.mb32
-        .infoCard__title 
-          span.f24 備註說明
-          
-        .infoCard__content.lh20 ※ 提醒您，進行結帳前
-          span.red 請先確認購買的商品及金額
-      
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 滿額贈品
+            
+          .infoCard__content 
+            .mb16 本筆訂單金額 #[span.red NT$5,000] 元以上，可挑選 #[span.red 1] 項贈品
+            
+            .scrollbarX
+
+              .gift__wrap.mb32
+                .gift
+                  a.gift__pic.tank( href="#modal-gift" data-lity)
+                    .fluid(style="background-image: url(styles/images/01-gift-1.jpg)")
+
+                  .gift__title 疏乳棒 (舒舒棒)
+                  .gift__bottom
+                    .gift__num: span 倒數 45
+                    .gift__check
+                      label.check_unit
+                        input(type="checkbox")
+                        .box
+                        span 選取
+
+                .gift.js-soldOut
+                  a.gift__pic.tank( href="#modal-gift" data-lity)
+                    .fluid(style="background-image: url(styles/images/01-gift-2.jpg)")
+                  .gift__title 美身帶
+                  .gift__bottom
+                    .gift__num: span 倒數 13
+                    .gift__check
+                      label.check_unit
+                        input(type="checkbox")
+                        .box
+                        span 選取
+
+                .gift
+                  a.gift__pic.tank( href="#modal-gift" data-lity)
+                    .fluid(style="background-image: url(styles/images/01-gift-3.jpg)")
+                  .gift__title 艾力克斯的禮物-清涼膏隨身瓶 (30ml)
+                  .gift__bottom
+                    .gift__num: span 倒數 13
+                    .gift__check
+                      label.check_unit
+                        input(type="checkbox")
+                        .box
+                        span 選取
+
+                .gift
+                  a.gift__pic.tank( href="#modal-gift" data-lity)
+                    .fluid(style="background-image: url(styles/images/01-gift-4.jpg)")
+                  .gift__title 乳尖修護膏
+                  .gift__bottom
+                    .gift__num: span 倒數 36
+                    .gift__check
+                      label.check_unit
+                        input(type="checkbox")
+                        .box
+                        span 選取
+            .gray 每次交易最高可折抵該筆訂單之消費金額150元
+
+
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 備註說明
+            
+          .infoCard__content.lh20 ※ 提醒您，進行結帳前
+            span.red 請先確認購買的商品及金額
+
+
+
+        .infoCard.mb32.right.infoCard--sm
+          .infoCard__title 
+            span.f24 訂單總計
+            
+          .infoCard__content.infoCard--multiple
+
+            .multiple__sum.lh22
+              ul.sum__order.nostyle
+                li 常溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span NT$ 11,888
+                li 低溫商品 (&nbsp; #[.brown 3] &nbsp;項 ) 
+                  span NT$ 62,976
+                li 滿額贈品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span.red 贈品
+                li 紅利折抵 (&nbsp; #[.brown -150] &nbsp;點 ) 
+                  span.red NT$ -150
+                li 活動折扣 (&nbsp; #[.brown 0] &nbsp;項 ) 
+                  span NT$ 0
+                li 常溫運費 
+                  span NT$ 0
+                li 低溫運費             
+                  span NT$ 0
+                li.border 總計金額
+                  span.f24.italicNum NT $ 74,714
+
+
+
       .submit.pb80
-        a(href="info.html").btn 繼續似購物
-        .btn.cancel 下一步
+        a(href="category.html").btn 繼續似購物
+        a(href="info.html").btn.cancel 下一步
 
   
     //- #modal-cancel.lity-hide.modal.f16
-    .lity-hide#modal-gift.modal
-      div(style="background-image: url(styles/images/01-gift-1.jpg)").pic
-      .wrap
-        .f20 疏乳棒 (舒舒棒)
-        p.lh18 各大教學醫院 & BadyHome網友們大力推薦! #[br]
-          | 哺乳媽咪2的超人氣法寶! 女性平日乳房按摩好幫手~ #[br]
-          | 產品適用對象：哺乳媽咪乳房按摩、青春期胸部發育按摩、生理期前乳房脹痛按摩、平時UP雙峰按摩、肩頸不適梳理按摩、頭皮疏理按摩。 #[br]
-          | 本產品專利證號第D118298號，由台大產科臨床研發設計。
+    //- .lity-hide#modal-gift.modal
+    //-   div(style="background-image: url(styles/images/01-gift-1.jpg)").pic
+    //-   .wrap
+    //-     .f20 疏乳棒 (舒舒棒)
+    //-     p.lh18 各大教學醫院 & BadyHome網友們大力推薦! #[br]
+    //-       | 哺乳媽咪2的超人氣法寶! 女性平日乳房按摩好幫手~ #[br]
+    //-       | 產品適用對象：哺乳媽咪乳房按摩、青春期胸部發育按摩、生理期前乳房脹痛按摩、平時UP雙峰按摩、肩頸不適梳理按摩、頭皮疏理按摩。 #[br]
+    //-       | 本產品專利證號第D118298號，由台大產科臨床研發設計。

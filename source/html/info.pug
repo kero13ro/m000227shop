@@ -1,0 +1,273 @@
+
+extends ./include/layout.pug
+
+block content
+  
+  
+  #info.cart-grid
+
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 購物車
+
+      .scrollbarX.mb32
+        .progress.mb32
+          a(data-abbr="購物清單")
+            img(src="./styles/images/cart-01.png", alt="紫金堂")
+            span 確認購物清單
+          .icon-double-right
+          a(data-abbr="填寫資料").current
+            img(src="./styles/images/cart-02b.png", alt="紫金堂")
+            span 填寫訂購資料
+          .icon-single-right
+          a(data-abbr="付款方式")
+            img(src="./styles/images/cart-03.png", alt="紫金堂")
+            span 選擇付款方式
+          .icon-single-right
+          a(data-abbr="資料確認")
+            img(src="./styles/images/cart-04.png", alt="紫金堂")
+            span 訂單、資料確認
+          .icon-single-right
+          a(data-abbr="購物完成")
+            img(src="./styles/images/cart-05.png", alt="紫金堂")
+            span 購物完成
+
+
+                
+      .infoCard-wrap
+      
+        .infoCard.mb32
+          .infoCard__title
+            span.f24 訂購人資料
+            span ※ 標示 #[span.red *] 符號的欄位為必填。
+          .infoCard__content.infoCard--form
+
+            .line.mb16
+              span.star.justify 姓名
+              input(type="text" required)
+
+            .line.mb16.radio_wrap
+              .radio_unit
+                input(type="radio" name="gender" id="male") 
+                label(for="male") 先生
+              .radio_unit
+                input(type="radio" name="gender" id="female") 
+                label(for="female") 小姐
+
+            label.line.mb16
+              span.star 電子信箱
+              input(type="mail" required).md
+
+            label.line.mb16 
+              span.star 連絡電話
+              input(type="tel" required).md
+
+            label.line.addr
+              span.star 通訊地址
+
+              .select_unit.mb16
+                select(required)
+                  option(disabled selected hidden) 縣市
+                  option(value="台北市") 台北市
+
+              .select_unit.mb16.break
+                select(required)
+                  option(disabled selected hidden) 鄉鎮區
+                  option(value="松山區") 松山區
+              
+              input(type="text" required placeholder="郵遞區號").mb16.break
+              input(type="text" required).main.mb16
+                
+      
+        .infoCard.mb32
+          .infoCard__title
+            span.f24 收件人資料
+            span ※ 標示 #[span.red *] 符號的欄位為必填。
+            .wrap
+              label.check_unit
+                input(type="checkbox")
+                .box
+                span 同訂購人資訊
+
+
+          .infoCard__content.infoCard--form
+
+            .line.mb16
+              span.star.justify 姓名
+              input(type="text" required)
+
+            .line.mb16.radio_wrap
+              .radio_unit
+                input(type="radio" name="gender" id="male") 
+                label(for="male") 先生
+              .radio_unit
+                input(type="radio" name="gender" id="female") 
+                label(for="female") 小姐
+
+            label.line.mb16
+              span.star 電子信箱
+              input(type="mail" required).md
+
+            label.line.mb16 
+              span.star 連絡電話
+              input(type="tel" required).md
+
+            label.line.addr
+              span.star 通訊地址
+
+              .select_unit.mb16
+                select(required)
+                  option(disabled selected hidden) 縣市
+                  option(value="台北市") 台北市
+
+              .select_unit.mb16.break
+                select(required)
+                  option(disabled selected hidden) 鄉鎮區
+                  option(value="松山區") 松山區
+              
+              input(type="text" required placeholder="郵遞區號").mb16.break
+              input(type="text" required).main.mb16
+
+            label.line.mb16.lg-break
+              span.star 收貨時段
+              .select_unit
+                select(required)
+                  option(disabled selected) 上午 09:00 - 13:00
+                  option(value="") 收貨時段2
+
+            label.line.mb16.lg-break
+              span.star 收貨方式
+              .select_unit
+                select(required).eli
+                  option(disabled selected) 保持電話暢通，到貨時請來電通知
+                  option(value="") 收貨方式2
+
+            label.line.mb16
+              span.star 配送方式
+              span.brown.ml8 常溫宅配、冷藏宅配
+
+        .infoCard.mb32
+          .infoCard__title
+            span.f24 發票資訊
+            span ※ 標示 #[span.red *] 符號的欄位為必填。
+            .wrap
+              label.check_unit
+                input(type="checkbox")
+                .box
+                span 同訂購人資訊
+              label.check_unit
+                input(type="checkbox")
+                .box
+                span 同收件人資訊
+
+
+          .infoCard__content.infoCard--form
+
+            .line.mb16.tri-type
+              span.star 發票形式
+              .wrap
+                label.check_unit
+                  input(type="checkbox")
+                  .box
+                  span 捐贈發票
+                label.check_unit
+                  input(type="checkbox")
+                  .box
+                  span 二聯式發票
+                label.check_unit
+                  input(type="checkbox")
+                  .box
+                  span 三聯式發票
+              
+            label.line.mb16 
+              span.star 公司抬頭
+              input(type="text" required).md
+
+            label.line.mb16 
+              span.star 統一編號
+              input(type="text" required).md
+
+            label.line.addr
+              span.star 通訊地址
+
+              .select_unit.mb16
+                select(required)
+                  option(disabled selected hidden) 縣市
+                  option(value="台北市") 台北市
+
+              .select_unit.mb16.break
+                select(required)
+                  option(disabled selected hidden) 鄉鎮區
+                  option(value="松山區") 松山區
+              
+              input(type="text" required placeholder="郵遞區號").mb16.break
+              input(type="text" required).main.mb16
+
+
+
+
+        .infoCard.mb16.ps
+          .infoCard__title 
+            span.f24 訂單備註事項
+            
+          .infoCard__content.infoCard--form
+            label.line.pb32.mb24
+              span 訂單備註
+              textarea(rows="3")
+
+            ul.nostyle.lh20.red
+              li ※ 月子餐、小產餐，訂單付款完成後 會有專屬服務人員與您聯繫，安排出貨日期。
+              li ※ 生理餐、 紫金食堂系列因物流作業因素，可以指定到貨時段，恕無法指定到貨時間。
+              li ※ 低溫商品需要冷藏保鮮，下單前請先確認到貨日有人可收貨並盡速將商品冷藏。
+
+        .infoCard.mb32.ps2
+          .infoCard__content.lh20
+            .f18 備註說明
+            .gray 提醒您，進行結帳前 #[span.red 請先確認購買的商品及金額] ，並填寫正確相關資訊
+          
+
+
+
+        .infoCard.mb32.right
+          .infoCard__title 
+            span.f24 訂單總計
+            
+          .infoCard__content.infoCard--multiple
+
+            .multiple__sum.lh22
+              ul.sum__order.nostyle
+                li 常溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span NT$ 11,888
+                li 低溫商品 (&nbsp; #[.brown 3] &nbsp;項 ) 
+                  span NT$ 62,976
+                li 滿額贈品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span.red 贈品
+                li 紅利折抵 (&nbsp; #[.brown -150] &nbsp;點 ) 
+                  span.red NT$ -150
+                li 活動折扣 (&nbsp; #[.brown 0] &nbsp;項 ) 
+                  span NT$ 0
+                li 常溫運費 
+                  span NT$ 0
+                li 低溫運費             
+                  span NT$ 0
+                li.border 總計金額
+                  span.f24.italicNum NT $ 74,714
+
+
+
+      .submit.pb80
+        a(href="cart.html").btn.cancel 上一步
+        a(href="pay.html").btn 選款付款方式
+
+  
+    //- #modal-cancel.lity-hide.modal.f16
+    //- .lity-hide#modal-gift.modal
+    //-   div(style="background-image: url(styles/images/01-gift-1.jpg)").pic
+    //-   .wrap
+    //-     .f20 疏乳棒 (舒舒棒)
+    //-     p.lh18 各大教學醫院 & BadyHome網友們大力推薦! #[br]
+    //-       | 哺乳媽咪2的超人氣法寶! 女性平日乳房按摩好幫手~ #[br]
+    //-       | 產品適用對象：哺乳媽咪乳房按摩、青春期胸部發育按摩、生理期前乳房脹痛按摩、平時UP雙峰按摩、肩頸不適梳理按摩、頭皮疏理按摩。 #[br]
+    //-       | 本產品專利證號第D118298號，由台大產科臨床研發設計。
