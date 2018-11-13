@@ -2,5 +2,74 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 非會員專區
+        li.icon-right-thin 訂單查詢
+
+  #guest-orders
+    
+    .slcik-menu.eq5.bgcWhite
+      ul.nostyle
+        li.active
+          a(href="guest-order.html") 訂單查詢
+        li 
+          a(href="guest-return.html") 退貨查詢
+        li 
+          a(href="guest-course.html") 媽媽教室
+        li 
+          a(href="guest-taste.html") 預約試吃
+        li 
+          a(href="guest-subscribe.html") 訂閱電子報
+
+    .container.pt64
+      h3.brown.f24.mb40 訂單資訊
+      .scrollbarX.plain
+        table.table.mb40
+          tr 
+            th 訂單編號
+            th 訂購日期
+            th 訂單狀態
+            th 訂單金額
+            th 付款方式
+            th 預定出貨日
+            th 配送狀態
+            th 取消/退貨
+            th 客服問答
+
+          tr
+            td: a(href="guest-detail.html") G2017120701
+            td 2017/12/01
+            td 訂單成立
+            td NT $ 11,888
+            td 信用卡
+            td 2017/12/10
+            td 處理中
+            td: a(href="#modal-cancel" data-lity) 取消訂單
+            td: a(href="guest-inquire.html") 詢問
+      
+      .ps
+        .ps__title.f20.brown 備註說明
+        .ps__content.ln22 加入會員即可享有紅利點數及紫金堂優惠資訊，馬上註冊成為紫金堂會員 #[br]
+          | 如您有任何問題，請至「 #[span.red 客服中心]」或撥專線
+          a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+          | ，將有客服專員為您服務
+
+      .bottom-btn.mt40.mb80
+        a.btn 重新查詢
+        a(href="member.html").btn.addin 加入會員
+
+
+
+
+  //- #modal-cancel.modal.f16
+  #modal-cancel.lity-hide.modal.f16
+    .modal__main
+      .f24.lh20.mb16 確定取消訂單?
+      .lh20 訂單取消後，系統無法為您保留取消的商品庫存；重新下單可能會遇到商品庫存被其他會員購買，建議您取消後立即重新下單。
+    .submit.pt48.pb40
+      a(href="guest-cancel.html").btn 確認取消
+      a.btn.cancel 放棄取消
+      

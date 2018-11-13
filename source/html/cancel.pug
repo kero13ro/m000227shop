@@ -1,5 +1,6 @@
 
 extends ./include/layout.pug
+include ./include/component.pug
 
 block content
   .container
@@ -14,47 +15,22 @@ block content
     .slcik-menu.eq9
       ul.nostyle
         li.active
-          a(href="order.html") 訂單紀錄
+          a(data-abbr="訂單紀錄" href="order.html") 訂單紀錄
         li 
-          a(href="returned.html") 退貨查詢
+          a(data-abbr="退貨查詢" href="returned.html") 退貨查詢
         li 
-          a(href="trace.html") 我的追蹤清單
+          a(data-abbr="追蹤清單" href="trace.html") 我的追蹤清單
         li 
-          a(href="bonus.html") 紅利點數
+          a(data-abbr="紅利點數" href="bonus.html") 紅利點數
         li 
-          a(href="profile.html") 會員資料維護
+          a(data-abbr="資料維護" href="profile.html") 會員資料維護
         li 
-          a(href="course.html") 媽媽教室
+          a(data-abbr="媽媽教室" href="course.html") 媽媽教室
         li 
-          a(href="taste.html") 預約試吃
+          a(data-abbr="預約試吃" href="taste.html") 預約試吃
         li 
-          a(href="subscribe.html") 訂閱電子報
+          a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
 
-    
-    .container.sm.pt56
-      span.f24.mb16 取消訂單
-      span.f16.lh18 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
-      p.mb40.wide10 訂單取消後，系統無法為您保留取消的商品庫存；重新下單可能會遇到商品庫存被其他會員購買，建議您取消後立即重新下單。
+    +cancel
 
-
-      .box.mb56
-        .box__title 取消訂單
-        .box__content
-          .line.mb16
-            span 訂單編號
-            span A2017120701
-          .line.mb24
-            span.star 取消原因
-            .select_unit
-              select(required)
-                option(selected disabled hidden) 請選擇
-                option(value="1") 原因1
-          .line.mb24
-            span.star 詳細描述
-            textarea(rows="3" required)
-
-
-    .submit.pt40.pb88
-      a(href="canceled.html").btn 送出
-      .btn.cancel 取消
 

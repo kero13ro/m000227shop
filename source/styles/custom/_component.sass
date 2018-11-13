@@ -73,6 +73,7 @@
     font-weight: bold
     // z-index: 1
     // line-height: 1.5
+    text-align: center
     &:after
       +shorterLine
         
@@ -301,7 +302,8 @@
     color: #B47832
     text-decoration: underline
 
-
+  +max(767)
+    font-size: 15px
 .control-row
   +f
   .f24
@@ -338,6 +340,9 @@
       +margin(null 0 1rem null)
       span 
         width: 90px
+    .search_unit
+      width: calc(100% - 90px)
+      margin-left: auto
 
 
 

@@ -108,3 +108,19 @@ $(window).on("load", function () {
 //     // $(this).siblings("li").slideDown(200).css("opacity", "1");
 //   });
 // }
+
+
+
+//qa左右滑動目錄
+var left = $(".control .icon-left-thin");
+var right = $(".control .icon-right-thin");
+var menu = $(".qa__menu .scrollbarX");
+
+left.click(function() {
+  var leftPos = menu.scrollLeft();
+  menu.animate({ scrollLeft: leftPos - 200 }, 800);
+});
+right.click(function() {
+  var leftPos = menu.scrollLeft();
+  menu.animate({ scrollLeft: leftPos + 200 }, 800);
+});

@@ -67,3 +67,34 @@
       margin-right: 8px
 
 
+#guest-orders
+  .table 
+    background-color: #fff
+  .ps
+    background-color: #fff
+    +padding(null 33px )
+  .ps__title,
+  .ps__content
+    +padding(23px null )
+
+  .ps__title
+    // color: $brown
+    border-bottom: 1px solid #eee
+
+  .bottom-btn
+    +fc
+    .btn
+      background-color: rgb(165, 123, 75)
+      color: white
+      +size(200px, 40px)
+      +fc
+      +hoverBgc(#b77f3e)
+    .addin
+      margin-left: 25px
+      background-color: rgb(235, 122, 28)
+      +hoverBgc(#e56e0d)
+
+    +max(500)
+      +f(center, center, column, wrap)
+      .addin
+        +margin(15px null null 0)

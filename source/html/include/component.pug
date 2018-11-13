@@ -15,3 +15,100 @@ mixin topLanding
       h2.f56 月子膳食組合
       .f24.bd 安心‧感動‧幸福
       .f15 嚴選優良食材，紫金時尚膳食服務，讓您安心 #[br] 優惠的好選擇
+
+mixin inquire
+  .container.sm.pt56
+    span.f24.mb16 客服詢問
+    span.f16.lh18 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
+    p.mb32.wide10 感謝您使用紫金堂購物商城，您提出的問題我們將盡快回覆。訂單相關、退換貨及購買流程等問題可先至《常見問題》查閱。
+
+
+    .box.mb48
+      .box__title 詢問內容
+      .box__content
+        .line.mb16
+          span 訂單編號
+          span A2017120701
+        .line.mb16
+          span.star 詢問主題
+          .select_unit
+            select(required)
+              option(selected disabled hidden) 請選擇
+              option(value="1") 主題1
+        .line.mb16
+          span.star 詢問內容
+          textarea(rows="3" required)
+
+  .submit.mb56.noBorder
+    .btn 送出
+    .btn.cancel 取消
+
+  .inquiryWrap.pt56.pb88
+    .inquiryLog.container
+      .log__title 客服問答紀錄
+
+      .log__content.quest
+        .sub
+          img(src="./styles/images/order-03-01.png", alt="紫金堂")
+          span 您的提問
+        .lh20
+          ul.nostyle
+            li 訂單編號：
+              span.underline A2017120701
+            li 詢問主題：退貨配送問題
+            li 發問時間：2017-12-05  12：00：12
+          div 請問商品退貨還需多少工作天才會進行？
+      .log__content.answer
+        .sub
+          img(src="./styles/images/order-03-02.png", alt="紫金堂")
+          span 客服回覆
+        .lh20
+          ul.nostyle
+            li 回覆時間：2017-12-05  13：00：01
+          div 您好，已為您處理退貨，將有宅配人員前往跟您收件，欲退商品單件退回交宅配人員即可，後續黑橋牌會為您處理退款事宜，造成不便非常抱歉，謝謝您。
+
+
+mixin cancel(member)
+  .container.sm.pt56
+    span.f24.mb16 取消訂單
+    span.f16.lh18 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
+    p.mb40.wide10 訂單取消後，系統無法為您保留取消的商品庫存；重新下單可能會遇到商品庫存被其他會員購買，建議您取消後立即重新下單。
+
+
+    .box.mb56
+      .box__title 取消訂單
+      .box__content
+        .line.mb16
+          span 訂單編號
+          span A2017120701
+        .line.mb24
+          span.star 取消原因
+          .select_unit
+            select(required)
+              option(selected disabled hidden) 請選擇
+              option(value="1") 原因1
+        .line.mb24
+          span.star 詳細描述
+          textarea(rows="3" required)
+
+
+  .submit.pt40.pb88
+    if member == "guest"
+      a(href="guest-canceled.html").btn 送出
+    else
+      a(href="canceled.html").btn 送出
+
+    .btn.cancel 取消
+
+mixin canceled
+  .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+    .container.fc.pt72.pb88
+      .modal.f16
+        .modal__main
+          img(src="./styles/images/login-00-01.png" alt="紫金堂")
+          .f24.lh20.mb24 訂單已取消
+          div 您的訂單已取消，您毋須支付此訂單費用。
+        .modal-bottom
+          a(href="index.html")
+            .icon-back
+            span 返回首頁

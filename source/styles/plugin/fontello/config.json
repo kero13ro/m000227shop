@@ -251,6 +251,18 @@
       ]
     },
     {
+      "uid": "fdfbd1fcbd4cb229716a810801a5f207",
+      "css": "double-right",
+      "code": 61697,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7bf14281af5633a597f85b061ef1cfb9",
+      "css": "single-right",
+      "code": 61701,
+      "src": "fontawesome"
+    },
+    {
       "uid": "8f009e59f3bc456f7520c06fbef5e24b",
       "css": "mouse",
       "code": 59397,
