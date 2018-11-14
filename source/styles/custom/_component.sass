@@ -302,14 +302,24 @@
     color: #B47832
     text-decoration: underline
 
-  +max(767)
+  +max(991)
     font-size: 15px
+
+
 .control-row
   +f
   .f24
     margin-right: auto
   .group
     +f
+
+  .select_unit select,
+  .search_unit input[type="search"] 
+    border: 1px solid #ddd
+    color: #777
+    &::placeholder 
+      color: #777
+
 
   +max(990)
     flex-wrap: wrap

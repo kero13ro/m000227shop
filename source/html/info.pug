@@ -14,23 +14,23 @@ block content
 
       .scrollbarX.mb32
         .progress.mb32
-          a(data-abbr="購物清單")
+          a(data-abbr="購物清單" href="cart.html")
             img(src="./styles/images/cart-01.png", alt="紫金堂")
             span 確認購物清單
-          .icon-double-right
-          a(data-abbr="填寫資料").current
+          .icon-single-right
+          a(data-abbr="填寫資料" href="info.html").current
             img(src="./styles/images/cart-02b.png", alt="紫金堂")
             span 填寫訂購資料
           .icon-single-right
-          a(data-abbr="付款方式")
+          a(data-abbr="付款方式" href="pay.html")
             img(src="./styles/images/cart-03.png", alt="紫金堂")
             span 選擇付款方式
           .icon-single-right
-          a(data-abbr="資料確認")
+          a(data-abbr="資料確認" href="confirm.html")
             img(src="./styles/images/cart-04.png", alt="紫金堂")
             span 訂單、資料確認
           .icon-single-right
-          a(data-abbr="購物完成")
+          a(data-abbr="購物完成" href="complete.html")
             img(src="./styles/images/cart-05.png", alt="紫金堂")
             span 購物完成
 
@@ -64,7 +64,7 @@ block content
               span.star 連絡電話
               input(type="tel" required).md
 
-            label.line.addr
+            .line.addr
               span.star 通訊地址
 
               .select_unit.mb16
@@ -114,7 +114,7 @@ block content
               span.star 連絡電話
               input(type="tel" required).md
 
-            label.line.addr
+            .line.addr
               span.star 通訊地址
 
               .select_unit.mb16
@@ -189,7 +189,7 @@ block content
               span.star 統一編號
               input(type="text" required).md
 
-            label.line.addr
+            .line.addr
               span.star 通訊地址
 
               .select_unit.mb16
@@ -222,7 +222,7 @@ block content
               li ※ 生理餐、 紫金食堂系列因物流作業因素，可以指定到貨時段，恕無法指定到貨時間。
               li ※ 低溫商品需要冷藏保鮮，下單前請先確認到貨日有人可收貨並盡速將商品冷藏。
 
-        .infoCard.mb32.ps2
+        .infoCard.mb32.ps2.noborder
           .infoCard__content.lh20
             .f18 備註說明
             .gray 提醒您，進行結帳前 #[span.red 請先確認購買的商品及金額] ，並填寫正確相關資訊
@@ -230,7 +230,7 @@ block content
 
 
 
-        .infoCard.mb32.right
+        .infoCard.mb64.right.infoCard--sm
           .infoCard__title 
             span.f24 訂單總計
             
@@ -262,12 +262,3 @@ block content
         a(href="pay.html").btn 選款付款方式
 
   
-    //- #modal-cancel.lity-hide.modal.f16
-    //- .lity-hide#modal-gift.modal
-    //-   div(style="background-image: url(styles/images/01-gift-1.jpg)").pic
-    //-   .wrap
-    //-     .f20 疏乳棒 (舒舒棒)
-    //-     p.lh18 各大教學醫院 & BadyHome網友們大力推薦! #[br]
-    //-       | 哺乳媽咪2的超人氣法寶! 女性平日乳房按摩好幫手~ #[br]
-    //-       | 產品適用對象：哺乳媽咪乳房按摩、青春期胸部發育按摩、生理期前乳房脹痛按摩、平時UP雙峰按摩、肩頸不適梳理按摩、頭皮疏理按摩。 #[br]
-    //-       | 本產品專利證號第D118298號，由台大產科臨床研發設計。

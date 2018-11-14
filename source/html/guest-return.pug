@@ -1,5 +1,6 @@
 
 extends ./include/layout.pug
+include ./include/public.pug
 
 block content
   
@@ -10,38 +11,47 @@ block content
         li 非會員專區
         li.icon-right-thin 退貨查詢
 
-  #guest.bgcWhite
-    
-    .slcik-menu.eq5
-      ul.nostyle
-        li
-          a(href="guest-order.html") 訂單查詢
-        li.active 
-          a(href="guest-return.html") 退貨查詢
-        li 
-          a(href="guest-course.html") 媽媽教室
-        li 
-          a(href="guest-taste.html") 預約試吃
-        li 
-          a(href="guest-subscribe.html") 訂閱電子報
-  
-    
-    .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
 
-      .container.fc.pt72.pb88
-        .login-non.f16
+  #guest-orders
+    +guest-menu(2)
 
-          .f24.lh18.brown.mb16.wide10 非會員退貨查詢
-          .mb32 請輸入訂購人的電子信箱及訂單編號，即可查詢退貨狀態
+    .container.pt64.plain
+      h3.brown.f24.mb40 退貨資訊
 
-          input(type="text", placeholder="Email").mb24
-          input(type="password", placeholder="Password").mb24
-          label.verify.mb40
-            input(type="text" placeholder="請輸入驗證碼" required)
-            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+      table.table.mb40
+        tr 
+          th 退貨單號
+          th 退訂日期
+          th 退貨狀態
+          th 退款金額
+          th 退款方式
+          th 退款狀態
+          th 商品狀態
+          th 收貨狀態
 
-          .login_btn
-            a(href="order.html").mr 送出
-            a(href="index.html") 取消
+        tr
+          td(data-title="退貨單號"): div.fc R2017123001
+          td(data-title="退訂日期"): div.fc 2017/12/30
+          td(data-title="退貨狀態"): div.fc 退貨成立
+          td(data-title="退款金額"): div.fc NT $ 34,776
+          td(data-title="退款方式"): div.fc 銀行匯款
+          td(data-title="退款狀態"): div.fc 待處理
+          td(data-title="商品狀態"): div.fc.red 退貨處理中
+          td(data-title="收貨狀態"): div.fc 已收貨
 
-  
+      
+      .ps
+        .ps__title.f20.brown 備註說明
+        .ps__content.ln22 加入會員即可享有紅利點數及紫金堂優惠資訊，
+          a(href="register.html").register 馬上註冊
+          | 成為紫金堂會員 #[br]
+          | 如您有任何問題，請至「 #[span.red 客服中心]」或撥專線
+          a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+          | ，將有客服專員為您服務
+
+      .bottom-btn.mt40.mb80
+        a.btn 重新查詢
+        a(href="register.html").btn.addin 加入會員
+
+
+      

@@ -1,0 +1,223 @@
+
+extends ./include/layout.pug
+include ./include/public.pug
+
+block content
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 非會員專區
+        li.icon-right-thin 訂單查詢
+
+  #detail.guest
+    +guest-menu(1)
+
+
+
+    .container.pt40
+    
+      .infoCard.mb32.w100
+        .infoCard__title 
+          span.f24 訂單相關資訊 - 非會員
+          a(href="member.html").edit 加入會員
+          
+        .infoCard__content.infoCard--multiple
+
+
+          .multiple__main.plain
+            table.table.mb24
+              tr 
+                th 訂單編號
+                th 訂購日期
+                th 訂單狀態
+                th 訂單總金額
+                th 付款方式
+                th 預定出貨日
+                th 配送狀態
+                th 取消/退貨
+              tr 
+                td(data-title="訂單編號"): div.fc G2017120701
+                td(data-title="訂購日期"): div.fc 2017/12/01 #[br] 13:00
+                td(data-title="訂單狀態"): div.fc 訂單成立
+                td(data-title="訂單總金額"): div.fc NT $ 11,888
+                td(data-title="付款方式"): div.fc 信用卡 #[br] (一次付清)
+                td(data-title="預定出貨日"): div.fc 2017/12/10
+                td(data-title="配送狀態"): div.fc 處理中
+                td(data-title="取消/退貨"): div.fc
+                  a(href="#") 取消訂單
+
+
+          .icon-thermometer.normal.mb16 常溫配送
+
+          .multiple__secondary.mb32
+            .table__title
+              div.pic 圖片
+              div.name 商品貨號 / 商品名稱
+              div.num 數量
+              div.per 單價
+              div.sum 小計
+            .table__content
+              div.pic
+                img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
+              div.name 月子補養兩日餐(10日)
+              div(data-title="數量").num 1
+              div.per NT$11,888
+              div.sum NT$11,888
+
+            .table__total.wide5
+              div.mr8 共 1 項，購物金額 11,888 + 常溫運費 0 =
+              div NT $ 11,888
+
+
+          .icon-thermometer.low.mb16 低溫配送
+          
+          .multiple__secondary
+            .table__title
+              div.pic 圖片
+              div.name 商品貨號 / 商品名稱
+              div.num 數量
+              div.per 單價
+              div.sum 小計
+              div.state 貨品狀態              
+            .table__content
+              div.pic 
+                img(src="./styles/images/01-item02.jpg" alt="紫金堂")
+              div.name 紫金堂月子餐【15日份】
+              div(data-title="數量").num 1
+              div.per NT$28,200
+              div.sum NT$28,200
+              div.state -
+            .table__append 《好孕加值禮》：  + (A) 疏乳棒1支、美身帶1條
+
+            
+            .table__total.wide5
+              div.mr8 共 1 項，購物金額 62,976 + 常溫運費 0 =
+              div NT $28,200
+
+
+          .multiple__sum.lh22
+            ul.sum__order.nostyle
+              li 常溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                span NT$ 11,888
+              li 低溫商品 (&nbsp; #[.brown 3] &nbsp;項 ) 
+                span NT$ 62,976
+
+              //- li 滿額贈品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+              //-   span NT$ 0
+              li 好孕加值禮 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                span NT$ 0
+              //- li 紅利折抵 (&nbsp; #[.brown -150] &nbsp;點 ) 
+              //-   span.red NT$ -150
+              li 活動折扣 (&nbsp; #[.brown 0] &nbsp;項 ) 
+                span NT$ 0
+              li 常溫運費 
+                span NT$ 0
+              li 低溫運費             
+                span NT$ 0
+
+            ul.sum__cost.nostyle 
+              li.bold 總計金額
+                span.f24.italicNum NT $ 40,088
+
+
+      .infoCard.mb32
+        .infoCard__title
+          span.f24 收貨人資料
+        .infoCard__content.infoCard--list
+          ul.nostyle
+            li
+              span.sp 姓名
+              span 張樂樂  小姐
+            li
+              span 電子信箱
+              span test@gmail.com
+            li
+              span 聯絡電話
+              span 0988-818-818
+            li
+              span 收貨地址
+              span 40647 台中市北屯區東山路一段147巷49號
+            li
+              span 收貨時段
+              span 上午 09:00 - 13:00
+            li
+              span 收貨方式
+              span 保持電話暢通，到貨時請來電通知
+            li
+              span 配送方式
+              span 常溫宅配、冷藏宅配
+
+      .infoCard.mb32
+        .infoCard__title 
+          span.f24 訂購人資料
+        .infoCard__content.infoCard--list
+          ul.nostyle
+            li
+              span.sp 姓名
+              span 張樂樂  小姐
+            li
+              span 電子信箱
+              span test@gmail.com
+            li
+              span 聯絡電話
+              span 0988-818-818
+            li
+              span 通訊地址
+              span 40647 台中市北屯區東山路一段147巷49號
+
+      .infoCard.mb32
+        .infoCard__title 
+          span.f24 發票資訊
+          
+        .infoCard__content.infoCard--list
+          ul.nostyle
+            li
+              span 發票型式
+              span 三聯式發票
+            li
+              span 公司抬頭
+              span 雲端數位科技股份有限公司
+            li
+              span 統一編號
+              span 24252151
+
+      .infoCard.mb32
+        .infoCard__title: span.f24 付款資訊
+        .infoCard__content.infoCard--list.two-columns
+          ul.nostyle
+            li
+              span 應付金額
+              span NT $ 40,088
+            li
+              span 付款金額
+              span NT $ 40,088
+            li
+              span 運費
+              span NT $ 0
+            li
+              span 付款狀態
+              span 已付款
+            li
+              span 紅利折扣
+              span 無，馬上
+                a(href="member.html") 加入會員
+            li
+              span 付款方式
+              span 信用卡(一次付清)
+
+      .infoCard.mb32.w100
+        .infoCard__title: span.f24 訂單備註
+        .infoCard__content.infoCard--list
+          ul.nostyle
+            li
+              span 備註說明
+              span 無
+            li.tel.lh20 如您有任何問題，請至「 #[.red 客服中心]」或撥專線
+              a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+              | ，將有客服專員為您服務
+      
+      .bottom.mb80.mt24
+        a 重新查詢
+        a(href="member.html").orange 加入會員
+

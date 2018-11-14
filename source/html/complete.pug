@@ -2,5 +2,191 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+  
+  #complete.cart-grid
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 購物車
+
+      .scrollbarX.mb32
+        .progress.mb32
+          a(data-abbr="購物清單" href="cart.html")
+            img(src="./styles/images/cart-01.png", alt="紫金堂")
+            span 確認購物清單
+          .icon-single-right
+          a(data-abbr="填寫資料" href="info.html")
+            img(src="./styles/images/cart-02.png", alt="紫金堂")
+            span 填寫訂購資料
+          .icon-single-right
+          a(data-abbr="付款方式" href="pay.html")
+            img(src="./styles/images/cart-03.png", alt="紫金堂")
+            span 選擇付款方式
+          .icon-single-right
+          a(data-abbr="資料確認" href="confirm.html")
+            img(src="./styles/images/cart-04.png", alt="紫金堂")
+            span 訂單、資料確認
+          .icon-single-right
+          a(data-abbr="購物完成" href="complete.html").current
+            img(src="./styles/images/cart-05b.png", alt="紫金堂")
+            span 購物完成
+
+                
+      .infoCard-wrap
+
+        .infoCard.mb32.success
+          .infoCard__title.lh18
+            .f24.mb8 訂購成功！
+            div 非常感謝您的訂購，我們已經收到您的訂單！ #[br]
+              | 稍後您將會收到一封由系統自動寄出的訂單收執聯信件副本，我們將會盡快安排並處理您的訂單，謝謝。
+
+          .infoCard__content.infoCard--list
+            ul.nostyle
+              li
+                span 訂單編號
+                span.underline A2017120701
+              li
+                span 付款方式
+                span 信用卡(一次付清)
+              li
+                span 訂購時間
+                span 2017/12/15  13:59
+              li
+                span 付款狀態
+                span 已付款
+              li
+                span 訂單狀態
+                span 已成立
+              li
+                span 付款金額
+                span NT $ 74,714
+
+
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 訂購人資料
+          .infoCard__content.infoCard--list
+            ul.nostyle
+              li.w100
+                span 姓名
+                span 張樂樂  小姐
+              li
+                span 電子信箱
+                span test@gmail.com
+              li
+                span 聯絡電話
+                span 0988-818-818
+              li.w100
+                span 通訊地址
+                span 40647 台中市北屯區東山路一段147巷49號
+
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 收件人資料
+          .infoCard__content.infoCard--list
+            ul.nostyle
+              li.w100
+                span 姓名
+                span 張樂樂  小姐
+              li
+                span 電子信箱
+                span test@gmail.com
+              li
+                span 聯絡電話
+                span 0988-818-818
+              li.w100
+                span 通訊地址
+                span 40647 台中市北屯區東山路一段147巷49號
+              li
+                span 收貨時段
+                span 上午 09:00 - 13:00
+              li
+                span 收貨方式
+                span 保持電話暢通，到貨時請來電通知
+              li
+                span 配送方式
+                span 常溫宅配、冷藏宅配
+
+
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 發票資訊
+          .infoCard__content.infoCard--list
+            ul.nostyle
+              li.w100
+                span 發票型式
+                span 三聯式發票
+              li
+                span 公司抬頭
+                span 雲端數位科技股份有限公司
+              li
+                span 統一編號
+                span 24252151
+
+        .infoCard.mb32
+          .infoCard__title 
+            span.f24 付款資訊
+          .infoCard__content.infoCard--list
+            ul.nostyle
+              li.w100
+                span 付款方式
+                span 信用卡一次付清
+              li.w100
+                span 付款金額
+                span NT $62,976
+
+        .infoCard.mb16.ps
+          .infoCard__title 
+            span.f24 訂單備註事項
+            
+          .infoCard__content.infoCard--list
+            ul.nostyle.bd.pb16.mb16
+              li
+                span 訂單備註
+                span 無
+              
+            ul.nostyle.lh20.red
+              li ※ 月子餐、小產餐，訂單付款完成後 會有專屬服務人員與您聯繫，安排出貨日期。
+              li ※ 生理餐、 紫金食堂系列因物流作業因素，可以指定到貨時段，恕無法指定到貨時間。
+              li ※ 低溫商品需要冷藏保鮮，下單前請先確認到貨日有人可收貨並盡速將商品冷藏。
+                
+
+        .infoCard.mb64.ps2.noborder
+          .infoCard__content.lh20
+            .f18 備註說明
+            .gray.lh20 如您有任何問題，請至「 #[span.red 客服中心]」或撥專線
+              a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+              | ，將有客服專員為您服務
+
+
+        .infoCard.mb64.right.infoCard--sm
+          .infoCard__title 
+            span.f24 訂單總計
+            
+          .infoCard__content.infoCard--multiple
+
+            .multiple__sum.lh22
+              ul.sum__order.nostyle
+                li 常溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span NT$ 11,888
+                li 低溫商品 (&nbsp; #[.brown 3] &nbsp;項 ) 
+                  span NT$ 62,976
+                li 滿額贈品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span.red 贈品
+                li 紅利折抵 (&nbsp; #[.brown -150] &nbsp;點 ) 
+                  span.red NT$ -150
+                li 活動折扣 (&nbsp; #[.brown 0] &nbsp;項 ) 
+                  span NT$ 0
+                li 常溫運費 
+                  span NT$ 0
+                li 低溫運費             
+                  span NT$ 0
+                li.border 總計金額
+                  span.f24.italicNum NT $ 74,714
+
+      .submit.mb88
+        a(href="index.html").btn.cancel 返回首頁
+        a(href="order.html").btn 訂單查詢
+
+  

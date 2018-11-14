@@ -1,0 +1,37 @@
+
+extends ./include/layout.pug
+include ./include/public.pug
+
+block content
+  
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 非會員專區
+        li.icon-right-thin 預約試吃
+
+  #guest.bgcWhite
+    +guest-menu(4)
+  
+    
+    .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+
+      .container.fc.pt72.pb88
+        .login-non.f16
+
+          .f24.lh18.brown.mb16.wide10 預約試吃報名查詢
+          .mb32 請輸入報名者的電子信箱及聯絡電話，即可查詢
+
+          input(type="text", placeholder="Email").mb24
+          input(type="tel", placeholder="聯絡電話").mb24
+          //- input(type="password", placeholder="Password").mb24
+          label.verify.mb40
+            input(type="text" placeholder="請輸入驗證碼" required)
+            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+
+          .login_btn
+            a(href="guest-taste.html").mr 送出
+            a(href="index.html") 取消
+
+  

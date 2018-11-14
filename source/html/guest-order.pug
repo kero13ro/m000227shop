@@ -1,8 +1,8 @@
 
 extends ./include/layout.pug
+include ./include/public.pug
 
 block content
-  
   .container
     .breadcrumb
       ul.nostyle
@@ -10,38 +10,56 @@ block content
         li 非會員專區
         li.icon-right-thin 訂單查詢
 
-  #guest.bgcWhite
-    
-    .slcik-menu.eq5
-      ul.nostyle
-        li.active
-          a(href="guest-order.html") 訂單查詢
-        li 
-          a(href="guest-return.html") 退貨查詢
-        li 
-          a(href="guest-course.html") 媽媽教室
-        li 
-          a(href="guest-taste.html") 預約試吃
-        li 
-          a(href="guest-subscribe.html") 訂閱電子報
-  
-    
-    .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+  #guest-orders
+    +guest-menu(1)
 
-      .container.fc.pt72.pb88
-        .login-non.f16
+    .container.pt64.plain
+      h3.brown.f24.mb40 訂單資訊
+      
+      table.table.mb40
+        tr 
+          th 訂單編號
+          th 訂購日期
+          th 訂單狀態
+          th 訂單金額
+          th 付款方式
+          th 預定出貨日
+          th 配送狀態
+          th 取消/退貨
+          th 客服問答
 
-          .f24.lh18.brown.mb16.wide10 非會員訂單查詢
-          .mb32 請輸入訂購人的電子信箱及訂單編號，即可查詢訂單資料
+        tr
+          td(data-title="訂單編號"): div.fc: a(href="guest-detail.html") G2017120701
+          td(data-title="訂購日期"): div.fc 2017/12/01
+          td(data-title="訂單狀態"): div.fc 訂單成立
+          td(data-title="訂單金額"): div.fc NT $ 11,888
+          td(data-title="付款方式"): div.fc 信用卡
+          td(data-title="預定出貨日"): div.fc 2017/12/10
+          td(data-title="配送狀態"): div.fc 處理中
+          td(data-title="取消/退貨"): div.fc: a(href="#modal-cancel" data-lity) 取消訂單
+          td(data-title="客服問答"): div.fc: a(href="guest-inquire.html") 詢問
+      
+      .ps
+        .ps__title.f20.brown 備註說明
+        .ps__content.ln22 加入會員即可享有紅利點數及紫金堂優惠資訊，
+          a(href="register.html").register 馬上註冊
+          | 成為紫金堂會員 #[br]
+          | 如您有任何問題，請至「 #[span.red 客服中心]」或撥專線
+          a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+          | ，將有客服專員為您服務
 
-          input(type="text", placeholder="Email").mb24
-          input(type="password", placeholder="Password").mb24
-          label.verify.mb40
-            input(type="text" placeholder="請輸入驗證碼" required)
-            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+      .bottom-btn.mt40.mb80
+        a.btn 重新查詢
+        a(href="register.html").btn.addin 加入會員
 
-          .login_btn
-            a(href="guest-orders.html").mr 送出
-            a(href="index.html") 取消
 
-  
+
+  //- #modal-cancel.modal.f16
+  #modal-cancel.lity-hide.modal.f16
+    .modal__main
+      .f24.lh20.mb16 確定取消訂單?
+      .lh20 訂單取消後，系統無法為您保留取消的商品庫存；重新下單可能會遇到商品庫存被其他會員購買，建議您取消後立即重新下單。
+    .submit.pt48.pb40
+      a(href="guest-cancel.html").btn 確認取消
+      a.btn.cancel 放棄取消
+      

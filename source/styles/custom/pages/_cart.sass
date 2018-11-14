@@ -1,4 +1,5 @@
-
+.noborder
+  border-width: 0
 
 .progress
   +f(space-between,center)
@@ -18,12 +19,14 @@
     color: rgb(149, 149, 149)
     +padding(null 3px 15px 3px)
 
-  .icon-double-right
+  .current + [class^="icon"]:before
+    content: '\f101'
     color: $brown
 
-  +max(767)
-    font-size: 15px
 
+  +max(768)
+    font-size: 15px
+    margin-bottom: 10px
     [class^="icon"]
       +padding(null 0px 10px 0px)
     a
@@ -41,15 +44,14 @@
         flex-shrink: 6
 
   +max(360)
-    margin-bottom: 0
+    
     a
       &.current
         max-width: 70px
 
       &:not(.current)
         max-width: 50px
-    // [class^="icon"]:before
-    //   +margin(0)
+    
 
 .cart-grid
   .infoCard-wrap
@@ -86,9 +88,8 @@
       +fc
       +margin(null 10px)
 
-  
-  .infoCard__title .ml24
-    padding-bottom: 3px
+  .infoCard__title > span:first-child
+    transform: translateY(3px)
 
   +max(1365)
     .infoCard,
@@ -98,7 +99,7 @@
     .infoCard.right
       width: 100%
       max-width: 718px
-      margin-left: auto
+      +margin(null auto)
       +position(relative, null 0 null null )
 
 
@@ -109,7 +110,7 @@
   .infoCard__content
     +padding(8px null )
 
-
+// ===================================================== 各別頁面
 
 #cart
   .radio-top
@@ -190,9 +191,7 @@
   .gift
     +margin(null 8px)
     +f(flex-start, flex-start, column)
-    // min-width: 200px
     width: 100%
-    // max-width: 215px
     +padding(18px 18px)
     border: 1px solid #ddd
 
@@ -342,9 +341,6 @@
     ul
       +margin(null 18px)
 
-  .ps2
-    border-width: 0
-
 
 #info
   +max(990)
@@ -398,4 +394,102 @@
     select,
     input
       +padding(null 8px)
+
+
+#pay
+  .infoCard__content.pay
+    +padding(0 0 12px 0)
+  .radio_unit
+    height: auto
+    +padding(18px null )
+  .radio_unit:not(:last-child)
+    border-bottom: 1px dashed #ddd
+    
+
+  .radio_unit label
+    justify-content: flex-start
+    align-items: flex-start
+
+    &:before
+      margin-top: 3px
+
+    > span:first-child
+      width: 140px
+      margin-left: 12px
+      flex-shrink: 0
+
+    .gray
+      white-space: normal
+
+    .gray.img
+      +f(flex-start, center)
+
+    +max(600)
+      flex-wrap: wrap
+      .gray
+        margin-top: 10px
+        padding-left: 30px
+        
+      .gray.img
+        flex-wrap: wrap
+        > div
+          width: 100%
+          margin-bottom: 6px
+        img
+          margin: 0
+          
+  .ps2 a
+    color: $brown-dark
+    +hoverText(#d8801c)
+
+
+#confirm
+  .italicNum
+    letter-spacing: 1px
+    color: $brown-dark
+
+#confirm,
+#complete
+  .infoCard--list
+    ul
+      +f(space-between, flex-start, row, wrap)
+    li
+      width: calc(50% - 18px)
+    li.w100
+      width: 100%
+
+    ul.bd
+      border-bottom: 1px solid #eee
+
+    ul.red li
+      width: 100%
+      padding: 0
+
+  +max(768)
+    .infoCard
+      font-size: 15px
+      li
+        width: 100%
+        +padding(3px null )
+
+  +max(360)
+    .infoCard,
+    .infoCard .infoCard--list
+      font-size: 14px
+
+#complete
+  .success
+    border-color: rgb(214, 142, 143)
+
+    .f24
+      color: rgb(206, 107, 107)
+      width: 100%
+
+    .infoCard--list
+      span:nth-child(2)
+        color: rgb(206, 107, 107)
+
+
+
+
 

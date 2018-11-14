@@ -70,16 +70,54 @@
 #guest-orders
   .table 
     background-color: #fff
+    +max(990)
+      max-width: 768px
+      margin-bottom: 40px
+      +margin(null auto)
+      th
+        display: none
+      td
+        +f
+        padding: 0
+        height: 40px
+        &:before
+          +fc
+          content: attr(data-title)
+          width: 40%
+          max-width: 200px
+          height: 100%
+          color: white
+          background-color: rgb(213, 178, 136)
+
+        .fc
+          +fc
+          flex: 1 0 60%
+          height: 100%
+      td:nth-child(odd)
+        &:before
+          background-color: #cea579
+        .fc
+          background-color: rgb(249, 249, 249)
+
+
   .ps
     background-color: #fff
     +padding(null 33px )
-  .ps__title,
-  .ps__content
-    +padding(23px null )
 
   .ps__title
-    // color: $brown
+    +padding(13px null )
     border-bottom: 1px solid #eee
+    
+  .ps__content
+    +padding(22px null )
+    color: #777777
+
+    .register
+      color: #777777
+      text-decoration: underline
+      +hoverText(#000)
+
+
 
   .bottom-btn
     +fc

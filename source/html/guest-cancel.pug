@@ -1,6 +1,7 @@
 
 extends ./include/layout.pug
 include ./include/component.pug
+include ./include/public.pug
 
 block content
   .container
@@ -11,19 +12,7 @@ block content
         li.icon-right-thin 訂單查詢
 
   #guest-inquire.inquireType
-    
-    .slcik-menu.eq5.bgcWhite
-      ul.nostyle
-        li.active
-          a(href="guest-order.html") 訂單查詢
-        li 
-          a(href="guest-return.html") 退貨查詢
-        li 
-          a(href="guest-course.html") 媽媽教室
-        li 
-          a(href="guest-taste.html") 預約試吃
-        li 
-          a(href="guest-subscribe.html") 訂閱電子報
+    +guest-menu(2)
 
 
     

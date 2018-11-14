@@ -2,5 +2,107 @@
 extends ./include/layout.pug
 
 block content
-  //- include ./include/landing.pug
-  h1 index
+  
+  
+  #pay.cart-grid
+
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 購物車
+
+      .scrollbarX.mb32
+        .progress.mb32
+          a(data-abbr="購物清單" href="cart.html")
+            img(src="./styles/images/cart-01.png", alt="紫金堂")
+            span 確認購物清單
+          .icon-single-right
+          a(data-abbr="填寫資料" href="info.html")
+            img(src="./styles/images/cart-02.png", alt="紫金堂")
+            span 填寫訂購資料
+          .icon-single-right
+          a(data-abbr="付款方式" href="pay.html").current
+            img(src="./styles/images/cart-03b.png", alt="紫金堂")
+            span 選擇付款方式
+          .icon-single-right
+          a(data-abbr="資料確認" href="confirm.html")
+            img(src="./styles/images/cart-04.png", alt="紫金堂")
+            span 訂單、資料確認
+          .icon-single-right
+          a(data-abbr="購物完成" href="complete.html")
+            img(src="./styles/images/cart-05.png", alt="紫金堂")
+            span 購物完成
+
+
+                
+      .infoCard-wrap
+      
+        .infoCard.mb32
+          .infoCard__title
+            span.f24 付款方式
+          .infoCard__content.pay
+            ul.nostyle 
+              li.radio_unit
+                input(type="radio" name="pay" id="pay1") 
+                label(for="pay1") 
+                  span 信用卡付款
+                  .gray.img.f16
+                    .break 線上刷卡，可接受
+                    img(src="./styles/images/cart-3-1.jpg", alt="紫金堂").ml8
+              li.radio_unit
+                input(type="radio" name="pay" id="pay2") 
+                label(for="pay2") 
+                  span 超商代碼繳費
+                  .gray.f16
+                    .mb8 超商機台輸入代碼，列印繳費單後前往櫃台繳費
+                    .red ※ 超商代收-代碼的繳費期限為7天，請務必於期限內進行繳款
+              li.radio_unit
+                input(type="radio" name="pay" id="pay3") 
+                label(for="pay3") 
+                  span 虛擬帳號匯款
+                  .gray.f16 完成結帳流程後，系統會產生一組專屬於此筆訂單的專用帳號，依帳號與購買總金額轉帳匯款即可
+
+
+
+        .infoCard.mb32.ps2.noborder
+          .infoCard__content.lh20
+            .f18 備註說明
+            .gray 送出訂單前，#[span.red 請再次確認所有資料正確無誤] ，並仔細閱讀本網站之「
+              a 服務條款
+              | 」、「
+              a 隱私權政策
+              | 」等所載內容及其意義，茲同意該等條款規定，願遵守網站現今、嗣後規範的各種規則
+          
+        .infoCard.mb64.right.infoCard--sm
+          .infoCard__title 
+            span.f24 訂單總計
+            
+          .infoCard__content.infoCard--multiple
+
+            .multiple__sum.lh22
+              ul.sum__order.nostyle
+                li 常溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span NT$ 11,888
+                li 低溫商品 (&nbsp; #[.brown 3] &nbsp;項 ) 
+                  span NT$ 62,976
+                li 滿額贈品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                  span.red 贈品
+                li 紅利折抵 (&nbsp; #[.brown -150] &nbsp;點 ) 
+                  span.red NT$ -150
+                li 活動折扣 (&nbsp; #[.brown 0] &nbsp;項 ) 
+                  span NT$ 0
+                li 常溫運費 
+                  span NT$ 0
+                li 低溫運費             
+                  span NT$ 0
+                li.border 總計金額
+                  span.f24.italicNum NT $ 74,714
+
+
+
+      .submit.pb80
+        a(href="info.html").btn.cancel 上一步
+        a(href="confirm.html").btn 確定送出
+
+  

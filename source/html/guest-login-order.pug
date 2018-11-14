@@ -1,0 +1,37 @@
+
+extends ./include/layout.pug
+include ./include/public.pug
+include ./include/public.pug
+
+block content
+  
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li 非會員專區
+        li.icon-right-thin 訂單查詢
+
+  #guest.bgcWhite
+    +guest-menu(1)
+  
+    
+    .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+
+      .container.fc.pt72.pb88
+        .login-non.f16
+
+          .f24.lh18.brown.mb16.wide10 非會員訂單查詢
+          .mb32 請輸入訂購人的電子信箱及訂單編號，即可查詢訂單資料
+
+          input(type="text", placeholder="Email").mb24
+          input(type="password", placeholder="Password").mb24
+          label.verify.mb40
+            input(type="text" placeholder="請輸入驗證碼" required)
+            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+
+          .login_btn
+            a(href="guest-order.html").mr 送出
+            a(href="index.html") 取消
+
+  

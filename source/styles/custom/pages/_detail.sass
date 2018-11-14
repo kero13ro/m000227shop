@@ -10,14 +10,19 @@
   .bottom
     +fc
     width: 100%
-  .back
-    +fc
-    +size(200px, 38px)
-    border-radius: 3px
-    letter-spacing: 1px
-    color: white
-    background-color: rgb(179, 139, 90)
-    +hoverBgc(#ce8327)
+    > a
+      +fc
+      +size(200px, 38px)
+      border-radius: 3px
+      letter-spacing: 1px
+      color: white
+      background-color: rgb(179, 139, 90)
+      +hoverBgc(#ce8327)
+      +margin(null 12px)
+    .orange
+      background-color: rgb(235, 122, 28)
+      +hoverBgc(rgb(234, 105, 0))
+
 
 .icon-thermometer
   +size(120px, 40px)
@@ -374,6 +379,21 @@ span.sp
 +max(450)
   [class*="sum__"]
     font-size: 15px
+    +padding(null 10px)
+
+
 +max(340)
   .sum__return
     font-size: 14px
+
+  [class*="sum__"]
+    +padding(null 6px)
+
+#detail.guest
+  .edit
+    color: rgb(235, 122, 28)
+    +hoverText(rgb(234, 105, 0))
+    text-decoration: underline
+  .sum__order
+    border: 1px solid #ddd
+    border-width: 0 1px 1px 1px

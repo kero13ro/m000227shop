@@ -1,5 +1,6 @@
 
 extends ./include/layout.pug
+include ./include/public.pug
 
 block content
   
@@ -10,39 +11,49 @@ block content
         li 非會員專區
         li.icon-right-thin 預約試吃
 
-  #guest.bgcWhite
-    
-    .slcik-menu.eq5
-      ul.nostyle
-        li
-          a(href="guest-order.html") 訂單查詢
-        li
-          a(href="guest-return.html") 退貨查詢
-        li 
-          a(href="guest-course.html") 媽媽教室
-        li.active  
-          a(href="guest-taste.html") 預約試吃
-        li 
-          a(href="guest-subscribe.html") 訂閱電子報
-  
-    
-    .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+  #taste.bgcWhite.guest
+    +guest-menu(4)
 
-      .container.fc.pt72.pb88
-        .login-non.f16
 
-          .f24.lh18.brown.mb16.wide10 預約試吃報名查詢
-          .mb32 請輸入報名者的電子信箱及聯絡電話，即可查詢
+    .container.pt40.pb56
 
-          input(type="text", placeholder="Email").mb24
-          input(type="tel", placeholder="聯絡電話").mb24
-          //- input(type="password", placeholder="Password").mb24
-          label.verify.mb40
-            input(type="text" placeholder="請輸入驗證碼" required)
-            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
+      .right-info
+        .f24.mb16 預約試吃
+        ul.nostyle.lh24
+          li 紫金堂尊榮獨享-「到府試吃」採預約報名，請填寫
+            a 預約申請表
+          li 本公司餐點採低溫冷藏配送方式(一日一配送)
+          li 每人每次僅能預約1次，請勿重複預約
+          li 紫金月子餐試吃，可試吃正餐一份價值700元整，僅酌收試吃費200元；由營養師配送並親自為您現場解說。
 
-          .login_btn
-            a(href="order.html").mr 送出
-            a(href="index.html") 取消
+      .site.mb40
+        .site_title.lh18
+          span.city 台中市
+          span 紫金堂尊榮獨享-「到府試吃」
+        .site_content
+          ul.nostyle.text.lh18
+            li #[span 預約日期：] 106/03/15
+            li #[span 預約狀態：] 預約成功
 
-  
+            li.bd #[span 媽媽姓名：] 張○○ 小姐
+            li #[span 電子信箱：] test@gmail.com
+            li #[span 市內電話：] 04-2435-0749
+            li #[span 聯絡手機：] 0988-212-121
+            li #[span 試吃餐別：] 葷食
+            li #[span 可聯絡時段：] 13:00-17:00
+            li #[span 生產醫院：] 台中醫院
+            li #[span 產別：] 自然
+            li #[span 預產期：] 2017/12/31
+            li #[span 胎次：] 第一胎
+            li #[span 聯絡地址：] 407 台中市北屯區東山路一段147巷49號
+            li #[span 資料來源：] 網路廣告(Google、Yahoo) ； 網路月子餐搜尋
+            li #[span 月子規劃方向：] 月子餐 30 天
+
+            li.ps.bd 備註：本服務僅提供懷孕中媽咪申請試吃
+          a.btn.cancel 取消預約
+
+
+
+      .bottom-btn.pb88
+        a.btn 重新查詢
+        a(href="member.html").btn.orange 加入會員

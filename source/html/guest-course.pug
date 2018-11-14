@@ -1,48 +1,87 @@
 
 extends ./include/layout.pug
+include ./include/public.pug
 
 block content
-  
   .container
     .breadcrumb
       ul.nostyle
         li 首頁
-        li 非會員專區
-        li.icon-right-thin 媽媽教室
+        li 會員專區
+        li.icon-right-thin 訂單紀錄
 
-  #guest.bgcWhite
-    
-    .slcik-menu.eq5
-      ul.nostyle
-        li
-          a(href="guest-order.html") 訂單查詢
-        li 
-          a(href="guest-return.html") 退貨查詢
-        li.active 
-          a(href="guest-course.html") 媽媽教室
-        li 
-          a(href="guest-taste.html") 預約試吃
-        li 
-          a(href="guest-subscribe.html") 訂閱電子報
-  
-    
-    .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+  #course.bgcWhite.guest
+    +guest-menu(3)
 
-      .container.fc.pt72.pb88
-        .login-non.f16
+    .container.pt40
 
-          .f24.lh18.brown.mb16.wide10 媽媽教室報名查詢
-          .mb32 請輸入報名者的電子信箱及聯絡電話，即可查詢
+      .right-info
+        .f24.mb16 媽媽教室
+        ul.nostyle.lh24
+          li 媽媽教室品嚐會採預約報名，進行15分鐘後，開放給現場媽咪參加，為保障孕媽咪的權益，敬請準時參加。
+          li 精美小禮及抽獎活動，請參照官網訊息。若因故無法進行，紫金堂保有變更或終止活動之權利。
+          li 特別活動所提供贈品，憑媽媽手冊兌換，一冊兌換乙次。
+          li 一個月內限預約2場。
 
-          input(type="text", placeholder="Email").mb24
-          input(type="tel", placeholder="聯絡電話").mb24
-          //- input(type="password", placeholder="Password").mb24
-          label.verify.mb40
-            input(type="text" placeholder="請輸入驗證碼" required)
-            img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
 
-          .login_btn
-            a(href="order.html").mr 送出
-            a(href="index.html") 取消
+      .control-row
 
-  
+        label.select_unit.mr24.md
+          span 排序依據：
+          select(required)
+            option(value="1" selected) 預約日期
+            option(value="2") 排序依據2
+            option(value="3") 排序依據3
+
+        form.search_unit.icon-scan
+          input(type="search", placeholder="搜尋") 
+          input(type="submit",  value="搜尋") 
+
+
+      .site.mb40
+        .site_title.lh18
+          span.city 新北市
+          span 玉美人DIY手作課程 - 新生兒手套&紫金月子膳食品嚐
+        .site_content
+          ul.nostyle.text.lh18
+            li #[span 活動場次：] 新北市 - 106/04/05(三)  - 13:30-15:30
+            li #[span 預約日期：] 106/03/15
+            li #[span 預約狀態：] 預約成功
+            li #[span 活動地址：] 220新北市板橋區四川路二段16巷10號
+              a(href="https://goo.gl/maps/JoQsHYRfSg12", target="_blank").icon-location  Google Map
+            li.ps 備註：該場次需憑媽媽手冊方可換取【新生兒手作課程】，限領一次。
+          a.btn.cancel 取消預約
+
+      .site.mb40
+        .site_title.lh18
+          span.city 新北市
+          span 一百分月子全攻略&紫金月子膳食品嚐
+        .site_content
+          ul.nostyle.text.lh18
+            li #[span 活動場次：] 新北市 - 106/04/05(三)  - 13:30-15:30
+            li #[span 預約日期：] 106/02/01
+            li #[span 預約狀態：] 已結束
+            li #[span 活動地址：] 114台北市內湖區瑞光路513巷28號8樓
+              a(href="https://goo.gl/maps/Tj1cHygjrZU2", target="_blank").icon-location  Google Map
+          a.btn 已結束
+
+      .site.mb40
+        .site_title.lh18
+          span.city 台北市
+          span 成功做好月子&紫金月子膳食品嚐會
+        .site_content
+          ul.nostyle.text.lh18
+            li #[span 活動場次：] 台北市 - 106/04/05(三)  - 13:30-15:30
+            li #[span 預約日期：] 106/01/30
+            li #[span 預約狀態：] 預約取消
+            li #[span 活動地址：] 220新北市板橋區四川路二段16巷10號
+              a(href="https://goo.gl/maps/huoqbojCGuB2", target="_blank").icon-location  Google Map
+            li.ps 備註：現場高圓清燕窩試吃，該場次限額15組媽咪報名參予。
+          a.btn 取消預約
+
+
+
+
+      .bottom-btn.pb88
+        a.btn 重新查詢
+        a(href="member.html").btn.orange 加入會員
