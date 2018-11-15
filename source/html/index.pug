@@ -5,12 +5,13 @@ include ./include/index_block.pug
 block content
   
   #index
+    #close-bgc
     .slider-show    
-      .wrapper(style="background-image: url(styles/images/01-banner1.jpg);")
-      .wrapper(style="background-image: url(styles/images/01-banner2.jpg);")
-      .wrapper(style="background-image: url(styles/images/01-banner3.jpg);")
-      .wrapper(style="background-image: url(styles/images/01-banner1.jpg);")
-      .wrapper(style="background-image: url(styles/images/01-banner1.jpg);")
+      .pic(style="background-image: url(styles/images/01-banner2.jpg);")
+      .pic(style="background-image: url(styles/images/01-banner3.jpg);")
+      .pic(style="background-image: url(styles/images/01-banner1.jpg);")
+      .pic(style="background-image: url(styles/images/01-banner2.jpg);")
+      .pic(style="background-image: url(styles/images/01-banner1.jpg);")
 
     ul.slider-nav.nostyle
       li.active 消費滿萬送好禮喔！
@@ -28,13 +29,13 @@ block content
         a 保健調養
         a 媽媽寶寶
         
-      .mb56.d-flex
+      .tri-columns.mb56
       
         .catalog.leftBlock
           +catalog
 
 
-        .items.midBlock
+        .midBlock
 
           .block__title 產品推薦
           .items__content

@@ -16,19 +16,16 @@ $bgco: rgb(245, 241, 240)
 
 .slider-show  
   border-bottom: 1px solid rgb(181,137,89)
-  .wrapper
-    // height: 470px
-
-
+  width: 100%
+  .pic
     background-size: cover
     background-position: center
     position: relative
+
     &:after
       display: block
       content: ""
-      padding-top: 33.57%
-      
-
+      padding-top: 33.57%  //470px
 
     &:before
       +size(100%)
@@ -39,16 +36,41 @@ $bgco: rgb(245, 241, 240)
       background-color: rgba(black, 0.3)
       opacity: 0
       transition: opacity 0.3s
-
-  .wrapper:not(.slick-current)
+      
+  .pic:not(.slick-current)
     &:before
       opacity: 1
       transition: opacity 0.3s
 
   .slick-list
-    position: relative
-    width: 100vw
-    +padding(null calc((100vw - 1400px) /2))
+    +padding(null 13.5vw)
+
+  .slick-arrow
+    +position(absolute, 0 null null null )
+    +size(13.5vw, 100%)
+    color: white
+    z-index: 1
+
+    &:before
+      font-size: 1.2rem
+      margin: 0 20px
+      transition: transform 0.3s
+
+    &:hover
+      &:before
+        transform: scale(1.3)
+        transition: transform 0.3s
+
+    &.slick-disabled
+      background-color: rgba(200,200,200,0.5)
+      
+  .icon-prev
+    left: 0
+    +f(flex-end, center)
+  .icon-next
+    right: 0
+    +f(flex-start, center)
+    
 
 
 .slider-nav
@@ -84,6 +106,19 @@ $bgco: rgb(245, 241, 240)
       transform: translateX(-50%) rotate(45deg)
 
 
+.slider-show
+  +max(1366)
+    .slick-list
+      +padding(null 8vw)
+
+    .slick-arrow
+      +size(8vw, 100%)
+
+  +max(767)
+    .slick-list
+      +padding(null 0)
+    .slick-arrow
+      display: none
 
 
 .slider-nav
@@ -172,9 +207,10 @@ $bgco: rgb(245, 241, 240)
   // .icon-prev
 
 
-.mb56.d-flex
+.tri-columns
   position: relative
   width: 100%
+  display: flex
 
 .midBlock
   +margin(null 24px)
@@ -191,7 +227,7 @@ $bgco: rgb(245, 241, 240)
 
 
 +max(1300)
-  .mb56.d-flex
+  .tri-columns
     flex-wrap: wrap
 
   .midBlock
@@ -201,9 +237,15 @@ $bgco: rgb(245, 241, 240)
   .rightBlock
     position: static
 
++max(991)
+  .leftBlock, .rightBlock
+    width: 190px
+  .midBlock
+    +margin(null 0px null 20px)
+    width: calc(100% - 211px)
 
 +max(767)
-  .mb56.d-flex
+  .tri-columns
     // flex-wrap: wrap-reverse
   .leftBlock, .midBlock, .rightBlock
     width: 100%
@@ -215,19 +257,22 @@ $bgco: rgb(245, 241, 240)
 
 
 .catalog
-  +f(null, null, column)
+  .block__title
+    z-index: 11
+    position: relative
+  #dorpdown-js
+    background-color: transparent
 
   ul
     background-color: rgb(255,255,255)
     +padding(null 25px)
     margin-bottom: 8px
     +padding(10px null)
-    line-height: 30px
-    font-weight: bolder
+    font-weight: bold
 
   .subtitle
     font-weight: bold
-    line-height: 36px
+    line-height: 2.25
     color: #a57b4b  
     a
       color: #a57b4b
@@ -235,9 +280,11 @@ $bgco: rgb(245, 241, 240)
       +margin(null 10px null -3px)
 
   li:not(.subtitle)
-    line-height: 32px
+    line-height: 2
     +f(null , center)
     +circle( 5px, 10px, #c8ab81)
+    a
+      +hoverText(rgb(104,55,0))
 
 
   ul.purple
@@ -260,15 +307,61 @@ $bgco: rgb(245, 241, 240)
       a
         color: #fd5f27
 
+  +max(991)
+    font-size: 15px
+    li:not(.subtitle):before
+      background-color: #fff !important
+
+    ul
+      +padding(null 20px)
+
+    .subtitle:before
+      margin-right: 5px
+
+
   +max(767)
-    li:not(.subtitle)
+    .block__title
+      width: 100%
+  
+    #dorpdown-js
+      +f(flex-start, stretch, row, wrap)
+      width: 100%
+
+    ul
+      width: 50%
+
+    #dorpdown-js
+      position: absolute
+      z-index: 11
+      background-color: #efefef
       display: none
-      opacity: 0
-      overflow: hidden
 
-      // transition: 0.3s opacity
 
-    // display: none //tmp
+  +max(450)
+
+    font-weight: normal      
+    ul
+      width: 100%
+    .subtitle + div
+      display: none
+    
+
+#close-bgc
+  +size(100vw, 100vh)
+  +position(fixed, 0 0 null null )
+  z-index: 10
+  pointer-events: none
+  transition: 0.3s background-color
+  &.active
+    transition: 0.3s background-color
+    pointer-events: auto
+    background-color: rgba(black, 0.1)
+
+
+
+
+
+
 
 
 
@@ -276,16 +369,14 @@ $bgco: rgb(245, 241, 240)
 //問題在於 順序無法以 小大小小 排列
 //應該要用js方式變更DOM 或是放入dashboard的方式
   
-
-.items
   
 .items__content
-  // background-color: rgb(255,255,255)
   +f(space-around, flex-start, row, wrap)
   +padding(5px 18px)
 
   .card
-    +size(220px, auto)
+    // +size(220px, auto)
+    width: calc(100% / 4)
     white-space: normal
     +padding(15px)
     +margin(18px null 18px null )
@@ -325,37 +416,58 @@ $bgco: rgb(245, 241, 240)
     background-color: rgba(black, 0.3)
     opacity: 0
     pointer-events: none
-    .icon-heart,
-    .icon-cart
+    +hover(opacity)
+
+    [class^="icon-"]
       +size(50px)
       +margin(null 10px)
       border-radius: 50%
       +fc
       cursor: pointer
+      flex-shrink: 0
+
     .icon-heart
       color: rgb(189, 160, 120)
       background-color: #fff
       +padding(3px 2px null null )
 
+      &:before
+        +hover(color)
+      &:hover:before
+        color: #d2655c
+        
     .icon-cart
       color: #fff
       background-color: rgb(189, 160, 120)
+      transition: 0.3s all
 
+      +hover(background-color)
+      &:hover
+        background-color: $brown-dark
+
+  .card:hover
+    box-shadow: 0 0 1px #b47832
+    .cover
+      opacity: 1
+      // transition: 0.3s opacity
+      pointer-events: auto
 
 
   .card__name
-    line-height: 26px
+    line-height: 1.625
     +padding(3px null)
 
   .card__price
-    height: 26px
     margin-bottom: 5px
     span:first-child
       font-size: 15px
+      white-space: nowrap
+      display: inline-block
       color: #8b8b8b
       margin-right: 5px
     .num
       font-size: 18px
+      white-space: nowrap
       color: #b47832
       
 
@@ -374,6 +486,25 @@ $bgco: rgb(245, 241, 240)
     border-bottom: 1px solid #e5e5e5
     +max(1450)
       display: none
+
+
+
+  +max(990)
+    align-items: stretch
+    .card
+      font-size: 15px
+      width: calc(100% / 3)
+      +padding(8px)
+      +margin(8px null)
+      +f(flex-start, flex-start, column)
+    .card__name
+      margin-bottom: auto
+
+  +max(768)
+    .cover
+      [class^="icon-"]
+        +size(45px)
+        +margin(null 6px)
 
 
 .items__content
@@ -485,6 +616,119 @@ $bgco: rgb(245, 241, 240)
       +hoverBgc(#cc3d33)
 
 
+#modal-tips
+  background-color: #fff
+  max-width: 1000px
+  +padding( 22px 30px)
+  border-radius: 10px
+  color: #7C7C7C
+
+  .tips__content >
+    p, span
+      +padding(null 6px)
+      display: inline-block
+      margin-bottom: 12px
+
+  .tips__title
+    +padding(null 6px)
+    border-bottom: 1px solid #eee
+    color: #A5514B
+    line-height: 2.2
+    margin-bottom: 18px
+    
+  .card-wrap
+    +f(flex-start, stretch, row ,wrap)
+    +margin(null -13px)
+    color: #333
+
+  .card
+    +margin(null 13px 25px 13px)
+    width: calc(25% - 26px)
+    +padding(18px)
+    border: 1px solid #eee
+    +f(flex-start, flex-start, column)
+    font-size: 15px
+
+  .card__name
+    +padding(15px null)
+
+  .card__price
+    margin-top: auto
+    +f(space-between)
+    width: 100%
+
+    span:not(.num)
+      color: $brown-dark
+    .num
+      text-decoration: line-through
+
+  .shop
+    display: inline-block
+    float: right
+    +size(110px, 40px)
+    line-height: 40px
+    border-radius: 20px
+    color: #ffffff
+    background-color: rgb(188, 74, 74)
+    text-align: center
+    cursor: pointer
+    +hoverBgc(rgb(204, 38, 38))
+  .clear
+    clear: both
+
+  +max(990)
+    .card__name
+      +padding(10px null)
+    .card
+      +margin(null 6px 20px 6px)
+      width: calc(33% - 12px)
+      +padding(15px)
+
+  +max(600)
+    +padding( 22px 20px)
+    font-size: 13px
+    .card
+      +padding(6px)
+      font-size: 12px
+      width: calc(33% - 6px)
+      +margin(null 3px 15px 3px)
+
+    .card__pic
+      +margin(-6px -6px null)
+    .card__price
+      flex-wrap: wrap
+
+      
+
+
+
+//讓lity內容過長時，可以上下捲動
+.lity-active body 
+  overflow: hidden
+
+.lity-inline 
+  .lity-content > * 
+    max-height: none !important
+
+  .lity-wrap 
+    overflow: auto
+
+  .lity-container 
+    max-height: none !important
+    margin: 30px 0
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .record__content
@@ -510,8 +754,7 @@ $bgco: rgb(245, 241, 240)
     margin-right: 12px
 
 
-.card:hover
-  box-shadow: 0 0 1px #b47832
-  .cover
-    opacity: 1
-    pointer-events: auto
+
+
+
+

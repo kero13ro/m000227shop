@@ -1,48 +1,57 @@
 mixin catalog
   .block__title 產品分類
+  #dorpdown-js
 
-  ul.nostyle.orange
-    li.subtitle.icon-right: a 特惠活動
-    li: a(href="category.html") 火熱新品養身飲
-    li: a(href="category.html") 誠意滿滿伴手禮
-    li: a(href="category.html") 艾力克斯的禮物
-  ul.nostyle.purple
-    li.subtitle.icon-right: a 月子餐組合選
-    li.active: a 月子補養兩日餐(素)
-    li: a(href="category.html") 月子養生飲品
-    li: a(href="category.html") 產後養護用品
-  ul.nostyle
-    li.subtitle.icon-right: a 紫金月子
-    li: a(href="category.html") 月子養生餐(葷)
-    li: a(href="category.html") 月子養生餐(素)
-  ul.nostyle
-    li.subtitle.icon-right: a 複合式月子餐
-    li: a(href="category.html") 複合式月子餐
-  ul.nostyle
-    li.subtitle.icon-right: a 月子調理
-    li: a(href="category.html") 月子水八折優惠
-    li: a(href="category.html") 紫金月子飲品
-    li: a(href="category.html") 孕媽咪滋養飲
-    li: a(href="category.html") 月子藥膳調理
-    li: a(href="category.html") 月子哺乳湯底
-  ul.nostyle
-    li.subtitle.icon-right: a 小產調養
-    li: a(href="category.html") 小產養生餐(葷)
-    li: a(href="category.html") 小產養生餐(素)
-    li: a(href="category.html") 小產藥膳調理
-  ul.nostyle
-    li.subtitle.icon-right: a 生理調養
-    li: a(href="category.html") 甜品&烘焙
-    li: a(href="category.html") 生理藥膳調理
-    li: a(href="category.html") 香草美人生理餐
-  ul.nostyle
-    li.subtitle.icon-right: a 保健調養
-    li: a(href="category.html") 美肌Q彈花膠飲
-    li: a(href="category.html") 孕期滋養鰻魚精
-    li: a(href="category.html") 術後調養鱸魚精
-    li: a(href="category.html") 百分百新鮮果汁
-    li: a(href="category.html") 連淨100%苦茶油
-    li: a(href="category.html") 真宴坊冰糖燕窩
+    ul.nostyle.orange
+      li.subtitle.icon-right: a 特惠活動
+      div
+        li: a(href="category.html") 火熱新品養身飲
+        li: a(href="category.html") 誠意滿滿伴手禮
+        li: a(href="category.html") 艾力克斯的禮物
+    ul.nostyle.purple
+      li.subtitle.icon-right: a 月子餐組合選
+      div
+        li.active: a 月子補養兩日餐(素)
+        li: a(href="category.html") 月子養生飲品
+        li: a(href="category.html") 產後養護用品
+    ul.nostyle
+      li.subtitle.icon-right: a 紫金月子
+      div
+        li: a(href="category.html") 月子養生餐(葷)
+        li: a(href="category.html") 月子養生餐(素)
+    ul.nostyle
+      li.subtitle.icon-right: a 複合式月子餐
+      div
+        li: a(href="category.html") 複合式月子餐
+    ul.nostyle
+      li.subtitle.icon-right: a 月子調理
+      div
+        li: a(href="category.html") 月子水八折優惠
+        li: a(href="category.html") 紫金月子飲品
+        li: a(href="category.html") 孕媽咪滋養飲
+        li: a(href="category.html") 月子藥膳調理
+        li: a(href="category.html") 月子哺乳湯底
+    ul.nostyle
+      li.subtitle.icon-right: a 小產調養
+      div
+        li: a(href="category.html") 小產養生餐(葷)
+        li: a(href="category.html") 小產養生餐(素)
+        li: a(href="category.html") 小產藥膳調理
+    ul.nostyle
+      li.subtitle.icon-right: a 生理調養
+      div
+        li: a(href="category.html") 甜品&烘焙
+        li: a(href="category.html") 生理藥膳調理
+        li: a(href="category.html") 香草美人生理餐
+    ul.nostyle
+      li.subtitle.icon-right: a 保健調養
+      div
+        li: a(href="category.html") 美肌Q彈花膠飲
+        li: a(href="category.html") 孕期滋養鰻魚精
+        li: a(href="category.html") 術後調養鱸魚精
+        li: a(href="category.html") 百分百新鮮果汁
+        li: a(href="category.html") 連淨100%苦茶油
+        li: a(href="category.html") 真宴坊冰糖燕窩
 
 
 
@@ -71,7 +80,7 @@ mixin cart
         span 小計：
         span.num $12,848
 
-      a.cart_tips 
+      a.cart_tips(href="#modal-tips" data-lity)
         .f18 滿額禮大方送
         .brown 購物滿$15,000 #[br] 好禮任你選
         | 還差 $2,152元 #[br] 好禮搶先看
@@ -79,6 +88,75 @@ mixin cart
       .cart__btn
         a(href="#") 查看 #[br] 購物車
         a(href="#") 結帳
+
+  #modal-tips.f16.lity-hide
+    .tips__title.f24 滿額贈品
+    .tips__content
+      p 單筆訂單金額 #[span.red NT$5,000] 元以上，可挑選 #[span.red 1] 項贈品，可在結帳時於購物車選擇
+      .card-wrap
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-1.jpg")
+          .card__name 疏乳棒 (舒舒棒)
+          .card__price
+            span 倒數 45
+            span.num $ 150
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-2.jpg")
+          .card__name 美身帶
+          .card__price
+            span 無庫存
+            span.num $ 250
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-3.jpg")
+          .card__name 艾力克斯的禮物-清涼膏隨身瓶 (30ml)
+          .card__price
+            span 倒數 13
+            span.num $ 350
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-4.jpg")
+          .card__name 乳尖修護膏
+          .card__price
+            span 倒數 36
+            span.num $ 450
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-5.jpg")
+          .card__name 松子紅豆酥【嚐鮮包4入】
+          .card__price
+            span 倒數 45
+            span.num $ 150
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-6.jpg")
+          .card__name 黑豆芝麻酪(份/220g)
+          .card__price
+            span 無庫存
+            span.num $ 250
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-7.jpg")
+          .card__name 極品紅棗茶(常溫)
+          .card__price
+            span 倒數 33
+            span.num $ 350
+        .card
+          .card__pic
+            img(src="./styles/images/01-gift-8.jpg")
+          .card__name 杏仁川貝露(份/220g)
+          .card__price
+            span 倒數 36
+            span.num $ 450
+
+        //- .card
+        //- .card
+
+      span ※ 若贈品、優惠下架或庫存量不足，本公司保有修改、變更或暫停本活動之權利
+      .shop(onclick='$("body").trigger(esc);') 繼續購物
+      .clear
 
 mixin record
   .record
