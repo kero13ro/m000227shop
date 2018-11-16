@@ -199,11 +199,23 @@
 .lity-container
   max-width: 90%
 .lity
-  background-color: rgba(0,0,0,0.5)
+  background-color: rgba(0,0,0,0.3)
+  // .lity-close
+  //   text-shadow: none
+  //   +position(absolute, 15px 15px null null )
+  //   color: #ddc6a8
+
   .lity-close
-    text-shadow: none
-    +position(absolute, 15px 15px null null )
-    color: #ddc6a8
+    +size(32px)
+    position: absolute
+    transform: translateX(50%) translateY(-50%)
+    font-size: 27px
+    line-height: 27px
+    color: $brown
+    border: 1px solid $brown
+    // background-color: $brown-light
+    background-color: #fff
+    border-radius: 50%
 
   .box
     +f(center,center,column)

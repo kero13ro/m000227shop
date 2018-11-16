@@ -56,17 +56,17 @@ mixin catalog
 
 
 mixin cart
-  .cart-lsit
+  .cart-list
     .block__title 購物車 (2)
     .cart__content
       ul.nostyle
-        li.unit
-          .unit__content
-            img(src="./styles/images/01-item03.jpg")
-            .info
-              .calc $11,888 x 1
-              .delete 移除
-          .unit__title 月子補養兩日餐(10日)
+        //- li.unit
+        //-   .unit__content
+        //-     img(src="./styles/images/01-item03.jpg")
+        //-     .info
+        //-       .calc $11,888 x 1
+        //-       .delete 移除
+        //-   .unit__title 月子補養兩日餐(10日)
 
         li.unit
           .unit__content
@@ -80,14 +80,14 @@ mixin cart
         span 小計：
         span.num $12,848
 
-      a.cart_tips(href="#modal-tips" data-lity)
+      a.cart_tips(href="#modal-tips" data-lity)#tips-js
         .f18 滿額禮大方送
         .brown 購物滿$15,000 #[br] 好禮任你選
         | 還差 $2,152元 #[br] 好禮搶先看
 
       .cart__btn
-        a(href="#") 查看 #[br] 購物車
-        a(href="#") 結帳
+        a(href="cart.html") 查看#[br]購物車
+        a(href="cart.html") 結帳
 
   #modal-tips.f16.lity-hide
     .tips__title.f24 滿額贈品
@@ -186,3 +186,10 @@ mixin record
       a.record__unit
         img(src="./styles/images/01-item09.jpg")
         div 紫金月子水1箱
+
+mixin modal-trace
+  #modal-trace.lity-hide
+    .wrapper
+      .icon-heart
+      .lh18 已加入追蹤清單 #[br] 前往
+        a(href="trace.html") 我的追蹤清單

@@ -1,5 +1,5 @@
 var gulp = require("gulp");
-var merge = require('merge-stream');
+// var merge = require('merge-stream');
 var browserSync = require("browser-sync").create();
 var plumber = require("gulp-plumber");
 

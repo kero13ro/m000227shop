@@ -5,13 +5,13 @@ include ./include/index_block.pug
 block content
   
   #index
-    #close-bgc
+    //- #close-bgc
     .slider-show    
-      .pic(style="background-image: url(styles/images/01-banner2.jpg);")
-      .pic(style="background-image: url(styles/images/01-banner3.jpg);")
-      .pic(style="background-image: url(styles/images/01-banner1.jpg);")
-      .pic(style="background-image: url(styles/images/01-banner2.jpg);")
-      .pic(style="background-image: url(styles/images/01-banner1.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner2.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner3.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner1.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner2.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner1.jpg);")
 
     ul.slider-nav.nostyle
       li.active 消費滿萬送好禮喔！
@@ -44,7 +44,7 @@ block content
               .card__pic(data-tri="新品" data-corner="30日")
                 img(src="./styles/images/01-item01.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                     
                   .icon-cart
                     
@@ -58,7 +58,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item02.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 月子補養兩日餐(20日)
               .card__price
@@ -70,7 +70,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item03.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 月子補養兩日餐(10日)
               .card__price
@@ -82,7 +82,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item04.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 月子補養兩日餐(2日)
               .card__price
@@ -96,7 +96,7 @@ block content
               .card__pic(data-tri="特惠" data-corner="TOP 1")
                 img(src="./styles/images/01-item05.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 生理藥膳調理【5日】
               .card__price
@@ -108,7 +108,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item06.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 香草美人經中餐
               .card__price
@@ -120,7 +120,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item07.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 香草美人經後餐
               .card__price
@@ -132,7 +132,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item08.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 香草美人生理餐(六期搭贈一期)
               .card__price
@@ -146,7 +146,7 @@ block content
               .card__pic(data-tri="特惠" data-corner="1箱")
                 img(src="./styles/images/01-item09.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 紫金月子水【1箱】
               .card__price
@@ -157,7 +157,7 @@ block content
               .card__pic(data-tri="特惠" data-corner="30日")
                 img(src="./styles/images/01-item10.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 月子藥膳湯底第一階段
               .card__price
@@ -168,7 +168,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item11.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 月子藥膳湯底第二階段
               .card__price
@@ -179,7 +179,7 @@ block content
               .card__pic
                 img(src="./styles/images/01-item12.jpg")
                 .cover
-                  .icon-heart
+                  .icon-heart(href="#modal-trace" data-lity)
                   .icon-cart
               .card__name 月子藥膳湯底第三階段
               .card__price
@@ -191,4 +191,12 @@ block content
 
           +cart
           +record
+
+
+    +modal-trace
+    //- #modal-trace.lity-hide
+    //-   .wrapper
+    //-     .icon-heart
+    //-     .lh18 已加入追蹤清單 #[br] 前往
+    //-       a(href="trace.html") 我的追蹤清單
 

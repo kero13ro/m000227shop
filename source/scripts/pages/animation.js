@@ -1,6 +1,68 @@
 
 
-// $("")
+var cartNum = sessionStorage.getItem("cart") || " ";
+var bedge = $("#nav .bedge");
+
+function renewNum() {
+  if (bedge.text() !== " ") {
+    bedge.css("opacity", 1);
+  } else {
+    bedge.css("opacity", 0);
+  }
+}
+
+var cartUnit = `
+  <div class="unit__content"><img src="./styles/images/01-item03.jpg">
+    <div class="info">
+      <div class="calc">$11,888 x 1</div>
+      <div class="delete">移除</div>
+    </div>
+  </div>
+  <div class="unit__title">月子補養兩日餐(10日)</div>`;
+
+
+
+function addCartUnit() {
+  var li = document.createElement('li');
+  li.className = "unit";
+  li.innerHTML = cartUnit;
+  li.querySelector(".delete").onclick = function () {li.remove();};
+  $(".cart-lsit ul").find("#mCSB_1_container").prepend(li);
+
+}
+
+$(".cart__content li").each(function () {
+  var _this = $(this)[0];
+
+  $(this).find(".delete").click(function () {
+    _this.remove();
+  });
+});
+
+
+bedge.text(cartNum);
+renewNum();
+
+$(".card .icon-cart").click(function (e) {
+  e.preventDefault();
+  cartNum++;
+  addCartUnit();
+  sessionStorage.setItem("cart", cartNum);
+  bedge.text(cartNum);
+  renewNum();
+});
+
+
+$("#tips-js").click(function() {
+  $("html").addClass("tips-mode");
+
+  $(document).on("lity:close", function() {
+    $("html").removeClass("tips-mode");
+  });
+});
+
+
+
 
 
   /* ==========================================================================

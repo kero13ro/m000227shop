@@ -140,8 +140,6 @@ $bgco: rgb(245, 241, 240)
     border-radius: 8px 8px 0 0
     background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
     margin-bottom: 10px
-    // +hoverText(rgb(104,55,0))
-
 
     position: relative
     &::before
@@ -163,21 +161,6 @@ $bgco: rgb(245, 241, 240)
       opacity: 1
 
 
-.block__title
-  height: 50px
-  +f(null, center)    
-  background: linear-gradient(to bottom, rgb(255,255,255), rgb(251,247,243))
-  border-top: 1px solid rgb(222, 207, 186)
-  +padding(null 25px)
-  border-bottom: 1px solid rgb(239,239,239)  
-  color: rgb(104,55,0)
-  font-weight: bold
-
-  & + *
-    background-color: rgb(255,255,255)
-
-
-
 .submenu
   .slick-track
     +f(flex-start, flex-end)
@@ -185,8 +168,7 @@ $bgco: rgb(245, 241, 240)
     display: flex !important
 
   .slick-list
-    +margin(null 42px)
-
+    +margin(null 36px)
 
   .slick-arrow
     background-color: rgb(216, 194, 170)
@@ -204,7 +186,50 @@ $bgco: rgb(245, 241, 240)
 
   .icon-next
     right: 0
-  // .icon-prev
+
+  +max(767)
+    .slick-list
+      +margin(null 36px)
+      // +padding(null 1px)
+      font-size: 12px
+
+  +max(430)
+    .slick-list
+      +margin(null 30px)
+
+    a
+      height: 38px
+    a.active
+      height: 42px
+
+  .slick-arrow
+    +size(24px)
+    top: 10px
+    &:before
+      font-size: 12px
+
+  .icon-prev
+    left: -5px
+  .icon-next
+    right: -5px
+
+
+
+.block__title
+  height: 50px
+  +f(null, center)    
+  background: linear-gradient(to bottom, rgb(255,255,255), rgb(251,247,243))
+  border-top: 1px solid rgb(222, 207, 186)
+  +padding(null 25px)
+  border-bottom: 1px solid rgb(239,239,239)  
+  color: rgb(104,55,0)
+  font-weight: bold
+
+  & + *
+    background-color: rgb(255,255,255)
+
+
+
 
 
 .tri-columns
@@ -215,6 +240,7 @@ $bgco: rgb(245, 241, 240)
 .midBlock
   +margin(null 24px)
   width: calc(100% - 478px)
+  margin-bottom: 80px
 
 .leftBlock, .rightBlock
   width: 215px
@@ -228,11 +254,16 @@ $bgco: rgb(245, 241, 240)
 
 +max(1300)
   .tri-columns
-    flex-wrap: wrap
+    flex-direction: column
+    // flex-wrap: wrap
+
 
   .midBlock
     +margin(null 0px null 20px)
     width: calc(100% - 236px)
+    position: absolute
+    right: 0
+    top: 0
 
   .rightBlock
     position: static
@@ -245,18 +276,31 @@ $bgco: rgb(245, 241, 240)
     width: calc(100% - 211px)
 
 +max(767)
-  .tri-columns
-    // flex-wrap: wrap-reverse
   .leftBlock, .midBlock, .rightBlock
     width: 100%
-    margin: 0
+    +margin(null 0px null 0)
+  
+  .rightBlock
+    +f(space-between, flex-start, row, wrap)
+    .cart-list, .record
+      width: calc(50% - 5px)
+      
+  .midBlock
+    position: relative
+    
 
+
++max(450)
+  .rightBlock
+    .cart-list, .record
+      width: 100%
 
 
 
 
 
 .catalog
+  margin-bottom: 15px
   .block__title
     z-index: 11
     position: relative
@@ -371,6 +415,7 @@ $bgco: rgb(245, 241, 240)
   
   
 .items__content
+  
   +f(space-around, flex-start, row, wrap)
   +padding(5px 18px)
 
@@ -507,42 +552,50 @@ $bgco: rgb(245, 241, 240)
         +margin(null 6px)
 
 
-.items__content
+
   +max(530)
-    +padding(null 10px)
-    
+    +padding(null 6px)
+    font-size: 14px
+    .card__price span:first-child
+      font-size: 14px
+
     .card
       width: calc(50%)
-      +padding(null 10px)
-      +margin(0 null)
+      +padding(null 6px)
+      +margin(0 null 10px)
 
-    .card__name
-      font-size: 15px
+    .card__pic
+      margin-bottom: 3px
+  
     .card__price
-      height: auto
-      > span
-        display: block
+      margin-top: 5px
 
 
 
 
 
-.cart-lsit
+  
+#mCSB_1_scrollbar_vertical
+  right: -6px
+
+
+.cart-list
   margin-bottom: 20px
 
   .cart__content
-    // background-color: rgb(255,255,255)
     +padding(null 20px)
     padding-bottom: 30px
+    +f(flex-start,center,  column)
+
+  ul
+    overflow: y-scroll
+    width: 100%
+    max-height: 450px 
 
   .unit
-    // margin-bottom: 18px
     +padding(20px null)
-
-  .unit
     border-bottom: 1px solid rgb(240, 240, 240)
-  .unit:last-child
-    border-bottom: 1px solid black
+    
     
   .unit__content
     +f(flex-start, flex-end)
@@ -558,13 +611,18 @@ $bgco: rgb(245, 241, 240)
     .delete
       +size(60px, 25px)
       font-size: 14px
+      color: #666
       background-color: rgb(237, 237, 237)
       +fc
       cursor: pointer
+      +hoverText(rgb(210,101,92))
 
   .cart__total
+    width: 100%
+    border-top: 1px solid black
     height: 60px
     text-align: center
+    margin-bottom: 8px
     span
       line-height: 60px
       align-self: baseline
@@ -576,15 +634,14 @@ $bgco: rgb(245, 241, 240)
   .cart_tips
     margin-bottom: 25px
     width: 100%
+    max-width: 200px
+
     border: 1px solid rgb(222, 207, 186)
     border-radius: 10px
     white-space: normal
-    +padding(12px null)
+    +padding(12px)
     text-align: center
     background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
-
-
-    +padding(null 12px)
     color: rgb(210,101,92)
     
     .f18
@@ -598,14 +655,17 @@ $bgco: rgb(245, 241, 240)
       padding-bottom: 10px
       margin-bottom: 10px
 
+    +hover(border-color, 0.2s)
+    &:hover
+      border-color: rgb(210,101,92)
 
   .cart__btn
-    +f
+    +f(center)
     a
       +size(80px)
       color: white
       border-radius: 50%
-      +margin(null 3px)
+      +margin(null 4px)
       +fc
       text-align: center
     a:first-child
@@ -614,6 +674,15 @@ $bgco: rgb(245, 241, 240)
     a:last-child
       background-color: rgb(210,101,92)
       +hoverBgc(#cc3d33)
+
+  +max(991)
+    .cart__btn
+      a
+        +size(70px)
+        font-size: 15px
+        flex-shrink: 0
+
+
 
 
 #modal-tips
@@ -703,41 +772,52 @@ $bgco: rgb(245, 241, 240)
 
 
 //讓lity內容過長時，可以上下捲動
-.lity-active body 
+
+html.lity-active.tips-mode body 
   overflow: hidden
 
-.lity-inline 
-  .lity-content > * 
-    max-height: none !important
+  .lity-inline 
+    .lity-content > * 
+      max-height: none !important
 
-  .lity-wrap 
-    overflow: auto
+    .lity-wrap 
+      overflow: auto
 
-  .lity-container 
-    max-height: none !important
-    margin: 30px 0
-
-
+    .lity-container 
+      max-height: none !important
+      margin: 30px 0
 
 
+#modal-trace
+  .wrapper
+    background-color: #fff
+    +fc
+    +padding(20px 22px)
+    border-radius: 5px
 
-
-
-
-
-
-
-
+  .icon-heart
+    +size(50px)
+    +margin(null 15px null null)
+    border-radius: 50%
+    +fc
+    color: #fff
+    background-color: rgb(189, 160, 120)
+    +padding(3px 2px null null )
+  a
+    text-decoration: underline
+    color: rgb(181, 130, 63)
+    +hoverText(rgb(234, 132, 0))
+    letter-spacing: 0.5px
 
 
 
 .record__content
   background-color: rgb(255,255,255)
   +padding(5px 30px 20px 20px)
-  height: 500px
+  height: 450px
   overflow: auto
-  
-  #mCSB_1_scrollbar_vertical
+
+  #mCSB_2_scrollbar_vertical
     right: 5px
   
   .record__unit

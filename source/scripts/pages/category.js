@@ -1,5 +1,20 @@
 
 
+//因為idBlock絕對定位，若內容較長，則會有被覆蓋的問題
+
+if (wW <= 1300 && wW >= 768) {
+  setTimeout(() => {
+    var midBlockHeight = document.querySelector(".midBlock").offsetHeight;
+    $(".tri-columns").height(midBlockHeight+50);
+    console.log(midBlockHeight);
+    
+  }, 100);
+}
+
+
+
+
+
 
 // $(".slick-intro").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
@@ -44,8 +59,6 @@ $(document).ready(function () {
 
 
 
-
-
 //首頁上方的slick
 var landing_slider = $("#index .slider-show");
 var navList = $("#index .slider-nav > li");
@@ -76,7 +89,7 @@ navList.click(function () {
 
 //首頁中間的submenu
 var submenu_slider = $("#index .submenu");
-if (wW < 990) {
+if (wW < 767) {
   submenu_slider.slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -89,10 +102,18 @@ if (wW < 990) {
 
 //瀏覽紀錄的客製化卷軸
 $(window).on("load", function () {
-  $(".record__content").mCustomScrollbar({
-    axis: "y",
-    theme: "minimal-dark"
+  $(" .record__content, .cart__content ul").each(function () {
+    $(this).mCustomScrollbar({
+      axis: "y",
+      theme: "minimal-dark"
+    });
   });
+  
+  
+  // $(".record__content").mCustomScrollbar({
+  //   axis: "y",
+  //   theme: "minimal-dark"
+  // });
 
   $("#privacy .content").mCustomScrollbar({
     axis: "y",

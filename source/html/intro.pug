@@ -7,7 +7,6 @@ block content
   include ./include/component.pug
 
   #info
-
     .container
       .breadcrumb
         ul.nostyle
@@ -17,22 +16,13 @@ block content
 
       +topLanding
 
-      
-        
-
-      .tri-columns
-
-        .two-columns-wrap
-          .catalog.leftBlock
-            +catalog
-
-          .rightBlock
-            +cart
-            +record
+      .tri-columns.mb56
+        .catalog.leftBlock
+          +catalog
 
 
         //- .items.midBlock.form-type
-        .items.midBlock
+        .midBlock
 
           .block__title 月子餐組合選
 
@@ -73,8 +63,9 @@ block content
                   .f28 $11,888
 
                 .group.links.mb32
-                  a.btn 立即購買
+                  a(href="cart.html").btn 立即購買
                   a.btn.icon-cart 加入購物車
+                  
 
                 .group
                   .mr40.share
@@ -192,7 +183,13 @@ block content
                   a.orange.f32 0800-289-666
                   | (上班時間)
 
+        .rightBlock
+          +cart
+          +record
 
-                
-
+    #modal-trace.lity-hide
+      .wrapper
+        .icon-heart
+        .lh18 已加入追蹤清單 #[br] 前往
+          a(href="trace.html") 我的追蹤清單
 

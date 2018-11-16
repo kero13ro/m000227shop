@@ -228,38 +228,6 @@
   td
     background-color: rgb(255, 252, 247)
 
-  // .radio_unit
-  //   height: 45px
-  //   white-space: nowrap
-
-  //   input[type="radio"]
-  //     position: absolute
-  //     opacity: 0
-  //     pointer-events: none
-
-  //   input[type="radio"] + label
-  //     cursor: pointer
-  //     +size(100%)
-  //     +fc
-  //     &:before
-  //       content: ""
-  //       display: block
-  //       +size(18px)
-  //       background: $white
-  //       border-radius: 50%
-  //       border: 1px solid rgb(211, 174, 130)
-  //       transition: background-color 0.3s ease, box-shadow 0.3s ease
-  //       flex-shrink: 0
-
-  //   input[type="radio"]:checked + label:before
-  //     background-color: rgb(211, 174, 130)
-  //     box-shadow: inset 0 0 0 3px #f4f4f4
-
-  //   input[type="radio"]:disabled + label:before
-  //     box-shadow: inset 0 0 0 4px #f4f4f4
-  //     border-color: #b4b4b4
-  //     background: #b4b4b4
-
 
 [class*="form-type-2"] .radio
   tr
@@ -331,117 +299,214 @@
         +position(absolute, null 0 null null )
 
 
+.content
+  +padding(32px)
+  +f
 
-  .content
-    +padding(32px)
+.content__pic
+  +f(center, center, column)
+  flex-shrink: 0
+  img
+    +size(215px, 160px )
+    margin-bottom: 10px
+  
+.content__text
+  margin-right: 30px
+  width: 100%
+  .f24
+    border-bottom: 1px solid rgb(239,239,239)  
+    padding-bottom: 14px
+    margin-bottom: 16px
+
+  .vege
+    margin-left: 15px
+
+  p 
+    color: #7c7c7c
+
+  .dark
+    color: #1e1e1e
+
+  .week
+    margin-bottom: 15px
+    margin-left: 10px
+
+  .group
+    +f
+    color: #7c7c7c
+    &:not(:last-child)
+      padding-bottom: 18px
+      margin-bottom: 18px
+      border-bottom: 1px solid rgb(239,239,239)  
+
+    div:first-child
+      width: 85px
+      flex-shrink: 0
+
+
+
+  //.js-page2
+  .red
+    color: #D2655C
+  .orange
+    color: #FF8C00
+  .bus
+    position: relative
+    img
+      +position(absolute, 0 0 null null )
+
+  .orange.f32 
+    font-style: italic
+    +margin(null 15px)
+    +hoverText(#f46a00)
+
+  .img-group  
     +f
 
-  .content__pic
-    +f(center, center, column)
-    flex-shrink: 0
+  .info__title
+    height: 40px
+    +fc
+
+  .info__content
+    +f
+    > div
+      flex: 1 1 auto
+      height: 140px
+      +f(flex-end,center,column)
+      padding-bottom: 20px
+    span 
+      text-align: center
+      
+      margin-top: 10px
+      line-height: 1.4
     img
-      +size(215px, 160px )
-      margin-bottom: 10px
+      max-width: 60%
 
+  .left-group
+    flex: 2
+    .info__title
+      background-color: #BD9F77
+      color: white
+
+    .info__content
+      color: #7c7c7c
+      > div:nth-child(odd)
+        background-color: rgb(239, 230, 221)
+      > div:nth-child(even)
+        background-color: rgb(247, 244, 239)
+
+
+  .right-group
+    flex: 1
+    .info__title
+      background-color: #F7F3ED
+      color: #AD8555
+    .info__content
+      background-color: #AD8555
+      color: white
     
-  .content__text
-    margin-right: 30px
-    width: 100%
-    .f24
-      border-bottom: 1px solid rgb(239,239,239)  
-      padding-bottom: 14px
-      margin-bottom: 16px
-
-    .vege
-      margin-left: 15px
-
-    p 
-      color: #7c7c7c
-
-    .dark
-      color: #1e1e1e
-
-    .week
-      margin-bottom: 15px
-      margin-left: 10px
-
-    .group
-      +f
-      color: #7c7c7c
-      &:not(:last-child)
-        padding-bottom: 18px
-        margin-bottom: 18px
-        border-bottom: 1px solid rgb(239,239,239)  
-
-      div:first-child
-        width: 85px
-        flex-shrink: 0
-
-
-    //.js-page2
-    .red
-      color: #D2655C
-    .orange
-      color: #FF8C00
-    .bus
-      position: relative
-      img
-        +position(absolute, 0 0 null null )
-
-    .orange.f32 
-      font-style: italic
-      +margin(null 15px)
-      +hoverText(#f46a00)
-
-    .img-group  
-      +f
-
-      .info__title
-        height: 40px
-        +fc
-
-      .info__content
-        +f
-        > div
-          +size(140px)
-          +f(flex-end,center,column)
-          padding-bottom: 20px
-        span 
-          text-align: center
-          
-          margin-top: 10px
-          line-height: 1.4
-
-      .left-group
-        flex: 2
-        .info__title
-          background-color: #BD9F77
-          color: white
-
-        .info__content
-          color: #7c7c7c
-          > div:nth-child(odd)
-            background-color: rgb(239, 230, 221)
-          > div:nth-child(even)
-            background-color: rgb(247, 244, 239)
-
-
-      .right-group
-        flex: 1
-        .info__title
-          background-color: #F7F3ED
-          color: #AD8555
-        .info__content
-          background-color: #AD8555
-          color: white
-        
-        .transY
-          padding-bottom: 12px
+    .transY
+      padding-bottom: 12px
 
 
   .js-page1 ~ *
     display: none
 
+.intro__main
   +max(990)
     .content
       flex-direction: column
+
+    .content__pic
+      +f(flex-start, flex-start, row, wrap)
+      +margin(null -5px)
+      img
+        width: calc(33% - 10px)
+        +margin(null 5px)
+        height: auto
+
+  +max(500)
+    .content
+      padding: 20px
+
+    .content__pic
+      img
+        width: calc(50% - 10px)
+        +margin(null 5px)
+
+    .group
+      flex-wrap: wrap
+
+      div:first-child
+        width: 100%
+        margin-bottom: 5px
+
+
+
+  //.js-page2
+
+  +max(1100)
+    .bus
+      +f
+      flex-direction: column-reverse
+      margin-top: -10px
+      img
+        position: relative
+        align-self: flex-end
+
+  +max(991)
+    .img-group
+      flex-direction: column
+      width: 100%
+      
+
+    .right-group,
+    .left-group
+      width: 100%
+      +f(flex-start, stretch)
+
+    .left-group 
+      height: 135px
+      .info__content
+        max-width: 480px
+    .right-group 
+      height: 145px
+      .info__content
+        max-width: 240px
+
+    .info__title
+      flex-shrink: 0
+      width: 40px
+      height: 100%
+      line-height: 1
+      writing-mode: vertical-lr
+
+
+    .info__content
+      width: 100%
+      height: 100%
+
+      > div
+        height: 100%
+
+  +max(500)
+    .info__content
+      font-size: 14px
+      > div
+        padding-bottom: 10px
+
+        
+
+    .right-group 
+      height: 130px
+    .left-group 
+      height: 240px
+      .info__content
+        height: 120px
+        max-width: 240px
+        flex-wrap: wrap
+        div
+          width: 50%
+        div:nth-child(3)
+          order: 1
+
