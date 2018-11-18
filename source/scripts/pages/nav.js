@@ -3,10 +3,29 @@
 //         通用元件 js
 // ==========================================================================*/
 
-$(".nav__toggle").click(function () {
 
-  $(this).toggleClass("active");
+var cover = $("#nav_cover"),
+    toggle = $(".nav__toggle"),
+    burger1 = toggle.find(".one"),
+    burger2 = toggle.find(".two"),
+    burger3 = toggle.find(".three");
+
+  
+var menu = new TimelineMax({ paused: true, reversed: true })
+
+menu
+  .to(cover, 0.6, { height: "210px" })
+  .to(toggle, 0.3, { transform: "translate(5px, 5px)"}, 0)
+  .to(burger2, 0.3, { autoAlpha: 0 }, 0)
+  .to(burger1, 0.3, { rotation: 45, transformOrigin: "10%" }, 0)
+  .to(burger3, 0.3, { rotation: -45, transformOrigin: "10%" }, 0)
+  
+    
+$(".nav__toggle").click(function () {
+  menu.reversed() ? menu.play() : menu.reverse();
 });
+
+
 
 
 

@@ -38,7 +38,7 @@
         content: ""
       +trans
       &:hover:not(:focus)
-        opacity: 0.8
+        opacity: 0.9
       &:focus
         opacity: 1
         outline: none
@@ -72,8 +72,6 @@
   .f24
     margin-bottom: 20px
 
-  .vege
-    display: block
   .f16.lh20
     width: 100%
 
@@ -96,7 +94,6 @@
     > span 
       width: 80px
       flex-shrink: 0
-      display: inline-block
       color: #7c7c7c
 
   .control
@@ -112,6 +109,7 @@
     a
       +size(32px)
       color: #ccc
+      +hoverText(#000)
 
   .through
     text-decoration: line-through
@@ -133,14 +131,15 @@
 
     .btn:first-child
       margin-right: 10px
-      // width: 250px
       flex: 1 1 250px
       background-color: rgb(221, 103, 75)
+      +hoverBgc(#cc0000)
+      
     .btn:last-child
-      // width: 150px
-      // min-width: 120px
       flex: 1 1 150px
       background-color: rgb(140, 176, 102)
+      +hoverBgc(rgb(101, 160, 38))
+
       &:before
         transform: scale(-1,1)
         margin-right: 10px
@@ -152,8 +151,13 @@
       padding-bottom: 2px
 
   .trace
-    .icon-heart
-      color: rgb(207, 63, 62)
+
+.icon-heart //跟首頁通用
+  color: #ccc
+  cursor: pointer
+  &.active
+    color: rgb(207, 63, 62) !important
+  +hoverText(rgb(207, 63, 62))
 
 
 +max(991)
@@ -303,6 +307,7 @@
   +padding(32px)
   +f
 
+
 .content__pic
   +f(center, center, column)
   flex-shrink: 0
@@ -409,8 +414,8 @@
       padding-bottom: 12px
 
 
-  .js-page1 ~ *
-    display: none
+.js-page1 ~ *
+  display: none
 
 .intro__main
   +max(990)

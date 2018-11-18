@@ -72,9 +72,15 @@ $("#tips-js").click(function() {
 /*  首頁動畫
   -------------------------------------------------- */
 
-  // var controller_index = new ScrollMagic.Controller();
+  var controller_index = new ScrollMagic.Controller(),
+      s1_tl = new TimelineLite(),
+      s1_card = $(".card");
 
-  // //場景一
+  s1_tl
+    .staggerFrom(s1_card, 1, { autoAlpha: 0 ,y: 10}, 0.3)
+  
+
+
   // let s1_slick = $("#index .slick "),
   //   s1_tl = new TimelineLite();
     // s1_chars40 = new SplitText(s1_sub40, { type: "words,chars" }).chars,

@@ -41,6 +41,10 @@ $(".slick-intro").slick({
 
 
 
+$(".icon-heart").click(function(params) {
+  $(this).addClass("active");
+})
+
 $(document).ready(function () {
   $("#js-page a[data-page]").click(function() {
 
