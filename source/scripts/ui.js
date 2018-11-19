@@ -25,13 +25,13 @@ navPages.click(function () {
 //qa 左右滑動目錄
 var left = $(".control .icon-left-thin");
 var right = $(".control .icon-right-thin");
-var menu = $(".qa__menu .scrollbarX");
+var qa__menu = $(".qa__menu .scrollbarX");
 
 left.click(function () {
-  var leftPos = menu.scrollLeft();
-  menu.animate({ scrollLeft: leftPos - 200 }, 800);
+  var leftPos = qa__menu.scrollLeft();
+  qa__menu.stop(true, false, true).animate({ scrollLeft: leftPos - 200 }, 800);
 });
 right.click(function () {
-  var leftPos = menu.scrollLeft();
-  menu.animate({ scrollLeft: leftPos + 200 }, 800);
+  var leftPos = qa__menu.scrollLeft();
+  qa__menu.stop(true, false, true).animate({ scrollLeft: leftPos + 200 }, 800);
 });

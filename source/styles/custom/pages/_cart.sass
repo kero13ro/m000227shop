@@ -91,6 +91,10 @@
   .infoCard__title > span:first-child
     transform: translateY(3px)
 
+  .ie
+    line-height: 20px
+    color: rgb(191, 166, 139)
+
   +max(1365)
     .infoCard,
     .submit
@@ -447,6 +451,9 @@
   .italicNum
     letter-spacing: 1px
     color: $brown-dark
+  .infoCard__title
+    a
+      +hoverText(rgb(234, 125, 9))
 
 #confirm,
 #complete
@@ -478,6 +485,24 @@
       font-size: 14px
 
 #complete
+  a.italicNum
+    &:after
+      display: block
+      content: ""
+      border-bottom: 2px solid #cc0000
+      width: 0%
+      position: relative
+      bottom: 10px
+
+      transition: 0.3s width
+    &:hover
+      &:after
+        width: 100%
+        transition: 0.3s width
+      
+    
+
+
   .success
     border-color: rgb(214, 142, 143)
 

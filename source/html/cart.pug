@@ -11,6 +11,8 @@ block content
         ul.nostyle
           li 首頁
           li.icon-right-thin 購物車
+            h2.sr-only 購物車
+            h3.sr-only 確認購物清單
 
       .scrollbarX.mb32
         .progress.mb32
@@ -155,7 +157,7 @@ block content
           .infoCard__content.lh20 您目前共享有紅利點數 #[span.red 1,130 ]
             | 點，每1點可折抵 #[span.red NT $ 1 ]
             | 元，本次購物使用
-            input(type="text" required placeholder="150")
+            input(type="text" required placeholder="150").ie
             | 點 ( #[span.red NT$150元]
             | ) #[br]
             span.gray 每次交易最高可折抵該筆訂單之消費金額150元

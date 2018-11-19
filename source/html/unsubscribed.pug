@@ -7,8 +7,10 @@ block content
     .breadcrumb
       ul.nostyle
         li 首頁
-        li 會員專區
-        li.icon-right-thin 訂單紀錄
+        li.icon-right-thin 會員專區
+          h2.sr-only 會員專區
+        li.icon-right-thin 訂閱電子報
+          h3.sr-only 訂閱電子報
 
   #unsubscribed.bgcWhite
     
@@ -28,9 +30,9 @@ block content
           a(data-abbr="媽媽教室" href="course.html") 媽媽教室
         li 
           a(data-abbr="預約試吃" href="taste.html") 預約試吃
-        li .active
+        li.active
           a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
 
 
     include ./include/public.pug
-    +subscribe_stage2("subscribed")
+    +subscribe_stage2("unsubscribed")

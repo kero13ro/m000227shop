@@ -2,6 +2,9 @@
 #privacy
   background-image: url("./images/login-00-bgc4.jpg")
   background-position:  right top -80px
+  background-size: cover
+  +max(1500)
+    background-image: url("./images/login-00-bgc4b.jpg")
   
   .title
     border-bottom: 2px solid rgba(#B47832, 0.5) 
@@ -14,6 +17,7 @@
 
   .content
     max-height: 440px
+    
     position: relative
     .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
       background-color: $brown-dark
@@ -21,6 +25,10 @@
       background-color: #eae5dc
     p
       padding-right: 20px
+
+    p:last-child
+      padding-bottom: 50px
+
     &:before
       content: ""
       display: block

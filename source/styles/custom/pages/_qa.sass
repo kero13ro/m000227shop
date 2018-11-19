@@ -4,16 +4,25 @@
     height: 350px
     margin-bottom: 35px
     +fc
+    background-size: cover
+    background-position: center
+    padding: 20px
+    +max(990)
+      height: 35vw
+      min-height: 200px
+
 
   .slogan
     color: white
     text-align: center
     text-shadow: 0 0 100px rgba(black, 0.3), 0 0 10px rgba(black, 0.3)
+    width: 100%
   .f56
     margin-bottom: 0
   .f24.bd
-    width: 310px
-    margin-top: 6px
+    max-width: 310px
+    width: 100%
+    +margin(6px auto null auto )
     padding-top: 6px
     border-top: 1px solid #fff
 
@@ -52,6 +61,18 @@
       +margin(null 7px)
       cursor: pointer
       +hoverBgc($brown)
+
+  
+
+.scrollbarX
+  &:after
+    content: ""
+    display: block
+    +size(30px, 50px)
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
+    +position(absolute, 0 0 null null )
+
+
 
 .qa__content
   +padding(40px null)
@@ -107,6 +128,36 @@
 
 
 
++min(1365)
+  .qa .control
+    display: none
 
++max(767)
+  .qa .block__content
+    +padding(null 15px)
 
+    .qa__menu
+      padding-right: 0
+      li:last-child
+        padding-right: 30px
 
+      .control
+        position: static
+        height: 60px
+        width: 80px
+        margin-left: auto
+
+      li:not(:last-child)
+        margin-right: 26px
+
+  .qa__content
+    .unit__q
+      +padding(12px null)
+
+    .unit__a
+      padding-bottom: 20px
+      line-height: 1.8
+
++max(350)
+  .qa__content.f16
+    font-size: 14px

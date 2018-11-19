@@ -7,13 +7,15 @@ block content
     .breadcrumb
       ul.nostyle
         li 首頁
-        li 會員專區
+        li.icon-right-thin 會員專區
+          h2.sr-only 會員專區
         li.icon-right-thin 會員資料維護
+          h3.sr-only 會員資料維護
 
   #profile
     
     .slcik-menu.eq9.bgcWhite
-      ul.nostyle
+      ul.nostyle(data-menu="5")
         li
           a(data-abbr="訂單紀錄" href="order.html") 訂單紀錄
         li 
@@ -50,7 +52,7 @@ block content
                 a(href="alter.html").underline 密碼變更
 
         .box.mb24
-          .box__title 帳號密碼設定
+          .box__title 個人資料設定
           .box__content.bottom
             .line.mb16.name
               span.star.justify 姓名

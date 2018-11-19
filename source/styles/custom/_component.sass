@@ -59,6 +59,7 @@
   ul
     max-width: 1400px
     +margin(null auto)
+    +padding(null 40px)
     +f
   li  
 
@@ -114,9 +115,9 @@
       left: 0
 
 
-  +max(990)
-    ul
-      +padding(null 40px)
+  // +max(990)
+  //   ul
+  //     +padding(null 40px)
 
 
 .epapper
@@ -298,9 +299,9 @@
     &:nth-child(odd):not(:first-child)
       background-color: #F6F6F6
 
-  a
-    color: #B47832
-    text-decoration: underline
+    a
+      color: #B47832
+      text-decoration: underline
 
   +max(991)
     font-size: 15px
@@ -416,22 +417,6 @@
     &.transX
       transform: translateX(15px)
 
-  // input,
-  // select
-  //   +size(100%, 38px)
-  //   line-height: 38px
-  //   +padding(null 15px)
-  //   border: 1px solid $brown
-  //   border-radius: 3px
-  //   color: $brown-dark
-  //   +trans
-  //   &::placeholder
-  //     color: $brown-dark
-  //   &:hover
-  //     background-color: $brown-light
-  //   &:focus
-  //     color: $brown-dark
-  //     border-color: $brown-dark
 
   .addr
     .select_unit
@@ -442,25 +427,27 @@
       width: 120px
       
 
+
+//profile 將group 改為line 有可能動到其他葉面，改到#profile下?
 .box
   +max(580)
     
     .box__content
       +padding(1.5rem)
 
-    .group
+    .line
       padding-left: 86px
       > span:first-child
         margin-right: 20px
 
-    .group.addr
+    .line.addr
       flex-wrap: wrap
       > *:not(:first-child)
         width: 100%
       > *:not(:first-child):not(:last-child)
         +margin(null 0 13px null)
 
-    .group.name
+    .line.name
       flex-wrap: wrap
       input
         width: 100%
@@ -480,7 +467,7 @@
       +padding(1rem)
       font-size: 15px
 
-    .group
+    .line
       padding-left: 76px
       > span:first-child
         width: 60px
@@ -488,7 +475,7 @@
       input, select
         +padding(null 8px)
 
-    .box__content.top .group
+    .box__content.top .line
       padding-left: 56px
 
 

@@ -4,21 +4,21 @@ var $submenu_slider = $(".slcik-menu.eq9 ul"),
     arrows: true,
     dots: false,
     infinite: false,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 2,
     autoplay: false,
     nextArrow: '<div class="icon-next"></div>',
     prevArrow: '<div class="icon-prev"></div>',
     
-    responsive: [
-      {
-        breakpoint: 765,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2
-        }
-      }
-    ]
+    // responsive: [
+    //   {
+    //     breakpoint: 765,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 2
+    //     }
+    //   }
+    // ]
   };
 
 
@@ -55,6 +55,25 @@ if ($(window).width() < 768) {
     nextArrow: '<div class="icon-next"></div>',
     prevArrow: '<div class="icon-prev"></div>',
   });
+}
+
+
+
+//submenu slick 初始化 及定位
+
+// $(".slcik-menu.eq5 ul")
+
+var $submenu_all = $(".slcik-menu.eq9 ul");
+var currentSubmenu = $submenu_all.attr("data-menu");
+var slideLength = $(".slcik-menu .slick-slide").length;
+
+// console.log(currentSubmenu);
+
+//slick 無法 goto 到最後一個 因此要指定到前一個
+currentSubmenu == slideLength ? (currentSubmenu = currentSubmenu - 2) : (currentSubmenu = currentSubmenu - 1);
+
+if ($submenu_all.hasClass('slick-initialized')) {
+  $submenu_all.slick("slickGoTo", currentSubmenu, true);
 }
 
 
@@ -127,23 +146,15 @@ window.addEventListener('resize', breakMenu, false);
 // $(window).trigger("resize");  
 
 
-// //submenu slick 初始化 及定位
-// var indexOfSubmenu;
-// var dashPos = window.location.pathname.indexOf("-");
-// var $submenu_all = $('.submenu .slick');
 
-// if (dashPos == -1) {
-//   indexOfSubmenu = 1;
-// } else {
-//   indexOfSubmenu = window.location.pathname.charAt(dashPos + 1);
-// }
 
-// //slick 無法 goto 到最後一個 因此要指定到前一個
-// var slideLength = $(".submenu .slick-slide").length;
-// indexOfSubmenu == slideLength ? (indexOfSubmenu = indexOfSubmenu - 2) : (indexOfSubmenu = indexOfSubmenu - 1);
-// // console.log(slideLength);
-// // console.log(indexOfSubmenu);
+$("#member .check_unit input").click(function () {
 
-// if ($submenu_all.hasClass('slick-initialized')) {
-//   $submenu_all.slick('slickGoTo', (indexOfSubmenu), true);
-// }
+  var cover = $("#member .cover");
+  
+  if ($(this).is(":checked")) {
+    cover.removeClass("ban");
+  } else {
+    cover.addClass("ban");
+  }
+});

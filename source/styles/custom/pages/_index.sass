@@ -3,7 +3,7 @@
 .slider-show
   opacity: 0
   visibility: hidden
-  transition: opacity 1s ease
+  transition: opacity 0.6s ease
 .slider-show.slick-initialized
   visibility: visible
   opacity: 1  
@@ -270,10 +270,15 @@ $bgco: rgb(245, 241, 240)
 
 +max(991)
   .leftBlock, .rightBlock
-    width: 190px
+    width: 200px
+    .cart__content,
+    .record__content
+      font-size: 15px
+      
   .midBlock
     +margin(null 0px null 20px)
-    width: calc(100% - 211px)
+    width: calc(100% - 221px)
+  
 
 +max(767)
   .leftBlock, .midBlock, .rightBlock
@@ -363,13 +368,15 @@ $bgco: rgb(245, 241, 240)
       margin-right: 5px
 
 
-  +max(767)
+    // +max(991)
     .block__title
       width: 100%
+      border-bottom: 1px solid #decfba
   
     #dorpdown-js
       +f(flex-start, stretch, row, wrap)
       width: 100%
+      max-width: 400px
 
     ul
       width: 50%
@@ -380,6 +387,9 @@ $bgco: rgb(245, 241, 240)
       background-color: #efefef
       display: none
 
+  +max(768)
+    #dorpdown-js
+      max-width: 100%
 
   +max(450)
 

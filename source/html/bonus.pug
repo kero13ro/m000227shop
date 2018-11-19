@@ -7,13 +7,15 @@ block content
     .breadcrumb
       ul.nostyle
         li 首頁
-        li 會員專區
+        li.icon-right-thin 會員專區
+          h2.sr-only 會員專區
         li.icon-right-thin 紅利點數
+          h3.sr-only 紅利點數
 
   #bonus.bgcWhite
     
     .slcik-menu.eq9
-      ul.nostyle
+      ul.nostyle(data-menu="4")
         li
           a(data-abbr="訂單紀錄" href="order.html") 訂單紀錄
         li 
@@ -38,7 +40,7 @@ block content
       //- .foreword(style="background-image: url(styles/images/login-4-bgc.jpg)")
       .foreword
         .wrap
-          h3.brown.f24.mb24 紅利點數使用說明
+          .brown.f24.mb24 紅利點數使用說明
           ul.nostyle.circle.lh20
             li 1點紅利可抵用購物金額1元
             li 凡線上購物消費滿100元（不含運費）即可累積1點紅利，於下次消費時抵用

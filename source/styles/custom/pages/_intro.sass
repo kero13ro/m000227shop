@@ -10,6 +10,7 @@
   margin-right: 35px
   width: 50%
   max-width: 400px  
+  flex-shrink: 0
 
   .show
     margin-bottom: 20px
@@ -168,8 +169,13 @@
     margin-right: 0
     width: 100%
 
+    max-width: 300px  
+  
+
   .head__right
     margin-bottom: 20px
+
+
 
 +max(768)
   .intro__head
@@ -303,9 +309,9 @@
         +position(absolute, null 0 null null )
 
 
-.content
-  +padding(32px)
-  +f
+  .content
+    +padding(32px)
+    +f
 
 
 .content__pic
