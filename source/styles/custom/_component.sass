@@ -64,6 +64,7 @@
   li  
 
     flex: 1 1 auto
+    line-height: 1.4
     +min(990)
       max-width: 175px  //會跟slcik有衝突
 
@@ -115,9 +116,11 @@
       left: 0
 
 
-  // +max(990)
-  //   ul
-  //     +padding(null 40px)
+  +max(400)
+    ul
+      font-size: 15px
+    a
+      font-weight: 400
 
 
 .epapper
@@ -208,7 +211,6 @@
   width: 100%
   max-width: 530px
   border: 1px solid #D1AF81
-  box-shadow: 3px 3px 15px rgba(black,0.2)
   background-color: #fff
   text-align: center
   border-radius: 6px
@@ -492,7 +494,7 @@
     border-radius: 3px
 
   .btn:not(.cancel)
-    background-color: $brown
+    background-color: rgb(165, 123, 75)
     +hoverBgc($brown-dark)
 
   .cancel

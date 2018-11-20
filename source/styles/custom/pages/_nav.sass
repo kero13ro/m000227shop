@@ -184,6 +184,8 @@
       +padding(20px)
       position: relative
       transition: 0.3s transform
+      z-index: 31
+
 
       .one, .two, .three
         +size(20px, 2px)
@@ -193,18 +195,40 @@
         transition: 0.3s transform
 
     #nav_cover
-      +position(fixed, 60px 0 null null )
+      +position(fixed, 0px 0 null null )
       background-color: #fff
+      background-color: rgba($purple, 0.9)
+      z-index: 30
+      +f(flex-end, center)
       width: 100%
-      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.1)
+      // height: 100vh
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1)
+      // box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.1)
+      
     .nav_shop
+      margin-top: -30px
       +padding(20px 30px)
       align-items: flex-end
       flex-direction: column
+      width: 100%
+      li
+        width: 100%
+        +f(flex-end)
+      li:not(:last-child)
+        border-bottom: 1px solid rgba(#fff,0.2)
       li a
-        +padding(10px 15px)
+        margin-left: auto
+        +padding(25px 25px)
+        font-size: 18px
+        color: rgba(#fff, 0.9)
+        font-weight: normal
+        letter-spacing: 1px
         &:after
           border-right: none
+        &.current
+          font-weight: bold
+          color: #fff
+        
 
     #nav_cover
       height: 0

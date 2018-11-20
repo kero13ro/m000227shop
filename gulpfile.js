@@ -84,6 +84,7 @@ gulp.task("copy-css", function () {
 gulp.task("babel", function () {
   gulp
     .src(["./source/scripts/ui.js","./source/scripts/pages/*.js"])
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(babel({presets: ["env"]}))
     .pipe(concat("ui.js"))

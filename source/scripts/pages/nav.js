@@ -3,27 +3,32 @@
 //         通用元件 js
 // ==========================================================================*/
 
-
-var cover = $("#nav_cover"),
-    toggle = $(".nav__toggle"),
-    burger1 = toggle.find(".one"),
-    burger2 = toggle.find(".two"),
-    burger3 = toggle.find(".three");
-
-  
-var menu = new TimelineMax({ paused: true, reversed: true })
-
-menu
-  .to(cover, 0.6, { height: "210px" })
-  .to(toggle, 0.3, { transform: "translate(5px, 5px)"}, 0)
-  .to(burger2, 0.3, { autoAlpha: 0 }, 0)
-  .to(burger1, 0.3, { rotation: 45, transformOrigin: "10%" }, 0)
-  .to(burger3, 0.3, { rotation: -45, transformOrigin: "10%" }, 0)
+if (wW < 768) {
+  var nav_cover = $("#nav_cover"),
+      cover_list = $("#nav_cover a"),
+      toggle = $(".nav__toggle"),
+      burger1 = toggle.find(".one"),
+      burger2 = toggle.find(".two"),
+      burger3 = toggle.find(".three");
   
     
-$(".nav__toggle").click(function () {
-  menu.reversed() ? menu.play() : menu.reverse();
-});
+  var menuToggle = new TimelineMax({ paused: true, reversed: true, yoyo: true});
+  
+  menuToggle
+    .set(nav_cover, { height: "100vh",autoAlpha: 0 })
+    .to([burger1, burger2, burger3], 0.3, { backgroundColor: "#fff"})
+  
+    .to(burger2, 0.3, { autoAlpha: 0 }, 0)
+    .to(burger1, 0.3, { rotation: 45, transformOrigin: "10%" }, 0)
+    .to(burger3, 0.3, { rotation: -45, transformOrigin: "10%" }, 0)
+    .to(nav_cover, 0.6, { autoAlpha: 1 }, "start")
+    .staggerFrom(cover_list, 0.4, { autoAlpha: 0, x: 30, ease: Power2.easeOut}, 0.1, 0.3);
+    
+      
+  $(".nav__toggle").click(function () {
+    menuToggle.reversed() ? menuToggle.play() : menuToggle.reverse();
+  });
+}
 
 
 

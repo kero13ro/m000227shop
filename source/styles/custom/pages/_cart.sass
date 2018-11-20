@@ -269,21 +269,36 @@
 
 
 #modal-gift
-  +size(650px, 330px)
-  +padding(30px)
-  max-width: 100% !important
-  +f
-  text-align: left
+  max-width: 100%
+  .container
+    +size(650px, auto)
+    +padding(30px)
+    max-width: 100% !important
+    +f
+    text-align: left
   
   .pic
     +size(175px)
     flex-shrink: 0
+    background-size: cover
   .wrap
     margin-left: 25px
   .f20
     margin-bottom: 12px
     padding-bottom: 12px
     border-bottom: 1px solid #eee
+
+  +max(600)
+    .container
+      +padding(18px)
+      font-size: 14px
+      flex-direction: column
+    .wrap
+      +margin(20px null null 0)
+    .pic
+      max-width: 40vw
+      max-height: 40vw
+
   
     
 
@@ -448,7 +463,7 @@
 
 
 #confirm
-  .italicNum
+  .spe
     letter-spacing: 1px
     color: $brown-dark
   .infoCard__title

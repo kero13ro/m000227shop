@@ -1,9 +1,27 @@
 
 #register
   background-image: url("./images/login-00-bgc4.jpg")
-  // background-position:  center top -60px
-  background-position:  right top -60px
-  // background-size: cover
+  // background-position:  right top -60px
+  background-position:  right top
+  background-size: cover
+  position: relative
+  +max(1365)
+    >*
+      z-index: 1
+      position: relative
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      +size(100%)
+      background-color: rgba(white,0.8)
+      z-index: 0
+    
+  &.bgc2
+    background-image: url("./images/login-0-bgc3.jpg")
+    +min(1900)
+      height: 736px
+
 
   .title
     +margin(null auto)

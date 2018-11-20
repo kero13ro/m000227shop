@@ -158,3 +158,18 @@ $("#member .check_unit input").click(function () {
     cover.addClass("ban");
   }
 });
+
+
+$("#all-return").click(function () {
+  if ($(this).is(":checked")) {
+    $(".multiple__secondary .check_unit input").prop("checked", true);
+  }
+});
+
+$("#part-return").click(function () {
+  if ($(this).is(":checked")) {
+    $(".multiple__secondary .check_unit input").prop("checked", false);
+  }
+});
+
+

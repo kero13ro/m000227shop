@@ -120,12 +120,6 @@ $("#tips-js").click(function() {
 /*  首頁動畫
   -------------------------------------------------- */
 
-  var controller_index = new ScrollMagic.Controller(),
-      s1_tl = new TimelineLite(),
-      s1_card = $(".card");
-
-  s1_tl
-    .staggerFrom(s1_card, 1, { autoAlpha: 0 ,y: 10}, 0.3)
   
 
 
@@ -197,3 +191,77 @@ $("#tips-js").click(function() {
 // var main = document.querySelector("main");
 // var body = document.querySelector("body");
 // body.parentNode.insertBefore(svgAnimation, main.nextSibling);
+
+
+
+// var controller_index = new ScrollMagic.Controller();
+
+
+
+if (document.querySelector("main").classList.contains("landing") && (wW >= 768)) {
+
+  var index_tl = new TimelineMax(),
+      main = $("main.landing"),
+      nav_logo = $("#nav .logo"),
+      nav_office = $("#nav .nav_office"),
+      nav_float = $("#nav .float"),
+      nav_shop = $("#nav_cover li"),
+
+      slider = $("#index .slider-show"),
+      slider_nav = $("#index .slider-nav"),
+      index_submenu = $("#index .submenu"),
+
+      leftBlockTitle = $("#index .leftBlock .block__title"),
+      leftBlockBgc = $("#dorpdown-js"),
+      leftBlockText = $("#dorpdown-js ul > *"),
+
+      midBlockTitle = $("#index .midBlock .block__title"),
+      midBlockContent = $("#index .midBlock .items__content"),
+      midCard = $("#index .card"),
+
+      rightBlockTitle = $("#index .rightBlock .block__title"),
+      rightBlockRecord = $("#index .rightBlock .record__content "),
+      rightBlockCart = $("#index .rightBlock .cart__content"),
+
+      dashboard_btn = $("#dashboard .gasp"),
+      // dashboard_plus = $("#dashboard #js-plus"),
+
+      logoDisplay = function (){nav_logo.addClass("animate"); };
+
+
+  index_tl
+    .set([leftBlockTitle, midBlockTitle, rightBlockTitle], { "overflow": "hidden" })
+    .set(["#index", "#dashboard"], { opacity: 1 })
+
+    .to(main, 0.6, { backgroundColor: "#f5f1f0" })
+    
+    .from("#nav", 0.6, { y: -10}, 0.3)
+    .to("#nav", 0.6, { opacity: 1}, 0.3)
+    
+    .call(logoDisplay, ["param1"], this, 0.3)
+    .addLabel("logoEnd", 0.9)
+
+    .staggerFrom(nav_shop, 2, { autoAlpha: 0 },0.3, "logoEnd")
+    .from([slider, slider_nav], 2, { autoAlpha: 0, y: -30 }, "logoEnd")
+
+    .addLabel("slideEnd", 1.8)
+    .from([nav_float, nav_office], 1.6, { autoAlpha: 0 }, "slideEnd")
+    .from(index_submenu, 2, { autoAlpha: 0 }, "slideEnd")
+    // .staggerFrom(dashboard_btn, 2, { autoAlpha: 0 },0.3, "slideEnd")
+    .staggerFromTo(dashboard_btn, 0.4, { autoAlpha: 0, y: -20, scale: 0.7 }, { autoAlpha: 1, y: 0, scale: 1 }, 0.2, "slideEnd")
+
+    .staggerFrom([leftBlockTitle, midBlockTitle, rightBlockTitle], 1, { autoAlpha: 0, y: -10 }, 0.2, "slideEnd+=0.5")
+
+    .staggerFrom([leftBlockBgc, midBlockContent, [rightBlockRecord, rightBlockCart]], 1, { autoAlpha: 0 }, 0.2, "slideEnd+=1.5");
+    // .staggerFrom(leftBlockText, 1, { autoAlpha: 0, x: -15 }, 0.2, "-1") //未確認
+    // .staggerFrom(midCard, 1, { autoAlpha: 0, y: 10 }, 0.2, "-1");  
+    // .staggerFrom(midCard, 1, { autoAlpha: 0, y: 10 }, 0.2, "-=0.3");  
+}
+
+  
+
+
+
+
+
+

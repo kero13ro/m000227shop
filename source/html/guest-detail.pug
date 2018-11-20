@@ -22,7 +22,7 @@ block content
       .infoCard.mb32.w100
         .infoCard__title 
           span.f24 訂單相關資訊 - 非會員
-          a(href="member.html").edit 加入會員
+          a(href="register.html").edit 加入會員
           
         .infoCard__content.infoCard--multiple
 
@@ -47,7 +47,7 @@ block content
                 td(data-title="預定出貨日"): div.fc 2017/12/10
                 td(data-title="配送狀態"): div.fc 處理中
                 td(data-title="取消/退貨"): div.fc
-                  a(href="#") 取消訂單
+                  a(href="#modal-cancel" data-lity) 取消訂單
 
 
           .icon-thermometer.normal.mb16 常溫配送
@@ -203,7 +203,7 @@ block content
             li
               span 紅利折扣
               span 無，馬上
-                a(href="member.html") 加入會員
+                a(href="register.html") 加入會員
             li
               span 付款方式
               span 信用卡(一次付清)
@@ -221,5 +221,13 @@ block content
       
       .bottom.mb80.mt24
         a 重新查詢
-        a(href="member.html").orange 加入會員
+        a(href="register.html").orange 加入會員
 
+  #modal-cancel.lity-hide.modal.f16
+    .modal__main
+      .f24.lh20.mb16 確定取消訂單?
+      .lh20 訂單取消後，系統無法為您保留取消的商品庫存；重新下單可能會遇到商品庫存被其他會員購買，建議您取消後立即重新下單。
+    .submit.pt48.pb40
+      a(href="guest-cancel.html").btn 確認取消
+      a.btn.cancel 放棄取消
+      
