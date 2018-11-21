@@ -12,24 +12,32 @@ if (wW < 768) {
       burger3 = toggle.find(".three");
   
     
+  TweenLite.set([burger1, burger2, burger3], { "transition": "none" });
   var menuToggle = new TimelineMax({ paused: true, reversed: true, yoyo: true});
-  
+
   menuToggle
-    .set(nav_cover, { height: "100vh",autoAlpha: 0 })
-    .to([burger1, burger2, burger3], 0.3, { backgroundColor: "#fff"})
-  
-    .to(burger2, 0.3, { autoAlpha: 0 }, 0)
-    .to(burger1, 0.3, { rotation: 45, transformOrigin: "10%" }, 0)
-    .to(burger3, 0.3, { rotation: -45, transformOrigin: "10%" }, 0)
-    .to(nav_cover, 0.6, { autoAlpha: 1 }, "start")
-    .staggerFrom(cover_list, 0.4, { autoAlpha: 0, x: 30, ease: Power2.easeOut}, 0.1, 0.3);
+    .set(nav_cover, { height: "100vh", autoAlpha: 0 })
+    .to([burger1, burger2, burger3], 0.3, { backgroundColor: "#fff" })
+
+    .to(burger3, 0.3, { y: -6 }, 0)
+    .to(burger1, 0.3, { y: 6 }, 0)
+    .to([burger1, burger2], 0.9, { rotation: 240, ease: Power2.easeInOut }, 0.3)
+    .to([burger1, burger2], 0.3, { rotation: "-=15", ease: Power2.easeOut }, 1.3)
+    .to(burger3, 0.9, { rotation: 330, ease: Power2.easeInOut }, 0.3)
+    .to(burger3, 0.3, { rotation: "-=15", ease: Power2.easeOut }, 1.3)
+
+    .to(nav_cover, 0.6, { autoAlpha: 1 }, 0)
+    .staggerFrom(cover_list, 0.4, { autoAlpha: 0, x: 30, ease: Power2.easeOut }, 0.1, 0.3)
+    .to("#dashboard",0.3 , { autoAlpha: 0 }, 0.5);
     
       
   $(".nav__toggle").click(function () {
     menuToggle.reversed() ? menuToggle.play() : menuToggle.reverse();
   });
 }
-
+    // .to(burger2, 0.3, { autoAlpha: 0 }, 0)
+    // .to(burger1, 0.3, { rotation: 45, transformOrigin: "10%" }, 0)
+    // .to(burger3, 0.3, { rotation: -45, transformOrigin: "10%" }, 0)
 
 
 

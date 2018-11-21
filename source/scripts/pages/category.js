@@ -1,29 +1,27 @@
 
 
 //因為idBlock絕對定位，若內容較長，則會有被覆蓋的問題
-if (document.querySelector(".midBlock") !== null) {
+function checkHeight() {
   var midBlockHeight = document.querySelector(".midBlock").offsetHeight;
   var containerHeight = $(".tri-columns").height();
-
-  if (wW >= 768 && wW <= 1300 && (midBlockHeight > containerHeight)) {
+  if (midBlockHeight > containerHeight) {
     setTimeout(() => {
       $(".tri-columns").height(midBlockHeight + 50);
     }, 100);
   }
 }
 
-// console.log(midBlockHeight);
+$(document).ready(function() {
+
+  if (document.querySelector(".midBlock") !== null) {
+    if (wW >= 768 && wW <= 1300) {
+      checkHeight();
+    }
+  }
+});
 
 
 
-
-
-// $(".slick-intro").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-
-//   var showPic = $("#js-show");
-//   var target = $(this).find("[data-slick-index=" + nextSlide + "]")[0].style.backgroundImage;
-//   TweenLite.fromTo(showPic, 1, { backgroundImage: target, opacity: 0 }, { opacity: 1 });
-// });
 
 $(".slick-intro .unit").on("click", function () {
 
@@ -43,23 +41,26 @@ $(".slick-intro").slick({
 
 
 
-$(".icon-heart").click(function(params) {
+$(".icon-heart").click(function() {
   $(this).addClass("active");
-})
+});
 
+
+// intro.html 下方分頁 toggle
 $(document).ready(function () {
-  $("#js-page a[data-page]").click(function() {
+  var pageBtn = $("#js-page a[data-page]");
 
-    $("#js-page a[data-page]").removeClass("active");
-    $(this).addClass("active");
-    var tmp = $(this).attr("data-page");
+  pageBtn.each(function () {
+    $(this).click(function () {
 
-    $(".content").hide();
-    $(`.js-${tmp}`).show();
+      pageBtn.removeClass("active");
+      $(this).addClass("active");
+      
+      var activePage = $(this).attr("data-page");
+      $(".main_content").hide();
+      $(`.js-${activePage}`).show();
 
-    // $(".content").stop(true, false, true).fadeOut(300, function () {
-    //   $(`.js-${tmp}`).fadeIn(300);
-    // });
+    });
   });
 });
 
@@ -129,7 +130,6 @@ $(window).on("load", function () {
 
 
 
-//還沒想到要如何共用
 $("#close-bgc").click(function() {
   $(".catalog .block__title").trigger("click");
 });
@@ -159,11 +159,3 @@ function inner_collapse() {
   });
 }
 
-
-
-// 尚未確定要展示 切換不同產品分類的動畫
-
-// $(".submenu a").click(function(){
-//   $(".submenu a").removeClass("active");
-//   $(this).addClass("active");
-// });

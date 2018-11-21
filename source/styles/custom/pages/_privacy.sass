@@ -5,7 +5,6 @@
   background-size: cover
   +max(1500)
     background-image: url("./images/login-00-bgc4b.jpg")
-  
   .title
     border-bottom: 2px solid rgba(#B47832, 0.5) 
     padding-bottom: 12px
@@ -15,27 +14,40 @@
   .container.md
     max-width: 1200px
 
+  .scrollbarY
+    position: relative
+
   .content
     max-height: 440px
-    
     position: relative
-    .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+
+    #mCSB_1_scrollbar_vertical
+      right: 6px
+
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
       background-color: $brown-dark
-    .mCS-dark-thick.mCSB_scrollTools .mCSB_draggerRail
+    .mCSB_scrollTools .mCSB_draggerRail
       background-color: #eae5dc
+      
+
     p
-      padding-right: 20px
+      padding-right: 10px
 
     p:last-child
       padding-bottom: 50px
+      
 
-    &:before
-      content: ""
-      display: block
-      +position(absolute, null null 0 null )
-      +size(calc(100% - 20px), 50px)
-      background: linear-gradient(0deg, rgb(245, 241, 240) 0%, rgba(0,212,255,0) 100%)
-      z-index: 1
+  .mask
+    +position(absolute, null null 0 null )
+    +size(calc(100% - 20px), 50px)
+    background: linear-gradient(0deg, rgb(245, 241, 240) 0%, rgba(0,212,255,0) 100%)
+    background: -webkit-linear-gradient(bottom, rgba(245, 241, 240,1) 0%, rgba(251, 251, 251,0) 100%)
+    
+  +max(1500)
+    .mask
+      background: linear-gradient(0deg, rgb(251, 251, 251) 0%, rgba(0,212,255,0) 100%)
+      background: -webkit-linear-gradient(bottom, rgba(251, 251, 251,1) 0%, rgba(251, 251, 251,0) 100%)
+      
 
   .submit
     border-top: 2px solid rgba(#B47832, 0.5) 

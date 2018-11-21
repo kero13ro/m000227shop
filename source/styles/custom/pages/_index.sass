@@ -7,7 +7,7 @@
 // .slider-show.slick-initialized
 //   visibility: visible
 //   opacity: 1  
-+min(768)
++min(992)
   .landing
     background-color: #fff
     #dashboard,
@@ -30,7 +30,12 @@
           right: -200%
           transition: 3s right
 
+  main:not(.landing)
+    > .container + *
+      opacity: 0
   
+
+
 $bgco: rgb(245, 241, 240)
 
 
@@ -283,9 +288,7 @@ $bgco: rgb(245, 241, 240)
   .midBlock
     +margin(null 0px null 20px)
     width: calc(100% - 236px)
-    position: absolute
-    right: 0
-    top: 0
+    +position(absolute, 0 0 null null )
 
   .rightBlock
     position: static
@@ -521,6 +524,9 @@ $bgco: rgb(245, 241, 240)
       +hover(background-color)
       &:hover
         background-color: $brown-dark
+    
+    +max(768)
+      display: none
 
   .card:hover
     box-shadow: 0 0 1px #b47832
@@ -864,7 +870,6 @@ html.lity-active.tips-mode body
   img
     +size(60px)
     margin-right: 12px
-
 
 
 

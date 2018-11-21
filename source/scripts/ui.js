@@ -35,3 +35,9 @@ right.click(function () {
   var leftPos = qa__menu.scrollLeft();
   qa__menu.stop(true, false, true).animate({ scrollLeft: leftPos + 200 }, 800);
 });
+
+
+
+  /* ==========================================================================
+          plugin slick init
+  ==========================================================================*/
