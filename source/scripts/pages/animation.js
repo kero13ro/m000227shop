@@ -185,9 +185,9 @@ if (document.querySelector("main").classList.contains("landing") && (wW > 991)) 
 
     .staggerFrom([leftBlockTitle, midBlockTitle, rightBlockTitle], 1, { autoAlpha: 0, y: -10 }, 0.2, "slideEnd+=0.5")
 
-    .staggerFrom([leftBlockBgc, midBlockContent, [rightBlockRecord, rightBlockCart]], 1, { autoAlpha: 0 }, 0.2, "slideEnd+=1.5");
+    .staggerFrom([leftBlockBgc, midBlockContent, [rightBlockRecord, rightBlockCart]], 1, { autoAlpha: 0 }, 0.4, "slideEnd+=1")
+    .staggerFrom(midCard, 1.2, { autoAlpha: 0, y: 10 }, 0.1, "-=1");  
     // .staggerFrom(leftBlockText, 1, { autoAlpha: 0, x: -15 }, 0.2, "-1") //未確認
-    // .staggerFrom(midCard, 1, { autoAlpha: 0, y: 10 }, 0.2, "-1");  
     // .staggerFrom(midCard, 1, { autoAlpha: 0, y: 10 }, 0.2, "-=0.3");  
 }
 
