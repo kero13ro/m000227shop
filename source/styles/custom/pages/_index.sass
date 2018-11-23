@@ -217,7 +217,6 @@ $bgco: rgb(245, 241, 240)
   +max(767)
     .slick-list
       +margin(null 36px)
-      // +padding(null 1px)
       font-size: 12px
 
   +max(430)
@@ -412,13 +411,18 @@ $bgco: rgb(245, 241, 240)
       background-color: #efefef
       display: none
 
+  +max(991)
+    ul
+      font-weight: normal      
+      margin-bottom: 2px
+    li:not(.subtitle)
+      line-height: 1.8
   +max(768)
     #dorpdown-js
       max-width: 100%
 
   +max(450)
 
-    font-weight: normal      
     ul
       width: 100%
     .subtitle + div
@@ -870,6 +874,7 @@ html.lity-active.tips-mode body
   img
     +size(60px)
     margin-right: 12px
+    flex-shrink: 0
 
 
 

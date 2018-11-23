@@ -21,12 +21,12 @@ if (wW < 768) {
 
     .to(burger3, 0.3, { y: -6 }, 0)
     .to(burger1, 0.3, { y: 6 }, 0)
-    .to([burger1, burger2], 0.9, { rotation: 240, ease: Power2.easeInOut }, 0.3)
-    .to([burger1, burger2], 0.3, { rotation: "-=15", ease: Power2.easeOut }, 1.3)
-    .to(burger3, 0.9, { rotation: 330, ease: Power2.easeInOut }, 0.3)
-    .to(burger3, 0.3, { rotation: "-=15", ease: Power2.easeOut }, 1.3)
+    .to([burger1, burger2], 0.8, { rotation: 240, ease: Power2.easeInOut }, 0.3)
+    .to([burger1, burger2], 0.2, { rotation: "-=10", ease: Power3.easeOut }, 1.2)
+    .to(burger3, 0.8, { rotation: 330, ease: Power2.easeInOut }, 0.3)
+    .to(burger3, 0.2, { rotation: "-=10", ease: Power3.easeOut }, 1.2)
 
-    .to(nav_cover, 0.6, { autoAlpha: 1 }, 0)
+    .to(nav_cover, 0.5, { autoAlpha: 1 }, 0)
     .staggerFrom(cover_list, 0.4, { autoAlpha: 0, x: 30, ease: Power2.easeOut }, 0.1, 0.3)
     .to("#dashboard",0.3 , { autoAlpha: 0 }, 0.5);
     

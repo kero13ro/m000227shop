@@ -463,12 +463,21 @@
 
 
 #confirm
+
   .spe
     letter-spacing: 1px
     color: $brown-dark
   .infoCard__title
     a
       +hoverText(rgb(234, 125, 9))
+
+  +max(500)
+    .baseline 
+      flex-wrap: wrap
+      > span
+        width: 100%
+        +margin(10px null null 0)
+
 
 #confirm,
 #complete

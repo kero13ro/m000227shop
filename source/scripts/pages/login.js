@@ -9,16 +9,6 @@ var $submenu_slider = $(".slcik-menu.eq9 ul"),
     autoplay: false,
     nextArrow: '<div class="icon-next"></div>',
     prevArrow: '<div class="icon-prev"></div>',
-    
-    // responsive: [
-    //   {
-    //     breakpoint: 765,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 2
-    //     }
-    //   }
-    // ]
   };
 
 
@@ -31,15 +21,12 @@ $(window).on('resize', function () {
     }
     return;
   }
-
   if (!$submenu_slider.hasClass('slick-initialized')) {
     return $submenu_slider.slick(settings_md);
   }
 });
 
 $(window).trigger("resize");  
-
-
 
 
 
@@ -60,14 +47,9 @@ if ($(window).width() < 768) {
 
 
 //submenu slick 初始化 及定位
-
-// $(".slcik-menu.eq5 ul")
-
-var $submenu_all = $(".slcik-menu.eq9 ul");
+var $submenu_all = document.querySelector(".slcik-menu.eq9 ul") ? $(".slcik-menu.eq9 ul") : $(".slcik-menu.eq5 ul");
 var currentSubmenu = $submenu_all.attr("data-menu");
 var slideLength = $(".slcik-menu .slick-slide").length;
-
-// console.log(currentSubmenu);
 
 //slick 無法 goto 到最後一個 因此要指定到前一個
 currentSubmenu == slideLength ? (currentSubmenu = currentSubmenu - 2) : (currentSubmenu = currentSubmenu - 1);
@@ -76,8 +58,6 @@ if ($submenu_all.hasClass('slick-initialized')) {
   $submenu_all.slick("slickGoTo", currentSubmenu, true);
 }
 
-
-  
 
 
 // 訂閱電子報
@@ -92,15 +72,12 @@ $("#epapper-js").find("div").click(function () {
 
 
 
-
-// 忘記密碼\ 送出成功對話框
+// 忘記密碼  送出成功對話框
 $("#js-sent").click(function () {
   $("#member").find(".forget").hide();
   $("#member").addClass("darker");
   $(".modal.dark").show();
 });
-
-
 
 
 $("#qa .unit__q").click(function () {
@@ -111,11 +88,7 @@ $("#qa .unit__q").click(function () {
     .slideUp(300);
   $(this).parent("li").addClass("expend");
   $(this).parent("li").find(".unit__a").slideDown(300);
-
-
 });
-
-
 
 
 
@@ -143,15 +116,12 @@ function breakMenu() {
 
 breakMenu();
 window.addEventListener('resize', breakMenu, false);
-// $(window).trigger("resize");  
-
 
 
 
 $("#member .check_unit input").click(function () {
 
   var cover = $("#member .cover");
-  
   if ($(this).is(":checked")) {
     cover.removeClass("ban");
   } else {

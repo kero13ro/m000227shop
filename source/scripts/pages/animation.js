@@ -45,8 +45,8 @@ function removeNode(target) {
     .to(target, 0.8, { height: "0px", autoAlpha: 0, "paddingTop": "0px", "paddingBottom": "0px", ease: Power3.easeOut})
     .call(function () { target.remove(); })
     .call(checkBorderStyle)
-    .call(renewBedge)
-    .call(checkHeight);
+    .call(renewBedge);
+    // .call(checkHeight);
   
 }
 
@@ -183,9 +183,9 @@ if (document.querySelector("main").classList.contains("landing") && (wW > 991)) 
     // .staggerFrom(dashboard_btn, 2, { autoAlpha: 0 },0.3, "slideEnd")
     .staggerFromTo(dashboard_btn, 0.4, { autoAlpha: 0, y: -20, scale: 0.7 }, { autoAlpha: 1, y: 0, scale: 1 }, 0.2, "slideEnd")
 
-    .staggerFrom([leftBlockTitle, midBlockTitle, rightBlockTitle], 1, { autoAlpha: 0, y: -10 }, 0.2, "slideEnd+=0.5")
+    .staggerFrom([leftBlockTitle, midBlockTitle, rightBlockTitle], 1, { autoAlpha: 0, y: -15 }, 0.2, "slideEnd+=0.3")
 
-    .staggerFrom([leftBlockBgc, midBlockContent, [rightBlockRecord, rightBlockCart]], 1, { autoAlpha: 0 }, 0.4, "slideEnd+=1")
+    .staggerFrom([leftBlockBgc, midBlockContent, [rightBlockRecord, rightBlockCart]], 1, { autoAlpha: 0 }, 0.4, "slideEnd+=0.3")
     .staggerFrom(midCard, 1.2, { autoAlpha: 0, y: 10 }, 0.1, "-=1");  
     // .staggerFrom(leftBlockText, 1, { autoAlpha: 0, x: -15 }, 0.2, "-1") //未確認
     // .staggerFrom(midCard, 1, { autoAlpha: 0, y: 10 }, 0.2, "-=0.3");  

@@ -6,10 +6,10 @@ var esc = $.Event("keydown", { keyCode: 27 });
 
 
 
-
 //nav 當前頁面的樣式
 var currentPage = sessionStorage.getItem("nav");
 var navPages = $("#nav .nav_shop a, \
+                  .login, \
                   .logo");
 
 navPages.filter("[href='" + currentPage + "']").addClass("current");
@@ -38,6 +38,14 @@ right.click(function () {
 
 
 
-  /* ==========================================================================
-          plugin slick init
-  ==========================================================================*/
+
+if (
+  document.querySelector("#confirm") !== null ||
+  document.querySelector("#complete") !== null
+) {
+  var childPos = $(".progress .current").position();
+  var parentPos = $(".current").position();
+
+  var scrollWidth = childPos.left - parentPos.left;
+  $(".scrollbarX").scrollLeft(scrollWidth);
+}

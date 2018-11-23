@@ -46,6 +46,10 @@
     +size(100px)
     background-position: left
     background-size: cover
+
+  .check_unit
+    +hoverText(rgb(147, 87, 17))
+    
     
   [class*="icon-"]
     color: white
@@ -57,11 +61,13 @@
 
   .icon-cart
     background-color: rgb(179, 139, 90)
+    +hoverBgc(rgb(204, 125, 36))
     &:before
       transform: scale(-1,1)
 
   .icon-trash
     background-color: rgb(153, 153, 153)
+    +hoverBgc(rgb(137, 134, 134))
 
   +max(990)
     td > div

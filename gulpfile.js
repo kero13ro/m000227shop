@@ -69,6 +69,10 @@ gulp.task("sass", function() {
 
 
 gulp.task("copy-css", function () {
+  // gulp
+  //   .src("./source/styles/**/*.sass")
+  //   .pipe(gulp.dest("./public/styles/sassBackup/"));
+
   gulp
     .src(["./source/styles/images/*.jpg", "./source/styles/images/*.png"])
     .pipe(gulp.dest("./public/styles/images/"));

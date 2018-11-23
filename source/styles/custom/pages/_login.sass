@@ -2,9 +2,6 @@
 
 #member
   background-size: cover
-  max-height: 800px
-  height: 90vh
-  min-height: 650px
   position: relative
   
 
@@ -16,18 +13,18 @@
   .forget
     z-index: 2
     
-  &.darker
-    &::before
-      content: ""
-      +position(absolute, 0 0 0 0)
-      +size(100%)
-      background-color: rgba(black,0.2)
-      z-index: 1
+  // &.darker
+  //   &::before
+  //     content: ""
+  //     +position(absolute, 0 0 0 0)
+  //     +size(100%)
+  //     background-color: rgba(black,0.2)
+  //     z-index: 1
 
   .container
     +size(100%)
     position: relative
-
+    +padding(130px null)
 
   .breadcrumb
     color: white
@@ -127,6 +124,8 @@
 
     .cover.ban
       a
+        +margin(null auto)
+        display: block
         opacity: 0.6
         pointer-events: none
 
@@ -138,10 +137,16 @@
       
       input, .login_btn
         height: 50px
+    .container
+      +padding(100px null)
 
   +max(767)
+    .container
+      +padding(80px null 40px)
+
     .login
       display: block
+      height: auto
     .login_left,
     .login_right
       +size(100%, auto)
@@ -157,7 +162,7 @@
       +padding(30px)
 
     .login
-      height: 80vh
+      // height: 80vh
       +margin(null 10px)
 
 

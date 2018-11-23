@@ -12,6 +12,7 @@ block content
       .breadcrumb
         ul.nostyle
           li 首頁
+          h2.sr-only 商品專區
           li.icon-right-thin 月子餐組合選
           li.icon-right-thin 月子補養兩日餐(10日)
 
@@ -43,7 +44,7 @@ block content
 
             .head__right
 
-              h3.f24.wide5 月子補養兩日餐(10日)
+              h4.f24.wide5 月子補養兩日餐(10日)
               .f16.lh20
                 div 素燉富含膳食纖維是坐月子混搭的好選擇
                 .vege.border-1 奶蛋素
@@ -120,7 +121,7 @@ block content
 
                   .trace
                     span 加入追蹤清單：
-                    span.icon-heart
+                    span.icon-heart(data-lity href="#modal-trace")
 
 
           +page-main
@@ -132,3 +133,8 @@ block content
           +record
 
 
+    #modal-trace.lity-hide
+      .wrapper
+        .icon-heart
+        .lh18 已加入追蹤清單 #[br] 前往
+          a(href="trace.html") 我的追蹤清單

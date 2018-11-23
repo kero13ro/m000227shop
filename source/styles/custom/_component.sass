@@ -20,6 +20,11 @@
       background-color: $brown-dark
       color: white
 
+  +max(330)
+    [class^="icon"]
+      margin: 0
+
+
 =afterline($height, $color: rgb(199,199,199))
   line-height: $height
   position: relative
@@ -446,8 +451,10 @@
       flex-wrap: wrap
       > *:not(:first-child)
         width: 100%
-      > *:not(:first-child):not(:last-child)
+      > *:not(:first-child)
         +margin(null 0 13px null)
+      > *:last-child
+        margin-bottom: 0px
 
     .line.name
       flex-wrap: wrap

@@ -3,7 +3,7 @@
 
 mixin guest-menu(index)
   .slcik-menu.eq5.bgcWhite
-    ul.nostyle
+    ul.nostyle(data-menu=index)
       if index == 1
         li.active
           a(href="guest-login-order.html" data-abbr="訂單查詢") 訂單查詢

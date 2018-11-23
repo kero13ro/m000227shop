@@ -3,20 +3,23 @@
 //因為idBlock絕對定位，若內容較長，則會有被覆蓋的問題
 function checkHeight() {
   var midBlockHeight = document.querySelector(".midBlock").offsetHeight;
-  var containerHeight = $(".tri-columns").height();
-  if (midBlockHeight > containerHeight) {
-    setTimeout(() => {
-      $(".tri-columns").height(midBlockHeight + 50);
-    }, 100);
+  var container = $(".tri-columns");
+  if (midBlockHeight !== container.height()) {
+    container.height(midBlockHeight);
   }
 }
 
 $(document).ready(function() {
-
   if (document.querySelector(".midBlock") !== null) {
-    if (wW >= 768 && wW <= 1300) {
-      checkHeight();
-    }
+    
+    window.addEventListener('resize', function () {
+      var wW = $(window).width();
+      if (wW >= 768 && wW <= 1300) {
+        checkHeight();
+      } else {
+        $(".tri-columns").height("auto");
+      }
+    });
   }
 });
 
