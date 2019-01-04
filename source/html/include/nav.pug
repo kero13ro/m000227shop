@@ -16,11 +16,13 @@
       a(href="#phone" data-lity) 聯絡電話
   
   .icon-scan.white.gasp
-    form.bar 
+    form(action="search.html").bar 
       label 網站搜尋
       div
         input(type="search", placeholder="") 
-        input(type="submit",  value="搜尋") 
+        //- input(type="submit",  value="搜尋") 
+        button(type="submit") 搜尋
+
   .go-top.icon-up.gasp
   //- a(href="#ADslick" data-lity)
   .plus#js-plus
@@ -65,6 +67,8 @@
           li: a(href="member.html") 會員專區
           li: a(href="qa.html") 常見問題
           li: a(href="guest-login-order.html") 非會員查詢
+          li: a(href="http://html.m000227.youweb.tw", target="_blank") 紫金堂官網
+
       
 
 

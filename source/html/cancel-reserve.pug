@@ -12,7 +12,7 @@ block content
         li.icon-right-thin 訂閱電子報
           h3.sr-only 訂閱電子報
 
-  #subscribed.bgcWhite
+  #unsubscribed.bgcWhite
     
     .slcik-menu.eq9
       ul.nostyle(data-menu="9")
@@ -30,9 +30,9 @@ block content
         //-   a(data-abbr="媽媽教室" href="course.html") 媽媽教室
         //- li 
         //-   a(data-abbr="預約試吃" href="taste.html") 預約試吃
-        li.active 
+        li.active
           a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
 
 
     include ./include/public.pug
-    +subscribe_stage2("subscribed")
+    +cancelReserve

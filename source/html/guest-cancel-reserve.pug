@@ -1,0 +1,26 @@
+
+extends ./include/layout.pug
+include ./include/public.pug
+
+block content
+
+  
+
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li.icon-right-thin 非會員專區
+          h2.sr-only 非會員專區
+        li.icon-right-thin 預約試吃
+          h3.sr-only 預約試吃
+
+  #guest.bgcWhite
+    +guest-menu(4)
+
+    include ./include/public.pug
+    +cancelReserve
+
+
+
+            

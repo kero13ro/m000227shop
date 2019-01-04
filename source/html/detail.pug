@@ -25,10 +25,10 @@ block content
           a(data-abbr="紅利點數" href="bonus.html") 紅利點數
         li 
           a(data-abbr="資料維護" href="profile.html") 會員資料維護
-        li
-          a(data-abbr="媽媽教室" href="course.html") 媽媽教室
-        li 
-          a(data-abbr="預約試吃" href="taste.html") 預約試吃
+        //- li
+        //-   a(data-abbr="媽媽教室" href="course.html") 媽媽教室
+        //- li 
+        //-   a(data-abbr="預約試吃" href="taste.html") 預約試吃
         li 
           a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
 
@@ -76,7 +76,8 @@ block content
             .table__content
               div.pic
                 img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
+              div.name
+                a(href="intro.html") 月子補養兩日餐(10日)
               div(data-title="數量").num 1
               div.per NT$11,888
               div.sum NT$11,888
@@ -101,7 +102,8 @@ block content
             .table__content
               div.pic 
                 img(src="./styles/images/01-item02.jpg" alt="紫金堂")
-              div.name 紫金堂月子餐【15日份】
+              div.name 
+                a(href="intro.html") 紫金堂月子餐【15日份】
               div(data-title="數量").num 1
               div.per NT$28,200
               div.sum NT$28,200
@@ -110,8 +112,9 @@ block content
             .table__content
               div.pic 
                 img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
-                .sub 產後第二週 + 哺乳
+              div.name 
+                a(href="intro.html") 月子補養兩日餐(10日)
+                  .sub 產後第二週 + 哺乳
               div(data-title="數量").num 1
               div.per NT$11,888
               div.sum NT$11,888
@@ -119,8 +122,9 @@ block content
             .table__content
               div.pic 
                 img(src="./styles/images/01-item01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
-                .sub 產後第一週 + 哺乳 (出一停一)
+              div.name 
+                a(href="intro.html") 月子補養兩日餐(10日)
+                  .sub 產後第一週 + 哺乳 (出一停一)
               div(data-title="數量").num 1
               div.per NT$22,888
               div.sum NT$22,888
@@ -169,7 +173,7 @@ block content
 
       .infoCard.mb32
         .infoCard__title
-          span 收貨人資料
+          span.f24 收貨人資料
         .infoCard__content.infoCard--list
           ul.nostyle
             li
@@ -196,7 +200,7 @@ block content
 
       .infoCard.mb32
         .infoCard__title 
-          span 訂購人資料
+          span.f24 訂購人資料
         .infoCard__content.infoCard--list
           ul.nostyle
             li
@@ -214,7 +218,7 @@ block content
 
       .infoCard.mb32
         .infoCard__title 
-          span 發票資訊
+          span.f24 發票資訊
         .infoCard__content.infoCard--list
           ul.nostyle
             li
@@ -228,7 +232,7 @@ block content
               span 24252151
 
       .infoCard.mb32
-        .infoCard__title: span 付款資訊
+        .infoCard__title: span.f24 付款資訊
         .infoCard__content.infoCard--list.two-columns
           ul.nostyle
             li
@@ -251,14 +255,14 @@ block content
               span 信用卡(一次付清)
 
       .infoCard.mb32.w100
-        .infoCard__title: span 訂單備註
+        .infoCard__title: span.f24 訂單備註
         .infoCard__content.infoCard--list
           ul.nostyle
             li
               span 備註說明
               span 無
             li.tel.lh20 如您有任何問題，請至「 #[.red 客服中心]」或撥專線
-              a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+              a(href="tel:0800-289-666").italicNum.f24.ml8 0800-289-666
               | ，將有客服專員為您服務
       
       .bottom.mb80.mt24

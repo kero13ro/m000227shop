@@ -51,9 +51,13 @@
 
 
   .infoCard--reason
+    textarea
+      // max-width: 500px
+
     .bgc
       +padding(22px 30px)
       +f(flex-start,center)
+      flex-wrap: wrap
       background-color: #ededed
       border: 1px solid #E5E5E5
 
@@ -69,9 +73,9 @@
           position: relative
       .select_unit
         width: 100%
-        +margin(null 0 12px null)
-      input
-        max-width: 100% 
+        +margin(null 0 0 null)
+      // input
+      //   max-width: 100% 
 
     +max(340)
       .bgc

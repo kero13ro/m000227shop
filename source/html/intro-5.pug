@@ -52,36 +52,12 @@ block content
                 .group #[span 付款方式] 信用卡付款  \  超商代碼繳費  \  虛擬帳號轉帳
                 .group #[span 配送方式] 低溫宅配
                 .group.border-2
-                  //- ===== 種類 4 ======
-                  .scrollbarX
-                    table.radio
-                      tr
-                        th(colspan="2") 好孕加值禮
-                      tr
-                        td: label(for="intro-4-1") (a) 沐浴包 1 組、益乳飲 3 盒
-                        td.radio_unit
-                          input(type="radio", name="intro-4" id="intro-4-1") 
-                          label(for="intro-4-1")
-                      tr
-                        td: label(for="intro-4-2") (B) 束腹帶 1 條、益乳飲 1 盒	
-                        td.radio_unit
-                          input(type="radio", name="intro-4" id="intro-4-2")
-                          label(for="intro-4-2")
-                      tr
-                        td: label(for="intro-4-3") (C) 束腹帶 1 條、紅棗茶 2 盒	
-                        td.radio_unit 
-                          input(type="radio", name="intro-4" id="intro-4-3")
-                          label(for="intro-4-3")
-                      tr
-                        td: label(for="intro-4-4") (D) 益乳飲 4 盒
-                        td.radio_unit
-                          input(type="radio", name="intro-4" id="intro-4-4")
-                          label(for="intro-4-4")
-                      tr
-                        td: label(for="intro-4-5") (E) 彌月蛋糕 10 盒
-                        td.radio_unit
-                          input(type="radio", name="intro-4" id="intro-4-5")
-                          label(for="intro-4-5")
+                  //- ===== 種類 5 ======
+                  label.select_unit
+                    select(required)
+                      option(disabled) 請選擇規格
+                      option(value="紫金堂紙箱") 請使用紫金堂紙箱
+                      option(value="請使用空白箱") 請使用空白箱
 
 
 

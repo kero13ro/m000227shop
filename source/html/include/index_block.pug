@@ -59,16 +59,19 @@ mixin cart
   .cart-list
     .block__title 購物車 (2)
     .cart__content
-      ul.nostyle
-        li.unit
+      //- ul.nostyle
+      .cart__list
+
+        a(href="intro.html").unit
           .unit__content
+
             img(src="./styles/images/01-item03.jpg")
             .info
               .calc $11,888 x 1
               .delete 移除
           .unit__title 月子補養兩日餐(10日)
 
-        li.unit
+        a(href="intro.html").unit
           .unit__content
             img(src="./styles/images/01-item09.jpg")
             .info
@@ -92,7 +95,8 @@ mixin cart
   #modal-tips.f16.lity-hide
     .tips__title.f24 滿額贈品
     .tips__content
-      p 單筆訂單金額 #[span.red NT$5,000] 元以上，可挑選 #[span.red 1] 項贈品，可在結帳時於購物車選擇
+      p 單筆訂單金額○○元以上，結帳前可於購物車畫面挑選○項贈品。
+      //- p 單筆訂單金額 #[span.red NT$5,000] 元以上，可挑選 #[span.red 1] 項贈品，可在結帳時於購物車選擇
       .card-wrap
         .card
           .card__pic

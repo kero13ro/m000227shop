@@ -29,20 +29,20 @@ $(window).on('resize', function () {
 $(window).trigger("resize");  
 
 
-
+//1212 拿掉媽媽教室、預約試吃
 //非會員專區的slcik僅有5個
-if ($(window).width() < 768) {
-  $(".slcik-menu.eq5 ul").slick({
-    arrows: true,
-    dots: false,
-    infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 2,
-    autoplay: false,
-    nextArrow: '<div class="icon-next"></div>',
-    prevArrow: '<div class="icon-prev"></div>',
-  });
-}
+// if ($(window).width() < 768) {
+//   $(".slcik-menu.eq5 ul").slick({
+//     arrows: true,
+//     dots: false,
+//     infinite: false,
+//     slidesToShow: 3,
+//     slidesToScroll: 2,
+//     autoplay: false,
+//     nextArrow: '<div class="icon-next"></div>',
+//     prevArrow: '<div class="icon-prev"></div>',
+//   });
+// }
 
 
 

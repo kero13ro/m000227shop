@@ -8,16 +8,16 @@ block content
         li 首頁
         li.icon-right-thin 會員專區
           h2.sr-only 會員專區
-        li.icon-right-thin 申請退貨
-          h3.sr-only 申請退貨
+        li.icon-right-thin 退貨查詢
+          h3.sr-only 退貨查詢
 
-  #returning
+  #detail
     
     .slcik-menu.eq9.bgcWhite
-      ul.nostyle(data-menu="2")
-        li.active
+      ul.nostyle
+        li
           a(data-abbr="訂單紀錄" href="order.html") 訂單紀錄
-        li 
+        li.active
           a(data-abbr="退貨查詢" href="returned.html") 退貨查詢
         li 
           a(data-abbr="追蹤清單" href="trace.html") 我的追蹤清單
@@ -32,16 +32,11 @@ block content
         li 
           a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
 
-    form.container.pt40
+    .container.pt40
     
       .infoCard.mb32.w100
         .infoCard__title 
-          span.f24 退貨明細
-
-        .top_select
-          .radio_unit
-            input(type="radio" name="return" id="part-return" checked) 
-            label(for="part-return") 部分退貨
+          span.f24 退貨相關資訊資料
           
         .infoCard__content.infoCard--multiple
 
@@ -49,8 +44,8 @@ block content
           .multiple__main.plain
             table.table.mb24
               tr 
-                th 退貨單號
-                th 退訂日期
+                th 退貨單號	
+                th 退訂日期	
                 th 退貨狀態
                 th 退款金額
                 th 退款方式
@@ -58,19 +53,17 @@ block content
                 th 商品狀態
                 th 收貨狀態
               tr 
-                td(data-title="退貨單號"): div.fc R2017123001
-                td(data-title="退訂日期"): div.fc 2017/12/30 #[br] 15:00
+                td(data-title="退貨單號	"): div.fc A2017120701
+                td(data-title="退訂日期	"): div.fc 2017/12/15 #[br] 13:00
                 td(data-title="退貨狀態"): div.fc 退貨成立
-                td(data-title="退款金額"): div.fc NT $ 34,776
+                td(data-title="退款金額"): div.fc NT $ 76,714
                 td(data-title="退款方式"): div.fc 銀行匯款
-                td(data-title="退款狀態"): div.fc 待處理
-                td(data-title="商品狀態"): div.fc 
-                  .red 退貨處理中
-                td(data-title="收貨狀態"): div.fc -
+                td(data-title="退款狀態"): div.fc 退款完成
+                td(data-title="商品狀態"): div.fc 退款完成
+                td(data-title="收貨狀態"): div.fc.red 已收貨
 
-          .baseline.mb16
-            .icon-thermometer.normal 常溫配送
-            span 退貨 #[span.brown 1] 項商品
+
+          .icon-thermometer.normal.mb16 常溫配送
 
           .multiple__secondary.mb32
             .table__title
@@ -79,34 +72,34 @@ block content
               div.num 數量
               div.per 單價
               div.sum 小計
-
+              div.state 貨品狀態              
             .table__content
-
               div.pic
                 img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
-              div.name 
+              div.name
                 a(href="intro.html") 月子補養兩日餐(10日)
               div(data-title="數量").num 1
               div.per NT$11,888
               div.sum NT$11,888
+              div.state.red 退貨處理中
 
             .table__total.wide5
-              div 共 1 項，退貨總計金額 =
-              div NT $ -11,888
+              div.mr8 共 1 項，購物金額 11,888 + 常溫運費 0 =
+              div NT $ 11,888
 
 
-          .baseline.mb16
-            .icon-thermometer.low 低溫配送
-            span 退貨 #[span.brown 1] 項商品
 
-          .multiple__secondary.mb16
+          .icon-thermometer.low.mb16 低溫配送
+          
+          .multiple__secondary.mb32
             .table__title
               div.pic 圖片
               div.name 商品貨號 / 商品名稱
               div.num 數量
               div.per 單價
               div.sum 小計
-              
+              div.state 貨品狀態              
+
             .table__content
               div.pic 
                 img(src="./styles/images/01-item01.jpg" alt="紫金堂")
@@ -116,25 +109,42 @@ block content
               div(data-title="數量").num 1
               div.per NT$22,888
               div.sum NT$22,888
-              
-            .table__total 
-              div 共 1 項，退貨總計金額 =
-              div NT $ -22,888
+              div.state.red 退貨處理中
+            .table__total.wide5
+              div.mr8 共 1 項，購物金額 22,888 + 常溫運費 0 =
+              div NT $ 22,888
 
 
-      .infoCard.mb32.w100
-        .infoCard__title
-          span.f24 退貨資訊
+          .multiple__sum.lh22
+
+            ul.sum__return.nostyle
+              li.bold 退貨總計
+
+              li 退貨 - 常溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                span NT$ -22,888
+              li 退貨 - 低溫商品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                span NT$ -11,888
+              li 退貨 - 滿額贈品 (&nbsp; #[.brown 1] &nbsp;項 ) 
+                span NT$ 0
+              li.bold 本次退貨總計金額
+                span.f20.red NT $ -34,776
+
+            //- ul.sum__cost.nostyle 
+            //-   li.bold 總計金額
+            //-     span.f24.italicNum NT $ 39,940
+
+
+      .infoCard.mb32
+        .infoCard__title 
+          span.f24 退貨原因
         .infoCard__content.infoCard--list
-          ul.nostyle
-            li
-              span 退貨原因
-              span 重訂(改付款方式/改買別款)
+          div 退貨原因敘述
 
 
       .infoCard.mb32
         .infoCard__title
           span.f24 退貨收件人資料
+
         .infoCard__content.infoCard--list
           ul.nostyle
             li
@@ -147,42 +157,48 @@ block content
               span 聯絡電話
               span 0988-818-818
             li
-              span 退貨地址
+              span 收貨地址
               span 40647 台中市北屯區東山路一段147巷49號
+            //- li
+            //-   span 配送方式
+            //-   span 常溫宅配、冷藏宅配
 
 
       .infoCard.mb32
-        .infoCard__title 
-          span.f24 退款資訊
-
-        .infoCard__content.infoCard--list
+        .infoCard__title: span.f24 退款資訊
+        .infoCard__content.infoCard--list.two-columns
           ul.nostyle
             li
               span 退款方式
-              span 銀行轉帳
+              span 銀行匯款
             li
               span 銀行名稱
-              span 808 玉山銀行   玉里分行
+              span ○○銀行
+            li
+              span 分行名稱
+              span ○○分行
             li
               span 銀行帳號
-              span 9888-8888-12345-8
+              span 
             li
-              span.sp 戶名
-              span 張樂樂
+              span 戶名
+              span 張○○
+            //- li
+            //-   span 備註說明
+            //-   span 
+
+
+      .infoCard.mb32
+        .infoCard__title: span.f24 退貨備註
+        .infoCard__content.infoCard--list
+          ul.nostyle
             li
               span 備註說明
               span 無
-
-
-      .infoCard.mb32.w100
-        .infoCard__title: span.f24 訂單備註
-        .infoCard__content.infoCard--list
-          ul.nostyle
             li.tel.lh20 如您有任何問題，請至「 #[.red 客服中心]」或撥專線
               a(href="tel:0800-289-666").italicNum.f24.ml8 0800-289-666
               | ，將有客服專員為您服務
       
-
-      .submit.pt32
-        a(href="returned.html").btn 返回
+      .bottom.mb80.mt24
+        a(href="returned.html").back 返回
 

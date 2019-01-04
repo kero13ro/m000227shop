@@ -3,7 +3,7 @@
 //         通用元件 js
 // ==========================================================================*/
 
-if (wW < 768) {
+if (wW < 1000) {
   var nav_cover = $("#nav_cover"),
       cover_list = $("#nav_cover a"),
       toggle = $(".nav__toggle"),
@@ -56,7 +56,7 @@ function closeDashboard() {
   dashboardStage.reverse(0);
 }
 
-if ($(window).width() <= 991) {
+if (wW < 1000) {
 
   var $dashboard = $("#dashboard");
   var $btnGroup = $("#dashboard > .gasp");
@@ -110,7 +110,7 @@ $(document).on('lity:close', function (event, instance) {
   dashboardCloseAllBar();
 });
 
-$("#dashboard .icon-scan .bar").click(function (e) {
+$("#dashboard .icon-scan .bar:not(form)").click(function (e) {
   e.stopPropagation();
   e.preventDefault();
 });
@@ -130,3 +130,23 @@ $(".go-top").each(function () {
 $(".wp").on('mousewheel', function () {
   $('html,body').stop();
 });
+
+
+//nav 會以 append 變換結構，因此在 resize 過邊界時 reload 全部頁面
+var beforeWidth = $(window).width();
+
+$window.resize(function () {
+  if (beforeWidth > 1000) {
+    ($window.width() <= 1000) ? reload() : "";
+  } else {
+    ($window.width() > 1000) ? reload() : "";
+  }
+  beforeWidth = $window.width();
+  console.log("tri");
+
+})
+
+function reload() {
+  $("main").css("opacity", "0");
+  location.reload();
+}
