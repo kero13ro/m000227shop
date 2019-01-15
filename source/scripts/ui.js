@@ -51,3 +51,10 @@ if (
   $(".scrollbarX").scrollLeft(scrollWidth);
 }
 
+if (document.getElementById("member") !== null) {
+
+  var leftHeight = $(".login_left .login_center").height();
+  
+  // $(".login_right .login_center").css({"minHeight":leftHeight + "px"});
+}
+

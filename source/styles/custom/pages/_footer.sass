@@ -119,7 +119,8 @@
   &__content
     +f(flex-start,flex-start,column)
     width: 100%
-    max-width: 760px
+    +min(1200)
+      max-width: 940px
     
     > *
       +f(flex-start,flex-start)
@@ -139,10 +140,13 @@
     a
       margin: 0 10px
 
-  +max(990)
+  +max(1200)
 
     +f(center, flex-start, column)
     padding: 30px 60px
+
+    &__contact
+      flex-wrap: wrap
 
     &__logo
       margin-bottom: 30px
@@ -207,3 +211,42 @@
       font-size: 12px
     .address__copyright
       letter-spacing: -0.5px
+
+
+
+#inspect
+  height: 100%
+  max-width: 1200px
+
+  .landing
+    max-height: 300px
+    height: 50vw
+    background-image: url("./images/inspect.jpg")
+    background-size: cover
+    background-position: center
+  
+  .content
+    padding: 60px
+    background-color: #fff
+    a
+      color: $red-btn
+      text-decoration: underline
+      +hoverText($red)
+  th 
+    background-color: rgb(249, 245, 234)
+    width: 220px
+    
+  th,
+  td
+    border: 1px solid rgb(214, 177, 132)
+    padding: 1rem
+
+
+  +max(500)
+    padding: 0
+    font-size: 15px
+    .content
+      padding: 20px 30px
+    th,
+    td
+      padding: 0.7rem

@@ -133,11 +133,12 @@ $(window).on("load", function () {
   //   theme: "minimal-dark"
   // });
 
-  $("#privacy .content").mCustomScrollbar({
-    axis: "y",
-    theme: "dark-thick"
-  });
-});
+//0104
+//   $("#privacy .content").mCustomScrollbar({
+//     axis: "y",
+//     theme: "dark-thick"
+//   });
+// });
 
 
 
