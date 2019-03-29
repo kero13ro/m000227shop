@@ -1,0 +1,163 @@
+
+extends ./include/layout.pug
+include ./include/index_block.pug
+
+block content
+
+  include ./include/component.pug
+
+  #category.search
+
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          li.icon-right-thin 搜尋結果
+
+      //- +topLanding
+        
+
+      .tri-columns.mb56   
+        //- .catalog.leftBlock
+          //- +catalog
+
+
+        //- .items.midBlock
+        .items
+
+          .block__title 以 ○○ 搜尋，共有 &nbsp; #[.brown 9] &nbsp; 項結果
+
+          .items__content
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item01.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                    
+                  .icon-cart
+                    
+              .card__name 月子補養兩日餐(30日)
+              .card__price
+                span 特惠價
+                span.num $ 33,888 
+              .card__ps 套餐
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item02.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子補養兩日餐(20日)
+              .card__price
+                span 特惠價
+                span.num $ 22,888 
+              .card__ps 套餐
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item03.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子補養兩日餐(10日)
+              .card__price
+                span 特惠價
+                span.num $ 11,888 
+              .card__ps 套餐
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item04.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子補養兩日餐(2日)
+              .card__price
+                span 特惠價
+                span.num $ 2,388
+              .card__ps 套餐
+
+            .border
+
+            a(href="intro.html").card
+              .card__pic(data-tri="特惠" data-corner="TOP 1")
+                img(src="./styles/images/02-00-item05.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 益乳飲(盒/10包)
+              .card__price
+                span 特惠價
+                span.num $ 925
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/02-00-item06.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子紅棗茶(盒/10包)
+              .card__price
+                span 特惠價
+                span.num $ 900
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/02-00-item07.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子飲品(10包/盒)
+              .card__price
+                span 特惠價
+                span.num $ 900
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/02-00-item08.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 疏乳棒 (舒舒棒)
+              .card__price
+                span 特惠價
+                span.num $ 365
+
+            .border
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/02-00-item09.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 疏乳棒 24支(1箱)
+              .card__price
+                span 特惠價
+                span.num $ 7,080
+
+            .card
+            .card
+            .card
+
+            //- .pages.pt56.pb56
+            //-   a(href="#").icon-first
+            //-   a(href="#").icon-prev
+            //-   a(href="#").active 1
+            //-   a(href="#") 2
+            //-   a(href="#") 3 
+            //-   a(href="#") 4
+            //-   a(href="#") 5
+            //-   a(href="#").icon-next
+            //-   a(href="#").icon-last
+
+
+
+        //- .rightBlock
+
+          //- +cart
+          //- +record
+
+
+    +modal-trace

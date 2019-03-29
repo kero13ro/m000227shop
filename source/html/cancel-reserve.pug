@@ -1,0 +1,38 @@
+
+extends ./include/layout.pug
+
+block content
+
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li.icon-right-thin 會員專區
+          h2.sr-only 會員專區
+        li.icon-right-thin 訂閱電子報
+          h3.sr-only 訂閱電子報
+
+  #unsubscribed.bgcWhite
+    
+    .slcik-menu.eq9
+      ul.nostyle(data-menu="9")
+        li
+          a(data-abbr="訂單紀錄" href="order.html") 訂單紀錄
+        li 
+          a(data-abbr="退貨查詢" href="returned.html") 退貨查詢
+        li 
+          a(data-abbr="追蹤清單" href="trace.html") 我的追蹤清單
+        li 
+          a(data-abbr="紅利點數" href="bonus.html") 紅利點數
+        li 
+          a(data-abbr="資料維護" href="profile.html") 會員資料維護
+        //- li
+        //-   a(data-abbr="媽媽教室" href="course.html") 媽媽教室
+        //- li 
+        //-   a(data-abbr="預約試吃" href="taste.html") 預約試吃
+        li.active
+          a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
+
+
+    include ./include/public.pug
+    +cancelReserve

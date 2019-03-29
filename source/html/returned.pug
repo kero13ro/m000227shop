@@ -24,10 +24,10 @@ block content
           a(data-abbr="紅利點數" href="bonus.html") 紅利點數
         li 
           a(data-abbr="資料維護" href="profile.html") 會員資料維護
-        li
-          a(data-abbr="媽媽教室" href="course.html") 媽媽教室
-        li 
-          a(data-abbr="預約試吃" href="taste.html") 預約試吃
+        //- li
+        //-   a(data-abbr="媽媽教室" href="course.html") 媽媽教室
+        //- li 
+        //-   a(data-abbr="預約試吃" href="taste.html") 預約試吃
         li 
           a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
 
@@ -66,8 +66,10 @@ block content
             th 退款狀態
             th 商品狀態
             th 收貨狀態
+            th 客服問答
           tr
-            td.brown R2017123001
+            //- td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
             td 2017/12/30
             td 退貨成立
             td NT $ 34,776
@@ -75,8 +77,9 @@ block content
             td 待處理
             td.red 退貨處理中
             td -
+            td: a(href="inquire.html") 詢問
           tr
-            td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
             td 2017/12/10
             td 退貨中
             td NT $ 12,848
@@ -84,8 +87,10 @@ block content
             td 處理中
             td 已送達
             td.red 未取貨
+            td: a(href="inquire.html") 詢問
+
           tr
-            td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
             td 2017/08/01
             td 退貨取消
             td NT $ 2,388
@@ -93,8 +98,10 @@ block content
             td -
             td -
             td 取消
+            td: a(href="inquire.html") 詢問
+
           tr
-            td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
             td 2017/07/28
             td 退貨成立
             td NT $ 22,888
@@ -102,8 +109,10 @@ block content
             td 已退款
             td 退貨完成
             td 已收貨
+            td: a(href="inquire.html") 詢問
+
           tr
-            td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
             td 2017/05/22
             td 退貨完成
             td NT $ 1,050
@@ -111,8 +120,10 @@ block content
             td 退款完成
             td 退貨完成
             td 已收貨
+            td: a(href="inquire.html") 詢問
+
           tr
-            td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
             td 2017/03/14
             td 退貨完成
             td NT $ 938
@@ -120,8 +131,10 @@ block content
             td 退款完成
             td 退貨完成
             td 已收貨
+            td: a(href="inquire.html") 詢問
+
           tr
-            td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
             td 2017/06/11
             td 退貨完成
             td NT $ 3,600
@@ -129,6 +142,8 @@ block content
             td 退款完成
             td 退貨完成
             td 已收貨
+            td: a(href="inquire.html") 詢問
+
 
 
       .pages.pt40.pb56

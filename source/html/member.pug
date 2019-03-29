@@ -8,9 +8,9 @@ block content
       .breadcrumb
         ul.nostyle
           li 首頁
-          li.icon-right-thin 會員專區
-            h2.sr-only 會員專區
-            h3.sr-only 會員登入
+          li.icon-right-thin 會員登入
+            //- h2.sr-only 會員專區
+            //- h3.sr-only 
       .login
         
         .login_left
@@ -42,16 +42,18 @@ block content
             label.mb24.check_unit
               input(type="checkbox")
               .box
-              span 建立帳號代表您已詳細閱讀並同意我們的
-                a(href="privacy.html") 服務條款
+              span.f16 我已詳讀並同意
+                a.bold(href="privacy.html") 隱私權條款
+                | 與
+                a.bold(href="service.html") 會員服務條款
 
             .cover.ban
               a.mb24
                 img(src="./styles/images/09-99-01.jpg", alt="紫金堂")
               a.mb24
                 img(src="./styles/images/09-99-02.jpg", alt="紫金堂")
-              a.mb24
-                img(src="./styles/images/09-99-03.jpg", alt="紫金堂")
+              //- a.mb24
+              //-   img(src="./styles/images/09-99-03.jpg", alt="紫金堂")
             
 
   

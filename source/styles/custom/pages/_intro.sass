@@ -153,6 +153,13 @@
 
   .trace
 
+  .select_unit
+    max-width: 200px
+    margin-top: 5px
+    // select
+    //   border: 1px solid #ccc
+    
+
 .icon-heart //跟首頁通用
   color: #ccc
   cursor: pointer
@@ -307,100 +314,30 @@
         +position(absolute, 16px 0 0 null )
 
 
-.main_content
-  +padding(32px)
-
-  .f24
-    border-bottom: 1px solid rgb(239,239,239)  
-    padding-bottom: 14px
-    margin-bottom: 16px
-
-  .vege
-    margin-left: 15px
-
-  p 
-    color: #7c7c7c
-
-  .dark
-    color: #1e1e1e
-
-  .week
-    margin-bottom: 15px
-    margin-left: 10px
-
-  .group
-    +f
-    color: #7c7c7c
-    &:not(:last-child)
-      padding-bottom: 18px
-      margin-bottom: 18px
-      border-bottom: 1px solid rgb(239,239,239)  
-
-    div:first-child
-      width: 85px
-      flex-shrink: 0
+.main_content.js-page1 ~ *
+  display: none
 
 
-  .content__pic
-    +f(space-between, center, row, wrap)
-    img, .pad
-      width: calc(33% - 5px)
-      margin-bottom: 10px
-    
-
-  //.js-page2
-  .red
-    color: #D2655C
-  .orange
-    color: #FF8C00
-  .bus
-    position: relative
-    img
-      +position(absolute, 0 0 null null )
-
-  .orange.f32 
-    font-style: italic
-    +margin(null 15px)
-    +hoverText(#f46a00)
-
-  .scrollbarX
-    img
-      min-width: 430px
-
-  //page toggle
-  &.js-page1 ~ *
-    display: none
-
-
-.intro__main
-  +max(1100)
-    .bus
-      +f
-      flex-direction: column-reverse
-      margin-top: -10px
-      img
-        position: relative
-        align-self: flex-end
-        max-width: 30vw
-
-  +max(500)
-    .main_content
+.editor
+  .main_content
+    padding: 32px
+    +max(500)
       padding: 20px
 
-    .content__pic
-      img
-        width: calc(50% - 10px)
-        +margin(null 5px)
+  .tri-column
+    img
+      width: calc(33% - 10px)
+      margin: 5px
 
-    .group
-      flex-wrap: wrap
-
-      div:first-child
+      +max(767)
         width: 100%
-        margin-bottom: 5px
 
-    .orange.f32 
-      +margin(null 8px null 0)
+  .group
+    display: flex
+    > div:first-child
+      flex: 0 0 85px
 
+    +max(500)
+      flex-wrap: wrap
 
 

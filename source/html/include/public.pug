@@ -17,17 +17,17 @@ mixin guest-menu(index)
         li 
           a(href="guest-login-return.html" data-abbr="退貨查詢") 退貨查詢
       if index == 3
-        li.active
-          a(href="guest-login-course.html" data-abbr="媽媽教室") 媽媽教室
+        //- li.active
+        //-   a(href="guest-login-course.html" data-abbr="媽媽教室") 媽媽教室
       else
-        li 
-          a(href="guest-login-course.html" data-abbr="媽媽教室") 媽媽教室
+        //- li 
+        //-   a(href="guest-login-course.html" data-abbr="媽媽教室") 媽媽教室
       if index == 4
-        li.active
-          a(href="guest-login-taste.html" data-abbr="預約試吃") 預約試吃
+        //- li.active
+        //-   a(href="guest-login-taste.html" data-abbr="預約試吃") 預約試吃
       else
-        li 
-          a(href="guest-login-taste.html" data-abbr="預約試吃") 預約試吃
+        //- li 
+        //-   a(href="guest-login-taste.html" data-abbr="預約試吃") 預約試吃
       if index == 5
         li.active
           a(href="guest-login-subscribe.html" data-abbr="訂閱電子報") 訂閱電子報
@@ -97,11 +97,34 @@ mixin subscribe_stage2(state)
           .modal__main
             img(src="./styles/images/login-00-01.png" alt="紫金堂")
             .f24.lh20.mb24 您已取消訂閱
-            div 感謝您對紫金堂的支持與肯定。
+            div 若有任何建議，我們都非常歡迎您來信給我們！ #[br]
+            | 來信請寄至 
+            a(href="mailto:service@tasteforlife.com.tw") service@tasteforlife.com.tw
+            | #[br]謝謝您！
           .modal-bottom
             a(href="index.html")
               .icon-back
               span 返回首頁
         else
           block
-        
+
+
+          
+//- 在訂閱及取消訂閱之後的回應
+mixin cancelReserve
+  .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+
+    .container.fc.pt72.pb88
+      .modal.f16
+
+        .modal__main
+          img(src="./styles/images/login-00-01.png" alt="紫金堂")
+          .f24.lh20.mb24 您已取消預約
+          div 若有任何建議，我們都非常歡迎您來信給我們！ #[br]
+          | 來信請寄至 
+          a(href="mailto:service@tasteforlife.com.tw") service@tasteforlife.com.tw
+          | #[br]謝謝您！
+        .modal-bottom
+          a(href="index.html")
+            .icon-back
+            span 返回首頁

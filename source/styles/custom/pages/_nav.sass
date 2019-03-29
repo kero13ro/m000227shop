@@ -145,7 +145,14 @@
     +hoverText($purple)
 
 
-  
+  +min(1366)
+    #nav_cover
+      li:last-child
+        display: none
+
+      li:nth-last-child(2) a:after
+        border-right: 0px solid #000
+
 .nav-padding
   +max(1365)
     height: 60px

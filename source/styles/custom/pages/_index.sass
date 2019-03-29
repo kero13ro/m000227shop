@@ -181,7 +181,7 @@ $bgco: rgb(245, 241, 240)
 
   a.active
     background: rgb(104,55,0)
-    color: white
+    color: white !important
     height: 60px
     &::before
       opacity: 1
@@ -468,6 +468,8 @@ $bgco: rgb(245, 241, 240)
   .card__pic
     margin-bottom: 10px
     position: relative
+    img
+      width: 100%
 
   .card__pic[data-tri]:before
     content: attr(data-tri)
@@ -629,7 +631,8 @@ $bgco: rgb(245, 241, 240)
     padding-bottom: 30px
     +f(flex-start,center,  column)
 
-  ul
+  // ul
+  .cart__list
     overflow: y-scroll
     width: 100%
     max-height: 450px 
@@ -637,11 +640,13 @@ $bgco: rgb(245, 241, 240)
   .unit
     +padding(20px null)
     border-bottom: 1px solid rgb(240, 240, 240)
-    
+    +hoverText($brown-dark)
+
     
   .unit__content
     +f(flex-start, flex-end)
     margin-bottom: 10px
+
     img
       +size(58px)
       margin-right: 10px
@@ -868,6 +873,7 @@ html.lity-active.tips-mode body
     +f(flex-start, center)
     +padding(15px null)
     white-space: normal
+    +hoverText($red)
     &:not(:last-child)
       border-bottom: 1px solid #e5e5e5
 
@@ -876,7 +882,6 @@ html.lity-active.tips-mode body
     margin-right: 12px
     flex-shrink: 0
 
-
-
-
+.search >.container
+  max-width: 980px
 

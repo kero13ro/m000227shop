@@ -20,17 +20,25 @@ $(document).ready(function() {
         $(".tri-columns").height("auto");
       }
     });
+    checkHeight();
   }
 });
 
 
 
-
+//商品介紹的輪播、圖片放大
 $(".slick-intro .unit").on("click", function () {
 
   var showPic = $("#js-show");
-  var target = $(this)[0].style.backgroundImage;
+  // var target = $(this)[0].style.backgroundImage;
+  var target = this.style.backgroundImage;
   TweenLite.set(showPic, { backgroundImage: target });
+});
+
+$("#js-show").click(function () {
+  var target = this.style.backgroundImage;
+  var addDot = `../${target.slice(5,-2)}`; 
+  lity(addDot);
 });
 
 $(".slick-intro").slick({
@@ -125,10 +133,11 @@ $(window).on("load", function () {
   //   theme: "minimal-dark"
   // });
 
-  $("#privacy .content").mCustomScrollbar({
-    axis: "y",
-    theme: "dark-thick"
-  });
+  //0104
+  //   $("#privacy .content").mCustomScrollbar({
+  //     axis: "y",
+  //     theme: "dark-thick"
+  //   });
 });
 
 

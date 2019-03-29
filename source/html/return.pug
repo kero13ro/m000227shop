@@ -25,10 +25,10 @@ block content
           a(data-abbr="紅利點數" href="bonus.html") 紅利點數
         li 
           a(data-abbr="資料維護" href="profile.html") 會員資料維護
-        li 
-          a(data-abbr="媽媽教室" href="course.html") 媽媽教室
-        li 
-          a(data-abbr="預約試吃" href="taste.html") 預約試吃
+        //- li 
+        //-   a(data-abbr="媽媽教室" href="course.html") 媽媽教室
+        //- li 
+        //-   a(data-abbr="預約試吃" href="taste.html") 預約試吃
         li 
           a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
 
@@ -93,7 +93,8 @@ block content
 
               div.pic
                 img(src="./styles/images//02-01-01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
+              div.name 
+                a(href="intro.html") 月子補養兩日餐(10日)
               div(data-title="數量").num 1
               div.per NT$11,888
               div.sum NT$11,888
@@ -126,7 +127,8 @@ block content
 
               div.pic 
                 img(src="./styles/images/01-item02.jpg" alt="紫金堂")
-              div.name 紫金堂月子餐【15日份】
+              div.name 
+                a(href="intro.html") 紫金堂月子餐【15日份】
               div(data-title="數量").num 1
               div.per NT$28,200
               div.sum NT$28,200
@@ -138,8 +140,9 @@ block content
                   .box
               div.pic 
                 img(src="./styles/images/02-01-01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
-                .sub 產後第二週 + 哺乳
+              div.name 
+                a(href="intro.html") 月子補養兩日餐(10日)
+                  .sub 產後第二週 + 哺乳
               div(data-title="數量").num 1
               div.per NT$11,888
               div.sum NT$11,888
@@ -151,8 +154,9 @@ block content
                   .box
               div.pic 
                 img(src="./styles/images/01-item01.jpg" alt="紫金堂")
-              div.name 月子補養兩日餐(10日)
-                .sub 產後第一週 + 哺乳 (出一停一)
+              div.name 
+                a(href="intro.html") 月子補養兩日餐(10日)
+                  .sub 產後第一週 + 哺乳 (出一停一)
               div(data-title="數量").num 1
               div.per NT$22,888
               div.sum NT$22,888
@@ -169,14 +173,17 @@ block content
           span ※ 標示 #[span.red *] 符號的欄位為必填。
         .infoCard__content.infoCard--reason
           .bgc
-            .line
+            .line.mb16
               span.star 退貨原因
               .select_unit
                 select(required)
                   option(selected disabled hidden) 請選擇
                   option(value="1") 退貨原因1
                   option(value="1") 退貨原因2
-              input(type="text").md
+            .line
+              textarea(rows="3")
+
+              //- input(type="text").md
 
       .infoCard.mb32
         .infoCard__title
@@ -274,7 +281,7 @@ block content
             li 退貨完成後，紅利點數未使用者將全部扣除；若已使用則不歸還 (非會員無紅利點數)。
             li
               .tel 當您申請退貨後，將安排物流公司到府收貨；如您有任何問題，請至「 #[.red 客服中心]」或撥專線
-                a(href="tel:0800-286-666").italicNum.f24.ml8 0800-286-666
+                a(href="tel:0800-289-666").italicNum.f24.ml8 0800-289-666
                 | ，將有客服專員為您服務
 
           label.check_unit

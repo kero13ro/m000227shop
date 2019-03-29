@@ -2,6 +2,7 @@
 
 var wW = $(window).width();
 var wH = $(window).height();
+var $window = $(window);
 var esc = $.Event("keydown", { keyCode: 27 });
 
 
@@ -38,7 +39,7 @@ right.click(function () {
 
 
 
-
+//在結帳頁面，控制上方卷軸 滑到相對應標題
 if (
   document.querySelector("#confirm") !== null ||
   document.querySelector("#complete") !== null
@@ -49,3 +50,11 @@ if (
   var scrollWidth = childPos.left - parentPos.left;
   $(".scrollbarX").scrollLeft(scrollWidth);
 }
+
+if (document.getElementById("member") !== null) {
+
+  var leftHeight = $(".login_left .login_center").height();
+  
+  // $(".login_right .login_center").css({"minHeight":leftHeight + "px"});
+}
+

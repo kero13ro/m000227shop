@@ -90,7 +90,8 @@
       &:hover 
         background-color: rgba(256,256,256,0.1)
 
-    input[type="submit"] 
+    // input[type="submit"] 
+    button
       color: white
       background-color: $purple
       border: 1px solid rgba(256,256,256,0.4)
@@ -105,7 +106,7 @@
 
   +max(1600)
     padding: 15px 15px 25px
-    margin-top: 30vw
+    margin-top: 20vw
 
     >*
       margin-bottom: 10px
@@ -129,37 +130,53 @@
       +size(42px)
       margin-top: 0
 
+  .icon-comment
+    display: none
+
   +max(991)
     top: auto
     bottom: 0
     height: auto
-    .plus
+
+    .icon-comment
+      display: flex
       +size(42px)
+      // margin-top: auto
+      margin-top: 40px
+      margin-bottom: 0
       background-color: $purple
       color: white
-      border-radius: 50%
-      margin-top: 30px
-      .one, .two
-        margin: 0 auto
-        +size(20px, 3px)
-        +position(absolute, null 0 null 0)
-        background-color: #fff
-      .two
-        transform: rotate(90deg)  
-        transition: 0.3s transform
+      box-shadow: 0 3px 10px 0px rgba(black, 0.3)
+      font-size: 1.5rem
+
+    // .plus
+    //   +size(42px)
+    //   font-size: 20px
+    //   background-color: $purple
+    //   color: white
+    //   border-radius: 50%
+    //   margin-top: 30px
+    //   .one, .two
+    //     margin: 0 auto
+    //     +size(20px, 3px)
+    //     +position(absolute, null 0 null 0)
+    //     background-color: #fff
+    //   .two
+    //     transform: rotate(90deg)  
+    //     transition: 0.3s transform
 
     .gasp
       opacity: 0
 
-    .plus:active
-      transform: scale(1.1)
-      transition: 0.3s transform
+    // .plus:active
+    //   transform: scale(1.1)
+    //   transition: 0.3s transform
 
-    &.expend .plus
-      transition: 0.3s transform
-      .two
-        transform: rotate(0deg)  
-        transition: 0.3s transform
+    // &.expend .plus
+    //   transition: 0.3s transform
+    //   .two
+    //     transform: rotate(0deg)  
+    //     transition: 0.3s transform
 
 
 //hover 動畫

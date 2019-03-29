@@ -94,11 +94,22 @@ block content
               span
               input(type="text" required)
 
-            label.line.mb16.verify
+            label.line.mb40.verify
               span.justify.star 驗證碼
               input(type="text" placeholder="請輸入驗證碼" required)
               img(src="./styles/images/09-99-04.jpg", alt="紫金堂").ml16
-              span.ml16 點擊刷新
+              .ml16 點擊刷新
+
+            label.line.mb16.confirm
+
+              span
+              label.check_unit
+                input(type="checkbox")
+                .box
+                span 已詳細閱讀並同意我們的
+                  a(href="service.html", target="_blank") 服務條款
+                  | 及
+                  a(href="privacy.html", target="_blank") 隱私權條款
 
 
       .submit.pt40.pb88
